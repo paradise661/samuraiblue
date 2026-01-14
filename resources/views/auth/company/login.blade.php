@@ -24,7 +24,7 @@
             <h4 class="mb-2">Welcome to {{ $settings['site_title_full'] }} !</h4>
             <p class="mb-4">Please Sign-in to your account</p>
 
-            <form method="POST" action="{{ route('user.login.submit') }}">
+            <form method="POST" action="{{ route('company.login.submit') }}">
                 @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>

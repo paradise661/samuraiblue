@@ -33,7 +33,7 @@ class CompanyAuthController extends Controller
 
             $request->session()->regenerate();
 
-            return redirect()->intended(route('frontend.home'));
+            return redirect()->intended(route('company.dashboard'));
         }
 
         return back()->withErrors([

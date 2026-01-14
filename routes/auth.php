@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\CompanyAuthController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\CustomerAuthController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
@@ -78,10 +79,15 @@ Route::get('user/dashboard',function(){
 });
 //Auth Routes for Company
 Route::middleware('guest:company')->group(function () {
-    Route::get('company/login', [CustomerAuthController::class, 'loginform'])->name('company.login');
-    Route::get('company/register', [CustomerAuthController::class, 'registerform'])->name('company.register');
-    Route::post('company/register', [CustomerAuthController::class, 'register'])->name('company.register.submit');
-    Route::post('company/login', [CustomerAuthController::class, 'login'])->name('company.login.submit');
+    Route::get('company/login', [CompanyAuthController::class, 'loginform'])->name('company.login');
+    Route::get('company/register', [CompanyAuthController::class, 'registerform'])->name('company.register');
+    Route::post('company/register', [CompanyAuthController::class, 'register'])->name('company.register.submit');
+    Route::post('company/login', [CompanyAuthController::class, 'login'])->name('company.login.submit');
 });
 
-
+Route::middleware('auth:company')->group(function () {
+    Route::post('company/logout', [CompanyAuthController::class, 'destroy'])->name('company.logout');
+    Route::get('company/dashboard', function () {
+        return view('dashboard');
+    })->name('company.dashboard');
+});

@@ -23,7 +23,7 @@
             <!-- /Logo -->
             <h4 class="mb-2">Welcome to {{ $settings['site_title_full'] }} !</h4>
 
-            <form id="formAuthentication" class="mb-3" action="{{ route('user.register.submit') }}" method="POST">
+            <form id="formAuthentication" class="mb-3" action="{{ route('company.register.submit') }}" method="POST">
                 <div class="mb-3">
                     @csrf
                     <label for="name" class="form-label">Name</label>
