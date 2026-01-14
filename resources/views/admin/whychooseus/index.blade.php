@@ -1,6 +1,6 @@
 @extends('layouts.admin.master')
 @php
-    $title = 'Events';
+    $title = 'Why Choose Us';
     $name = 'whychooseus';
 @endphp
 @section('content')
