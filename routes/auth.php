@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
+use App\Http\Controllers\Auth\CustomerAuthController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\NewPasswordController;
@@ -19,7 +20,7 @@ Route::middleware('guest')->group(function () {
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
         ->name('login');
-
+    
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
@@ -57,3 +58,30 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
 });
+
+//Auth Routes for Customers
+Route::middleware('guest:customer')->group(function () {
+
+Route::get('user/login', [CustomerAuthController::class, 'loginform'])->name('user.login');
+Route::get('user/register', [CustomerAuthController::class, 'registerform'])->name('user.register');
+Route::post('user/register', [CustomerAuthController::class, 'register'])->name('user.register.submit');
+Route::post('user/login', [CustomerAuthController::class, 'login'])->name('user.login.submit');
+
+});
+Route::middleware('auth:customer')->group(function () {
+    
+Route::post('user/logout', [CustomerAuthController::class, 'destroy'])->name('user.logout');
+Route::get('user/dashboard',function(){
+    return view('welcome');
+})->name('user.dashboard');
+
+});
+//Auth Routes for Company
+Route::middleware('guest:company')->group(function () {
+    Route::get('company/login', [CustomerAuthController::class, 'loginform'])->name('company.login');
+    Route::get('company/register', [CustomerAuthController::class, 'registerform'])->name('company.register');
+    Route::post('company/register', [CustomerAuthController::class, 'register'])->name('company.register.submit');
+    Route::post('company/login', [CustomerAuthController::class, 'login'])->name('company.login.submit');
+});
+
+

@@ -50,8 +50,13 @@
                                         </a>
                                     @endif
                                 @endauth
+                                <form action="{{ route('user.logout') }}" method="POST">
+                                    @csrf
+                                    <button type="submit">Logout</button>
+                                </form>
                             </nav>
                         @endif
+
                     </header>
 
                     <main class="mt-6">
