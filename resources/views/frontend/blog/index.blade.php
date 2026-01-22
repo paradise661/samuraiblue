@@ -11,75 +11,105 @@
 @endsection
 @extends('layouts.frontend.master')
 @section('content')
-@if ($blog_page)
-<div class="hero-banner2 position-relative ">
-    <div class="row g-0 text-bannner-section">
-        <div class="col-md-6 d-flex justify-content-center align-items-center py-5">
-            <div class="text-center page-banner-lft px-4">
-                <h1 class="text-white font-weight-bold">{{ $blog_page->title ?? 'About Us' }}</h1>
-                <p class="breadcrumb-text text-white">
-                    <a href="{{ route('frontend.home') }}" class="text-white text-decoration-none">Home</a> /
-                    <a href="#"
-                        class="text-white text-decoration-none">{{ $blog_page->title ?? 'About Us' }}</a>
-                </p>
-                </p>
+    <section class="position-relative" style="height: 420px;">
+        <img src="./images/office-skyscrapers-business-district.jpg"
+            class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="Blog Banner">
+        <div class="position-absolute top-0 start-0 w-100 h-100"
+            style="background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));"></div>
+        <div class="container h-100 position-relative d-flex align-items-center">
+            <div class="text-white">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb text-white-50 mb-3">
+                        <li class="breadcrumb-item">
+                            <a href="#" class="text-white text-decoration-none">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#" class="text-white text-decoration-none">Blog</a>
+                        </li>
+                        <!-- <li class="breadcrumb-item active text-white" aria-current="page">
+                                    find a job at sumarai blue
+                                </li> -->
+                    </ol>
+                </nav>
+                <h1 class="fw-bold display-5"> Learn about your work visa type</h1>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="img-container-banner">
-                <div class="img-wrapper-2">
-                    <img src="{{ asset($blog_page->banner_image) }}" alt="Creative Design"
-                        class="background-img">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endif
-    <section class="blog-section py-5 page-bg-color">
+    </section>
+    <section class="blog-section my-4 py-4">
         <div class="container">
-            <div class="row">
-                @foreach ($blog as $blog)
-                    <div class="col-lg-4 col-md-6 position-relative" data-aos="fade-up" data-aos-duration="3000">
-                        <div class="shadow blog-card bg-white">
-                            <div class="my-3">
-                                <div class="blog-media-wrapper">
-                                    <img class="study-card-img" src="{{ asset($blog->image) }}"
-                                        alt="{{ $blog->title }}">
-                                    <div class="blog-icon">
-                                        <span class="icons"><i class="ri-heart-line"></i></span>
-                                    </div>
-                                </div>
-                                <div class="p-3">
-                                    <div class="d-flex justify-content-between mt-2">
-                                        <p class="bodypart-css">
-                                            <span><i class="ri-calendar-line offer-icon"></i></span>
-                                            {{ \Carbon\Carbon::parse($blog->created_at)->format('d M Y') }}
-                                        </p>
-                                        <p class="book-text"><span><i
-                                            class="ri-eye-line offer-icon"></i></span>{{ $blog->views }}</p>
-                                    </div>
-
-                                    <div class="subheadings my-1">
-                                        <h3 class="line-clamp-2">{{ $blog->title }}</h3>
-                                    </div>
-
-                                    <div class="bodypart-css line-clamp-3 mb-2">
-                                        <p>{{ \Illuminate\Support\Str::limit(strip_tags($blog->description), 150) }}</p>
-                                    </div>
-
-                                    <div class="reviw-part d-flex justify-content-start">
-                                        <div class="bodypart-css">
-                                            <span><i
-                                                    class="ri-star-fill rating-blog"></i></span>{{ $blog->rating ?? '5' }}
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="blog-block">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="{{ asset('frontend/assets/image/blog-2.jpg') }}" alt="Blog image">
                             </div>
-                            <a class="stretched-link" href="{{route('frontend.blogsingle',$blog->slug)}}"></a>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>by admin</span>
+                                    <span>april 05, 2023</span>
+                                </div>
+                                <h5 class="blog-title">
+                                    Finding the Right Job in Japan Starts with the Right Platform
+                                </h5>
+                                <p class="blog-desc line-clamp-3">
+                                    Finding a job in Japan can feel overwhelming, especially for foreign workers and
+                                    students navigating language barriers, visa rules, and unfamiliar hiring systems.
+                                    Samurai Blue was created to simplify that journey. </p>
+                                <a href="#" class="blog-read">READ MORE</a>
+                            </div>
                         </div>
                     </div>
-                @endforeach
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="{{ asset('frontend/assets/image/blog-1.jpg') }}" alt="Blog image">
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>by admin</span>
+                                    <span>april 05, 2023</span>
+                                </div>
+                                <h5 class="blog-title">
+                                    Top Part-Time Jobs for International Students in Japan
+                                </h5>
+                                <p class="blog-desc line-clamp-3">
+                                    Balancing studies and work is a reality for many international students in Japan.
+                                    Choosing the right part-time job not only supports your finances but also builds
+                                    valuable experience.
+
+                                    Popular student-friendly jobs include convenience store staff, restaurant assistants,
+                                    hotel housekeeping, warehouse packing, and delivery support roles. These jobs offer
+                                    flexible hours and help improve basic Japanese communication skills. </p>
+                                <a href="" class="blog-read">READ MORE</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="{{ asset('frontend/assets/image/blog-3.jpg') }}" alt="Blog image">
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>by admin</span>
+                                    <span>april 05, 2023</span>
+                                </div>
+                                <h5 class="blog-title">
+                                    Understanding SSW Visa Job Opportunities in Japan
+                                </h5>
+                                <p class="blog-desc line-clamp-3">
+                                    The Specified Skilled Worker (SSW) visa opens doors to stable employment in key Japanese
+                                    industries facing labor shortages. From food services and caregiving to manufacturing
+                                    and cleaning services, the SSW visa provides long-term career possibilities. </p>
+                                <a href="#" class="blog-read">READ MORE</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>

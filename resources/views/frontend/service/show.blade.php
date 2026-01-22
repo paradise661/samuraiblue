@@ -11,72 +11,93 @@
 @endsection
 @extends('layouts.frontend.master')
 @section('content')
-    @if ($service_page)
-        <div class="hero-banner2 position-relative ">
-            <div class="row g-0 text-bannner-section">
-                <div class="col-md-6 d-flex justify-content-center align-items-center py-5">
-                    <div class="text-center page-banner-lft px-4">
-                        <h1 class="text-white font-weight-bold">{{ $servicesingle->title ?? 'About Us' }}</h1>
-                        <p class="breadcrumb-text text-white">
-                            <a href="{{ route('frontend.home') }}" class="text-white text-decoration-none">Home</a> /
-                            <a href="{{ route('frontend.service') }}"
-                                class="text-white text-decoration-none">{{ $service_page->title ?? 'About Us' }}</a> /
-                            <a href="#"
-                                class="text-white text-decoration-none">{{ $servicesingle->title ?? 'About Us' }}</a>
-                        </p>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="img-container-banner">
-                        <div class="img-wrapper-2">
-                            <img src="{{ asset($service_page->banner_image) }}" alt="Creative Design" class="background-img">
-                        </div>
-                    </div>
+   <section class="position-relative" style="height: 420px;">
+            <img src="./images/office-skyscrapers-business-district.jpg" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="Blog Banner">
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));"></div>
+            <div class="container h-100 position-relative d-flex align-items-center">
+                <div class="text-white">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb text-white-50 mb-3">
+                            <li class="breadcrumb-item">
+                                <a href="#" class="text-white text-decoration-none">Home</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#" class="text-white text-decoration-none">services</a>
+                            </li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">
+                                find a job at sumarai blue
+                            </li>
+                        </ol>
+                    </nav>
+                    <h1 class="fw-bold display-5"> SSW Visa</h1>
                 </div>
             </div>
-        </div>
-    @endif
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 py-5">
-                    <div class="country-main-section ">
-                        <div class="country-img-wrapper">
-                            <img src="{{ asset($servicesingle->image_1) }}" class="country-image" alt="">
+        </section>
+        <section class="service-detail">
+            <div class="container">
+                <div class="service-detail-content">
+                    <h2 class="section-heading-title">SSW Visa</h2>
+                    <img class="service-detail-img" src="./images/ssw.jpg" alt="">
+                    <p class="service-detail-description">
+                        As a general rule, foreign national who intend to entry into Japan must
+                         acquire a "visa" at the embassy of Japan (an organization of the Ministry
+                         of Foreign Affairs, the headquarters for Japanese Government representatives
+                         serving) in a foreign country, but this does not mean that you are guaranteed
+                         entry into Japan if obtaining a visa. When you arrive in Japan, you need to
+                         undergo the necessary examination by the Immigration Services Agency of Japan
+                         at the airport and aquire a "Status of Residence" according to the activity you
+                         are trying to conduct in Japan. if you want to work here you have to understand
+                          the work ethics carefully as well. In light of this, acquisition of "visa" and
+                         "Status of Residence" are separate procedures that fall under the jurisdiction
+                         of different organizations. The SSW introduced on this page is a type of newly
+                         established "Status of Residence".The SSW has two types, "Specified Skilled Worker"
+                         - (i) and (ii) The SSW (Specified Skilled Worker) visa is a Japanese residency
+                         status for foreign nationals to work in sectors facing labor shortages, like
+                         caregiving, construction, and food service, requiring Japanese language/skill
+                         tests for Type I (up to 5 years, limited family) and more advanced skills for
+                         Type II (longer stay, family allowed). Introduced in 2019, it's a pathway for
+                         skilled workers to contribute to Japan's economy, with support available for
+                         daily life and job matching.
+                    </p>
+                </div>
+                <div class="section-heading mt-4 pt-4">
+                    <h2 class="section-heading-title">Find out the suitable job for you!</h2>
+                    <!-- <p class="section-heading-para">Find out the suitable job for you!</p> -->
+                </div>
+                <div class="service-detail-card-block my-4 py-4">
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-detail-card">
+                                <img src="images/why-us-img.jpg" alt="Cleaning Staff">
+                                <div class="card-overlay">
+                                    <span class="badge">Part-time</span>
+                                    <h5>Cleaning Staff</h5>
+                                    <p>Office, hotel and facility cleaning work.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="country-content pt-3">
-                            <h2 class="heading-css">{{ $servicesingle->title }}
-                            </h2>
-                            <div class="text-css mb-3">
-                                <p>{!! $servicesingle->description !!}</p>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-detail-card">
+                                <img src="images/blog.jpeg" alt="Kitchen Assistant">
+                                <div class="card-overlay">
+                                    <span class="badge">Shift Work</span>
+                                    <h5>Kitchen Assistant</h5>
+                                    <p>Food prep, dishwashing and kitchen support.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-detail-card">
+                                <img src="images/office-skyscrapers-business-district.jpg" alt="Warehouse Assistant">
+                                <div class="card-overlay">
+                                    <span class="badge">SSW Eligible</span>
+                                    <h5>Warehouse Assistant</h5>
+                                    <p>Packing, sorting and goods handling tasks.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5 py-3">
-                    <div class="sticky-sidebar" style="position: sticky; top: 85px;">
-                        <p class="course-detail-heading">Top Services</p>
-                        @foreach ($services as $course)
-                            <div class="shadow course-detail-list-card d-flex gap-3 position-relative">
-                                <div class="main-img-course-detail-container">
-                                    <img src="{{ asset($course->image_1 ?? 'frontend/assets/images/default.jpg') }}"
-                                        alt="{{ $course->title }}" class="main-img-course-detail">
-                                </div>
-                                <div class="course-detail-card-text">
-                                    <div class="fotter-headings">
-                                        {!! $course->title !!}
-                                    </div>
-                                    <div class="line-clamp-2 text-css">
-                                        {{ $course->short_description }}
-                                    </div>
-                                </div>
-                                <a class="stretched-link" href="{{ route('frontend.servicesingle', $course->slug) }}"></a>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
-@endsection    
+        </section>
+@endsection

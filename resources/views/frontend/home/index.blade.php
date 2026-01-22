@@ -1,677 +1,489 @@
 @section('seo')
     @include('frontend.seo', [
-    'name' => $settings['homepage_title'] ?? '',
-    'title' => $settings['homepage_seo_title'] ?? '',
-    'description' => $settings['home_seo_description'] ?? '',
-    'keyword' => $settings['homepage_seo_keywords'] ?? '',
-    'created_at' => '2024-04-26T08:09:15+00:00',
-    'updated_at' => '2024-04-26T10:54:05+00:00',
-])
+        'name' => $settings['homepage_title'] ?? '',
+        'title' => $settings['homepage_seo_title'] ?? '',
+        'description' => $settings['home_seo_description'] ?? '',
+        'keyword' => $settings['homepage_seo_keywords'] ?? '',
+        'created_at' => '2024-04-26T08:09:15+00:00',
+        'updated_at' => '2024-04-26T10:54:05+00:00',
+    ])
 @endsection
 @extends('layouts.frontend.master')
 @section('content')
-           {{-- @if ($sliders->count())
-    <section class="md:py-5 pb-4 py-5 slider-section">
-        <div class="container">
-            <div id="homeSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
-                <div class="carousel-inner">
-                    @foreach($sliders as $key => $slider)
-                        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                            <div class="row center">
-                                 Text area 
-                                <div class="col-lg-6 d-flex justify-items-start align-items-center">
-                                    <div>
-                                        <div class="heading-title mb-3">
-                                            <h1>{{ $slider->title }},
-                                                <span>{{ $slider->short_description }}</span>
-                                            </h1>
-                                        </div>
-                                        <div class="text-css mb-3">
-                                            {!! $slider->description !!}
-                                        </div>
-                                        <a class="d-flex align-items-center justify-content-start mb-5" href="/contact-us">
-                                            <button class="custom-btn btn-8">
-                                                <span>Contact Us <i class="ri-arrow-right-up-line"></i></span>
-                                            </button>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                 Image area 
-                                <div class="col-lg-6 p-0">
-                                    <div class="home-img-border">
-                                        <div class="home-img-wrapper">
-                                            <div class="img-line">
-                                                <div class="position-relative img-zindex my-3 w-100">
-                                                    <img class="home-banner-img d-block w-100"
-                                                         src="{{ asset($slider->image) }}"
-                                                         alt="slider image">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>  row end
-                        </div>
-                    @endforeach
+    <section class="hero-slider">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="overlay"></div>
+                    <img src="{{ asset('frontend/assets/image/banner-2.jpeg') }}" class="d-block w-100" alt="">
                 </div>
-
-                Prev/Next buttons 
-                <button id="prev-icon" class="carousel-control-prev" type="button" data-bs-target="#homeSlider" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button id="next-icon" class="carousel-control-next" type="button" data-bs-target="#homeSlider" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <div class="carousel-item">
+                    <div class="overlay"></div>
+                    <img src="{{ asset('frontend/assets/image/banner-1.jpg') }}" class="d-block w-100" alt="">
+                </div>
+                <div class="carousel-caption my-2">
+                    <h1 class="carousel-caption-title">Build Your Bussiness and Careers</h1>
+                    <p class="carousel-caption-para">Opportunities that actually matter</p>
+                    <div class="search-hero-buttons">
+                        <a href="#" class=" primary-btn">Browse Jobs</a>
+                        <a href="#" class=" secondary-btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel"
+                data-bs-slide="prev"></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel"
+                data-bs-slide="next"></button>
+        </div>
+    </section>
+    <section class="job-categories my-4">
+        <div class="section-heading mt-4 pt-4">
+            <h2 class="section-heading-title">Job Categoriess</h2>
+            <p class="section-heading-para">Find out the suitable job for you!</p>
+        </div>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+        <div class="container py-4">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card my-2">
+                        <div class="category-icon-circle">
+                            <i class="ri-bar-chart-line"></i>
+                        </div>
+                        <h6>Web & Software Dev</h6>
+                        <div class="my-2 job-category-address">
+                            <i class="categories-icon ri-map-pin-2-line"></i>
+                            <span class="category-address">Bharatpur, chitwan</span>
+                        </div>
+                        <div class="job-count">
+                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
+                            <span class="job-count-number">122 open jobs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card my-2">
+                        <div class="category-icon-circle">
+                            <i class="ri-bar-chart-line"></i>
+                        </div>
+                        <h6>Web & Software Dev</h6>
+                        <div class="my-2 job-category-address">
+                            <i class="categories-icon ri-map-pin-2-line"></i>
+                            <span class="category-address">Bharatpur, chitwan</span>
+                        </div>
+                        <div class="job-count">
+                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
+                            <span class="job-count-number">122 open jobs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card my-2">
+                        <div class="category-icon-circle">
+                            <i class="ri-bar-chart-line"></i>
+                        </div>
+                        <h6>Web & Software Dev</h6>
+                        <div class="my-2 job-category-address">
+                            <i class="categories-icon ri-map-pin-2-line"></i>
+                            <span class="category-address">Bharatpur, chitwan</span>
+                        </div>
+                        <div class="job-count">
+                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
+                            <span class="job-count-number">122 open jobs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card my-2">
+                        <div class="category-icon-circle">
+                            <i class="ri-bar-chart-line"></i>
+                        </div>
+                        <h6>Web & Software Dev</h6>
+                        <div class="my-2 job-category-address">
+                            <i class="categories-icon ri-map-pin-2-line"></i>
+                            <span class="category-address">Bharatpur, chitwan</span>
+                        </div>
+                        <div class="job-count">
+                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
+                            <span class="job-count-number">122 open jobs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card my-2">
+                        <div class="category-icon-circle">
+                            <i class="ri-bar-chart-line"></i>
+                        </div>
+                        <h6>Web & Software Dev</h6>
+                        <div class="my-2 job-category-address">
+                            <i class="categories-icon ri-map-pin-2-line"></i>
+                            <span class="category-address">Bharatpur, chitwan</span>
+                        </div>
+                        <div class="job-count">
+                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
+                            <span class="job-count-number">122 open jobs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card my-2">
+                        <div class="category-icon-circle">
+                            <i class="ri-bar-chart-line"></i>
+                        </div>
+                        <h6>Web & Software Dev</h6>
+                        <div class="my-2 job-category-address">
+                            <i class="categories-icon ri-map-pin-2-line"></i>
+                            <span class="category-address">Bharatpur, chitwan</span>
+                        </div>
+                        <div class="job-count">
+                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
+                            <span class="job-count-number">122 open jobs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card my-2">
+                        <div class="category-icon-circle">
+                            <i class="ri-bar-chart-line"></i>
+                        </div>
+                        <h6>Web & Software Dev</h6>
+                        <div class="my-2 job-category-address">
+                            <i class="categories-icon ri-map-pin-2-line"></i>
+                            <span class="category-address">Bharatpur, chitwan</span>
+                        </div>
+                        <div class="job-count">
+                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
+                            <span class="job-count-number">122 open jobs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card my-2">
+                        <div class="category-icon-circle">
+                            <i class="ri-bar-chart-line"></i>
+                        </div>
+                        <h6>Web & Software Dev</h6>
+                        <div class="my-2 job-category-address">
+                            <i class="categories-icon ri-map-pin-2-line"></i>
+                            <span class="category-address">Bharatpur, chitwan</span>
+                        </div>
+                        <div class="job-count">
+                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
+                            <span class="job-count-number">122 open jobs</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    @endif --}}
-    @if ($sliders->count())
-        <section class="md:py-5 pb-4 slider-section">
-            <div class="container-fluid p-0">
-                                        <div id="homeSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
-                    <div class="carousel-inner">
-                        @foreach($sliders as $key => $slider)
-                            <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                <!-- Background Image -->
-                                <div class="slider-bg" style="background-image: url('{{ asset($slider->image) }}');">
-                                    <div class="slider-overlay"></div>
+    <section class="about-section my-4 py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="about-image-wrapper">
+                        <img src="{{ asset('frontend/assets/image/about-us-bg.png') }}" alt="About Image"
+                            class="about-image">
+                        <div class="experience-badge">
+                            <span>
+                                10+ Years
+                                <br>
+                                Experience
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content p-4">
+                        <span class="about-subtitle">ABOUT US</span>
+                        <h2 class="about-title">Welcome to Samurai Blue</h2>
+                        <div class="about-short">
+                            Connecting talent with opportunity through a modern and trusted job platform.
+                        </div>
+                        <div class="about-desc">
+                            Samurai Blue is designed to bridge the gap between job seekers and employers by
+                            offering a streamlined, transparent, and skill-focused hiring experience.
+                            We help candidates discover meaningful careers while enabling companies to
+                            find the right talent faster and smarter.Samurai Blue is designed to bridge
+                            the gap between job seekers and employers by offering a streamlined,
+                            transparent, and skill-focused hiring experience.
+                        </div>
+                        <a href="#" class="blog-btn">See More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                    <!-- Text Content on top -->
-                                    <div class="carousel-caption text-start d-flex flex-column justify-content-center h-100">
-                                        <div class="heading-title mb-3">
-                                            <h1 class="text-white fw-bold">
-                                                {{ $slider->title }},
-                                                <span>{{ $slider->short_description }}</span>
-                                            </h1>
-                                        </div>
-                                        <div class="text-css mb-3 text-white">
-                                            {!! $slider->description !!}
-                                        </div>
-                                            <a class="d-flex align-items-center justify-content-start mb-5" href="/contact-us">
-                                                    <button class="custom-btn btn-8">
-                                                            <span>Contact Us <i class="ri-arrow-right-up-line"></i></span>
-                                                                    </button>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                        @endforeach
+    <section class="review">
+        <div class="section-heading mt-4 pt-4">
+            <h2 class="section-heading-title">reviews</h2>
+            <p class="section-heading-para">our clients voices!!</p>
+        </div>
+        <div class="container my-4">
+            <div class="row g-4 justify-content-center my-3">
+                <div class="col-md-5 py-4">
+                    <div class="review-card  p-4 ">
+                        <div class="image-wrapper-review  ">
+                            <img src="{{ asset('frontend/assets/image/why-us-img.jpg') }}" alt="">
+                        </div>
+                        <div class="review-text line-clamp-3 mt-4 pt-4 ">
+                            This platform made job searching simple and stress-free. I received interview
+                            calls within a week and finally landed a job that matches my skills.
+                            </p>
+                            <div class="review-footer flex-wrap">
+                                <div class="text-start">
+                                    <h6>Aayusha</h6>
+                                    <small class="text-muted">International Job Seeker</small>
                                 </div>
-
-                                 <!--   Prev/Next buttons -->
-                                <button id="prev-icon" class="carousel-control-prev" type="button" data-bs-target="#homeSlider" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Previous</span>
-                                            </button>
-                                            <button id="next-icon" class="carousel-control-next" type="button" data-bs-target="#homeSlider" data-bs-slide="next">
-                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                <span class="visually-hidden">Next</span>
-                                            </button>
-                                        </div>
-                            </div>
-                        </section>
-    @endif
-            @foreach ($popup as $popups)
-            <!-- Bootstrap Modal -->
-            <div class="modal fade" id="popupModal{{ $popups->id }}" tabindex="-1" aria-labelledby="popupModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="d-flex">
-                            <div class="modal-headerpopup">
-                                <button class="btn-close red-close-btn" data-bs-dismiss="modal" type="button"
-                                    aria-label="Close">
-                                </button>
+                                <div class="stars text-warning fs-6">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                </div>
                             </div>
                         </div>
-                        <div class="modal-body text-center">
-                            @if ($popups->image)
-                                <img class="img-fluid popup-img" src="{{ asset($popups->image) }}" alt="Popup Image"
-                                    style=" object-fit: fill;">
-                            @endif
+                    </div>
+                </div>
+                <div class="col-md-5 py-4">
+                    <div class="review-card p-4 ">
+                        <div class="image-wrapper-review">
+                            <img src="{{ asset('frontend/assets/image/why-us-img.jpg') }}" alt="">
+                        </div>
+                        <div class="review-text line-clamp-3 mt-4 pt-4 ">
+                            This platform made job searching simple and stress-free. I received interview calls within a
+                            week and finally landed a job that matches my skills.
+                            </p>
+                            <div class="review-footer flex-wrap">
+                                <div class="text-start">
+                                    <h6>Aayusha</h6>
+                                    <small class="text-muted">International Job Seeker</small>
+                                </div>
+                                <div class="stars text-warning fs-6">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="see-btn-block">
+                    <a href="#" class="see-all-btn">
+                        View all
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+    </section>
+    <section class="why-choose-us py-5">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="image-wrapper position-relative">
+                        <img src="{{ asset('frontend/assets/image/banner-2.jpeg') }}" class="main-img" alt="">
+                        <img src="{{ asset('frontend/assets/image/why-us-img.jpg') }}" class="overlay-img"
+                            alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title mt-2">
+                        Why Choose Us
+                    </h2>
+                    <p class="section-desc">
+                        We connect the right talent with the right opportunities
+                        through a smart, transparent, and people-focused hiring
+                        platform.
+                    </p>
+                    <div class="feature-box d-flex  mb-4">
+                        <div class="icon-circle">
+                            <i class="ri-check-line"></i>
+                        </div>
+                        <div class="why-us-content">
+                            <h5 class="why-us-title">Trusted by Job Seekers & Employers</h5>
+                            <p class="why-us-para">Thousands of candidates and companies rely on our platform for accurate
+                                job listings.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box d-flex mb-4">
+                        <div class="icon-circle">
+                            <i class="ri-check-line"></i>
+                        </div>
+                        <div class="why-us-content">
+                            <h5 class="why-us-title">Fast & Transparent Hiring</h5>
+                            <p class="why-us-para">Employers can connect directly with qualified candidates, streamline
+                                hiring decisions</p>
+                        </div>
+                    </div>
+                    <div class="feature-box d-flex mb-4">
+                        <div class="icon-circle">
+                            <i class="ri-check-line"></i>
+                        </div>
+                        <div class="why-us-content">
+                            <h5 class="why-us-title">Smart Job Matching</h5>
+                            <p class="why-us-para">Our advanced search and filtering tools help candidates find roles that
+                                truly match their skills,</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Auto Trigger Script -->
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    var myModal = new bootstrap.Modal(document.getElementById('popupModal{{ $popups->id }}'));
-                    myModal.show();
-                });
-            </script>
-        @endforeach
-            {{-- <video src="{{asset('frontend/assets/image/student.mp4')}}" controls></video> --}}
-            {{-- counter section --}}
-             <section class="counter-section service-section d-none d-md-block" >
-                <div class="container">
-                    <div class="row col-xl-7 justify-content-start align-items-center">
-                        <div class="col-md-4 col-6">
-                            <div class="homebanner-card p-3 text-center">
-                                <div class=" d-flex align-items-center justify-content-center">
-                                    <img class=" icon-image" src={{ $settings['home_counter_scholarship_img'] ? asset($settings['home_counter_scholarship_img']) : asset('frontend/assets/image/icon1.png') }} alt="">
-                                </div>
-                                <div class="homecard-text-num">
-                                    <p>{{ $settings['home_counter_scholarship'] ?? '' }}</p>
-                                </div>
-                                <p class="text-css-counter d-flex align-items-center justify-content-center">
-                                    {{ $settings['home_counter_scholarship_title'] ?? '' }}
-                                </p>
+        </div>
+    </section>
+    <section class="process-section">
+        <div id="process-heading" class="section-heading mt-4 pt-4">
+            <h2 id="process-heading-title" class="section-heading-title">The process of job hunting</h2>
+            <p id="process-heading-para" class="section-heading-para">Follow these steps to land your dream job</p>
+        </div>
+        <div class="process">
+            <div class="process-step">
+                <div class="circle">
+                    <i class="ri-file-text-line"></i>
+                </div>
+                <p class="process-desc">Create a Resume</p>
+            </div>
+            <div class="process-step">
+                <div class="circle">
+                    <i class="ri-mail-send-line"></i>
+                </div>
+                <p class="process-desc">Receive a Scout</p>
+            </div>
+            <div class="process-step">
+                <div class="circle">
+                    <i class="ri-user-follow-line"></i>
+                </div>
+                <p class="process-desc">Attend Interviews</p>
+            </div>
+            <div class="process-step">
+                <div class="circle">
+                    <i class="ri-hand-coin-line"></i>
+                </div>
+                <p class="process-desc">Get Job Offer</p>
+            </div>
+        </div>
+    </section>
+    <section class="mission-vision py-4">
+        <div class="section-heading my-4 py-4">
+            <h2 class="section-heading-title">Our Mission and values</h2>
+            <p class="section-heading-para">What we want our client to achieve.</p>
+        </div>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12 col-md-4 col-lg-4 position-relative mb-5">
+                    <img src="{{ asset('frontend/assets/image/mission.jpg') }}" class="icon mb-4" alt="Mission">
+                    <h4 class="title">Our Mission</h4>
+                    <p class="description">
+                        To empower individuals with the right guidance, skills, and
+                        opportunities to build a successful career in Japan while
+                        maintaining a balance.
+                    </p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 position-relative mb-5">
+                    <img src="{{ asset('frontend/assets/image/bulb.jpg') }}" class="icon mb-4" alt="Vision">
+                    <h4 class="title">Our Vision</h4>
+                    <p class="description">
+                        To become a trusted bridge between global talent and Japanese
+                        organizations by creating long-term professional and cultural
+                        connections.
+                    </p>
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 position-relative mb-5">
+                    <img src="{{ asset('frontend/assets/image/values.jpg') }}" class="icon mb-4" alt="Values">
+                    <h4 class="title">Our Values</h4>
+                    <p class="description">
+                        Integrity, transparency, continuous support, and respect for
+                        cultural diversity in every step of the journey. We are there for you
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="blog-section">
+        <div class="section-heading my-4 py-4">
+            <h2 class="section-heading-title">Our Blog</h2>
+            <p class="section-heading-para">Find the latest news here.</p>
+        </div>
+        <div class="container">
+            <div class="blog-block">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="{{ asset('frontend/assets/image/blog-2.jpg') }}" alt="Blog image">
                             </div>
-                        </div>
-                        <div class="col-md-4 col-6">
-                            <div class="homebanner-card p-3 text-center">
-                                <div class=" d-flex align-items-center justify-content-center">
-                                    <img class=" icon-image" src={{ $settings['home_counter_students_img'] ? asset($settings['home_counter_students_img']) : asset('frontend/assets/image/icon1.png') }} alt="">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>by admin</span>
+                                    <span>april 05, 2023</span>
                                 </div>
-                                <div class="homecard-text-num">
-                                    <p>{{ $settings['home_counter_students'] ?? '' }}</p>
-                                </div>
-                                <p class="text-css-counter d-flex align-items-center justify-content-center">
-                                    {{ $settings['home_counter_students_title'] ?? '' }}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-6">
-                            <div class="homebanner-card p-3 text-center">
-                                <div class=" d-flex align-items-center justify-content-center">
-                                    <img class=" icon-image" src={{ $settings['home_counter_enrolled_img'] ? asset($settings['home_counter_enrolled_img']) : asset('frontend/assets/image/icon1.png') }} alt="">
-                                </div>
-                                <div class="homecard-text-num">
-                                    <p>{{ $settings['home_counter_enrolled'] ?? '' }} </p>
-                                </div>
-                                <p class="text-css-counter d-flex align-items-center justify-content-center">
-                                    {{ $settings['home_counter_enrolled_title'] ?? '' }}
-                                </p>
+                                <h5 class="blog-title">
+                                    Finding the Right Job in Japan Starts with the Right Platform
+                                </h5>
+                                <p class="blog-desc line-clamp-3">
+                                    Finding a job in Japan can feel overwhelming, especially for foreign workers and
+                                    students navigating language barriers, visa rules, and unfamiliar hiring systems.
+                                    Samurai Blue was created to simplify that journey. </p>
+                                <a href="#" class="blog-read">READ MORE</a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section> 
 
-            {{-- @endif --}}
-            <section class="service-section py-5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5 d-flex justify-content-center align-items-center"data-aos="fade-right"  data-aos-duration="2000">
-                            <div class="service-content-container">
-                                <h6 class="my-2">{{ $settings['services_title'] ?? '' }}</h6>
-                                <h3 class="my-2"> {{ $settings['services_subtitle'] ?? '' }}</h3>
-                                <p class="text-css-counter">
-                                    {{ $settings['services_description'] ?? '' }}
-                                </p>
-                                <a class="d-flex align-items-center justify-content-start my-3" href=""> <button
-                                        class="custom-btn btn-8"><span>Explore All <i
-                                                class="ri-arrow-right-up-line"></i></span></button></a>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="{{ asset('frontend/assets/image/blog-1.jpg') }}" alt="Blog image">
                             </div>
-                        </div>
-                        <div class="col-lg-6" data-aos="fade-left"  data-aos-duration="2000">
-                            <div class="row">
-                                @foreach ($services as $service)
-                                    <div class="col-lg-6 py-2">
-                                        <div class="service-card">
-                                            <!-- Floating Arrow Icon -->
-                                            <div class="arrow-icon">
-                                                <i class="ri-arrow-right-up-line"></i>
-                                            </div>
-                                            <!-- Icon -->
-                                            <div class="service-icon">
-                                                <img src="{{ asset($service->image) }}" alt="{{ $service->title }}" />
-                                            </div>
-                                            <!-- Title -->
-                                            <h3 class="line-clamp-1">{{ $service->title }}</h3>
-                                            <!-- Description -->
-                                            <div class="line-clamp-3"><p>{{($service->short_description) }}</p></div>
-                                            <!-- Read More Link -->
-                                            <a href="{{ route('frontend.servicesingle', $service->slug) }}" class="read-more pt-2">
-                                                Read More <i class="ri-arrow-right-line"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {{-- about us section --}}
-            <section class="about-us-section py-5">
-                <div class="container">
-                    <div class="row">
-                        {{-- Image --}}
-                        <div class="col-lg-6 d-flex align-items-center justify-content-center"  data-aos="fade-up" data-aos-duration="2000">
-                            <div class="about-us-img">
-                                <img src="{{ asset($about_us->image_1) }}" alt="{{ $about_us->title }}">
-                            </div>
-                        </div>
-                        {{-- Content --}}
-                        <div class="col-lg-6 d-flex align-items-center justify-content-center"  data-aos="fade-up" data-aos-duration="2000">
-                            <div class="service-content-container">
-                                <h6 class="my-2">{{ $about_us->title ?? 'About us' }}</h6>
-                                <h3 class="my-2">{{ $about_us->short_description }}</h3>
-                                <div class="text-css-counter line-clamp-14">
-                                    {!! $about_us->description !!}
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>by admin</span>
+                                    <span>april 05, 2023</span>
                                 </div>
-                                {{-- Optional Counters (JSON or Relationship Based) --}}
-                                {{-- <div class="row">
-                                    <div class="col-md-3 ">
-                                        <div class=" p-3 text-center">
-                                            <div class=" d-flex align-items-center justify-content-center">
-                                                <img class=" icon-image-about" src={{ asset('frontend/assets/image/icon1.png') }}
-                                                    alt="">
-                                            </div>
-                                            <div class="homecard-text-num">
-                                                <p>{{ $settings['home_counter_scholarship'] ?? '' }}</p>
-                                            </div>
-                                            <p class="text-css-counter d-flex align-items-center justify-content-center">
-                                                {{ $settings['home_counter_scholarship_title'] ?? '' }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 ">
-                                        <div class=" p-3 text-center">
-                                            <div class=" d-flex align-items-center justify-content-center">
-                                                <img class=" icon-image-about" src={{ asset('frontend/assets/image/icon1.png') }}
-                                                    alt="">
-                                            </div>
-                                            <div class="homecard-text-num">
-                                                <p>{{ $settings['home_counter_students'] ?? '' }}</p>
-                                            </div>
-                                            <p class="text-css-counter d-flex align-items-center justify-content-center">
-                                                {{ $settings['home_counter_students_title'] ?? '' }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 ">
-                                        <div class=" p-3 text-center">
-                                            <div class=" d-flex align-items-center justify-content-center">
-                                                <img class=" icon-image-about" src={{ asset('frontend/assets/image/icon1.png') }}
-                                                    alt="">
-                                            </div>
-                                            <div class="homecard-text-num">
-                                                <p>{{ $settings['home_counter_enrolled'] ?? '' }} </p>
-                                            </div>
-                                            <p class="text-css-counter d-flex align-items-center justify-content-center">
-                                                {{ $settings['home_counter_enrolled_title'] ?? '' }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                {{-- Read More --}}
-                                <a class="d-flex align-items-center justify-content-md-start justify-content-center my-3"
-                                    href="{{ route('frontend.about') }}">
-                                    <button class="custom-btn btn-8">
-                                        <span>Read More <i class="ri-arrow-right-up-line"></i></span>
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {{--  country section --}}
-            <section class="py-5 page-bg-color ">
-                <div class="container">
-                    <div class="service-content-container text-center">
-                        <h6 class="my-2"> {{ $settings['countries_title'] ?? '' }}</h6>
-                        <h3 class="my-2"> {{ $settings['countries_subtitle'] ?? '' }} </h3>
-                    </div>
-                    <div class="row g-3 py-5">
-                        @foreach ($countries as $item)
-                            <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
-                                <div class="country-card-container p-3 shadow rounded-lg bg-white position-relative">
-                                    <div class="country-img">
-                                        <img src="{{ asset($item->image) }}" alt="">
-                                        <div class="overlay"></div>
-                                    </div>
-                                    <div class="country-flag"><img src="{{ asset($item->image_1) }}" alt=""></div>
-                                    <div class="py-2">
-                                        <h3 class="pr-2 blog-heading">{{ $item->title }}</h3>
-                                        <p class="line-clamp-4">{{ $item->short_description }}</p>
-                                    </div>
-                                    <a href="{{ route('frontend.abroadsingle', $item->slug) }}" class="stretched-link"></a>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <div class="d-flex align-items-center justify-content-center">
-                        <a class="d-flex align-items-center justify-content-start my-3" href=""> <button
-                                class="custom-btn btn-8"><span>Explore All <i
-                                        class="ri-arrow-right-up-line"></i></span></button></a>
-                    </div>
-                </div>
-                </div>
-            </section>
-            {{-- course section --}}
-            <section class="testimonail-section py-5">
-                <div class="container">
-                    <div class="service-content-container text-center">
-                        <h6 class="my-2">{{ $settings['courses_title'] ?? '' }}</h6>
-                        <h3 class="my-2"> {{ $settings['courses_subtitle'] ?? '' }} </h3>
-                    </div>
-                    <div class="row py-5">
-                        @foreach ($courses as $index => $course)
-                            @php
-        $isOdd = $index % 2 == 0; // 0-based index: 0 = 1st = odd position visually
-                            @endphp
+                                <h5 class="blog-title">
+                                    Top Part-Time Jobs for International Students in Japan
+                                </h5>
+                                <p class="blog-desc line-clamp-3">
+                                    Balancing studies and work is a reality for many international students in Japan.
+                                    Choosing the right part-time job not only supports your finances but also builds
+                                    valuable experience.
 
-                            @if ($isOdd)
-                                {{-- Odd position: Image Left, Content Right --}}
-                                <div class="col-lg-6 py-3">
-                                    <div class="course-img shadow rounded" data-aos="fade-right"  data-aos-duration="2000">
-                                        <img src="{{ asset($course->image) }}" class="shadow rounded"
-                                            alt="{{ $course->title }}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 py-3 d-flex align-items-center justify-content-center">
-                                    <div class="service-content-container" data-aos="fade-left"  data-aos-duration="2000">
-                                        <h5 class="my-2">{{ $course->title }}</h5>
-                                        <p class="text-css-counter">
-                                            {{ Str::limit($course->short_description, 300) }}
-                                        </p>
-                                        <a class="d-flex align-items-center justify-content-start my-3"
-                                            href="{{ route('frontend.coursesingle', $course->slug) }}">
-                                            <button class="custom-btn btn-8">
-                                                <span>Read More <i class="ri-arrow-right-up-line"></i></span>
-                                            </button>
-                                        </a>
-                                    </div>
-                                </div>
-                            @else
-                                {{-- Even position: Content Left, Image Right --}}
-                                <div class="col-lg-6 py-3 d-flex align-items-center justify-content-center">
-                                    <div class="service-content-container" data-aos="fade-right"  data-aos-duration="2000">
-                                        <h5 class="my-2">{{ $course->title }}</h5>
-                                        <p class="text-css-counter">
-                                            {{ Str::limit($course->short_description, 300) }}
-                                        </p>
-                                        <a class="d-flex align-items-center justify-content-start my-3"
-                                            href="{{ route('frontend.coursesingle', $course->slug) }}">
-                                            <button class="custom-btn btn-8">
-                                                <span>Read More <i class="ri-arrow-right-up-line"></i></span>
-                                            </button>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 py-3">
-                                    <div class="course-img shadow rounded" data-aos="fade-left"  data-aos-duration="2000">
-                                        <img src="{{ asset($course->image) }}" class="shadow rounded"
-                                            alt="{{ $course->title }}">
-                                    </div>
-                                </div>
-                            @endif
-                        @endforeach
+                                    Popular student-friendly jobs include convenience store staff, restaurant assistants,
+                                    hotel housekeeping, warehouse packing, and delivery support roles. These jobs offer
+                                    flexible hours and help improve basic Japanese communication skills. </p>
+                                <a href="#" class="blog-read">READ MORE</a>
+                            </div>
+                        </div>
+                    </div>
 
-                        <div class="d-flex align-items-center justify-content-center">
-                            <a class="d-flex align-items-center justify-content-start my-3"
-                                href="{{ route('frontend.course') }}">
-                                <button class="custom-btn btn-8">
-                                    <span>Explore All <i class="ri-arrow-right-up-line"></i></span>
-                                </button>
-                            </a>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="{{ asset('frontend/assets/image/blog-3.jpg') }}" alt="Blog image">
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span>by admin</span>
+                                    <span>april 05, 2023</span>
+                                </div>
+                                <h5 class="blog-title">
+                                    Understanding SSW Visa Job Opportunities in Japan
+                                </h5>
+                                <p class="blog-desc line-clamp-3">
+                                    The Specified Skilled Worker (SSW) visa opens doors to stable employment in key Japanese
+                                    industries facing labor shortages. From food services and caregiving to manufacturing
+                                    and cleaning services, the SSW visa provides long-term career possibilities. </p>
+                                <a href="#" class="blog-read">READ MORE</a>
+                            </div>
                         </div>
                     </div>
 
                 </div>
-            </section>
-            {{-- testimonial section --}}
-            <section class="testimonial-section py-5 page-bg-color">
-                <div class="container">
-                    <div class="service-content-container text-center">
-                        <h6 class="my-2"> {{ $settings['testioninal_title'] ?? '' }}</h6>
-                        <h3 class="my-2"> {{ $settings['testioninal_subtitle'] ?? '' }} </h3>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-lg-4 d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-duration="2000">
-                            <div class="testi-side-banner">
-                                <img src="{{ asset('frontend/assets/image/testi.jpg') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-8 d-flex justify-content-center align-items-center">
-                            <!-- Swiper Container -->
-                            <div class="swiper mySwiper py-4">
-                                <div class="swiper-wrapper">
-                                    @foreach ($testimonials as $testimonial)
-                                        <div class="swiper-slide" data-aos="fade-up" data-aos-duration="2000">
-                                            <div class="scholar-main-card bg-white">
-                                                <div class="p-3 my-4">
-                                                    <div class="swiper-icon center"><i class="ri-double-quotes-l"></i></div>
-
-                                                    <div class="text-css text-center line-clamp my-2">
-                                                        {!! $testimonial->description !!}
-                                                    </div>
-
-                                                    <div class="scholar-img-container center mb-2">
-                                                        <img class="scholarship-img" src="{{ asset($testimonial->image) }}"
-                                                            alt="{{ $testimonial->name }}">
-                                                    </div>
-
-                                                    <div class="name center">
-                                                        <p>{{ $testimonial->name }}</p>
-                                                    </div>
-
-                                                    <div class="center">
-                                                        @for ($i = 0; $i < $testimonial->rating; $i++)
-                                                            <svg class="rating w-5 h-5 text-warning"
-                                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                                fill="currentColor">
-                                                                <path fill-rule="evenodd"
-                                                                    d="M10 2l2.72 5.792H18l-4.271 4.324 1.013 7.057L10 15.16l-5.742 3.013 1.013-7.057L2 7.792h4.28L10 2z"
-                                                                    clip-rule="evenodd" />
-                                                            </svg>
-                                                        @endfor
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                                <div class="swiper-pagination"></div>
-                                {{-- <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-                <script>
-                    const swiper = new Swiper('.mySwiper', {
-                        slidesPerView: 1,
-                        spaceBetween: 30,
-                        loop: true,
-                        autoplay: {
-                            delay: 2500,
-                            disableOnInteraction: false,
-                        },
-                        pagination: {
-                            el: '.swiper-pagination',
-                            clickable: true,
-                        },
-                        navigation: {
-                            nextEl: '.swiper-button-next',
-                            prevEl: '.swiper-button-prev',
-                        },
-                        breakpoints: {
-                            768: {
-                                slidesPerView: 1,
-                            },
-                        },
-                    });
-                </script>
-            </section>
-            {{-- faq section --}}
-            <section class="faq-section py-5">
-                <div class="container">
-                    <div class="service-content-container text-center">
-                        <h6 class="my-2"> {{ $faq_page->title ?? 'About Us' }}</h6>
-                        <h3 class="my-2"> {{ $faq_page->short_description ?? 'About Us' }}</h3>
-                    </div>
-                    @php $i = 0; @endphp
-                    <div class="row">
-                        <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                            <div class="accordion" id="accordionExample" data-aos="fade-right"  data-aos-duration="2000">
-                                @foreach ($faq as $index => $item)
-                                    @php
-        $headingId = 'heading' . $index;
-        $collapseId = 'collapse' . $index;
-        $isFirst = $index === 0;
-                                    @endphp
-                                    <div class="accordion-item accordion-card mb-2">
-                                        <h2 class="accordion-header" id="{{ $headingId }}">
-                                            <button class="accordion-button {{ $isFirst ? '' : 'collapsed' }}" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#{{ $collapseId }}"
-                                                aria-expanded="{{ $isFirst ? 'true' : 'false' }}"
-                                                aria-controls="{{ $collapseId }}">
-                                                {{ $item->question }}
-                                            </button>
-                                        </h2>
-                                        <div id="{{ $collapseId }}"
-                                            class="accordion-collapse collapse {{ $isFirst ? 'show' : '' }}"
-                                            aria-labelledby="{{ $headingId }}" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                {!! $item->answer !!}
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="faq-img-container" data-aos="fade-left"  data-aos-duration="2000">
-                                <img src="{{ asset('frontend/assets/image/faq.jpg') }}" alt="FAQ Image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {{-- blog section --}}
-            <section class="blog-section py-5 page-bg-color">
-                <div class="container">
-                    <div class="service-content-container text-center">
-                        <h6 class="my-2"> {{ $settings['blogs_title'] ?? '' }}</h6>
-                        <h3 class="my-2"> {{ $settings['blogs_subtitle'] ?? '' }} </h3>
-                    </div>
-                    <div class="row">
-                        @foreach ($blogs as $blog)
-                            <div class="col-lg-4 col-md-6 position-relative" data-aos="fade-up" data-aos-duration="2000">
-                                <div class="shadow blog-card bg-white">
-                                    <div class="my-3">
-                                        <div class="blog-media-wrapper">
-                                            <img class="study-card-img" src="{{ asset($blog->image) }}"
-                                                alt="{{ $blog->title }}">
-                                            <div class="blog-icon">
-                                                <span class="icons"><i class="ri-heart-line"></i></span>
-                                            </div>
-                                        </div>
-                                        <div class="p-3">
-                                            <div class="d-flex justify-content-between mt-2">
-                                                <p class="bodypart-css">
-                                                    <span><i class="ri-calendar-line offer-icon"></i></span>
-                                                    {{ \Carbon\Carbon::parse($blog->created_at)->format('d M Y') }}
-                                                </p>
-                                                <p class="book-text">
-                                                    <p class="book-text"><span><i
-                                                        class="ri-eye-line offer-icon"></i></span>{{ $blog->views }}</p>
-                                                </p>
-                                            </div>
-
-                                            <div class="subheadings my-1">
-                                                <h3 class="line-clamp-2">{{ $blog->title }}</h3>
-                                            </div>
-
-                                            <div class="bodypart-css line-clamp-3 mb-2">
-                                                <p>{{ \Illuminate\Support\Str::limit(strip_tags($blog->description), 150) }}</p>
-                                            </div>
-
-                                            <div class="reviw-part d-flex justify-content-start">
-                                                <div class="bodypart-css">
-                                                    <span><i
-                                                            class="ri-star-fill rating-blog"></i></span>{{ $blog->rating ?? '5' }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a class="stretched-link" href="{{route('frontend.blogsingle', $blog->slug)}}"></a>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </section>
-            {{-- counry location section --}}
-            {{-- <div class="container py-5">
-                <div class="service-content-container text-center pb-5">
-                    <h6 class="my-2"> Location</h6>
-                    <h3 class="my-2"> Ready to study in your dream country? </h3>
-                </div>
-                <div class="shadow">
-                    <ul class="nav nav-tabs" id="countryTab" role="tablist">
-                        @foreach ($countrylocation as $index => $country)
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link @if ($index == 0) active @endif"
-                                    id="{{ Str::slug($country->countryname) }}-tab" data-bs-toggle="tab"
-                                    data-bs-target="#{{ Str::slug($country->countryname) }}" type="button" role="tab"
-                                    aria-controls="{{ Str::slug($country->countryname) }}"
-                                    aria-selected="{{ $index == 0 ? 'true' : 'false' }}">
-                                    {{ $country->countryname }}
-                                </button>
-                            </li>
-                        @endforeach
-                    </ul>
-
-                    <div class="tab-content mt-3">
-                        @foreach ($countrylocation as $index => $country)
-                            <div class="tab-pane fade @if ($index == 0) show active @endif"
-                                id="{{ Str::slug($country->countryname) }}" role="tabpanel"
-                                aria-labelledby="{{ Str::slug($country->countryname) }}-tab">
-                                <div class="country-location">
-                                    <div class="row">
-
-                                        <div class="col-lg-6">
-                                            <div class="country-location-img">
-                                                <img src="{{ asset($country->image1) }}" alt="{{ $country->image1 }}">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <div class="location-container">
-                                                <h4>{{ $country->title ?? 'Helpful Education' }}</h4>
-
-                                                <div class="country-location-flag">
-                                                    <span>{{ strtoupper($country->country) }}</span>
-                                                    @if ($country->flag)
-                                                        <img src="{{ asset($country->image2) }}" alt="{{ $country->image2 }}">
-                                                    @endif
-                                                </div>
-
-                                                <div class="location-content d-flex align-items-center py-2">
-                                                    <i class="ri-map-pin-line location-icon"></i>
-                                                    {{ $country->location }}
-                                                </div>
-
-                                                <p class="text-css">
-                                                    {!! $country->description !!}
-                                                </p>
-
-                                                @if ($country->link)
-                                                    <div>
-                                                        <a href="{{ $country->link }}" target="_blank">
-                                                            <button class="map-btn">Google Map</button>
-                                                        </a>
-                                                    </div>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-
-                </div>
-            </div> --}}
+            </div>
+            <div class="see-btn-block my-4 pt-4">
+                <a href="./blog.html" class="see-all-btn">
+                    View all
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 @endsection

@@ -11,159 +11,200 @@
 @endsection
 @extends('layouts.frontend.master')
 @section('content')
-    @if ($about_us)
-        <div class="hero-banner2 position-relative ">
-            <div class="row g-0 text-bannner-section">
-                <div class="col-md-6 d-flex justify-content-center align-items-center py-5">
-                    <div class="text-center page-banner-lft px-4">
-                        <h1 class="text-white font-weight-bold">{{ $about_us->title ?? 'About Us' }}</h1>
-                        <p class="breadcrumb-text text-white">
-                            <a href="{{ route('frontend.home') }}" class="text-white text-decoration-none">Home</a> /
-                            <a href="#" class="text-white text-decoration-none">{{ $about_us->title ?? 'About Us' }}</a>
+       <section class="about-section my-4 py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="about-image-wrapper">
+                            <img src="./images/modern-business-buildings-financial-district.jpg" alt="About Image" class="about-image">
+                            <div class="experience-badge">
+                                <span>
+                                    10+ Years
+                                    <br>
+                                    Experience
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-content p-4">
+                            <span class="about-subtitle">ABOUT US</span>
+                            <h2 class="about-title">Welcome to Samurai Blue</h2>
+                            <p class="about-short">
+                                Connecting talent with opportunity through a modern and trusted job platform.
+                            </p>
+                            <p class="about-desc">
+                                Samurai Blue is designed to bridge the gap between job seekers and employers by
+                    offering a streamlined, transparent, and skill-focused hiring experience.
+                    We help candidates discover meaningful careers while enabling companies to
+                    find the right talent faster and smarter.
+                      Samurai Blue is designed to bridge the gap between job seekers and employers by
+                    offering a streamlined, transparent, and skill-focused hiring experience.
+                            </p>
+                            <a href="#" class="blog-btn">See More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="why-choose-us py-5">
+            <div class="container py-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="image-wrapper position-relative">
+                            <img src="./images/banner-2.jpeg" class="main-img" alt="">
+                            <img src="./images/why-us-img.jpg" class="overlay-img" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="section-title mt-2">
+                            Why Choose Us
+                        </h2>
+                        <p class="section-desc">
+                            We connect the right talent with the right opportunities
+                           through a smart, transparent, and people-focused hiring
+                           platform.
+                        </p>
+                        <div class="feature-box d-flex  mb-4">
+                            <div class="icon-circle">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <div class="why-us-content">
+                                <h5 class="why-us-title">Trusted by Job Seekers & Employers</h5>
+                                <p class="why-us-para">Thousands of candidates and companies rely on our platform for accurate job listings.</p>
+                            </div>
+                        </div>
+                        <div class="feature-box d-flex mb-4">
+                            <div class="icon-circle">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <div class="why-us-content">
+                                <h5 class="why-us-title">Fast & Transparent Hiring</h5>
+                                <p class="why-us-para">Employers can connect directly with qualified candidates, streamline hiring decisions</p>
+                            </div>
+                        </div>
+                        <div class="feature-box d-flex mb-4">
+                            <div class="icon-circle">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <div class="why-us-content">
+                                <h5 class="why-us-title">Smart Job Matching</h5>
+                                <p class="why-us-para">Our advanced search and filtering tools help candidates find roles that truly match their skills,</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="team-section pb-5">
+    <div class="container">
+         <div class="section-heading py-4">
+                <h2 class="section-heading-title">Our Team </h2>
+                <p class="section-heading-para">Dedicated members of Samurai Blue</p>
+            </div>
+        <div class="row g-4">
+            <!-- Team Member -->
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card">
+                    <img src="{{asset('frontend/assets/image/people.jpg')}}" alt="Alex dhakal">
+                    <div class="team-info py-4">
+                        <h5>Alex Brown</h5>
+                        <p>CEO & Founder</p>
+                    </div>
+                </div>
+            </div>
 
-                        </p>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="img-container-banner">
-                        <div class="img-wrapper-2">
-                            <img src="{{ asset($about_us->banner_image) }}" alt="Creative Design" class="background-img">
-                        </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card">
+                    <img src="{{asset('frontend/assets/image/people.jpg')}}" alt="prashant sapkota">
+                    <div class="team-info py-4">
+                        <h5>Marina Doe</h5>
+                        <p>Product Manager</p>
                     </div>
                 </div>
             </div>
-        </div>
-    @endif
-    {{-- about us section --}}
-    {{-- about us section --}}
-    <section class="about-us-section py-5">
-        <div class="container">
-            <div class="row">
-                {{-- Image --}}
-                <div class="col-lg-6 d-flex align-items-center justify-content-center">
-                    <div class="about-us-img" data-aos="fade-right"  data-aos-duration="3000">
-                        <img src="{{ asset($about_us->image_1) }}" alt="{{ $about_us->title }}">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card">
+                    <img src="{{asset('frontend/assets/image/people.jpg')}}" alt="sachin tiwari">
+                    <div class="team-info py-4">
+                        <h5>Michael Smith</h5>
+                        <p>CEO & Founder</p>
                     </div>
                 </div>
-                {{-- Content --}}
-                <div class="col-lg-6 d-flex align-items-center justify-content-center">
-                    <div class="service-content-container" data-aos="fade-left"  data-aos-duration="3000">
-                        <h6 class="my-2">{{ $about_us->title ?? 'About us' }}</h6>
-                        <h3 class="my-2">{{ $about_us->short_description }}</h3>
-                        <p class="text-css-counter">
-                            {!! $about_us->description !!}
+            </div>
+
+            <!-- Repeat for next row -->
+        </div>
+    </div>
+</section>
+
+        <section class="process-section">
+            <div id="process-heading" class="section-heading mt-4 pt-4">
+                <h2 id="process-heading-title" class="section-heading-title">The process of job hunting</h2>
+                <p id="process-heading-para" class="section-heading-para">Follow these steps to land your dream job</p>
+            </div>
+            <div class="process">
+                <div class="process-step">
+                    <div class="circle">
+                        <i class="ri-file-text-line"></i>
+                    </div>
+                    <p class="process-desc">Create a Resume</p>
+                </div>
+                <div class="process-step">
+                    <div class="circle">
+                        <i class="ri-mail-send-line"></i>
+                    </div>
+                    <p class="process-desc">Receive a Scout</p>
+                </div>
+                <div class="process-step">
+                    <div class="circle">
+                        <i class="ri-user-follow-line"></i>
+                    </div>
+                    <p class="process-desc">Attend Interviews</p>
+                </div>
+                <div class="process-step">
+                    <div class="circle">
+                        <i class="ri-hand-coin-line"></i>
+                    </div>
+                    <p class="process-desc">Get Job Offer</p>
+                </div>
+            </div>
+        </section>
+        <section class="mission-vision py-4">
+            <div class="section-heading my-4 py-4">
+                <h2 class="section-heading-title">Our Mission and values</h2>
+                <p class="section-heading-para">What we want our client to achieve.</p>
+            </div>
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-12 col-md-4 col-lg-4 position-relative mb-5">
+                        <img src="./images/about-us-bg.png" class="icon mb-4" alt="Mission">
+                        <h4 class="title">Our Mission</h4>
+                        <p class="description">
+                            To empower individuals with the right guidance, skills, and
+                    opportunities to build a successful career in Japan while
+                    maintaining a balanced and fulfilling life.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 position-relative mb-5">
+                        <img src="./images/about-us-bg.png" class="icon mb-4" alt="Vision">
+                        <h4 class="title">Our Vision</h4>
+                        <p class="description">
+                            To become a trusted bridge between global talent and Japanese
+                    organizations by creating long-term professional and cultural
+                    connections.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 position-relative mb-5">
+                        <img src="./images/about-us-bg.png" class="icon mb-4" alt="Values">
+                        <h4 class="title">Our Values</h4>
+                        <p class="description">
+                            Integrity, transparency, continuous support, and respect for
+                    cultural diversity in every step of the journey. We are there for you
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="counter-section">
-         {{-- Optional Counters (JSON or Relationship Based) --}}
-         <div class="container">
-            <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-md-3 ">
-                    <div class=" p-3 text-center">
-                        <div class=" d-flex align-items-center justify-content-center">
-                            <img class=" icon-image-about" src={{ $settings['home_counter_scholarship_img'] ? asset($settings['home_counter_scholarship_img']) : asset('frontend/assets/image/icon1.png') }}
-                                alt="">
-                        </div>
-                        <div class="homecard-text-num">
-                            <p>{{ $settings['home_counter_scholarship'] ?? '' }}</p>
-                        </div>
-                        <p class="text-css-counter d-flex align-items-center justify-content-center">
-                            {{ $settings['home_counter_scholarship_title'] ?? '' }}
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-3 ">
-                    <div class=" p-3 text-center">
-                        <div class=" d-flex align-items-center justify-content-center">
-                            <img class=" icon-image-about" src={{ $settings['home_counter_students_img'] ? asset($settings['home_counter_students_img']) : asset('frontend/assets/image/icon1.png') }}
-                                alt="">
-                        </div>
-                        <div class="homecard-text-num">
-                            <p>{{ $settings['home_counter_students'] ?? '' }}</p>
-                        </div>
-                        <p class="text-css-counter d-flex align-items-center justify-content-center">
-                            {{ $settings['home_counter_students_title'] ?? '' }}
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-3 ">
-                    <div class=" p-3 text-center">
-                        <div class=" d-flex align-items-center justify-content-center">
-                            <img class=" icon-image-about" src={{ $settings['home_counter_enrolled_img'] ? asset($settings['home_counter_enrolled_img']) : asset('frontend/assets/image/icon1.png') }}
-                                alt="">
-                        </div>
-                        <div class="homecard-text-num">
-                            <p>{{ $settings['home_counter_enrolled'] ?? '' }} </p>
-                        </div>
-                        <p class="text-css-counter d-flex align-items-center justify-content-center">
-                            {{ $settings['home_counter_enrolled_title'] ?? '' }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-         </div>
-    </section>
-    {{-- why choose us section --}}
-    <section class="about-us-section page-bg-color py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="service-content-container" data-aos="fade-right"  data-aos-duration="3000">
-                        <h6 class="my-2">{{ $why_us->title ?? 'About us' }}</h6>
-                        <h3 class="my-2"> {{ $why_us->short_description ?? 'About us' }}</h3>
-                      <div class="custom-list">
-                        {!! $why_us->description !!}</div> 
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-us-img" data-aos="fade-left"  data-aos-duration="3000">
-                        <img src="{{ asset($why_us->image_1) }}" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{-- our team section --}}
-    <section class="team-section py-5">
-        <div class="service-content-container text-center">
-            <h6 class="my-2">Our Teams</h6>
-            <h3 class="my-2"> Helpful offers you confidently pursue
-                your dreams </h3>
-        </div>
-        <div class="container py-3">
-            <div class="row">
-                @foreach ($teams as $team)
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-duration="3000">
-                        <div class="team-card">
-                            <div class="team-img-container shadow rounded">
-                                <img src="{{ asset($team->image) }}" alt="{{ $team->name }}">
-                            </div>
-                            <div class="team-content-container">
-                                <h4>{{ $team->name }}</h4>
-                                <p>{{ $team->position }}</p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-    {{-- <div class="container py-3">
-        <div class="row">
-            @foreach ($studentreviw as $studentreviw)
-                <div class="col-lg-6  mb-4">
-                    <div class="youtube-card ">
-                        <div class="youtube-content-container">
-                     {!!$studentreviw->description!!}
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div> --}}
+        </section>
 @endsection
