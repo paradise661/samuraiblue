@@ -12,28 +12,30 @@
 @section('content')
     <section class="hero-slider">
         <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="overlay"></div>
-                    <img src="{{ asset('frontend/assets/image/banner-2.jpeg') }}" class="d-block w-100" alt="">
-                </div>
-                <div class="carousel-item">
-                    <div class="overlay"></div>
-                    <img src="{{ asset('frontend/assets/image/banner-1.jpg') }}" class="d-block w-100" alt="">
-                </div>
-                <div class="carousel-caption my-2">
-                    <h1 class="carousel-caption-title">Build Your Bussiness and Careers</h1>
-                    <p class="carousel-caption-para">Opportunities that actually matter</p>
-                    <div class="search-hero-buttons">
-                        <a href="#" class=" primary-btn">Browse Jobs</a>
-                        <a href="#" class=" secondary-btn">Apply Now</a>
+            @if ($sliders)
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="overlay"></div>
+                        <img src="{{ $sliders->image }}" class="d-block w-100" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <div class="overlay"></div>
+                        <img src="{{ $sliders->image_1 }}" class="d-block w-100" alt="">
+                    </div>
+                    <div class="carousel-caption my-2">
+                        <h1 class="carousel-caption-title">{{ $sliders->title }}</h1>
+                        <p class="carousel-caption-para">{{ $sliders->short_description }}</p>
+                        <div class="search-hero-buttons">
+                            <a href="#" class=" primary-btn">Browse Jobs</a>
+                            <a href="#" class=" secondary-btn">Apply Now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel"
-                data-bs-slide="prev"></button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel"
-                data-bs-slide="next"></button>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel"
+                    data-bs-slide="prev"></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel"
+                    data-bs-slide="next"></button>
+            @endif
         </div>
     </section>
     <section class="job-categories my-4">
@@ -180,8 +182,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="about-image-wrapper">
-                        <img src="{{ asset('frontend/assets/image/about-us-bg.png') }}" alt="About Image"
-                            class="about-image">
+                        <img src="{{ $about_us->banner_image }}" alt="About Image" class="about-image">
                         <div class="experience-badge">
                             <span>
                                 10+ Years
@@ -193,20 +194,15 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about-content p-4">
-                        <span class="about-subtitle">ABOUT US</span>
-                        <h2 class="about-title">Welcome to Samurai Blue</h2>
-                        <div class="about-short">
+                        <span class="about-subtitle">{{ $about_us->title }}</span>
+                        <h2 class="about-title"> {{ $about_us->short_description }}</h2>
+                        {{-- <div class="about-short">
                             Connecting talent with opportunity through a modern and trusted job platform.
-                        </div>
+                        </div> --}}
                         <div class="about-desc">
-                            Samurai Blue is designed to bridge the gap between job seekers and employers by
-                            offering a streamlined, transparent, and skill-focused hiring experience.
-                            We help candidates discover meaningful careers while enabling companies to
-                            find the right talent faster and smarter.Samurai Blue is designed to bridge
-                            the gap between job seekers and employers by offering a streamlined,
-                            transparent, and skill-focused hiring experience.
+                            {!! $about_us->description !!}
                         </div>
-                        <a href="#" class="blog-btn">See More</a>
+                        <a href="{{ route('frontend.about') }}" class="blog-btn">See More</a>
                     </div>
                 </div>
             </div>
@@ -215,19 +211,19 @@
 
     <section class="review">
         <div class="section-heading mt-4 pt-4">
-            <h2 class="section-heading-title">reviews</h2>
-            <p class="section-heading-para">our clients voices!!</p>
+            <h2 class="section-heading-title">Reviews</h2>
+            <p class="section-heading-para">Our clients voices!!</p>
         </div>
         <div class="container my-4">
             <div class="row g-4 justify-content-center my-3">
                 <div class="col-md-5 py-4">
                     <div class="review-card  p-4 ">
-                        <div class="image-wrapper-review  ">
+                        <div class="image-wrapper-review">
                             <img src="{{ asset('frontend/assets/image/why-us-img.jpg') }}" alt="">
                         </div>
                         <div class="review-text line-clamp-3 mt-4 pt-4 ">
-                            This platform made job searching simple and stress-free. I received interview
-                            calls within a week and finally landed a job that matches my skills.
+                            {{-- This platform made job searching simple and stress-free. I received interview
+                            calls within a week and finally landed a job that matches my skills. --}}
                             </p>
                             <div class="review-footer flex-wrap">
                                 <div class="text-start">
@@ -400,86 +396,38 @@
     </section>
     <section class="blog-section">
         <div class="section-heading my-4 py-4">
-            <h2 class="section-heading-title">Our Blog</h2>
-            <p class="section-heading-para">Find the latest news here.</p>
+            <h2 class="section-heading-title">{{ $settings['blogs_title'] ?? '' }}</h2>
+            <p class="section-heading-para"> {{ $settings['blogs_subtitle'] ?? '' }}</p>
         </div>
         <div class="container">
             <div class="blog-block">
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-card">
-                            <div class="blog-image">
-                                <img src="{{ asset('frontend/assets/image/blog-2.jpg') }}" alt="Blog image">
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <span>by admin</span>
-                                    <span>april 05, 2023</span>
+                    @foreach ($blogs as $item)
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-card">
+                                <div class="blog-image">
+                                    <img src="{{$item->image}}" alt="Blog image">
                                 </div>
-                                <h5 class="blog-title">
-                                    Finding the Right Job in Japan Starts with the Right Platform
-                                </h5>
-                                <p class="blog-desc line-clamp-3">
-                                    Finding a job in Japan can feel overwhelming, especially for foreign workers and
-                                    students navigating language barriers, visa rules, and unfamiliar hiring systems.
-                                    Samurai Blue was created to simplify that journey. </p>
-                                <a href="#" class="blog-read">READ MORE</a>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <span>{{ $item->short_description }}</span>
+                                        <span> {{ $item->created_at->format('d M Y') }}</span>
+                                    </div>
+                                    <h5 class="blog-title">
+                                        {{ $item->title}}
+                                    </h5>
+                                    <div class="blog-desc line-clamp-3">
+                                        {!! $item->description !!} </div>
+                                    <a href="{{ route('frontend.blogsingle', $item->slug) }}" class="blog-read">READ
+                                        MORE</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-card">
-                            <div class="blog-image">
-                                <img src="{{ asset('frontend/assets/image/blog-1.jpg') }}" alt="Blog image">
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <span>by admin</span>
-                                    <span>april 05, 2023</span>
-                                </div>
-                                <h5 class="blog-title">
-                                    Top Part-Time Jobs for International Students in Japan
-                                </h5>
-                                <p class="blog-desc line-clamp-3">
-                                    Balancing studies and work is a reality for many international students in Japan.
-                                    Choosing the right part-time job not only supports your finances but also builds
-                                    valuable experience.
-
-                                    Popular student-friendly jobs include convenience store staff, restaurant assistants,
-                                    hotel housekeeping, warehouse packing, and delivery support roles. These jobs offer
-                                    flexible hours and help improve basic Japanese communication skills. </p>
-                                <a href="#" class="blog-read">READ MORE</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-card">
-                            <div class="blog-image">
-                                <img src="{{ asset('frontend/assets/image/blog-3.jpg') }}" alt="Blog image">
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <span>by admin</span>
-                                    <span>april 05, 2023</span>
-                                </div>
-                                <h5 class="blog-title">
-                                    Understanding SSW Visa Job Opportunities in Japan
-                                </h5>
-                                <p class="blog-desc line-clamp-3">
-                                    The Specified Skilled Worker (SSW) visa opens doors to stable employment in key Japanese
-                                    industries facing labor shortages. From food services and caregiving to manufacturing
-                                    and cleaning services, the SSW visa provides long-term career possibilities. </p>
-                                <a href="#" class="blog-read">READ MORE</a>
-                            </div>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
             <div class="see-btn-block my-4 pt-4">
-                <a href="./blog.html" class="see-all-btn">
+                <a href="{{ route('frontend.blog') }}" class="see-all-btn">
                     View all
                     <i class="ri-arrow-right-line"></i>
                 </a>

@@ -13,29 +13,30 @@
 @endsection
 @section('content')
     @if ($contact_page)
-        <div class="hero-banner2 position-relative ">
-            <div class="row g-0 text-bannner-section">
-                <div class="col-md-6 d-flex justify-content-center align-items-center py-5">
-                    <div class="text-center page-banner-lft px-4">
-                        <h1 class="text-white font-weight-bold">{{ $contact_page->title ?? 'About Us' }}</h1>
-                        <p class="breadcrumb-text text-white">
-                            <a href="{{ route('frontend.home') }}" class="text-white text-decoration-none">Home</a> /
-                            <a href="#"
-                                class="text-white text-decoration-none">{{ $contact_page->title ?? 'About Us' }}</a>
-                        </p>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="img-container-banner">
-                        <div class="img-wrapper-2">
-                            <img src="{{ asset($contact_page->banner_image) }}" alt="Creative Design"
-                                class="background-img">
-                        </div>
-                    </div>
-                </div>
+         <section class="position-relative" style="height: 420px;">
+        <img src="{{ $contact_page->banner_image}}"
+            class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="contact Banner">
+        <div class="position-absolute top-0 start-0 w-100 h-100"
+            style="background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));"></div>
+        <div class="container h-100 position-relative d-flex align-items-center">
+            <div class="text-white">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb text-white-50 mb-3">
+                        <li class="breadcrumb-item">
+                            <a href="#" class="text-white text-decoration-none">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#" class="text-white text-decoration-none">{{ $contact_page->title ?? 'Contact Us' }}</a>
+                        </li>
+                        <!-- <li class="breadcrumb-item active text-white" aria-current="page">
+                                                    find a job at sumarai blue
+                                                </li> -->
+                    </ol>
+                </nav>
+                <h1 class="fw-bold display-5"> {{ $contact_page->title ?? 'Contact Us' }}</h1>
             </div>
         </div>
+    </section>
     @endif
     <div class="container pt-4">
             <div class="row">
@@ -143,10 +144,7 @@
             </div>
         </div>
         <div class="map pt-5">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.7584007067744!2d84.42124197447188!3d27.69386112608786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994fb0b4d5486cf%3A0x33f37bae941e59c9!2sHELPFUL%20EDUCATIONAL%20INSTITUTE!5e0!3m2!1sen!2snp!4v1751616338506!5m2!1sen!2snp"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209990.25315019573!2d135.1741880945774!3d34.67748345411807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e715c1e604f1%3A0x3af716a495529141!2sShinsaibashi%20Grand%20Hotel%20-%20Osaka!5e0!3m2!1sen!2snp!4v1769168243547!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
     @if (session('success'))

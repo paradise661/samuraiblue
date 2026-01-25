@@ -38,19 +38,20 @@
     <section class="features-section py-5">
         <div class="container">
             <div class="row g-4">
+                 @foreach ($services as $item)
                 <div class="col-lg-3 col-md-6">
                     <div class="feature-card text-center">
                         <div class="icon-box">
-                            <i class="ri-user-line"></i>
+                            <i class="{{$item->icon}}"></i>
                         </div>
-                        <h5 class="feature-card-title">Student Visa</h5>
+                        <h5 class="feature-card-title">{{ $item->title }}</h5>
                         <p class="feature-card-desc">
-                            Part-time jobs (restaurants, cafes, retail), On-campus jobs, Internships related to studies,
-                            Limited weekly hours as per visa rules
+                          {{$item->short_description}}
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                    @endforeach
+                {{-- <div class="col-lg-3 col-md-6">
                     <div class="feature-card text-center">
                         <div class="icon-box">
                             <i class="ri-customer-service-2-line"></i>
@@ -85,7 +86,7 @@
                             jobs faster through professional guidance, application support, and career advice.
                         </p>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
