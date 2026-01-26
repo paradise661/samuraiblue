@@ -42,7 +42,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="feature-card text-center">
                         <div class="icon-box">
-                            <i class="{{$item->icon}}"></i>
+                           <i class="ri-customer-service-2-line"></i>
                         </div>
                         <h5 class="feature-card-title">{{ $item->title }}</h5>
                         <p class="feature-card-desc">

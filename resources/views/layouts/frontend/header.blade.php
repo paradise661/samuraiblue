@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">
-                <img class="logo-img" src="./images/logo.png" alt="">
+                <img class="logo-img" src="{{ $settings['site_main_logo'] }}" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -32,6 +32,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('frontend.about') }}">About Us</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('frontend.testimonial') }}">Reviews</a>
                     </li>
                     <li class="nav-item dropdown header-dropdown">
                         <a class="nav-link" href="{{ route('frontend.service') }}" role="button">

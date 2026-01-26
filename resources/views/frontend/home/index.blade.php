@@ -208,71 +208,6 @@
             </div>
         </div>
     </section>
-
-    <section class="review">
-        <div class="section-heading mt-4 pt-4">
-            <h2 class="section-heading-title">Reviews</h2>
-            <p class="section-heading-para">Our clients voices!!</p>
-        </div>
-        <div class="container my-4">
-            <div class="row g-4 justify-content-center my-3">
-                <div class="col-md-5 py-4">
-                    <div class="review-card  p-4 ">
-                        <div class="image-wrapper-review">
-                            <img src="{{ asset('frontend/assets/image/why-us-img.jpg') }}" alt="">
-                        </div>
-                        <div class="review-text line-clamp-3 mt-4 pt-4 ">
-                            {{-- This platform made job searching simple and stress-free. I received interview
-                            calls within a week and finally landed a job that matches my skills. --}}
-                            </p>
-                            <div class="review-footer flex-wrap">
-                                <div class="text-start">
-                                    <h6>Aayusha</h6>
-                                    <small class="text-muted">International Job Seeker</small>
-                                </div>
-                                <div class="stars text-warning fs-6">
-                                    <i class="ri-star-fill"></i>
-                                    <i class="ri-star-fill"></i>
-                                    <i class="ri-star-fill"></i>
-                                    <i class="ri-star-fill"></i>
-                                    <i class="ri-star-fill"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5 py-4">
-                    <div class="review-card p-4 ">
-                        <div class="image-wrapper-review">
-                            <img src="{{ asset('frontend/assets/image/why-us-img.jpg') }}" alt="">
-                        </div>
-                        <div class="review-text line-clamp-3 mt-4 pt-4 ">
-                            This platform made job searching simple and stress-free. I received interview calls within a
-                            week and finally landed a job that matches my skills.
-                            </p>
-                            <div class="review-footer flex-wrap">
-                                <div class="text-start">
-                                    <h6>Aayusha</h6>
-                                    <small class="text-muted">International Job Seeker</small>
-                                </div>
-                                <div class="stars text-warning fs-6">
-                                    <i class="ri-star-fill"></i>
-                                    <i class="ri-star-fill"></i>
-                                    <i class="ri-star-fill"></i>
-                                    <i class="ri-star-fill"></i>
-                                    <i class="ri-star-fill"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="see-btn-block">
-                    <a href="#" class="see-all-btn">
-                        View all
-                        <i class="ri-arrow-right-line"></i>
-                    </a>
-                </div>
-    </section>
     <section class="why-choose-us py-5">
         <div class="container py-4">
             <div class="row align-items-center">
@@ -358,6 +293,72 @@
             </div>
         </div>
     </section>
+
+    <section class="review-section py-5">
+        <div class="container">
+            <div class="section-heading text-center pb-4 mb-5">
+                <h2 class="section-heading-title">Reviews</h2>
+                <p class="section-heading-para">Our clients voices!!</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="review-card text-center p-4 shadow-sm">
+                        <img src="{{ asset('frontend/assets/image/blog-3.jpg') }}" class="review-img mb-3"
+                            alt="Reviewer">
+                        <div class="review-content text-muted mb-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore.
+                        </div>
+                        <h6 class="mb-1">Olivia Wilson</h6>
+                        <div class="stars text-warning fs-6">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="review-card text-center p-4 shadow-sm">
+                        <img src="{{ asset('frontend/assets/image/blog-3.jpg') }}" class="review-img mb-3"
+                            alt="Reviewer">
+                        <div class="review-content text-muted mb-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore.
+                        </div>
+                        <h6 class="mb-1">James Carter</h6>
+                        <div class="stars text-warning fs-6">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="review-card text-center p-4 shadow-sm">
+                        <img src="{{ asset('frontend/assets/image/why-us-img.jpg') }}" class="review-img mb-3"
+                            alt="Reviewer">
+                        <div class="review-content text-muted mb-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore.
+                        </div>
+                        <h6 class="mb-1">Sophia Brown</h6>
+                        <div class="stars text-warning fs-6">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="see-btn-block my-4 pt-4">
+                    <a href="{{ route('frontend.testimonial') }}" class="see-all-btn">
+                        View all
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <section class="mission-vision py-4">
         <div class="section-heading my-4 py-4">
             <h2 class="section-heading-title">Our Mission and values</h2>
@@ -366,7 +367,7 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-12 col-md-4 col-lg-4 position-relative mb-5">
-                    <img src="{{ asset('frontend/assets/image/mission.jpg') }}" class="icon mb-4" alt="Mission">
+                    <img src="{{ asset('frontend/assets/image/2606563_5898.jpg') }}" class="icon mb-4" alt="Mission">
                     <h4 class="title">Our Mission</h4>
                     <p class="description">
                         To empower individuals with the right guidance, skills, and
@@ -406,7 +407,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="blog-card">
                                 <div class="blog-image">
-                                    <img src="{{$item->image}}" alt="Blog image">
+                                    <img src="{{ $item->image }}" alt="Blog image">
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-meta">
@@ -414,7 +415,7 @@
                                         <span> {{ $item->created_at->format('d M Y') }}</span>
                                     </div>
                                     <h5 class="blog-title">
-                                        {{ $item->title}}
+                                        {{ $item->title }}
                                     </h5>
                                     <div class="blog-desc line-clamp-3">
                                         {!! $item->description !!} </div>

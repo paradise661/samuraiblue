@@ -12,65 +12,93 @@
 @extends('layouts.frontend.master')
 @section('content')
     @if ($testimonial_page)
-        <div class="hero-banner2 position-relative ">
-            <div class="row g-0 text-bannner-section">
-                <div class="col-md-6 d-flex justify-content-center align-items-center py-5">
-                    <div class="text-center page-banner-lft px-4">
-                        <h1 class="text-white font-weight-bold">{{ $testimonial_page->title ?? 'About Us' }}</h1>
-                        <p class="breadcrumb-text text-white">
-                            <a href="{{ route('frontend.home') }}" class="text-white text-decoration-none">Home</a> /
-                            <a href="#"
-                                class="text-white text-decoration-none">{{ $testimonial_page->title ?? 'About Us' }}</a>
-                        </p>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="img-container-banner">
-                        <div class="img-wrapper-2">
-                            <img src="{{ asset($testimonial_page->banner_image) }}" alt="Creative Design"
-                                class="background-img">
-                        </div>
-                    </div>
-                </div>
+          <section class="position-relative" style="height: 420px;">
+        <img src="{{$testimonial_page->image}}"
+            class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="Blog Banner">
+        <div class="position-absolute top-0 start-0 w-100 h-100"
+            style="background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));"></div>
+        <div class="container h-100 position-relative d-flex align-items-center">
+            <div class="text-white">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb text-white-50 mb-3">
+                        <li class="breadcrumb-item">
+                            <a href="#" class="text-white text-decoration-none">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#" class="text-white text-decoration-none">Blog</a>
+                        </li>
+                        <!-- <li class="breadcrumb-item active text-white" aria-current="page">
+                                                    find a job at sumarai blue
+                                                </li> -->
+                    </ol>
+                </nav>
+                <h1 class="fw-bold display-5">{{ $testimonial_page->title }}</h1>
             </div>
         </div>
+    </section>
     @endif
-    <div class="container">
-        <div class="row">
-            @foreach ($testimonial as $testimonial)
-                <div class="col-lg-4" data-aos="fade-up" data-aos-duration="3000">
-                    <div class="scholar-main-card bg-white">
-                        <div class="p-3 my-4">
-                            <div class="swiper-icon center"><i class="ri-double-quotes-l"></i></div>
-
-                            <div class="text-css text-center line-clamp my-2">
-                                {!! $testimonial->description !!}
-                            </div>
-
-                            <div class="scholar-img-container center mb-2">
-                                <img class="scholarship-img" src="{{ asset($testimonial->image) }}"
-                                    alt="{{ $testimonial->name }}">
-                            </div>
-
-                            <div class="name center">
-                                <p>{{ $testimonial->name }}</p>
-                            </div>
-
-                            <div class="center">
-                                @for ($i = 0; $i < $testimonial->rating; $i++)
-                                    <svg class="rating w-5 h-5 text-warning" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M10 2l2.72 5.792H18l-4.271 4.324 1.013 7.057L10 15.16l-5.742 3.013 1.013-7.057L2 7.792h4.28L10 2z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                @endfor
-                            </div>
+      <section class="review-section py-5">
+        <div class="container">
+            <div class="section-heading text-center pb-4 mb-5">
+                <h2 class="section-heading-title">Reviews</h2>
+                <p class="section-heading-para">Our clients voices!!</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="review-card text-center p-4 shadow-sm">
+                        <img src="{{ asset('frontend/assets/image/blog-3.jpg') }}" class="review-img mb-3"
+                            alt="Reviewer">
+                        <div class="review-content text-muted mb-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore.
+                        </div>
+                        <h6 class="mb-1">Olivia Wilson</h6>
+                        <div class="stars text-warning fs-6">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
                         </div>
                     </div>
                 </div>
-            @endforeach
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="review-card text-center p-4 shadow-sm">
+                        <img src="{{ asset('frontend/assets/image/blog-3.jpg') }}" class="review-img mb-3"
+                            alt="Reviewer">
+                        <div class="review-content text-muted mb-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore.
+                        </div>
+                        <h6 class="mb-1">James Carter</h6>
+                        <div class="stars text-warning fs-6">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="review-card text-center p-4 shadow-sm">
+                        <img src="{{ asset('frontend/assets/image/why-us-img.jpg') }}" class="review-img mb-3"
+                            alt="Reviewer">
+                        <div class="review-content text-muted mb-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore.
+                        </div>
+                        <h6 class="mb-1">Sophia Brown</h6>
+                        <div class="stars text-warning fs-6">
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                {{-- <div class="see-btn-block my-4 pt-4">
+                    <a href="{{ route('frontend.blog') }}" class="see-all-btn">
+                        View all
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div> --}}
+            </div>
+
         </div>
-    </div>
+    </section>
 @endsection
