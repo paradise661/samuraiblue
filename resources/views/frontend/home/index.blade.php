@@ -297,27 +297,27 @@
     <section class="review-section py-5">
         <div class="container">
             <div class="section-heading text-center pb-4 mb-5">
-                <h2 class="section-heading-title">Reviews</h2>
-                <p class="section-heading-para">Our clients voices!!</p>
+                <h2 class="section-heading-title">{{ $settings['testioninal_title'] }}</h2>
+                <p class="section-heading-para">{{ $settings['testioninal_subtitle'] }}</p>
             </div>
             <div class="row g-4">
+                @foreach ($testimonials as $item )
                 <div class="col-lg-4 col-md-6">
-                    <div class="review-card text-center p-4 shadow-sm">
-                        <img src="{{ asset('frontend/assets/image/blog-3.jpg') }}" class="review-img mb-3"
+                    <div class="review-card text-center p-4">
+                        <img src="{{ $item->image}}" class="review-img mb-3"
                             alt="Reviewer">
-                        <div class="review-content text-muted mb-3">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore.
+                        <div class="review-content text-muted line-clamp-3 mb-3">
+                         {!! $item->description !!}
                         </div>
-                        <h6 class="mb-1">Olivia Wilson</h6>
+                        <h6 class="mb-1">{{$item->name}}</h6>
                         <div class="stars text-warning fs-6">
                             <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
                             <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-4 col-md-6">
+   @endforeach
+                {{-- <div class="col-lg-4 col-md-6">
                     <div class="review-card text-center p-4 shadow-sm">
                         <img src="{{ asset('frontend/assets/image/blog-3.jpg') }}" class="review-img mb-3"
                             alt="Reviewer">
@@ -347,7 +347,7 @@
                             <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="see-btn-block my-4 pt-4">
                     <a href="{{ route('frontend.testimonial') }}" class="see-all-btn">
                         View all

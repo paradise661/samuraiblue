@@ -91,14 +91,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="see-btn-block my-4 pt-4">
-                    <a href="{{ route('frontend.blog') }}" class="see-all-btn">
-                        View all
-                        <i class="ri-arrow-right-line"></i>
-                    </a>
-                </div> --}}
             </div>
-
         </div>
     </section>
 @endsection

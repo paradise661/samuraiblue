@@ -707,6 +707,7 @@ form[role="search"] .btn:focus {
     border-radius: 20px;
     background: #fff;
     position: relative;
+    box-shadow: 0 6px 15px rgba(53, 53, 54, 0.3);
 }
 .review-content{
     padding-top: 30px;
