@@ -44,48 +44,16 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="image-wrapper position-relative">
-                        <img src="./images/banner-2.jpeg" class="main-img" alt="">
-                        <img src="./images/why-us-img.jpg" class="overlay-img" alt="">
+                        <img src="{{ $why_choose_us->image }}" class="main-img" alt="">
+                        <img src="{{ asset('frontend/assets/image/why-us-img.jpg') }}" class="overlay-img" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <h2 class="section-title mt-2">
-                        Why Choose Us
+                        {{ $why_choose_us->title }}
                     </h2>
-                    <p class="section-desc">
-                        We connect the right talent with the right opportunities
-                        through a smart, transparent, and people-focused hiring
-                        platform.
-                    </p>
-                    <div class="feature-box d-flex  mb-4">
-                        <div class="icon-circle">
-                            <i class="ri-check-line"></i>
-                        </div>
-                        <div class="why-us-content">
-                            <h5 class="why-us-title">Trusted by Job Seekers & Employers</h5>
-                            <p class="why-us-para">Thousands of candidates and companies rely on our platform for accurate
-                                job listings.</p>
-                        </div>
-                    </div>
-                    <div class="feature-box d-flex mb-4">
-                        <div class="icon-circle">
-                            <i class="ri-check-line"></i>
-                        </div>
-                        <div class="why-us-content">
-                            <h5 class="why-us-title">Fast & Transparent Hiring</h5>
-                            <p class="why-us-para">Employers can connect directly with qualified candidates, streamline
-                                hiring decisions</p>
-                        </div>
-                    </div>
-                    <div class="feature-box d-flex mb-4">
-                        <div class="icon-circle">
-                            <i class="ri-check-line"></i>
-                        </div>
-                        <div class="why-us-content">
-                            <h5 class="why-us-title">Smart Job Matching</h5>
-                            <p class="why-us-para">Our advanced search and filtering tools help candidates find roles that
-                                truly match their skills,</p>
-                        </div>
+                    <div class="custom-list ">
+                        {!! $why_choose_us->description ?? '' !!}
                     </div>
                 </div>
             </div>
@@ -94,15 +62,14 @@
     <section class="team-section pb-5">
         <div class="container">
             <div class="section-heading py-4">
-                <h2 class="section-heading-title">Our Team </h2>
-                <p class="section-heading-para">Dedicated members of Samurai Blue</p>
+                <h2 class="section-heading-title">{{ $settings['teams_title'] }}</h2>
+                <p class="section-heading-para">{{ $settings['teams_subtitle'] }}</p>
             </div>
             <div class="row g-4">
-                <!-- Team Member -->
                 @foreach ($teams as $team)
                     <div class="col-lg-4 col-md-6">
                         <div class="team-card">
-                            <img src="{{ $team->image }}" alt="Alex dhakal">
+                            <img src="{{ $team->image }}" alt="team image">
                             <div class="team-info py-4">
                                 <h5>{{ $team->name }}</h5>
                                 <p>{{ $team->position }}</p>

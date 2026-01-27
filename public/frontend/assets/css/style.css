@@ -464,6 +464,37 @@ form[role="search"] .btn:focus {
 .why-choose-us {
     background-color: #f9fafb;
 }
+.custom-list {
+    list-style: none !important;
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    padding: 0 20px;
+}
+
+.custom-list li {
+    margin-bottom: 0.6rem;
+    position: relative;
+    list-style: none !important;
+}
+
+.custom-list li:before {
+    content: "✓";
+    color: #7194D1;
+    display: inline-block;
+    position: absolute;
+    top: 40%;
+    left: -40px;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 18px;
+    border: 3px solid #7194D1;
+    border-radius: 50%;
+    text-align: center;
+}
 
 .image-wrapper {
     max-width: 520px;

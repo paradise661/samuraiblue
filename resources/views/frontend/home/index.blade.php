@@ -182,7 +182,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="about-image-wrapper">
-                        <img src="{{ $about_us->banner_image }}" alt="About Image" class="about-image">
+                        <img src="{{ $about_us->banner_image ?? ''}}" alt="About Image" class="about-image">
                         <div class="experience-badge">
                             <span>
                                 10+ Years
@@ -194,13 +194,10 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about-content p-4">
-                        <span class="about-subtitle">{{ $about_us->title }}</span>
-                        <h2 class="about-title"> {{ $about_us->short_description }}</h2>
-                        {{-- <div class="about-short">
-                            Connecting talent with opportunity through a modern and trusted job platform.
-                        </div> --}}
+                        <span class="about-subtitle">{{ $about_us->title ?? ''}}</span>
+                        <h2 class="about-title"> {{ $about_us->short_description ?? '' }}</h2>
                         <div class="about-desc">
-                            {!! $about_us->description !!}
+                            {!! $about_us->description ?? ''!!}
                         </div>
                         <a href="{{ route('frontend.about') }}" class="blog-btn">See More</a>
                     </div>
@@ -213,49 +210,17 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="image-wrapper position-relative">
-                        <img src="{{ asset('frontend/assets/image/banner-2.jpeg') }}" class="main-img" alt="">
+                        <img src="{{ $why_choose_us->image }}" class="main-img" alt="">
                         <img src="{{ asset('frontend/assets/image/why-us-img.jpg') }}" class="overlay-img"
                             alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <h2 class="section-title mt-2">
-                        Why Choose Us
+                        {{ $why_choose_us->title ?? ''}}
                     </h2>
-                    <p class="section-desc">
-                        We connect the right talent with the right opportunities
-                        through a smart, transparent, and people-focused hiring
-                        platform.
-                    </p>
-                    <div class="feature-box d-flex  mb-4">
-                        <div class="icon-circle">
-                            <i class="ri-check-line"></i>
-                        </div>
-                        <div class="why-us-content">
-                            <h5 class="why-us-title">Trusted by Job Seekers & Employers</h5>
-                            <p class="why-us-para">Thousands of candidates and companies rely on our platform for accurate
-                                job listings.</p>
-                        </div>
-                    </div>
-                    <div class="feature-box d-flex mb-4">
-                        <div class="icon-circle">
-                            <i class="ri-check-line"></i>
-                        </div>
-                        <div class="why-us-content">
-                            <h5 class="why-us-title">Fast & Transparent Hiring</h5>
-                            <p class="why-us-para">Employers can connect directly with qualified candidates, streamline
-                                hiring decisions</p>
-                        </div>
-                    </div>
-                    <div class="feature-box d-flex mb-4">
-                        <div class="icon-circle">
-                            <i class="ri-check-line"></i>
-                        </div>
-                        <div class="why-us-content">
-                            <h5 class="why-us-title">Smart Job Matching</h5>
-                            <p class="why-us-para">Our advanced search and filtering tools help candidates find roles that
-                                truly match their skills,</p>
-                        </div>
+                    <div class="custom-list ">
+                        {!! $why_choose_us->description ?? '' !!}
                     </div>
                 </div>
             </div>
@@ -297,57 +262,25 @@
     <section class="review-section py-5">
         <div class="container">
             <div class="section-heading text-center pb-4 mb-5">
-                <h2 class="section-heading-title">{{ $settings['testioninal_title'] }}</h2>
-                <p class="section-heading-para">{{ $settings['testioninal_subtitle'] }}</p>
+                <h2 class="section-heading-title">{{ $settings['testioninal_title'] ?? ' ' }}</h2>
+                <p class="section-heading-para">{{ $settings['testioninal_subtitle']  ?? ' '}}</p>
             </div>
             <div class="row g-4">
-                @foreach ($testimonials as $item )
-                <div class="col-lg-4 col-md-6">
-                    <div class="review-card text-center p-4">
-                        <img src="{{ $item->image}}" class="review-img mb-3"
-                            alt="Reviewer">
-                        <div class="review-content text-muted line-clamp-3 mb-3">
-                         {!! $item->description !!}
-                        </div>
-                        <h6 class="mb-1">{{$item->name}}</h6>
-                        <div class="stars text-warning fs-6">
-                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
-                        </div>
-                    </div>
-                </div>
-   @endforeach
-                {{-- <div class="col-lg-4 col-md-6">
-                    <div class="review-card text-center p-4 shadow-sm">
-                        <img src="{{ asset('frontend/assets/image/blog-3.jpg') }}" class="review-img mb-3"
-                            alt="Reviewer">
-                        <div class="review-content text-muted mb-3">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore.
-                        </div>
-                        <h6 class="mb-1">James Carter</h6>
-                        <div class="stars text-warning fs-6">
-                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                @foreach ($testimonials as $item)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="review-card text-center p-4">
+                            <img src="{{ $item->image}}" class="review-img mb-3" alt="Reviewer">
+                            <div class="review-content text-muted line-clamp-3 mb-3">
+                                {!! $item->description !!}
+                            </div>
+                            <h6 class="mb-1">{{ $item->name }}</h6>
+                            <div class="stars text-warning fs-6">
+                                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="review-card text-center p-4 shadow-sm">
-                        <img src="{{ asset('frontend/assets/image/why-us-img.jpg') }}" class="review-img mb-3"
-                            alt="Reviewer">
-                        <div class="review-content text-muted mb-3">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore.
-                        </div>
-                        <h6 class="mb-1">Sophia Brown</h6>
-                        <div class="stars text-warning fs-6">
-                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
-                        </div>
-                    </div>
-                </div> --}}
+                @endforeach
                 <div class="see-btn-block my-4 pt-4">
                     <a href="{{ route('frontend.testimonial') }}" class="see-all-btn">
                         View all
@@ -355,10 +288,8 @@
                     </a>
                 </div>
             </div>
-
         </div>
     </section>
-
     <section class="mission-vision py-4">
         <div class="section-heading my-4 py-4">
             <h2 class="section-heading-title">Our Mission and values</h2>
@@ -412,7 +343,7 @@
                                 <div class="blog-content">
                                     <div class="blog-meta">
                                         <span>{{ $item->short_description }}</span>
-                                        <span> {{ $item->created_at->format('d M Y') }}</span>
+                                        <span>{{ $item->created_at->format('d M Y') }}</span>
                                     </div>
                                     <h5 class="blog-title">
                                         {{ $item->title }}

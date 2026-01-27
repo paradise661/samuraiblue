@@ -13,7 +13,7 @@
 @section('content')
     <section class="position-relative" style="height: 420px;">
         <img src="./images/office-skyscrapers-business-district.jpg"
-            class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="Blog Banner">
+            class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="service Banner">
         <div class="position-absolute top-0 start-0 w-100 h-100"
             style="background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));"></div>
         <div class="container h-100 position-relative d-flex align-items-center">
@@ -24,14 +24,14 @@
                             <a href="#" class="text-white text-decoration-none">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="#" class="text-white text-decoration-none">Services</a>
+                            <a href="#" class="text-white text-decoration-none">{{$service_page->title}}</a>
                         </li>
                         <!-- <li class="breadcrumb-item active text-white" aria-current="page">
                                     find a job at sumarai blue
                                 </li> -->
                     </ol>
                 </nav>
-                <h1 class="fw-bold display-5"> find a job at sumarai blue</h1>
+                <h1 class="fw-bold display-5">{{$service_page->title}}</h1>
             </div>
         </div>
     </section>

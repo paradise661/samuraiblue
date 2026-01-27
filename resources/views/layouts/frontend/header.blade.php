@@ -33,7 +33,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('frontend.about') }}">About Us</a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link active" href="{{ route('frontend.testimonial') }}">Reviews</a>
                     </li>
                     <li class="nav-item dropdown header-dropdown">
@@ -42,26 +42,17 @@
                             <i class="ri-arrow-down-s-line"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item" href="#">Student Visa</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">SSW visa</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Rental Service</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Jobs</a>
-                            </li>
+                            @foreach ($footer_services as $services)
+                                <li>
+                                    <a class="dropdown-item"
+                                        href="{{ route('frontend.servicesingle', $services->slug) }}">{{ $services->title }}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('frontend.blog') }}">Blog</a>
                     </li>
-                    {{-- <li class="nav-item">
-                                <a class="nav-link active" href="./blog.html">Explore Jobs</a>
-                            </li> --}}
                 </ul>
                 <div class="d-flex align-items-center gap-4">
                     <li class="nav-item">
