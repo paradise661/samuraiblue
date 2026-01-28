@@ -1,7 +1,7 @@
 @section('seo')
     @include('frontend.seo', [
         'name' => $service_page->seo_title ?? '',
-        'title' => $service_page->seo_title ?? $service_page->title,
+        'title' => $service_page->seo_title ?? $service_page->title ?? '',
         'description' => $service_page->meta_description ?? '',
         'keyword' => $service_page->meta_keywords ?? '',
         'schema' => $service_page->seo_schema ?? '',
@@ -12,7 +12,7 @@
 @extends('layouts.frontend.master')
 @section('content')
     <section class="position-relative" style="height: 420px;">
-        <img src="./images/office-skyscrapers-business-district.jpg"
+        <img src="{{$service_page->banner_image}}"
             class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="service Banner">
         <div class="position-absolute top-0 start-0 w-100 h-100"
             style="background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));"></div>
@@ -51,42 +51,6 @@
                     </div>
                 </div>
                     @endforeach
-                {{-- <div class="col-lg-3 col-md-6">
-                    <div class="feature-card text-center">
-                        <div class="icon-box">
-                            <i class="ri-customer-service-2-line"></i>
-                        </div>
-                        <h5 class="feature-card-title">SSW Visa</h5>
-                        <p class="feature-card-desc">
-                            Our SSW visa services help skilled workers secure legal employment overseas by assisting with
-                            eligibility checks, paperwork, and application processing tailored to your profession.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="feature-card text-center">
-                        <div class="icon-box">
-                            <i class="ri-home-office-line"></i>
-                        </div>
-                        <h5 class="feature-card-title">Rental Services</h5>
-                        <p class="feature-card-desc">
-                            We help you discover reliable rental homes and apartments that match your budget and location
-                            preferences, ensuring comfort, safety, and hassle-free arrangements.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="feature-card text-center">
-                        <div class="icon-box">
-                            <i class="ri-search-line"></i>
-                        </div>
-                        <h5 class="feature-card-title">Job Search</h5>
-                        <p class="feature-card-desc">
-                            Our job search service matches your skills with verified employers, helping you find suitable
-                            jobs faster through professional guidance, application support, and career advice.
-                        </p>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </section>

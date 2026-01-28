@@ -1,7 +1,7 @@
 @section('seo')
     @include('frontend.seo', [
         'name' => $blogsingle->seo_title ?? '',
-        'title' => $blogsingle->seo_title ?? $blogsingle->title,
+        'title' => $blogsingle->seo_title ?? $blogsingle->title ?? '',
         'description' => $blogsingle->meta_description ?? '',
         'keyword' => $blogsingle->meta_keywords ?? '',
         'schema' => $blogsingle->seo_schema ?? '',

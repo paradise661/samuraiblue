@@ -3,7 +3,7 @@
 @section('seo')
     @include('frontend.seo', [
         'name' => $contact_page->seo_title ?? '',
-        'title' => $contact_page->seo_title ?? $contact_page->title,
+        'title' => $contact_page->seo_title ?? $contact_page->title ?? '',
         'description' => $contact_page->meta_description ?? '',
         'keyword' => $contact_page->meta_keywords ?? '',
         'schema' => $contact_page->seo_schema ?? '',
@@ -79,7 +79,6 @@
                                 <p class="bodypart-css">{{ $settings['contact_phone'] }}</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

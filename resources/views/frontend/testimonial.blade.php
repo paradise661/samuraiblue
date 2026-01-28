@@ -1,7 +1,7 @@
 @section('seo')
     @include('frontend.seo', [
         'name' => $testimonial_page->seo_title ?? '',
-        'title' => $testimonial_page->seo_title ?? $testimonial_page->title,
+        'title' => $testimonial_page->seo_title ?? $testimonial_page->title ?? '',
         'description' => $testimonial_page->meta_description ?? '',
         'keyword' => $testimonial_page->meta_keywords ?? '',
         'schema' => $testimonial_page->seo_schema ?? '',

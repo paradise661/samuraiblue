@@ -1,97 +1,175 @@
 @section('seo')
     @include('frontend.seo', [
         'name' => $event_page->seo_title ?? '',
-        'title' => $event_page->seo_title ?? $event_page->title,
+        'title' => $event_page->seo_title ?? ($event_page->title ?? ''),
         'description' => $event_page->meta_description ?? '',
         'keyword' => $event_page->meta_keywords ?? '',
         'schema' => $event_page->seo_schema ?? '',
-        'created_at' => $event_page->created_at,
-        'updated_at' => $event_page->updated_at,
+        'created_at' => $event_page->created_at ?? now(),
+        'updated_at' => $event_page->updated_at ?? now(),
     ])
 @endsection
 @extends('layouts.frontend.master')
 @section('content')
-    @if ($event_page)
-        <div class="hero-banner2 position-relative ">
-            <div class="row g-0 text-bannner-section">
-                <div class="col-md-6 d-flex justify-content-center align-items-center py-5">
-                    <div class="text-center page-banner-lft px-4">
-                        <h1 class="text-white font-weight-bold">{{ $event_page->title ?? 'About Us' }}</h1>
-                        <p class="breadcrumb-text text-white">
-                            <a href="{{ route('frontend.home') }}" class="text-white text-decoration-none">Home</a> /
-                            <a href="#"
-                                class="text-white text-decoration-none">{{ $event_page->title ?? 'About Us' }}</a>
-                        </p>
-                        </p>
+    <section class="position-relative" style="height: 420px;">
+        <img src="{{ $event_page->banner_image ?? '' }}" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
+            alt="job Banner">
+        <div class="position-absolute top-0 start-0 w-100 h-100"
+            style="background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));"></div>
+        <div class="container h-100 position-relative d-flex align-items-center">
+            <div class="text-white">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb text-white-50 mb-3">
+                        <li class="breadcrumb-item">
+                            <a href="#" class="text-white text-decoration-none">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#" class="text-white text-decoration-none">Jobs</a>
+                        </li>
+                        <!-- <li class="breadcrumb-item active text-white" aria-current="page">
+                                                            find a job at sumarai blue
+                                                        </li> -->
+                    </ol>
+                </nav>
+                <h1 class="fw-bold display-5">{{ $event_page->title ?? '' }}</h1>
+            </div>
+        </div>
+    </section>
+    <section class="featured-jobs">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2>Featured Jobs</h2>
+                <p>Hand-picked opportunities from trusted employers</p>
+            </div>
+            <div class="row g-4">
+                @foreach ($events as $item)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="job-card">
+                            <div class="job-header">
+                                <h3>Restaurant Staff</h3>
+                                <span class="job-type">Full-Time</span>
+                            </div>
+                            <p class="company">{{$item->name}}</p>
+                            <div class="job-meta">
+                                <span>
+                                    <i class="ri-map-pin-2-fill"></i> {{$item->location}}
+                                </span>
+                                <span>
+                                    <i class="ri-money-dollar-circle-line"></i> ¥200,000 / month
+                                </span>
+                            </div>
+                            <a href="#" class="apply-btn">Apply Now</a>
+                        </div>
+                    </div>
+                @endforeach
+                {{-- <div class="col-lg-4 col-md-6">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3>Restaurant Staff</h3>
+                            <span class="job-type">Full-Time</span>
+                        </div>
+                        <p class="company">Sakura Dining Pvt. Ltd.</p>
+                        <div class="job-meta">
+                            <span>
+                                <i class="ri-map-pin-2-fill"></i> Tokyo, Japan
+                            </span>
+                            <span>
+                                <i class="ri-money-dollar-circle-line"></i> ¥200,000 / month
+                            </span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now</a>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="img-container-banner">
-                        <div class="img-wrapper-2">
-                            <img src="{{ asset($event_page->banner_image) }}" alt="Creative Design" class="background-img">
+                <div class="col-lg-4 col-md-6">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3>Restaurant Staff</h3>
+                            <span class="job-type">Full-Time</span>
+                        </div>
+                        <p class="company">Sakura Dining Pvt. Ltd.</p>
+                        <div class="job-meta">
+                            <span>
+                                <i class="ri-map-pin-2-fill"></i> Tokyo, Japan
+                            </span>
+                            <span>
+                                <i class="ri-money-dollar-circle-line"></i> ¥200,000 / month
+                            </span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3>Restaurant Staff</h3>
+                            <span class="job-type">Full-Time</span>
+                        </div>
+                        <p class="company">Sakura Dining Pvt. Ltd.</p>
+                        <div class="job-meta">
+                            <span>
+                                <i class="ri-map-pin-2-fill"></i> Tokyo, Japan
+                            </span>
+                            <span>
+                                <i class="ri-money-dollar-circle-line"></i> ¥200,000 / month
+                            </span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3>Restaurant Staff</h3>
+                            <span class="job-type">Full-Time</span>
+                        </div>
+                        <p class="company">Sakura Dining Pvt. Ltd.</p>
+                        <div class="job-meta">
+                            <span>
+                                <i class="ri-map-pin-2-fill"></i> Tokyo, Japan
+                            </span>
+                            <span>
+                                <i class="ri-money-dollar-circle-line"></i> ¥200,000 / month
+                            </span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3>Restaurant Staff</h3>
+                            <span class="job-type">Full-Time</span>
+                        </div>
+                        <p class="company">Sakura Dining Pvt. Ltd.</p>
+                        <div class="job-meta">
+                            <span>
+                                <i class="ri-map-pin-2-fill"></i> Tokyo, Japan
+                            </span>
+                            <span>
+                                <i class="ri-money-dollar-circle-line"></i> ¥200,000 / month
+                            </span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now</a>
+                    </div>
+                </div> --}}
+            </div>
+            <!-- <div class="text-center mt-5">
+                    <a href="#" class="view-all-btn">View All Jobs</a>
+                </div> -->
+        </div>
+    </section>
+    {{-- <section class="search-job">
+            <div class="final-banner">
+                <img src="{{ $event_page->banner_image }}" alt="Job Search Banner" class="final-banner-image">
+                <div class="final-banner-overlay">
+                    <div class="final-banner-content">
+                        <h1>Find the Right Job. Start Your Career.</h1>
+                        <p>Browse verified job opportunities and get professional support for your career journey.</p>
+                        <div class="final-banner-buttons">
+                            <a href="#" class="secondary-btn">Apply Now</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    @endif
-    <div class="container py-5">
-        <!-- Events Grid -->
-        <div class="row g-4">
-            @foreach ($events as $event)
-                @php
-                    $eventDate = \Carbon\Carbon::parse($event->date);
-                    $today = now()->startOfDay();
-                    $isExpired = $eventDate->lt($today);
-
-                    $formattedDate = $eventDate->format('d M Y');
-                    $formattedTime = \Carbon\Carbon::parse($event->time)->format('h:i A');
-                @endphp
-                <div class="col-lg-12 col-md-6" data-aos="fade-up" data-aos-duration="3000">
-                    <div class="row shadow">
-                        <div class="col-lg-6">
-                            <div class="card event-card h-100">
-                                <!-- Status Badge -->
-                                <span class="badge status-badge {{ $isExpired ? 'badge-expired' : 'badge-upcoming' }}">
-                                    {{ $isExpired ? 'Expired' : 'Upcoming' }}
-                                </span>
-                                <!-- Event Image -->
-                                <div class="event-image">
-                                    <img class="img-fluidevent" style="height: 280px" src="{{ asset($event->image) }}"
-                                        alt="{{ $event->name ?? '' }}">
-                                </div>
-                                <!-- Event Details -->
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="event-details">
-                                <h3 class="event-title">{{ $event->name ?? '' }}</h3>
-                                <p class="event-description">
-                                    {!! Str::words(strip_tags($event->description ?? ''), 18, '...') !!}
-                                </p>
-                                <div class="event-info">
-                                    <div class="info-item">
-                                        <i class="fas fa-calendar info-icon"></i>
-                                        <span><strong>{{ $formattedDate }}</strong></span>
-                                    </div>
-                                    <div class="info-item">
-                                        <i class="fas fa-clock info-icon"></i>
-                                        <span>{{ $formattedTime }} onwards</span>
-                                    </div>
-                                    <div class="info-item">
-                                        <i class="fas fa-map-marker-alt info-icon"></i>
-                                        <span>{{ $event->location ?? '' }}</span>
-                                    </div>
-                                </div>
-                                <a class="btn btn-register btn-upcoming"
-                                    href="{{ route('frontend.eventsingle', $event->slug) }}">
-                                    Learn More
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
+        </section> --}}
 @endsection

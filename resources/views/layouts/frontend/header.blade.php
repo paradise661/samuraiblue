@@ -36,6 +36,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('frontend.testimonial') }}">Reviews</a>
                     </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('frontend.event') }}">Jobs</a>
+                    </li>
                     <li class="nav-item dropdown header-dropdown">
                         <a class="nav-link" href="{{ route('frontend.service') }}" role="button">
                             Services
