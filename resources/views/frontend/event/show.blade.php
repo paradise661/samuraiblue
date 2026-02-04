@@ -23,7 +23,6 @@
                             <a href="#"
                                 class="text-white text-decoration-none">{{ $eventsingle->title ?? 'Event' }}</a>
                         </p>
-                        </p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -38,7 +37,6 @@
     @endif
     <div class="container py-5">
         <div class="row">
-            <!-- Main Content -->
             <div class="col-lg-8" data-aos="fade-right"  data-aos-duration="3000">
                 <div class="post-detail-card bg-white rounded-4 shadow-sm p-4">
                     <div class="text-centre" style="text-align: center;">
@@ -103,4 +101,4 @@
             </div>
         </div>
     </div>
-@endsection    
+@endsection

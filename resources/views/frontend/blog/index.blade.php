@@ -1,7 +1,7 @@
 @section('seo')
     @include('frontend.seo', [
         'name' => $blog_page->seo_title ?? '',
-        'title' => $blog_page->seo_title ?? $blog_page->title ?? '',
+        'title' => $blog_page->seo_title ?? ($blog_page->title ?? ''),
         'description' => $blog_page->meta_description ?? '',
         'keyword' => $blog_page->meta_keywords ?? '',
         'schema' => $blog_page->seo_schema ?? '',
@@ -12,8 +12,8 @@
 @extends('layouts.frontend.master')
 @section('content')
     <section class="position-relative" style="height: 420px;">
-        <img src="{{$blog_page->banner_image}}"
-            class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="Blog Banner">
+        <img src="{{ $blog_page->banner_image }}" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
+            alt="Blog Banner">
         <div class="position-absolute top-0 start-0 w-100 h-100"
             style="background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));"></div>
         <div class="container h-100 position-relative d-flex align-items-center">
@@ -40,7 +40,6 @@
                         <div class="col-lg-4 col-md-6">
                             <a href="{{ route('frontend.blogsingle', $item->slug) }}"
                                 class="d-flex stretched-card-link align-items-center mb-3 text-decoration-none text-dark">
-
                                 <div class="blog-card">
                                     <div class="blog-image">
                                         <img src="{{ $item->image }}" alt="Blog image">
@@ -55,8 +54,7 @@
                                         </h5>
                                         <div class="blog-desc line-clamp-3">
                                             {!! $item->description !!} </div>
-                                        <div class="blog-read">READ
-                                            MORE</div>
+                                        <div class="blog-read">Read MORE</div>
                                     </div>
                                 </div>
                             </a>

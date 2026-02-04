@@ -11,33 +11,40 @@
 @extends('layouts.frontend.master')
 @section('content')
     <section class="hero-slider">
-        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-            @if ($sliders)
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
+
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="true">
+
+            <div class="carousel-inner">
+
+                @foreach ($sliders as $index => $item)
+                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                         <div class="overlay"></div>
-                        <img src="{{ $sliders->image }}" class="d-block w-100" alt="">
-                    </div>
-                    <div class="carousel-item">
-                        <div class="overlay"></div>
-                        <img src="{{ $sliders->image_1 }}" class="d-block w-100" alt="">
-                    </div>
-                    <div class="carousel-caption my-2">
-                        <h1 class="carousel-caption-title">{{ $sliders->title }}</h1>
-                        <p class="carousel-caption-para">{{ $sliders->short_description }}</p>
-                        <div class="search-hero-buttons">
-                            <a href="#" class=" primary-btn">Browse Jobs</a>
-                            <a href="#" class=" secondary-btn">Apply Now</a>
+
+                        <img src="{{ $item->image }}" class="d-block w-100" alt="">
+
+                        <div class="carousel-caption my-2">
+                            <h1 class="carousel-caption-title">{{ $item->title }}</h1>
+                            <p class="carousel-caption-para">{{ $item->short_description }}</p>
+
+                            <div class="search-hero-buttons">
+                                <a href="{{ route('frontend.event') }}" class="primary-btn">Browse Jobs</a>
+                                <a href="{{ route('frontend.contact') }}" class="secondary-btn">Apply Now</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel"
-                    data-bs-slide="prev"></button>
-                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel"
-                    data-bs-slide="next"></button>
-            @endif
-        </div>
+                @endforeach
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel"
+                data-bs-slide="prev"></button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel"
+                data-bs-slide="next"></button>
+
+        </div>-
     </section>
+
     <section class="job-categories my-4">
         <div class="section-heading mt-4 pt-4">
             <h2 class="section-heading-title">Job Categoriess</h2>
@@ -177,12 +184,12 @@
             </div>
         </div>
     </section>
-    <section class="about-section my-4 py-5">
-        <div class="container">
+    <section class="about-section py-5">
+        <div class="container my-4">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="about-image-wrapper">
-                        <img src="{{ $about_us->banner_image ?? ''}}" alt="About Image" class="about-image">
+                        <img src="{{ $about_us->banner_image ?? '' }}" alt="About Image" class="about-image">
                         <div class="experience-badge">
                             <span>
                                 10+ Years
@@ -194,10 +201,10 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about-content p-4">
-                        <span class="about-subtitle">{{ $about_us->title ?? ''}}</span>
+                        <span class="about-subtitle">{{ $about_us->title ?? '' }}</span>
                         <h2 class="about-title"> {{ $about_us->short_description ?? '' }}</h2>
                         <div class="about-desc">
-                            {!! $about_us->description ?? ''!!}
+                            {!! $about_us->description ?? '' !!}
                         </div>
                         <a href="{{ route('frontend.about') }}" class="blog-btn">See More</a>
                     </div>
@@ -217,7 +224,7 @@
                 </div>
                 <div class="col-lg-6">
                     <h2 class="section-title mt-2">
-                        {{ $why_choose_us->title ?? ''}}
+                        {{ $why_choose_us->title ?? '' }}
                     </h2>
                     <div class="custom-list ">
                         {!! $why_choose_us->description ?? '' !!}
@@ -258,18 +265,17 @@
             </div>
         </div>
     </section>
-
     <section class="review-section py-5">
         <div class="container">
             <div class="section-heading text-center pb-4 mb-5">
                 <h2 class="section-heading-title">{{ $settings['testioninal_title'] ?? ' ' }}</h2>
-                <p class="section-heading-para">{{ $settings['testioninal_subtitle']  ?? ' '}}</p>
+                <p class="section-heading-para">{{ $settings['testioninal_subtitle'] ?? ' ' }}</p>
             </div>
             <div class="row g-4">
                 @foreach ($testimonials as $item)
                     <div class="col-lg-4 col-md-6">
                         <div class="review-card text-center p-4">
-                            <img src="{{ $item->image}}" class="review-img mb-3" alt="Reviewer">
+                            <img src="{{ $item->image }}" class="review-img mb-3" alt="Reviewer">
                             <div class="review-content text-muted line-clamp-3 mb-3">
                                 {!! $item->description !!}
                             </div>
@@ -329,7 +335,7 @@
     <section class="blog-section">
         <div class="section-heading my-4 py-4">
             <h2 class="section-heading-title">{{ $settings['blogs_title'] ?? '' }}</h2>
-            <p class="section-heading-para"> {{ $settings['blogs_subtitle'] ?? '' }}</p>
+            <p class="section-heading-para">{{ $settings['blogs_subtitle'] ?? '' }}</p>
         </div>
         <div class="container">
             <div class="blog-block">

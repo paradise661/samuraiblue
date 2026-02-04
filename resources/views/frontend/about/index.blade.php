@@ -11,7 +11,7 @@
 @endsection
 @extends('layouts.frontend.master')
 @section('content')
-    <section class="about-section my-4 py-5">
+    <section class="about-section py-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
@@ -59,27 +59,7 @@
             </div>
         </div>
     </section>
-    <section class="team-section pb-5">
-        <div class="container">
-            <div class="section-heading py-4">
-                <h2 class="section-heading-title">{{ $settings['teams_title'] }}</h2>
-                <p class="section-heading-para">{{ $settings['teams_subtitle'] }}</p>
-            </div>
-            <div class="row g-4">
-                @foreach ($teams as $team)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="team-card">
-                            <img src="{{ $team->image }}" alt="team image">
-                            <div class="team-info py-4">
-                                <h5>{{ $team->name }}</h5>
-                                <p>{{ $team->position }}</p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
+  
 
     <section class="process-section">
         <div id="process-heading" class="section-heading mt-4 pt-4">

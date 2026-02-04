@@ -26,9 +26,6 @@
                         <li class="breadcrumb-item">
                             <a href="#" class="text-white text-decoration-none">Jobs</a>
                         </li>
-                        <!-- <li class="breadcrumb-item active text-white" aria-current="page">
-                                                            find a job at sumarai blue
-                                                        </li> -->
                     </ol>
                 </nav>
                 <h1 class="fw-bold display-5">{{ $event_page->title ?? '' }}</h1>
@@ -49,113 +46,20 @@
                                 <h3>Restaurant Staff</h3>
                                 <span class="job-type">Full-Time</span>
                             </div>
-                            <p class="company">{{$item->name}}</p>
+                            <p class="company">{{ $item->name }}</p>
                             <div class="job-meta">
                                 <span>
-                                    <i class="ri-map-pin-2-fill"></i> {{$item->location}}
+                                    <i class="ri-map-pin-2-fill"></i> {{ $item->location }}
                                 </span>
                                 <span>
-                                    <i class="ri-money-dollar-circle-line"></i> ¥200,000 / month
+                                    <i class="ri-money-dollar-circle-line"></i>200,000 / month
                                 </span>
                             </div>
                             <a href="#" class="apply-btn">Apply Now</a>
                         </div>
                     </div>
                 @endforeach
-                {{-- <div class="col-lg-4 col-md-6">
-                    <div class="job-card">
-                        <div class="job-header">
-                            <h3>Restaurant Staff</h3>
-                            <span class="job-type">Full-Time</span>
-                        </div>
-                        <p class="company">Sakura Dining Pvt. Ltd.</p>
-                        <div class="job-meta">
-                            <span>
-                                <i class="ri-map-pin-2-fill"></i> Tokyo, Japan
-                            </span>
-                            <span>
-                                <i class="ri-money-dollar-circle-line"></i> ¥200,000 / month
-                            </span>
-                        </div>
-                        <a href="#" class="apply-btn">Apply Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="job-card">
-                        <div class="job-header">
-                            <h3>Restaurant Staff</h3>
-                            <span class="job-type">Full-Time</span>
-                        </div>
-                        <p class="company">Sakura Dining Pvt. Ltd.</p>
-                        <div class="job-meta">
-                            <span>
-                                <i class="ri-map-pin-2-fill"></i> Tokyo, Japan
-                            </span>
-                            <span>
-                                <i class="ri-money-dollar-circle-line"></i> ¥200,000 / month
-                            </span>
-                        </div>
-                        <a href="#" class="apply-btn">Apply Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="job-card">
-                        <div class="job-header">
-                            <h3>Restaurant Staff</h3>
-                            <span class="job-type">Full-Time</span>
-                        </div>
-                        <p class="company">Sakura Dining Pvt. Ltd.</p>
-                        <div class="job-meta">
-                            <span>
-                                <i class="ri-map-pin-2-fill"></i> Tokyo, Japan
-                            </span>
-                            <span>
-                                <i class="ri-money-dollar-circle-line"></i> ¥200,000 / month
-                            </span>
-                        </div>
-                        <a href="#" class="apply-btn">Apply Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="job-card">
-                        <div class="job-header">
-                            <h3>Restaurant Staff</h3>
-                            <span class="job-type">Full-Time</span>
-                        </div>
-                        <p class="company">Sakura Dining Pvt. Ltd.</p>
-                        <div class="job-meta">
-                            <span>
-                                <i class="ri-map-pin-2-fill"></i> Tokyo, Japan
-                            </span>
-                            <span>
-                                <i class="ri-money-dollar-circle-line"></i> ¥200,000 / month
-                            </span>
-                        </div>
-                        <a href="#" class="apply-btn">Apply Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="job-card">
-                        <div class="job-header">
-                            <h3>Restaurant Staff</h3>
-                            <span class="job-type">Full-Time</span>
-                        </div>
-                        <p class="company">Sakura Dining Pvt. Ltd.</p>
-                        <div class="job-meta">
-                            <span>
-                                <i class="ri-map-pin-2-fill"></i> Tokyo, Japan
-                            </span>
-                            <span>
-                                <i class="ri-money-dollar-circle-line"></i> ¥200,000 / month
-                            </span>
-                        </div>
-                        <a href="#" class="apply-btn">Apply Now</a>
-                    </div>
-                </div> --}}
             </div>
-            <!-- <div class="text-center mt-5">
-                    <a href="#" class="view-all-btn">View All Jobs</a>
-                </div> -->
         </div>
     </section>
     {{-- <section class="search-job">

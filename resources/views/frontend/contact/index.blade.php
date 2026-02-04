@@ -3,7 +3,7 @@
 @section('seo')
     @include('frontend.seo', [
         'name' => $contact_page->seo_title ?? '',
-        'title' => $contact_page->seo_title ?? $contact_page->title ?? '',
+        'title' => $contact_page->seo_title ?? ($contact_page->title ?? ''),
         'description' => $contact_page->meta_description ?? '',
         'keyword' => $contact_page->meta_keywords ?? '',
         'schema' => $contact_page->seo_schema ?? '',
@@ -29,7 +29,6 @@
                                 <a href="#"
                                     class="text-white text-decoration-none">{{ $contact_page->title ?? 'Contact Us' }}</a>
                             </li>
-
                         </ol>
                     </nav>
                     <h1 class="fw-bold display-5"> {{ $contact_page->title ?? 'Contact Us' }}</h1>
@@ -37,97 +36,136 @@
             </div>
         </section>
     @endif
-    <div class="container pt-4">
-        <div class="row">
-            <div class="col-lg-4 mb-4">
-                <div class="card shadow contact-card">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-2 gap-2">
-                            <i class="ri-map-pin-line contact-icon ri-5x"></i>
-                            <div>
-                                <p class="contact-css mb-0">Office Location</p>
-                                <p class="bodypart-css">{{ $settings['contact_location'] }}</p>
-                            </div>
-                        </div>
+    {{-- <div class="container py-5">
+        <div class="row text-center">
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card shadow contact-card">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-2 gap-2">
-                            <i class="ri-mail-line contact-icon ri-5x"></i>
-                            <div>
-                                <p class="contact-css mb-0">Email Address</p>
-                                <a href="mailto:{{ $settings['contact_email'] ?? 'mail@gmail.com' }}"
-                                    class="bodypart-css">{{ $settings['contact_email'] }}</a>
-                            </div>
-                        </div>
-
-                    </div>
+            <div class="col-lg-4 mb-5">
+                <div class="contact-item">
+                    <i class="ri-map-pin-line"></i>
+                    <h6>Office Location</h6>
+                    <p>{{ $settings['contact_location'] ?? 'Bharatpur, Nepal' }}</p>
                 </div>
             </div>
 
-            <div class="col-lg-4 mb-4">
-                <div class="card shadow contact-card">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-2 gap-2">
-                            <i class="ri-phone-line contact-icon ri-5x"></i>
-                            <div>
-                                <p class="contact-css mb-0">WhatsApp / Phone</p>
-                                <p class="bodypart-css">{{ $settings['contact_phone'] }}</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-lg-4 mb-5">
+                <div class="contact-item">
+                    <i class="ri-mail-line"></i>
+                    <h6>Email Address</h6>
+                    <a href="mailto:{{ $settings['contact_email'] ?? 'mail@gmail.com' }}">
+                        {{ $settings['contact_email'] ?? 'mail@gmail.com' }}
+                    </a>
                 </div>
             </div>
+
+            <div class="col-lg-4 mb-5">
+                <div class="contact-item">
+                    <i class="ri-phone-line"></i>
+                    <h6>Phone Number</h6>
+                    <p>{{ $settings['contact_phone'] ?? '+977-XXXXXXXX' }}</p>
+                </div>
+            </div>
+
         </div>
-    </div>
-    <section class=" py-5 contact-page">
-        <div class="container contact-main shadow p-4 py-3 ">
-            <div class="row d-flex align-items-center justify-content-center ">
-                <div class="col-md-12  ">
-                    <div class="">
-                        <form class=" px-4 " action="" method="post">
+    </div> --}}
+    <section class="py-5 contact-page">
+
+        <div class="container">
+
+            <!-- Title -->
+            <div class="text-center mb-4">
+                <h2>Contact Us</h2>
+            </div>
+
+            <!-- Map + Form -->
+            <div class="contact-main p-4 py-3">
+                <div class="row align-items-center">
+
+                  
+                    <div class="container py-5">
+                        <div class="row text-center">
+
+                            <div class="col-lg-4 mb-4">
+                                <div class="contact-item">
+                                    <i class="ri-map-pin-line"></i>
+                                    <h6>Office Location</h6>
+                                    <p>{{ $settings['contact_location'] ?? 'Bharatpur, Nepal' }}</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 mb-4">
+                                <div class="contact-item">
+                                    <i class="ri-mail-line"></i>
+                                    <h6>Email Address</h6>
+                                    <a href="mailto:{{ $settings['contact_email'] ?? 'mail@gmail.com' }}">
+                                        {{ $settings['contact_email'] ?? 'mail@gmail.com' }}
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 mb-4">
+                                <div class="contact-item">
+                                    <i class="ri-phone-line"></i>
+                                    <h6>Phone Number</h6>
+                                    <p>{{ $settings['contact_phone'] ?? '+977-XXXXXXXX' }}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Form (RIGHT) -->
+                    <div class="col-lg-6">
+                        <form class="px-4" action="{{ route('frontend.contact.submit') }}" method="post">
                             @csrf
                             @method('post')
-                            <div class="heading-title-contact  center mt-1">
-                                {{ $settings['contact_section_title'] ?? 'Get In Touch' }} </div>
+
+                            <div class="heading-title-contact center mt-1">
+                                {{ $settings['contact_section_title'] ?? 'Get In Touch' }}
+                            </div>
+
                             <div class="form-group">
                                 <label for="name">First Name <i class="ri-asterisk asterisk"></i></label>
                                 <input id="name" type="text" name="name" required>
                             </div>
+
                             <div class="form-group">
                                 <label for="phone">Phone Number <i class="ri-asterisk asterisk"></i></label>
-                                <input id="phone" type="tel" name="phone" placeholder="" required>
+                                <input id="phone" type="tel" name="phone" required>
                             </div>
+
                             <div class="form-group">
                                 <label for="email">Email <i class="ri-asterisk asterisk"></i></label>
                                 <input id="email" type="email" name="email" required>
                             </div>
+
                             <div class="form-group">
                                 <label for="message">Message <i class="ri-asterisk asterisk"></i></label>
                                 <textarea id="message" name="message" rows="5" required></textarea>
                             </div>
+
                             <div class="form-group center">
-                                <a href="{{ route('frontend.contact.submit') }}">
-                                    <button class="custom-btn btn-8"><span>Contact Us <i
-                                                class="ri-arrow-right-up-line"></i></span></button>
-                                </a>
+                                <button class="custom-btn btn-8">
+                                    <span>Contact Us <i class="ri-arrow-right-up-line"></i></span>
+                                </button>
                             </div>
                         </form>
                     </div>
+
                 </div>
             </div>
-            <div class="map pt-5">
-                <iframe
-                    src="{{ $settings['contact_map'] ?? '' }}"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <!-- Contact Info (BOTTOM) -->
+
+            <div class="map">
+                <iframe src="{{ $settings['contact_map'] ?? '' }}" width="100%" height="450" style="border:0;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
+
+        </div>
     </section>
+
     @if (session('success'))
         <script>
             document.addEventListener('DOMContentLoaded', function() {

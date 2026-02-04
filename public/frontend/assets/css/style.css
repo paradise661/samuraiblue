@@ -407,7 +407,7 @@ form[role="search"] .btn:focus {
     top: 100%;
     left: 0;
     min-width: 260px;
-    background: #ececec;
+    background: #f4f2f2;
     border-radius: 6px;
     padding: 8px 0;
     margin-top: 0px;
@@ -751,7 +751,6 @@ form[role="search"] .btn:focus {
     border-radius: 50%;
     position: absolute;
     top: -50px;
-
     left: 40%;
     /* right: 50%; */
 }
@@ -960,8 +959,8 @@ form[role="search"] .btn:focus {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 25px;
-} */
-.contact-card {
+}
+ .contact-card {
     border: none;
     border-radius: 18px;
     transition: all 0.3s ease;
@@ -989,14 +988,11 @@ form[role="search"] .btn:focus {
     font-weight: 500;
     color: #212529;
     text-decoration: none;
-}
-.contact-page {
-    background: #f8fafc;
-}
+}*/
 
 .contact-main {
     border-radius: 24px;
-    background: #ffffff;
+    /* background: #ffffff; */
 }
 .heading-title-contact {
     font-size: 28px;
@@ -1006,6 +1002,38 @@ form[role="search"] .btn:focus {
     margin-bottom: 25px;
 }
 
+
+.contact-item {
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.contact-item i {
+    font-size: 30px;
+    color: #999;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.contact-item h6 {
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.contact-item p,
+.contact-item a {
+    font-size: 16px;
+    color: #222;
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
 .form-group {
     margin-bottom: 20px;
 }
@@ -1066,8 +1094,6 @@ form[role="search"] .btn:focus {
     border-radius: 24px;
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
 }
-
-
 
 .form-control {
     border-radius: 0;
@@ -1162,20 +1188,43 @@ textarea.form-control {
 .faq-item.active .faq-answer {
     display: block;
 }
-.blog-card {
+/* .blog-card {
     background: #fff;
+} */
+.blog-image{
+    position: relative;
+        overflow: hidden;
 }
-
 .blog-image img {
     width: 100%;
     height: 280px;
     object-fit: cover;
+        transform: scale(1);
+            transition: transform 0.6s ease,opacity 0.6s ease;
+}
+.blog-card:hover .blog-image img {
+    transform: scale(1.08);
 }
 
 .blog-content {
     padding-top: 18px;
 }
+.blog-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
 
+.blog-card:hover .blog-image img {
+    transform: scale(1.08);
+    opacity: 0.92;
+}
+.blog-card:hover .blog-image::after {
+    opacity: 1;
+}
 .blog-meta {
     font-size: 13px;
     color: #888;
@@ -1423,6 +1472,7 @@ textarea.form-control {
 }
 
 .company {
+    font-size: 16px;
     font-weight: 600;
     margin-bottom: 15px;
     color: #333;
@@ -1555,12 +1605,11 @@ textarea.form-control {
     font-size: 36px;
     color: #3b82f6;
 }
-
+/* .service-main-title{
+    color: #7194D1;
+}
 .service-detail {
     padding: 30px;
-    /* min-height: 100vh;
-    display: flex;
-    align-items: center; */
 }
 
 .service-detail-content {
@@ -1584,12 +1633,150 @@ textarea.form-control {
     font-size: 16px;
     color: #666;
     line-height: 1.6;
+} */
+
+/* =========================
+   MAIN SECTION
+========================= */
+.services-details {
+    background-color: #ffffff;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+.services-details .media img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.services-details__content {
+    margin-top: 40px;
+}
+
+.service-main-title {
+    font-size: 44px;
+    font-weight: 700;
+    color: #00a6e7;
+    margin-bottom: 25px;
+}
+
+.services-details__content p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #666;
+    margin-bottom: 18px;
+}
+
+/* =========================
+   RIGHT SIDEBAR (STICKY)
+========================= */
+.course-card-list {
+    position: sticky;
+    top: 120px;
+}
+
+.single-sidebar-widget {
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Sidebar title */
+.wid-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #00a6e7;
+}
+
+.course-card {
+    background: #ffffff;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Image */
+.course-card-image {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    padding: 10px;
+    margin-right: 15px;
+}
+
+.course-card-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Content */
+.course-card-content {
+    padding: 10px;
+    flex: 1;
+}
+
+.course-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #00a6e7;
+    margin-bottom: 6px;
+    text-transform: capitalize;
+}
+
+.course-desc {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 991px) {
+    .course-card-list {
+        position: static;
+        margin-top: 40px;
+    }
+
+    .services-details .media img {
+        height: 280px;
+    }
+
+    .service-main-title {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-main-title {
+        font-size: 28px;
+    }
+
+    .course-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .course-card-image {
+        margin: 0 auto 10px;
+    }
 }
 
 .service-detail-card {
     position: relative;
     height: 320px;
-    border-radius: 8px;
+    border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
 }
@@ -1652,15 +1839,6 @@ textarea.form-control {
         0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* .service-detail-img:hover {
-    transform: scale(1.02);
-    box-shadow:
-        0 16px 40px rgba(0, 0, 0, 0.18);
-} */
-/* .team-section {
-     background: #e6e6e6;
- } */
-
 .team-card {
     background: #7194d11a;
     border-radius: 60px;
@@ -1711,3 +1889,6 @@ align-self: flex-start;}
 /* .blog-detail-block * {
     outline: 1px solid red;
 } */
+
+
+

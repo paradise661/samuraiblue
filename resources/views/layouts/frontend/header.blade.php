@@ -30,13 +30,27 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('frontend.home') }}">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('frontend.about') }}">About Us</a>
+                    <li class="nav-item dropdown header-dropdown">
+                        <a class="nav-link" href="{{ route('frontend.about') }}" role="button">
+                            About
+                            <i class="ri-arrow-down-s-line"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('frontend.about') }}">Company Profile</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('frontend.team') }}">Our Team</a>
+                            </li>
+                            {{-- <li>
+                                <a class="dropdown-item" href="">Our Mission</a>
+                            </li> --}}
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('frontend.testimonial') }}">Reviews</a>
                     </li>
-                      <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link active" href="{{ route('frontend.event') }}">Jobs</a>
                     </li>
                     <li class="nav-item dropdown header-dropdown">

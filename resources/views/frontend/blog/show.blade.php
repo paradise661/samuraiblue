@@ -1,7 +1,7 @@
 @section('seo')
     @include('frontend.seo', [
         'name' => $blogsingle->seo_title ?? '',
-        'title' => $blogsingle->seo_title ?? $blogsingle->title ?? '',
+        'title' => $blogsingle->seo_title ?? ($blogsingle->title ?? ''),
         'description' => $blogsingle->meta_description ?? '',
         'keyword' => $blogsingle->meta_keywords ?? '',
         'schema' => $blogsingle->seo_schema ?? '',
@@ -45,7 +45,6 @@
                             <h2 class="fw-bold mb-3">{{ $blogsingle->title }}</h2>
                             <div class="text-muted lh-lg">
                                 {!! $blogsingle->description !!}
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -70,5 +69,6 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 @endsection

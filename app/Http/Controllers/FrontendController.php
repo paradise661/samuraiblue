@@ -36,7 +36,7 @@ class FrontendController extends Controller
     //
     public function home()
     {
-        $sliders = Slider::where('status', 1)->oldest("order")->first();
+        $sliders = Slider::where('status', 1)->oldest("order")->get();
         $about_us = Page::where('status', 1)->where('slug', 'about-us')->first();
         $why_choose_us = WhyChooseUs::where('status', 1)->first();
         $teams = Team::where('status', 1)->oldest("order")->get();
@@ -74,9 +74,10 @@ class FrontendController extends Controller
     {
         $about_us = Page::where('status', 1)->where('slug', 'about-us')->first();
         $why_us = Page::where('status', 1)->where('slug', 'why-choose-us')->first();
+        $why_choose_us = WhyChooseUs::where('status', 1)->first();
         $teams = Team::where('status', 1)->oldest("order")->get();
         $studentreviw = WhyChooseUs::get();
-        return view('frontend.about.index', compact('about_us', 'why_us', 'teams', 'studentreviw'));
+        return view('frontend.about.index', compact('why_choose_us','about_us', 'why_us', 'teams', 'studentreviw'));
     }
     public function service()
     {
