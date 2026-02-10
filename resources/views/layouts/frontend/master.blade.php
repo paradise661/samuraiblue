@@ -16,7 +16,7 @@
 
     <link rel="shortcut icon" href="{{ asset('frontend/assets/images/favicon.svg') }}" type="image/x-icon" />
     <link rel="icon" type="image/x-icon"
-        href="{{ $settings['site_fav_icon'] ? asset($settings['site_fav_icon']) : 'Umi Advisor' }}" />
+        href="{{ $settings['site_fav_icon'] ? asset($settings['site_fav_icon']) : 'Smurai Blue' }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">

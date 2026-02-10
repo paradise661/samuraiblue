@@ -16,64 +16,14 @@
                      <nav class="nav main-menu">
                          <ul class="navigation">
                              <li class="current dropdown">
-                                 <a href="#">Home</a>
-                                 <ul>
-                                     <li><a href="index.html">Home page 01</a></li>
-                                     <li><a href="index-2.html">Home page 02</a></li>
-                                     <li><a href="index-3.html">Home page 03</a></li>
-                                     <li><a href="index-4.html">Home page 04</a></li>
-                                     <li><a href="index-5.html">Home page 05</a></li>
-                                     <li><a href="index-6.html">Home page 06</a></li>
-                                     <li><a href="index-7.html">Home page 07</a></li>
-                                     <li class="dropdown">
-                                         <a href="#">Single Styles</a>
-                                         <ul>
-                                             <li><a href="index-1-single.html">Single Styles One</a></li>
-                                             <li><a href="index-2-single.html">Single Styles Two</a></li>
-                                             <li><a href="index-3-single.html">Single Styles Three</a></li>
-                                             <li><a href="index-4-single.html">Single Styles Four</a></li>
-                                             <li><a href="index-5-single.html">Single Styles Five</a></li>
-                                             <li><a href="index-6-single.html">Single Styles Six</a></li>
-                                             <li><a href="index-7-single.html">Single Styles Seven</a></li>
-                                         </ul>
-                                     </li>
-                                     <li class="dropdown">
-                                         <a href="#">Dark Styles</a>
-                                         <ul>
-                                             <li><a href="index-1-dark.html">Dark Styles One</a></li>
-                                             <li><a href="index-2-dark.html">Dark Styles Two</a></li>
-                                             <li><a href="index-3-dark.html">Dark Styles Three</a></li>
-                                             <li><a href="index-4-dark.html">Dark Styles Four</a></li>
-                                             <li><a href="index-5-dark.html">Dark Styles Five</a></li>
-                                             <li><a href="index-6-dark.html">Dark Styles Six</a></li>
-                                             <li><a href="index-7-dark.html">Dark Styles Seven</a></li>
-                                         </ul>
-                                     </li>
-                                     <li><a href="index-1-rtl.html">RTL Style</a></li>
-                                 </ul>
+                                 <a href="{{ route('frontend.home') }}">Home</a>
                              </li>
                              <li class="dropdown">
-                                 <a href="#">Pages</a>
+                                 <a href="#">About</a>
                                  <ul>
-                                     <li><a href="page-about.html">About</a></li>
-                                     <li class="dropdown">
-                                         <a href="#">Projects</a>
-                                         <ul>
-                                             <li><a href="page-projects.html">Our Projects</a></li>
-                                             <li><a href="page-project-details.html">Project Details</a></li>
-                                         </ul>
-                                     </li>
-                                     <li class="dropdown">
-                                         <a href="#">Team</a>
-                                         <ul>
-                                             <li><a href="page-team.html">Our Team</a></li>
-                                             <li><a href="page-team-details.html">Team Details</a></li>
-                                         </ul>
-                                     </li>
+                                     <li><a href="page-about.html">Company's Profile</a></li>
                                      <li><a href="page-testimonial.html">Testimonial</a></li>
-                                     <li><a href="page-pricing.html">Pricing</a></li>
                                      <li><a href="page-faq.html">FAQ</a></li>
-                                     <li><a href="page-404.html">Page 404</a></li>
                                  </ul>
                              </li>
                              <li class="dropdown">
@@ -83,7 +33,10 @@
                                      <li><a href="page-service-details.html">Service Details</a></li>
                                  </ul>
                              </li>
-                             <li class="dropdown">
+                             <li class=" dropdown">
+                                 <a href="#">Student Journey</a>
+                             </li>
+                             {{-- <li class="dropdown">
                                  <a href="#">Shop</a>
                                  <ul>
                                      <li><a href="shop-products.html">Products</a></li>
@@ -92,25 +45,25 @@
                                      <li><a href="shop-cart.html">Cart</a></li>
                                      <li><a href="shop-checkout.html">Checkout</a></li>
                                  </ul>
-                             </li>
+                             </li> --}}
                              <li class="dropdown">
-                                 <a href="#">News</a>
+                                 <a href="#">Blogs</a>
                                  {{-- <ul>
                         <li><a href="news-grid.html">News Grid</a></li>
                         <li><a href="news-details.html">News Details</a></li>
                       </ul> --}}
                              </li>
-                             <li><a href="page-contact.html">Contact</a></li>
+                             <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
                          </ul>
                      </nav>
                      <!-- Main Menu End-->
                      <div class="ui-btn-outer">
                          <div class="header-contact">
-                             <div class="social-icon">
+                             {{-- <div class="social-icon">
                                  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                                  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                             </div>
+                             </div> --}}
                              <a href="tel:+92(8800)9806" class="info-btn">
                                  <i class="icon fa fa-phone"></i>
                                  + 88 ( 9800 ) 6802
@@ -118,7 +71,7 @@
                          </div>
                      </div>
 
-                     <a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
+                     <a href="page-contact.html" class="theme-btn btn-style-one">Apply Now</a>
 
                      <!-- Mobile Nav toggler -->
                      <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>

@@ -63,123 +63,34 @@
                     </div>
                 </div>
             </section> --}}
-            <section class="hero-section hero-5 parallaxie bg-cover" style="background-image: url('{{ asset('frontend/assets/images/home-5/hero/hero-image.jpg') }}');">
-		<div class="banner-outer">
-			<div class="hero-content">
-				<div class="star">
-					<i class="icon fa-solid fa-star"></i>
-					<i class="icon fa-solid fa-star"></i>
-					<i class="icon fa-solid fa-star"></i>
-					<i class="icon fa-solid fa-star"></i>
-					<i class="icon fa-solid fa-star"></i>
-					<span class="star-title">Trusted by 50,000+ Clients</span>
-				</div>
-				<h1 class="banner-title wow fadeInUp" data-wow-delay=".2s">Fuel Business Success <br> with Informed Financial <br> Strategies</h1>
-				<div class="hero-button wow fadeInLeft" data-wow-delay="700ms" data-wow-duration="1500ms">
-					<a class="video-btn playbtnanim" href="https://www.youtube.com/watch?v=Lplq8RjQ0zU" data-fancybox="gallery" data-caption=""><i class="fa-sharp fa-solid fa-play"></i></a>
-					<h4 class="btn-title">Watch  Videos</h4>
-				</div>
-			</div>
-			<div class="hero-box-items">
-				<div class="content-box wow fadeInUp" data-wow-delay=".3s">
-					<p>(406) 555-012022</p>
-					<p>Give Us a Call</p>
-				</div>
-				<div class="content-box wow fadeInUp" data-wow-delay=".5s">
-					<p>Mon - Fri: 8:00AM - 7:00PM</p>
-					<p>Sat - Sun: Closed</p>
-				</div>
-				<div class="content-box wow fadeInUp" data-wow-delay=".8s">
-					<p>65 North Medical Drive</p>
-					<p>Salt Lake City, Australia 84132</p>
-				</div>
-			</div>
-		</div>
-	</section>
-<!-- Service Section Start -->
-	<section class="service-section-2 section-padding section-bg fix">
-		<div class="auto-container">
-			<div class="sec-title text-center">
-				<h6 class="sub-title wow fadeInUp">
-					<span class="triangle triangle1"></span>
-					<span class="triangle triangle2"></span>
-					Student Journey
-				</h6>
-				<h2 class="wow fadeInUp" data-wow-delay=".2s">Step by step process</h2>
-			</div>
-			<div class="row">
-				<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-					<div class="service-card-items-2">
-						<div class="service-icon">
-							<div class="icon">
-								<i class="flaticon-business-028-briefcase"></i>
-								<div class="service-triangle"></div>
-							</div>
-							<span class="number">
-								01
-							</span>
-						</div>
-						<div class="content">
-							<h3><a href="page-service-details.html">Business Consulting</a></h3>
-							<p>
-								everyone with high and useful reward for  his We offer a free consultation <br>
-								so that .
-							</p>
-						</div>
-						<div class="arrow-shape-2 float-bob-x">
-							<img src="images/home-2/service-icon/arrow-shape.png" alt="img">
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
-					<div class="service-card-items-2">
-						<div class="service-icon">
-							<div class="icon">
-								<i class="lnr-icon-folder-open"></i>
-								<div class="service-triangle"></div>
-							</div>
-							<span class="number">
-								02
-							</span>
-						</div>
-						<div class="content">
-							<h3><a href="page-service-details.html">Invest Process</a></h3>
-							<p>
-								everyone with high and useful reward for  his We offer a free consultation <br>
-								so that .
-							</p>
-						</div>
-						<div class="arrow-shape-2 float-bob-x">
-							<img src="images/home-2/service-icon/arrow-shape.png" alt="img">
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".7s">
-					<div class="service-card-items-2">
-						<div class="service-icon">
-							<div class="icon">
-								<i class=" lnr-icon-layers"></i>
-								<div class="service-triangle"></div>
-							</div>
-							<span class="number">
-								03
-							</span>
-						</div>
-						<div class="content">
-							<h3><a href="page-service-details.html">Life Insurance</a></h3>
-							<p>
-								everyone with high and useful reward for  his We offer a free consultation <br>
-								so that .
-							</p>
-						</div>
-						<div class="arrow-shape-2 float-bob-x">
-							<img src="images/home-2/service-icon/arrow-shape.png" alt="img">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+            <section class="hero-section hero-5 parallaxie bg-cover"
+                style="background-image: url('{{ asset('frontend/assets/images/home-2/about/banner.jpg') }}'); object-fit:cover;">
+                <div class="banner-outer">
+                    <div class="hero-content" style="text-align: center; font-weight:400;">
+                        <h2 class="banner-title wow fadeInUp" data-wow-delay=".2s">
+                            Samurai blue
+                        </h2>
+                        <p class="banner-subtitle wow fadeInUp" data-wow-delay=".2s">Supporting International Students to Settle & Succeed in Japan</p>
+                    </div>
+
+                    <div class="hero-box-items">
+                        <div class="content-box wow fadeInUp" data-wow-delay=".3s">
+                            <p>(406) 555-012022</p>
+                            <p>Give Us a Call</p>
+                        </div>
+                        <div class="content-box wow fadeInUp" data-wow-delay=".5s">
+                            <p>Mon - Fri: 8:00AM - 7:00PM</p>
+                            <p>Sat - Sun: Closed</p>
+                        </div>
+                        <div class="content-box wow fadeInUp" data-wow-delay=".8s">
+                            <p>65 North Medical Drive</p>
+                            <p>Salt Lake City, Australia 84132</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Service Section Start -->
+
             <!-- Busnisness Solution Section Start -->
             {{-- <section class="business-solution-section">
                 <div class="container pt-0 pb-0">
@@ -251,8 +162,8 @@
             {{--
              --}}
 
-             <section class="about-section-2 fix section-padding">
-		<div class="arrow-shape-1 bounce-x">
+            <section class="about-section-2 fix section-padding">
+                {{-- <div class="arrow-shape-1 bounce-x">
 			<img src="images/home-1/about/arrow-1.png" alt="img">
 		</div>
 		<div class="arrow-shape-2 bounce-y">
@@ -260,105 +171,112 @@
 		</div>
 		<div class="shape-1">
 			<img src="images/home-2/about/shape-1.png" alt="img">
-		</div>
-		<div class="auto-container">
-			<div class="about-wrapper-2 section-padding pt-0">
-				<div class="row g-4 align-items-center">
-					<div class="col-xl-6">
-						<div class="about-image-items-2 wow img-custom-anim-left">
-							<div class="about-image">
-								<img src="images/home-2/about/about-01.png" alt="img">
-							</div>
-							<div class="about-counter2">
-								<div class="count-box">
-									<h2>
-										<span class="count-text" data-speed="3000" data-stop="25">0</span>+
-									</h2>
-									<p>
-										Years of
-										Experience
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-6">
-						<div class="about-content-2">
-							<div class="sec-title mb-0">
-								<h6 class="sub-title wow fadeInUp">
-									<span class="triangle triangle1"></span>
-									<span class="triangle triangle2"></span>
-									Who We Are
-								</h6>
-								<h2 class="wow fadeInUp" data-wow-delay=".2s">Increase your money systematically </h2>
-							</div>
-							<div class="icon-items-area">
-								<div class="icon-items wow fadeInUp mb-4 mb-sm-0" data-wow-delay=".3s">
-									<div class="icon"><i class="flaticon-business-028-briefcase"></i></div>
-									<h6>Worldwide business Grow</h6>
-								</div>
-								<div class="icon-items wow fadeInUp" data-wow-delay=".5s">
-									<div class="icon"><i class="flaticon-business-006-target"></i></div>
-									<h6>business Strategy & growth planning</h6>
-								</div>
-							</div>
-							<p class="about-text wow fadeInUp" data-wow-delay=".5s">
-								everyone with high and useful reward for  his/her trading, purchase and investment. Our goal is to make the Discover the transformative power of our solutions. Learn how we've helped businesses of all
-								sizes overcome challenges.
-							</p>
-							<a href="page-contact.html" class="theme-btn btn-style-one wow fadeInUp" data-wow-delay=".7s">
-								Lets Talk With Us
-								<span class="icon">
-									<i class="flaticon-finance-fi_3385625"></i>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row g-4">
-				<div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-					<div class="about-counter">
-						<div class="count-box">
-							<h2>
-								<span class="count-text" data-speed="3000" data-stop="1">0</span>M
-							</h2>
-							<p>
-								Worldwide <br>
-								business Grow
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-					<div class="about-counter">
-						<div class="count-box">
-							<h2>
-								<span class="count-text" data-speed="3000" data-stop="32">0</span>+
-							</h2>
-							<p>
-								Best Business <br>
-								Awards
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-					<div class="about-counter">
-						<div class="count-box">
-							<h2>
-								<span class="count-text" data-speed="3000" data-stop="3">0</span>K+
-							</h2>
-							<p>
-								Satisfied <br>
-								Clients
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+		</div> --}}
+                <div class="auto-container">
+                    <div class="about-wrapper-2 section-padding pt-0">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-xl-6">
+                                <div class="about-image-items-2 wow img-custom-anim-left">
+                                    <div class="about-image">
+                                        <img src="{{ asset('frontend/assets/images/home-2/about/why-us-img.jpg') }}"
+                                            alt="img">
+                                    </div>
+                                    <div class="about-counter2">
+                                        <div class="count-box">
+                                            <h2>
+                                                <span class="count-text" data-speed="3000" data-stop="25">1</span>+
+                                            </h2>
+                                            <p>
+                                                Years of
+                                                Experience
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="about-content-2">
+                                    <div class="sec-title mb-0">
+                                        <h6 class="sub-title wow fadeInUp">
+                                            <span class="triangle triangle1"></span>
+                                            <span class="triangle triangle2"></span>
+                                            Who We Are
+                                        </h6>
+                                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Samurai Blue</h2>
+                                    </div>
+
+                                    <p class="about-text wow fadeInUp" data-wow-delay=".5s">
+                                        Samurai BLUE operates with the mission of supporting foreign nationals who have
+                                        chosen Japan for their future.
+                                        What we value most is not simply working in Japan, but learning the Japanese
+                                        language correctly, understanding the rules and values of Japanese society, and
+                                        living while respecting them.
+                                        Japanese language ability and social understanding not only protect an individual’s
+                                        future, but also become a great strength for the accepting companies, schools, local
+                                        communities, and Japanese society as a whole.
+                                        For this reason, Samurai BLUE is not a company that prioritizes profit above all
+                                        else.
+                                        We value people, work to prevent future problems before they occur, and act with the
+                                        goal of reducing the burden on schools, companies, and society as much as possible.
+                                        Creating a future where each individual becomes independent as a member of Japanese
+                                        society and can move forward with pride—
+                                        this is the unwavering belief of Samurai BLUE.
+
+                                    </p>
+                                    <a href="page-contact.html" class="theme-btn btn-style-one wow fadeInUp"
+                                        data-wow-delay=".7s">
+                                        Lets Talk With Us
+                                        <span class="icon">
+                                            <i class="flaticon-finance-fi_3385625"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                            <div class="about-counter">
+                                <div class="count-box">
+                                    <h2>
+                                        <span class="count-text" data-speed="3000" data-stop="1">0</span>M
+                                    </h2>
+                                    <p>
+                                        Worldwide <br>
+                                        business Grow
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                            <div class="about-counter">
+                                <div class="count-box">
+                                    <h2>
+                                        <span class="count-text" data-speed="3000" data-stop="32">0</span>+
+                                    </h2>
+                                    <p>
+                                        Best Business <br>
+                                        Awards
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                            <div class="about-counter">
+                                <div class="count-box">
+                                    <h2>
+                                        <span class="count-text" data-speed="3000" data-stop="3">0</span>K+
+                                    </h2>
+                                    <p>
+                                        Satisfied <br>
+                                        Clients
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <!-- Counter Section Start -->
             {{-- <section class="counter-section section-padding pt-0">
                 <div class="auto-container">
@@ -394,30 +312,17 @@
             </section> --}}
 
             <!-- Service Section Start -->
-            <section class="service-section section-padding fix bg-cover"
+            <section class="service-section section-padding section-bg fix bg-cover"
                 style="background-image: url('images/home-1/service/service-bg.jpg')">
                 <span class="ellipse-bg"></span>
                 <div class="auto-container">
-                    <div class="sec-title">
-                        <div class="row g-4 justify-content-between align-items-center">
-                            <div class="col-xl-7 col-lg-7">
-                                <h6 class="text-white sub-title wow fadeInUp">
-                                    <span class="triangle triangle1"></span>
-                                    <span class="triangle triangle2"></span>
-                                   What We Do
-                                </h6>
-                                <h2 class="text-white wow fadeInUp" data-wow-delay=".2s">Guidance for Personal and
-                                    Professional Growth.</h2>
-                            </div>
-                            <div class="col-xl-3 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
-                                <div class="section-counter-content">
-                                    <h3 class="count-box"><span class="count-text" data-speed="3000"
-                                            data-stop="5">0</span>k+</h3>
-                                    <h6 class="text-white font-size-20 line-height-1 font-weight-400">Satisfied Clients
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
+                     <div class="sec-title text-center">
+                        <h6 class="sub-title wow fadeInUp">
+                            <span class="triangle triangle1"></span>
+                            <span class="triangle triangle2"></span>
+                            Student Journey
+                        </h6>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Step by step process</h2>
                     </div>
                 </div>
                 <div class="service-wrapper">
@@ -426,9 +331,9 @@
                             <div class="service-card-items">
                                 <div class="icon"><i class="flaticon-finance-business-expense-svgrepo-com-1"></i></div>
                                 <div class="content">
-                                    <h3><a href="page-service-details.html">Business Consulting</a></h3>
-                                    <p>We promise cost-effective business consulting solutions designed to help you lower
-                                        expenses and boost profits.</p>
+                                    <h3><a href="page-service-details.html">Student Support in Japan</a></h3>
+                                    <p>We provide reliable student support services in Japan to help you adapt smoothly,
+                                        focus on your studies, make suiable income, and build a successful future abroad.</p>
                                     <a href="page-service-details.html" class="link-btn"><i
                                             class="lnr-icon-arrow-right"></i></a>
                                 </div>
@@ -438,9 +343,9 @@
                             <div class="service-card-items">
                                 <div class="icon"><i class=" lnr-icon-layers"></i></div>
                                 <div class="content">
-                                    <h3><a href="page-service-details.html">Invest Propose</a></h3>
-                                    <p>We promise cost-effective business consulting solutions designed to help you lower
-                                        expenses and boost profits.</p>
+                                    <h3><a href="page-service-details.html">Job Placement & Training</a></h3>
+                                    <p>We offer job placement guidance and practical training programs to help students gain
+                                        valuable work experience and secure suitable employment opportunities.</p>
                                     <a href="page-service-details.html" class="link-btn"><i
                                             class="lnr-icon-arrow-right"></i></a>
                                 </div>
@@ -450,9 +355,9 @@
                             <div class="service-card-items">
                                 <div class="icon"><i class="flaticon-business-023-lifesaver"></i></div>
                                 <div class="content">
-                                    <h3><a href="page-service-details.html">Accounting</a></h3>
-                                    <p>We promise cost-effective business consulting solutions designed to help you lower
-                                        expenses and boost profits.</p>
+                                    <h3><a href="page-service-details.html">Food & Beverage Training</a></h3>
+                                    <p>We provide hands-on food and beverage training to equip students with industry-ready
+                                        skills and improve their employability in Japan’s hospitality sector.</p>
                                     <a href="page-service-details.html" class="link-btn"><i
                                             class="lnr-icon-arrow-right"></i></a>
                                 </div>
@@ -462,9 +367,9 @@
                             <div class="service-card-items">
                                 <div class="icon"><i class="lnr-icon-folder-open"></i></div>
                                 <div class="content">
-                                    <h3><a href="page-service-details.html">Career Development</a></h3>
-                                    <p>We promise cost-effective business consulting solutions designed to help you lower
-                                        expenses and boost profits.</p>
+                                    <h3><a href="page-service-details.html">Accommodation Assistance</a></h3>
+                                    <p>We help students find safe, affordable accommodation near their institutions,
+                                        ensuring comfort and peace of mind during their stay in Japan.</p>
                                     <a href="page-service-details.html" class="link-btn"><i
                                             class="lnr-icon-arrow-right"></i></a>
                                 </div>
@@ -475,7 +380,7 @@
             </section>
 
             <!-- Project Section Start -->
-            <section class="project-section fix section-padding">
+            {{-- <section class="project-section fix section-padding">
                 <div class="shape-1">
                     <img src="images/home-1/project/shape-1.png" alt="img" />
                 </div>
@@ -572,9 +477,9 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> --}}
             <!-- Marquee Section Start -->
-            <div class="marquee-section fix section-padding pt-0">
+            {{-- <div class="marquee-section fix section-padding pt-0">
                 <div class="marquee">
                     <div class="marquee-group">
                         <div class="text">Consulting</div>
@@ -618,24 +523,24 @@
                         <div class="text">Accounting</div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Why Choose Us Section Start -->
-            <section class="why-choose-section fix section-bg"
+            <section class="why-choose-section fix section-padding"
                 style="background-image: url('images/home-1/choose-us/choose-us-shape.png')">
                 <div class="auto-container">
                     <div class="why-choose-us-wrapper">
                         <div class="row g-4 align-items-center">
                             <div class="col-xl-5">
                                 <div class="why-choose-us-image-1">
-                                    <img src="images/home-1/choose-us/choose-us.jpg" alt="img"
-                                        class="wow img-custom-anim-left" />
-                                    <div class="icon-box-items">
+                                    <img src="{{ asset('frontend/assets/images/home-2/about/why-us.jpg') }}"
+                                        alt="img" class="wow img-custom-anim-left" />
+                                    {{-- <div class="icon-box-items">
                                         <div class="icon">
                                             <i class="flaticon-business-006-target"></i>
                                         </div>
                                         <h3>Best Business Consulting Awards</h3>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="col-xl-7">
@@ -644,12 +549,11 @@
                                         <h6 class="sub-title">
                                             <span class="triangle triangle1"></span>
                                             <span class="triangle triangle2"></span>
-                                            Why Chhose Us
+                                            Why Choose Us
                                         </h6>
-                                        <h2 class="wow fadeInUp" data-wow-delay=".2s">you need someone at with Strategic
-                                            support</h2>
+                                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Expert Guidance for Japan</h2>
                                     </div>
-                                    <ul class="nav">
+                                    {{-- <ul class="nav">
                                         <li class="nav-item">
                                             <a href="#Mission" data-bs-toggle="tab" class="nav-link active"> Our Mission
                                             </a>
@@ -665,24 +569,28 @@
                                             <a href="#Acchievment" data-bs-toggle="tab" class="nav-link"> Acchievment
                                             </a>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                     <div class="tab-content">
                                         <div id="Mission" class="tab-pane fade show active">
                                             <div class="why-choose-list wow fadeInUp" data-wow-delay=".3s">
-                                                <h3>Our Mission</h3>
-                                                <p>everyone with high and useful reward for his/her trading, purchase
-                                                    investment to make the Collabo</p>
+                                                <p>We specialize exclusively in Japan-focused student support, ensuring
+                                                    accurate guidance on education, visas, work regulations, and life in
+                                                    Japan.
+                                                    From course selection and visa processing to accommodation and job
+                                                    assistance, we support students at every stage of their journey.We
+                                                    believe in honest, cost-effective services with clear guidance and no
+                                                    hidden charges, making overseas education more accessible.</p>
                                             </div>
                                             <div class="why-choose-list-items">
                                                 <ul class="why-list wow fadeInUp" data-wow-delay=".5s">
                                                     <li><span class="icon"><i class="fa-solid fa-check"></i></span>
-                                                        Protecting your company</li>
+                                                        Expert Guidance for Japan</li>
                                                     <li><span class="icon"><i class="fa-solid fa-check"></i></span> We
-                                                        offer you solutions</li>
+                                                        End-to-End Student Support</li>
                                                     <li><span class="icon"><i class="fa-solid fa-check"></i></span> we
-                                                        take care of you</li>
+                                                        Affordable & Transparent Process</li>
                                                 </ul>
-                                                <div class="choose-us-progressbar wow fadeInUp" data-wow-delay=".5s">
+                                                {{-- <div class="choose-us-progressbar wow fadeInUp" data-wow-delay=".5s">
                                                     <div class="progress-container">
                                                         <div class="circular-progress" id="progress1">
                                                             <span class="progress-value" id="value1">0%</span>
@@ -695,10 +603,10 @@
                                                         </div>
                                                         <div class="text">Business Growth</div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
-                                        <div id="Vision" class="tab-pane fade">
+                                        {{-- <div id="Vision" class="tab-pane fade">
                                             <div class="why-choose-list">
                                                 <h3>Our Vision</h3>
                                                 <p>everyone with high and useful reward for his/her trading, purchase
@@ -790,7 +698,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -798,280 +706,85 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Pricing Section Start -->
-            <section class="pricing-section fix section-padding">
-                <div class="pricing-circle">
-                    <img src="images/home-1/pricing-circle.png" alt="img" />
-                </div>
+  <section class="service-section-2 section-padding section-bg fix">
                 <div class="auto-container">
                     <div class="sec-title text-center">
                         <h6 class="sub-title wow fadeInUp">
                             <span class="triangle triangle1"></span>
                             <span class="triangle triangle2"></span>
-                            Pricing Plan
+                            Student Journey
                         </h6>
-                        <h2 class="wow fadeInUp" data-wow-delay=".3s">our populer pricing plan <br />by company</h2>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Step by step process</h2>
                     </div>
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a href="#Monthly" data-bs-toggle="tab" class="nav-link active"> Monthly </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#Yearly" data-bs-toggle="tab" class="nav-link"> Yearly </a>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="Monthly" class="tab-pane fade show active">
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                                    <div class="pricing-box-items">
-                                        <div class="pricing-header">
-                                            <div class="title-icon"><i class="flaticon-finance-Priicng-Plan"></i></div>
-                                            <h3>Personal Plan</h3>
-                                            <span>Customized anything in anytime</span>
-                                        </div>
-                                        <ul class="pricing-list">
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Unlimited
-                                                features
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Multi language
-                                                content
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> 30 Days free
-                                                trial features
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Data backup
-                                                and recovery
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Updates via
-                                                dashboard & slack
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Synced to
-                                                cloud database
-                                            </li>
-                                        </ul>
-                                        <div class="pricing-button">
-                                            <a href="page-pricing.html" class="theme-btn btn-style-one w-100">$2500/
-                                                Month</a>
-                                        </div>
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                            <div class="service-card-items-2">
+                                <div class="service-icon">
+                                    <div class="icon">
+                                        <i class="flaticon-business-028-briefcase"></i>
+                                        <div class="service-triangle"></div>
                                     </div>
+                                    <span class="number">
+                                        01
+                                    </span>
                                 </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5">
-                                    <div class="pricing-box-items active">
-                                        <span class="gt-price-tag">recommend</span>
-                                        <div class="pricing-header">
-                                            <div class="title-icon"><i class="flaticon-finance-Priicng-Plan"></i></div>
-                                            <h3>Premium Plan</h3>
-                                            <span>Customized anything in anytime</span>
-                                        </div>
-                                        <ul class="pricing-list">
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Unlimited
-                                                features
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Multi language
-                                                content
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> 30 Days free
-                                                trial features
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Data backup
-                                                and recovery
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Updates via
-                                                dashboard & slack
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Synced to
-                                                cloud database
-                                            </li>
-                                        </ul>
-                                        <div class="pricing-button">
-                                            <a href="page-pricing.html" class="theme-btn btn-style-one w-100">choose
-                                                pricing plan</a>
-                                        </div>
-                                    </div>
+                                <div class="content">
+                                    <h3><a href="page-service-details.html">Consultation & Course Selection</a></h3>
+                                    <p>
+                                        We begin with a personalized consultation to understand the student’s goals,
+                                        academic background.
+                                    </p>
                                 </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7">
-                                    <div class="pricing-box-items">
-                                        <div class="pricing-header">
-                                            <div class="title-icon"><i class="flaticon-finance-Priicng-Plan"></i></div>
-                                            <h3>Standard Plan</h3>
-                                            <span>Customized anything in anytime</span>
-                                        </div>
-                                        <ul class="pricing-list">
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Unlimited
-                                                features
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Multi language
-                                                content
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> 30 Days free
-                                                trial features
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Data backup
-                                                and recovery
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Updates via
-                                                dashboard & slack
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Synced to
-                                                cloud database
-                                            </li>
-                                        </ul>
-                                        <div class="pricing-button">
-                                            <a href="page-pricing.html" class="theme-btn btn-style-one w-100">$2500/
-                                                Month</a>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
-                        <div id="Yearly" class="tab-pane fade">
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                    <div class="pricing-box-items">
-                                        <div class="pricing-header">
-                                            <div class="title-icon"><i class="flaticon-finance-Priicng-Plan"></i></div>
-                                            <h3>Personal Plan</h3>
-                                            <span>Customized anything in anytime</span>
-                                        </div>
-                                        <ul class="pricing-list">
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div>
-                                                Unlimited features
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Multi
-                                                language content
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> 30
-                                                Days free trial features
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Data
-                                                backup and recovery
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div>
-                                                Updates via dashboard & slack
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Synced
-                                                to cloud database
-                                            </li>
-                                        </ul>
-                                        <div class="pricing-button">
-                                            <a href="page-pricing.html" class="theme-btn btn-style-one w-100">$2500/
-                                                Yearly</a>
-                                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
+                            <div class="service-card-items-2">
+                                <div class="service-icon">
+                                    <div class="icon">
+                                        <i class="lnr-icon-folder-open"></i>
+                                        <div class="service-triangle"></div>
                                     </div>
+                                    <span class="number">
+                                        02
+                                    </span>
                                 </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                    <div class="pricing-box-items active">
-                                        <span class="gt-price-tag">recommend</span>
-                                        <div class="pricing-header">
-                                            <div class="title-icon"><i class="flaticon-finance-Priicng-Plan"></i></div>
-                                            <h3>Premium Plan</h3>
-                                            <span>Customized anything in anytime</span>
-                                        </div>
-                                        <ul class="pricing-list">
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div>
-                                                Unlimited features
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Multi
-                                                language content
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> 30
-                                                Days free trial features
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Data
-                                                backup and recovery
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div>
-                                                Updates via dashboard & slack
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Synced
-                                                to cloud database
-                                            </li>
-                                        </ul>
-                                        <div class="pricing-button">
-                                            <a href="page-pricing.html" class="theme-btn btn-style-one w-100">choose
-                                                pricing plan</a>
-                                        </div>
+                                <div class="content">
+                                    <h3><a href="page-service-details.html">Application & Visa Processing</a></h3>
+                                    <p>
+                                        We assist with university or language school applications, document preparation, and
+                                        submission.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".7s">
+                            <div class="service-card-items-2">
+                                <div class="service-icon">
+                                    <div class="icon">
+                                        <i class=" lnr-icon-layers"></i>
+                                        <div class="service-triangle"></div>
                                     </div>
+                                    <span class="number">
+                                        03
+                                    </span>
                                 </div>
-                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                    <div class="pricing-box-items">
-                                        <div class="pricing-header">
-                                            <div class="title-icon"><i class="flaticon-finance-Priicng-Plan"></i></div>
-                                            <h3>Standard Plan</h3>
-                                            <span>Customized anything in anytime</span>
-                                        </div>
-                                        <ul class="pricing-list">
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div>
-                                                Unlimited features
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Multi
-                                                language content
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> 30
-                                                Days free trial features
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Data
-                                                backup and recovery
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div>
-                                                Updates via dashboard & slack
-                                            </li>
-                                            <li>
-                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Synced
-                                                to cloud database
-                                            </li>
-                                        </ul>
-                                        <div class="pricing-button">
-                                            <a href="page-pricing.html" class="theme-btn btn-style-one w-100">$2500/
-                                                Yearly</a>
-                                        </div>
-                                    </div>
+                                <div class="content">
+                                    <h3><a href="page-service-details.html">Pre-Departure & Arrival Support</a></h3>
+                                    <p>
+                                        Before departure, we provide orientation, accommodation assistance, and travel
+                                        guidance.
+                                    </p>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
             <!-- Team Section Start -->
-            <section class="team-section fix">
+            {{-- <section class="team-section fix">
                 <div class="team-wrapper section-padding">
                     <div class="auto-container">
                         <div class="sec-title text-center">
@@ -1207,13 +920,13 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> --}}
 
             <!-- Contact Section Start -->
             <section class="contact-section fix section-padding">
-                <div class="contact-shape">
+                {{-- <div class="contact-shape">
                     <img src="images/home-1/contact/contact-shape.png" alt="img" />
-                </div>
+                </div> --}}
                 <div class="auto-container">
                     <div class="contact-wrapper">
                         <div class="row g-4">
@@ -1273,11 +986,11 @@
                     </div>
                 </div>
                 <div class="contact-image-1">
-                    <img src="images/home-1/contact/contact-image.jpg" alt="img"
+                    <img src="{{ asset('frontend/assets/images/home-1/contact/contact-image.jpg') }}" alt="img"
                         class="wow img-custom-anim-right" />
-                    <div class="shape-image">
+                    {{-- <div class="shape-image">
                         <img src="images/home-1/contact/shape-1.png" alt="img" />
-                    </div>
+                    </div> --}}
                     <div class="contact-info-box float-bob-y">
                         <h2>Still Have you Any Question?</h2>
                         <ul class="contact-list">
@@ -1308,8 +1021,7 @@
             <!-- Testimonial Section Start -->
             <section class="testimonial-section fix section-padding">
                 <div class="auto-container">
-                    <div class="testimonial-wrapper bg-cover"
-                        style="background-image: url(images/home-1/testimonial/testimonial-bg.png)">
+                    <div class="testimonial-wrapper bg-cover">
                         <div class="sec-title text-center">
                             <h6 class="sub-title wow fadeInUp">
                                 <span class="triangle triangle1"></span>
@@ -1327,14 +1039,15 @@
                                     <div class="testimonial-box-items">
                                         <div class="client-info-items">
                                             <div class="client-image">
-                                                <img src="images/home-1/testimonial/client-01.png" alt="img" />
+                                                <img src="{{ asset('frontend/assets/images/home-1/testimonial/download.png') }}"
+                                                    alt="img" />
                                                 <div class="quote-icon">
                                                     <i class="lnr-icon-quote"></i>
                                                 </div>
                                             </div>
                                             <div class="client-content">
-                                                <h5>Alison Hedge</h5>
-                                                <span>CEO & Founder</span>
+                                                <h5>Ramesh K.</h5>
+                                                <span>Language School Student, Tokyo</span>
                                             </div>
                                         </div>
                                         <div class="testimonial-content">
@@ -1345,8 +1058,9 @@
                                                 <i class="fa-solid fa-star"></i>
                                                 <i class="fa-solid fa-star"></i>
                                             </div>
-                                            <p>Everyone receives valuable and rewarding returns on their trading, purchases,
-                                                and investments. There are many variations</p>
+                                            <p>“Samurai Blue guided me through every step of my journey to Japan. From visa
+                                                processing to accommodation support, everything was smooth and stress-free.”
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -1354,14 +1068,15 @@
                                     <div class="testimonial-box-items">
                                         <div class="client-info-items">
                                             <div class="client-image">
-                                                <img src="images/home-1/testimonial/client-02.png" alt="img" />
+                                                <img src="{{ asset('frontend/assets/images/home-1/testimonial/download.png') }}"
+                                                    alt="img" />
                                                 <div class="quote-icon">
                                                     <i class="lnr-icon-quote"></i>
                                                 </div>
                                             </div>
                                             <div class="client-content">
-                                                <h5>Eleanor Pena</h5>
-                                                <span>Head Of Design</span>
+                                                <h5>Sita P.</h5>
+                                                <span>F&B Training Program, Osaka</span>
                                             </div>
                                         </div>
                                         <div class="testimonial-content">
@@ -1372,8 +1087,9 @@
                                                 <i class="fa-solid fa-star"></i>
                                                 <i class="fa-solid fa-star"></i>
                                             </div>
-                                            <p>Everyone receives valuable and rewarding returns on their trading, purchases,
-                                                and investments. There are many variations</p>
+                                            <p>“The Food & Beverage training provided by Samurai Blue helped me gain
+                                                practical skills and confidence. They also assisted me in finding a
+                                                part-time job, which made living in Japan much easier.”</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1381,14 +1097,15 @@
                                     <div class="testimonial-box-items">
                                         <div class="client-info-items">
                                             <div class="client-image">
-                                                <img src="images/home-1/testimonial/client-03.png" alt="img" />
+                                                <img src="{{ asset('frontend/assets/images/home-1/testimonial/download.png') }}"
+                                                    alt="img" />
                                                 <div class="quote-icon">
                                                     <i class="lnr-icon-quote"></i>
                                                 </div>
                                             </div>
                                             <div class="client-content">
-                                                <h5>Jenny Wilson</h5>
-                                                <span>team Manager</span>
+                                                <h5>Anil S.</h5>
+                                                <span>Working Student, Yokohama</span>
                                             </div>
                                         </div>
                                         <div class="testimonial-content">
@@ -1399,8 +1116,9 @@
                                                 <i class="fa-solid fa-star"></i>
                                                 <i class="fa-solid fa-star"></i>
                                             </div>
-                                            <p>Everyone receives valuable and rewarding returns on their trading, purchases,
-                                                and investments. There are many variations</p>
+                                            <p>“I was worried about managing studies and work in Japan, but Samurai Blue
+                                                made everything clear. Their guidance on job placement and language support
+                                                was extremely helpful.”</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1429,14 +1147,14 @@
                                     <h2 class="wow fadeInUp" data-wow-delay=".2s">Frequently Asked Quetions</h2>
                                 </div>
                                 <div class="faq-image">
-                                    <img src="images/home-1/faq/faq-image.jpg" alt="img"
-                                        class="wow img-custom-anim-left" />
-                                    <div class="shape-1 float-bob-y">
+                                    <img src="{{ asset('frontend/assets/images/home-1/faq.jpg') }}"
+                                        alt="img" class="wow img-custom-anim-left" />
+                                    {{-- <div class="shape-1 float-bob-y">
                                         <img src="images/home-1/faq/shape-01.png" alt="img" />
                                     </div>
                                     <div class="shape-2 float-bob-x">
                                         <img src="images/home-1/faq/shape-02.png" alt="img" />
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -1446,64 +1164,71 @@
                                     <!--Block-->
                                     <li class="accordion block active-block wow fadeInUp">
                                         <div class="acc-btn">
-                                            Financial consultants handle conflicts?
+                                            Can I work while studying?
                                             <div class="icon fa fa-plus"></div>
                                         </div>
                                         <div class="acc-content current">
                                             <div class="content">
-                                                <div class="text">everyone with high and useful reward for his/her
-                                                    trading, purchase and investment. Our goal is to make the</div>
+                                                <div class="text">Yes. International students in Japan are allowed to
+                                                    work part-time for up to 28 hours per week with proper work permission,
+                                                    helping them support their living expenses and gain work experience.
+                                                </div>
                                             </div>
                                         </div>
                                     </li>
                                     <!--Block-->
                                     <li class="accordion block wow fadeInUp" data-wow-delay=".2s">
                                         <div class="acc-btn active">
-                                            Errors with financial consequences in tax ?
+                                            How much does accommodation cost?
                                             <div class="icon fa fa-plus"></div>
                                         </div>
                                         <div class="acc-content">
                                             <div class="content">
-                                                <div class="text">everyone with high and useful reward for his/her
-                                                    trading, purchase and investment. Our goal is to make the</div>
+                                                <div class="text">Accommodation costs vary by location and type. On
+                                                    average, students can expect to pay between ¥30,000 to ¥60,000 per month
+                                                    for shared housing or student accommodation.</div>
                                             </div>
                                         </div>
                                     </li>
                                     <!--Block-->
                                     <li class="accordion block wow fadeInUp" data-wow-delay=".4s">
                                         <div class="acc-btn">
-                                            Prevention of damage of almost € 43,000?
+                                            Is Japanese language required?
                                             <div class="icon fa fa-plus"></div>
                                         </div>
                                         <div class="acc-content">
                                             <div class="content">
-                                                <div class="text">everyone with high and useful reward for his/her
-                                                    trading, purchase and investment. Our goal is to make the</div>
+                                                <div class="text">Basic Japanese is recommended but not always required
+                                                    at the beginning. Many institutions offer Japanese language courses, and
+                                                    we provide guidance to help students improve their language skills after
+                                                    arrival.</div>
                                             </div>
                                         </div>
                                     </li>
                                     <!--Block-->
                                     <li class="accordion block wow fadeInUp" data-wow-delay=".6s">
                                         <div class="acc-btn">
-                                            Bad experience with financial service providers?
+                                            What jobs are available?
                                             <div class="icon fa fa-plus"></div>
                                         </div>
                                         <div class="acc-content">
                                             <div class="content">
-                                                <div class="text">everyone with high and useful reward for his/her
-                                                    trading, purchase and investment. Our goal is to make the</div>
+                                                <div class="text">Students commonly work in restaurants, convenience
+                                                    stores, factories, hotels, supermarkets, and cleaning services. Food &
+                                                    Beverage roles are especially popular for part-time work.</div>
                                             </div>
                                         </div>
                                     </li>
                                     <li class="accordion block wow fadeInUp" data-wow-delay=".8s">
                                         <div class="acc-btn">
-                                            Monthly insurance rates far too high ?
+                                            How long is Food & Beverage (F&B) training?
                                             <div class="icon fa fa-plus"></div>
                                         </div>
                                         <div class="acc-content">
                                             <div class="content">
-                                                <div class="text">everyone with high and useful reward for his/her
-                                                    trading, purchase and investment. Our goal is to make the</div>
+                                                <div class="text">Food & Beverage training typically lasts between 3 to 6
+                                                    months, depending on the program and skill level, and includes both
+                                                    practical and on-the-job training.</div>
                                             </div>
                                         </div>
                                     </li>
@@ -1515,7 +1240,7 @@
             </section>
 
             <!-- Cta Contact Section Start -->
-            <section class="cta-contact-section fix">
+            {{-- <section class="cta-contact-section fix">
                 <div class="auto-container">
                     <div class="cta-contact-wrapper bg-cover" style="background-image: url('images/home-1/cta-bg.jpg')">
                         <div class="left-shape float-bob-x">
@@ -1527,7 +1252,7 @@
                             data-wow-delay=".5s">Lets Talk With Us</a>
                     </div>
                 </div>
-            </section>
+            </section> --}}
 
             <!-- News Section Start -->
             <section class="news-secton section-padding fix">
@@ -1544,8 +1269,9 @@
                         <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                             <div class="news-box-items">
                                 <div class="news-image">
-                                    <img src="images/home-1/news/news-01.jpg" alt="img" />
-                                    <img src="images/home-1/news/news-01.jpg" alt="img" />
+                                    <img src="{{ asset('frontend/assets/images/home-1/ssw.jpg') }}"
+                                        alt="img" />
+                                    {{-- <img src="images/home-1/news/news-01.jpg" alt="img" /> --}}
                                     <span class="post-box">
                                         <span class="date">20</span>
                                         <span class="month">March</span>
@@ -1557,7 +1283,7 @@
                                         <li><i class="lnr-icon-comment"></i> 3 Comments</li>
                                     </ul>
                                     <h3>
-                                        <a href="news-details.html">Errors with financial consequences in tax ?</a>
+                                        <a href="news-details.html">Record high number of international students</a>
                                     </h3>
                                     <a href="news-details.html" class="link-btn">
                                         Learn More
@@ -1569,8 +1295,8 @@
                         <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                             <div class="news-box-items">
                                 <div class="news-image">
-                                    <img src="images/home-1/news/news-02.jpg" alt="img" />
-                                    <img src="images/home-1/news/news-02.jpg" alt="img" />
+                                    <img src="{{ asset('frontend/assets/images/home-1/banner-2.jpeg') }}" alt="img" />
+                                    {{-- <img src="images/home-1/news/news-02.jpg" alt="img" /> --}}
                                     <span class="post-box">
                                         <span class="date">25</span>
                                         <span class="month">March</span>
@@ -1582,7 +1308,7 @@
                                         <li><i class="lnr-icon-comment"></i> 3 Comments</li>
                                     </ul>
                                     <h3>
-                                        <a href="news-details.html">Achieving Work Life Balance in a Hectic World</a>
+                                        <a href="news-details.html">Government & public debate on foreign student support</a>
                                     </h3>
                                     <a href="news-details.html" class="link-btn">
                                         Learn More
@@ -1596,8 +1322,8 @@
                         <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                             <div class="news-box-items">
                                 <div class="news-image">
-                                    <img src="images/home-1/news/news-03.jpg" alt="img" />
-                                    <img src="images/home-1/news/news-03.jpg" alt="img" />
+                                    <img src="{{ asset('frontend/assets/images/home-1/banner-1.jpg') }}" alt="img" />
+                                    {{-- <img src="images/home-1/news/news-03.jpg" alt="img" /> --}}
                                     <span class="post-box">
                                         <span class="date">30</span>
                                         <span class="month">March</span>
@@ -1609,7 +1335,7 @@
                                         <li><i class="lnr-icon-comment"></i> 3 Comments</li>
                                     </ul>
                                     <h3>
-                                        <a href="news-details.html">Mastering Work-Life On Target Business Goal </a>
+                                        <a href="news-details.html">Policy responses to international student  </a>
                                     </h3>
                                     <a href="news-details.html" class="link-btn">
                                         Learn More
@@ -1639,8 +1365,7 @@
                         </div>
                         <form action="#" class="wow fadeInUp" data-wow-delay=".5s">
                             <div class="form-clt">
-                                <input type="text" name="email" id="email2"
-                                    placeholder="Your email address" />
+                                <input type="text" name="email" id="email2" placeholder="Your email address" />
                                 <button class="arrow-icon" type="submit">
                                     <i class="lnr-icon-arrow-right"></i>
                                 </button>
@@ -1704,7 +1429,7 @@
                                         </li>
                                         <li>
                                             <i class="lnr-icon-envelope"></i>
-                                            <p><a href="mailto:finclix@help.us">Finclix@help.us</a></p>
+                                            <p><a href="mailto:finclix@help.us">info@help.us</a></p>
                                         </li>
                                         <li>
                                             <i class="lnr-icon-map-marker"></i>
@@ -1718,7 +1443,7 @@
                 </div>
                 <div class="footer-bottom">
                     <div class="auto-container">
-                        <p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 Finclix. All Rights Reserved</p>
+                        <p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 . All Rights Reserved</p>
                     </div>
                 </div>
             </footer>
