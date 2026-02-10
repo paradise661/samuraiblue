@@ -1,84 +1,221 @@
-<header>
-    <div class="top-bar">
-        <div class="container d-flex justify-content-between align-items-center py-2">
-            <div class="d-flex align-items-center">
-                <span>
-                    <i class="header-icon ri-phone-fill"></i>
-                    +977-987654321
-                </span>
-                <span class="divider">|</span>
-                <span>
-                    <i class="ri-map-pin-2-fill"></i>
-                    Kathmandu, Nepal
-                </span>
-            </div>
-            <div class="d-flex align-items-center gap-3">
-                <a href="">info@yourcompany.com</a>
-            </div>
-        </div>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
-                <img class="logo-img" src="{{ $settings['site_main_logo'] }}" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainNavbar">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('frontend.home') }}">Home</a>
-                    </li>
-                    <li class="nav-item dropdown header-dropdown">
-                        <a class="nav-link" href="{{ route('frontend.about') }}" role="button">
-                            About
-                            <i class="ri-arrow-down-s-line"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item" href="{{ route('frontend.about') }}">Company Profile</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{{ route('frontend.team') }}">Our Team</a>
-                            </li>
-                            {{-- <li>
-                                <a class="dropdown-item" href="">Our Mission</a>
-                            </li> --}}
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('frontend.testimonial') }}">Reviews</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('frontend.event') }}">Jobs</a>
-                    </li>
-                    <li class="nav-item dropdown header-dropdown">
-                        <a class="nav-link" href="{{ route('frontend.service') }}" role="button">
-                            Services
-                            <i class="ri-arrow-down-s-line"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            @foreach ($footer_services as $services)
-                                <li>
-                                    <a class="dropdown-item"
-                                        href="{{ route('frontend.servicesingle', $services->slug) }}">{{ $services->title }}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('frontend.blog') }}">Blog</a>
-                    </li>
-                </ul>
-                <div class="d-flex align-items-center gap-4">
-                    <li class="nav-item">
-                        <a href="{{ route('frontend.contact') }}" class="header-btn header-btn-outline">
-                            Contact Us
-                        </a>
-                    </li>
-                </div>
-            </div>
-        </div>
-    </nav>
-</header>
+ <header class="main-header header-style-one header-1">
+     <!-- Header Lower -->
+     <div class="header-lower">
+         <!-- Main box -->
+         <div class="main-box">
+             <!--Nav Box-->
+             <div class="nav-outer">
+                 <div class="logo-box">
+                     <div class="logo">
+                         <a href="index.html"><img src="{{ asset('frontend/assets/images/black-logo.png') }}"
+                                 alt="" title="finclix" /></a>
+                     </div>
+                 </div>
+
+                 <div class="outer-box">
+                     <nav class="nav main-menu">
+                         <ul class="navigation">
+                             <li class="current dropdown">
+                                 <a href="#">Home</a>
+                                 <ul>
+                                     <li><a href="index.html">Home page 01</a></li>
+                                     <li><a href="index-2.html">Home page 02</a></li>
+                                     <li><a href="index-3.html">Home page 03</a></li>
+                                     <li><a href="index-4.html">Home page 04</a></li>
+                                     <li><a href="index-5.html">Home page 05</a></li>
+                                     <li><a href="index-6.html">Home page 06</a></li>
+                                     <li><a href="index-7.html">Home page 07</a></li>
+                                     <li class="dropdown">
+                                         <a href="#">Single Styles</a>
+                                         <ul>
+                                             <li><a href="index-1-single.html">Single Styles One</a></li>
+                                             <li><a href="index-2-single.html">Single Styles Two</a></li>
+                                             <li><a href="index-3-single.html">Single Styles Three</a></li>
+                                             <li><a href="index-4-single.html">Single Styles Four</a></li>
+                                             <li><a href="index-5-single.html">Single Styles Five</a></li>
+                                             <li><a href="index-6-single.html">Single Styles Six</a></li>
+                                             <li><a href="index-7-single.html">Single Styles Seven</a></li>
+                                         </ul>
+                                     </li>
+                                     <li class="dropdown">
+                                         <a href="#">Dark Styles</a>
+                                         <ul>
+                                             <li><a href="index-1-dark.html">Dark Styles One</a></li>
+                                             <li><a href="index-2-dark.html">Dark Styles Two</a></li>
+                                             <li><a href="index-3-dark.html">Dark Styles Three</a></li>
+                                             <li><a href="index-4-dark.html">Dark Styles Four</a></li>
+                                             <li><a href="index-5-dark.html">Dark Styles Five</a></li>
+                                             <li><a href="index-6-dark.html">Dark Styles Six</a></li>
+                                             <li><a href="index-7-dark.html">Dark Styles Seven</a></li>
+                                         </ul>
+                                     </li>
+                                     <li><a href="index-1-rtl.html">RTL Style</a></li>
+                                 </ul>
+                             </li>
+                             <li class="dropdown">
+                                 <a href="#">Pages</a>
+                                 <ul>
+                                     <li><a href="page-about.html">About</a></li>
+                                     <li class="dropdown">
+                                         <a href="#">Projects</a>
+                                         <ul>
+                                             <li><a href="page-projects.html">Our Projects</a></li>
+                                             <li><a href="page-project-details.html">Project Details</a></li>
+                                         </ul>
+                                     </li>
+                                     <li class="dropdown">
+                                         <a href="#">Team</a>
+                                         <ul>
+                                             <li><a href="page-team.html">Our Team</a></li>
+                                             <li><a href="page-team-details.html">Team Details</a></li>
+                                         </ul>
+                                     </li>
+                                     <li><a href="page-testimonial.html">Testimonial</a></li>
+                                     <li><a href="page-pricing.html">Pricing</a></li>
+                                     <li><a href="page-faq.html">FAQ</a></li>
+                                     <li><a href="page-404.html">Page 404</a></li>
+                                 </ul>
+                             </li>
+                             <li class="dropdown">
+                                 <a href="#">Services</a>
+                                 <ul>
+                                     <li><a href="page-services.html">Our Services</a></li>
+                                     <li><a href="page-service-details.html">Service Details</a></li>
+                                 </ul>
+                             </li>
+                             <li class="dropdown">
+                                 <a href="#">Shop</a>
+                                 <ul>
+                                     <li><a href="shop-products.html">Products</a></li>
+                                     <li><a href="shop-products-sidebar.html">Products with Sidebar</a></li>
+                                     <li><a href="shop-product-details.html">Product Details</a></li>
+                                     <li><a href="shop-cart.html">Cart</a></li>
+                                     <li><a href="shop-checkout.html">Checkout</a></li>
+                                 </ul>
+                             </li>
+                             <li class="dropdown">
+                                 <a href="#">News</a>
+                                 {{-- <ul>
+                        <li><a href="news-grid.html">News Grid</a></li>
+                        <li><a href="news-details.html">News Details</a></li>
+                      </ul> --}}
+                             </li>
+                             <li><a href="page-contact.html">Contact</a></li>
+                         </ul>
+                     </nav>
+                     <!-- Main Menu End-->
+                     <div class="ui-btn-outer">
+                         <div class="header-contact">
+                             <div class="social-icon">
+                                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                 <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                             </div>
+                             <a href="tel:+92(8800)9806" class="info-btn">
+                                 <i class="icon fa fa-phone"></i>
+                                 + 88 ( 9800 ) 6802
+                             </a>
+                         </div>
+                     </div>
+
+                     <a href="page-contact.html" class="theme-btn btn-style-one">Free Consultation</a>
+
+                     <!-- Mobile Nav toggler -->
+                     <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- End Header Lower -->
+
+     <!-- Mobile Menu  -->
+     <div class="mobile-menu">
+         <div class="menu-backdrop"></div>
+
+         <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+         <nav class="menu-box">
+             <div class="upper-box">
+                 <div class="nav-logo">
+                     <a href="index.html"><img src="images/white-logo.png" alt="" /></a>
+                 </div>
+                 <div class="close-btn"><i class="icon fa fa-times"></i></div>
+             </div>
+
+             <ul class="navigation clearfix">
+                 <!--Keep This Empty / Menu will come through Javascript-->
+             </ul>
+             <ul class="contact-list-one">
+                 <li>
+                     <!-- Contact Info Box -->
+                     <div class="contact-info-box">
+                         <i class="icon lnr-icon-phone-handset"></i>
+                         <span class="title">Call Now</span>
+                         <a href="tel:+92880098670">+92 (8800) - 98670</a>
+                     </div>
+                 </li>
+                 <li>
+                     <!-- Contact Info Box -->
+                     <div class="contact-info-box">
+                         <span class="icon lnr-icon-envelope1"></span>
+                         <span class="title">Send Email</span>
+                         <a href="mailto:help@company.com">help@company.com</a>
+                     </div>
+                 </li>
+                 <li>
+                     <!-- Contact Info Box -->
+                     <div class="contact-info-box">
+                         <span class="icon lnr-icon-clock"></span>
+                         <span class="title">Send Email</span>
+                         Mon - Sat 8:00 - 6:30, Sunday - CLOSED
+                     </div>
+                 </li>
+             </ul>
+
+             <ul class="social-links">
+                 <li>
+                     <a href="#"><i class="fab fa-twitter"></i></a>
+                 </li>
+                 <li>
+                     <a href="#"><i class="fab fa-facebook-f"></i></a>
+                 </li>
+                 <li>
+                     <a href="#"><i class="fab fa-pinterest"></i></a>
+                 </li>
+                 <li>
+                     <a href="#"><i class="fab fa-instagram"></i></a>
+                 </li>
+             </ul>
+         </nav>
+     </div>
+     <!-- End Mobile Menu -->
+
+     <!-- Sticky Header  -->
+     <div class="sticky-header">
+         <div class="auto-container">
+             <div class="inner-container">
+                 <!--Logo-->
+                 <div class="logo">
+                     <a href="index.html"><img src="images/black-logo.png" alt="img" /></a>
+                 </div>
+
+                 <!--Right Col-->
+                 <div class="nav-outer">
+                     <!-- Main Menu -->
+                     <nav class="main-menu">
+                         <div class="navbar-collapse show collapse clearfix">
+                             <ul class="navigation clearfix">
+                                 <!--Keep This Empty / Menu will come through Javascript-->
+                             </ul>
+                         </div>
+                     </nav>
+                     <!-- Main Menu End-->
+
+                     <!--Mobile Navigation Toggler-->
+                     <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- End Sticky Menu -->
+ </header>
+ <!--End Main Header -->

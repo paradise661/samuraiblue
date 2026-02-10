@@ -10,7 +10,7 @@
             <h5 class="mb-0 text-capitalize">{{ $name }}</h5>
         </div>
         <div class="card-body">
-            
+
             <div class="row">
                 @foreach ($vars as $card_title => [$icon, $link, $value])
                     @php

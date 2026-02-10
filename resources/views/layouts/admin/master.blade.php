@@ -113,8 +113,7 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/libs/datatable/datatables.css') }}">
     <script src="{{ asset('admin/assets/vendor/libs/datatable/datatables.js') }}"></script>
 
-    {{--
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script> --}}
 </head>
 

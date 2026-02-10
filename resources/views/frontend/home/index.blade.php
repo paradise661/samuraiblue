@@ -10,366 +10,1743 @@
 @endsection
 @extends('layouts.frontend.master')
 @section('content')
-    <section class="hero-slider">
 
-        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="true">
+    <body>
+        <div class="page-wrapper">
+            <!-- Scroll To Top -->
+            <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 
-            <div class="carousel-inner">
+            <!-- Main Header-->
 
-                @foreach ($sliders as $index => $item)
-                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                        <div class="overlay"></div>
-
-                        <img src="{{ $item->image }}" class="d-block w-100" alt="">
-
-                        <div class="carousel-caption my-2">
-                            <h1 class="carousel-caption-title">{{ $item->title }}</h1>
-                            <p class="carousel-caption-para">{{ $item->short_description }}</p>
-
-                            <div class="search-hero-buttons">
-                                <a href="{{ route('frontend.event') }}" class="primary-btn">Browse Jobs</a>
-                                <a href="{{ route('frontend.contact') }}" class="secondary-btn">Apply Now</a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel"
-                data-bs-slide="prev"></button>
-
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel"
-                data-bs-slide="next"></button>
-
-        </div>-
-    </section>
-
-    <section class="job-categories my-4">
-        <div class="section-heading mt-4 pt-4">
-            <h2 class="section-heading-title">Job Categoriess</h2>
-            <p class="section-heading-para">Find out the suitable job for you!</p>
-        </div>
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-        <div class="container py-4">
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="category-card my-2">
-                        <div class="category-icon-circle">
-                            <i class="ri-bar-chart-line"></i>
-                        </div>
-                        <h6>Web & Software Dev</h6>
-                        <div class="my-2 job-category-address">
-                            <i class="categories-icon ri-map-pin-2-line"></i>
-                            <span class="category-address">Bharatpur, chitwan</span>
-                        </div>
-                        <div class="job-count">
-                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
-                            <span class="job-count-number">122 open jobs</span>
-                        </div>
+            <!-- Hero Section Start -->
+            {{-- <section class="hero-section hero-1">
+                <div class="hero-image wow img-custom-anim-right">
+                    <img src="{{ asset('frontend/assets/images/home-1/hero/hero-01.png') }}" alt="img" />
+                    <div class="shape-2">
+                        <img src="{{ asset('frontend/assets/images/home-1/shape-2.png') }}" alt="img" />
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="category-card my-2">
-                        <div class="category-icon-circle">
-                            <i class="ri-bar-chart-line"></i>
-                        </div>
-                        <h6>Web & Software Dev</h6>
-                        <div class="my-2 job-category-address">
-                            <i class="categories-icon ri-map-pin-2-line"></i>
-                            <span class="category-address">Bharatpur, chitwan</span>
-                        </div>
-                        <div class="job-count">
-                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
-                            <span class="job-count-number">122 open jobs</span>
-                        </div>
-                    </div>
+                <div class="shape-1 float-bob-x">
+                    <img src="{{ asset('frontend/assets/images/home-1/shape-1.png') }}" alt="img" />
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="category-card my-2">
-                        <div class="category-icon-circle">
-                            <i class="ri-bar-chart-line"></i>
-                        </div>
-                        <h6>Web & Software Dev</h6>
-                        <div class="my-2 job-category-address">
-                            <i class="categories-icon ri-map-pin-2-line"></i>
-                            <span class="category-address">Bharatpur, chitwan</span>
-                        </div>
-                        <div class="job-count">
-                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
-                            <span class="job-count-number">122 open jobs</span>
-                        </div>
-                    </div>
+                <div class="shape-3">
+                    <img src="{{ asset('frontend/assets/images/home-1/shape-3.png') }}" alt="img" />
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="category-card my-2">
-                        <div class="category-icon-circle">
-                            <i class="ri-bar-chart-line"></i>
-                        </div>
-                        <h6>Web & Software Dev</h6>
-                        <div class="my-2 job-category-address">
-                            <i class="categories-icon ri-map-pin-2-line"></i>
-                            <span class="category-address">Bharatpur, chitwan</span>
-                        </div>
-                        <div class="job-count">
-                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
-                            <span class="job-count-number">122 open jobs</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="category-card my-2">
-                        <div class="category-icon-circle">
-                            <i class="ri-bar-chart-line"></i>
-                        </div>
-                        <h6>Web & Software Dev</h6>
-                        <div class="my-2 job-category-address">
-                            <i class="categories-icon ri-map-pin-2-line"></i>
-                            <span class="category-address">Bharatpur, chitwan</span>
-                        </div>
-                        <div class="job-count">
-                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
-                            <span class="job-count-number">122 open jobs</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="category-card my-2">
-                        <div class="category-icon-circle">
-                            <i class="ri-bar-chart-line"></i>
-                        </div>
-                        <h6>Web & Software Dev</h6>
-                        <div class="my-2 job-category-address">
-                            <i class="categories-icon ri-map-pin-2-line"></i>
-                            <span class="category-address">Bharatpur, chitwan</span>
-                        </div>
-                        <div class="job-count">
-                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
-                            <span class="job-count-number">122 open jobs</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="category-card my-2">
-                        <div class="category-icon-circle">
-                            <i class="ri-bar-chart-line"></i>
-                        </div>
-                        <h6>Web & Software Dev</h6>
-                        <div class="my-2 job-category-address">
-                            <i class="categories-icon ri-map-pin-2-line"></i>
-                            <span class="category-address">Bharatpur, chitwan</span>
-                        </div>
-                        <div class="job-count">
-                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
-                            <span class="job-count-number">122 open jobs</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="category-card my-2">
-                        <div class="category-icon-circle">
-                            <i class="ri-bar-chart-line"></i>
-                        </div>
-                        <h6>Web & Software Dev</h6>
-                        <div class="my-2 job-category-address">
-                            <i class="categories-icon ri-map-pin-2-line"></i>
-                            <span class="category-address">Bharatpur, chitwan</span>
-                        </div>
-                        <div class="job-count">
-                            <i class="px-2 categories-icon ri-suitcase-fill"></i>
-                            <span class="job-count-number">122 open jobs</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="about-section py-5">
-        <div class="container my-4">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="about-image-wrapper">
-                        <img src="{{ $about_us->banner_image ?? '' }}" alt="About Image" class="about-image">
-                        <div class="experience-badge">
-                            <span>
-                                10+ Years
-                                <br>
-                                Experience
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-content p-4">
-                        <span class="about-subtitle">{{ $about_us->title ?? '' }}</span>
-                        <h2 class="about-title"> {{ $about_us->short_description ?? '' }}</h2>
-                        <div class="about-desc">
-                            {!! $about_us->description ?? '' !!}
-                        </div>
-                        <a href="{{ route('frontend.about') }}" class="blog-btn">See More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="why-choose-us py-5">
-        <div class="container py-4">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="image-wrapper position-relative">
-                        <img src="{{ $why_choose_us->image }}" class="main-img" alt="">
-                        <img src="{{ asset('frontend/assets/image/why-us-img.jpg') }}" class="overlay-img"
-                            alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h2 class="section-title mt-2">
-                        {{ $why_choose_us->title ?? '' }}
-                    </h2>
-                    <div class="custom-list ">
-                        {!! $why_choose_us->description ?? '' !!}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="process-section">
-        <div id="process-heading" class="section-heading mt-4 pt-4">
-            <h2 id="process-heading-title" class="section-heading-title">The process of job hunting</h2>
-            <p id="process-heading-para" class="section-heading-para">Follow these steps to land your dream job</p>
-        </div>
-        <div class="process">
-            <div class="process-step">
-                <div class="circle">
-                    <i class="ri-file-text-line"></i>
-                </div>
-                <p class="process-desc">Create a Resume</p>
-            </div>
-            <div class="process-step">
-                <div class="circle">
-                    <i class="ri-mail-send-line"></i>
-                </div>
-                <p class="process-desc">Receive a Scout</p>
-            </div>
-            <div class="process-step">
-                <div class="circle">
-                    <i class="ri-user-follow-line"></i>
-                </div>
-                <p class="process-desc">Attend Interviews</p>
-            </div>
-            <div class="process-step">
-                <div class="circle">
-                    <i class="ri-hand-coin-line"></i>
-                </div>
-                <p class="process-desc">Get Job Offer</p>
-            </div>
-        </div>
-    </section>
-    <section class="review-section py-5">
-        <div class="container">
-            <div class="section-heading text-center pb-4 mb-5">
-                <h2 class="section-heading-title">{{ $settings['testioninal_title'] ?? ' ' }}</h2>
-                <p class="section-heading-para">{{ $settings['testioninal_subtitle'] ?? ' ' }}</p>
-            </div>
-            <div class="row g-4">
-                @foreach ($testimonials as $item)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="review-card text-center p-4">
-                            <img src="{{ $item->image }}" class="review-img mb-3" alt="Reviewer">
-                            <div class="review-content text-muted line-clamp-3 mb-3">
-                                {!! $item->description !!}
-                            </div>
-                            <h6 class="mb-1">{{ $item->name }}</h6>
-                            <div class="stars text-warning fs-6">
-                                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-                <div class="see-btn-block my-4 pt-4">
-                    <a href="{{ route('frontend.testimonial') }}" class="see-all-btn">
-                        View all
-                        <i class="ri-arrow-right-line"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="mission-vision py-4">
-        <div class="section-heading my-4 py-4">
-            <h2 class="section-heading-title">Our Mission and values</h2>
-            <p class="section-heading-para">What we want our client to achieve.</p>
-        </div>
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-12 col-md-4 col-lg-4 position-relative mb-5">
-                    <img src="{{ asset('frontend/assets/image/2606563_5898.jpg') }}" class="icon mb-4" alt="Mission">
-                    <h4 class="title">Our Mission</h4>
-                    <p class="description">
-                        To empower individuals with the right guidance, skills, and
-                        opportunities to build a successful career in Japan while
-                        maintaining a balance.
-                    </p>
-                </div>
-                <div class="col-12 col-md-4 col-lg-4 position-relative mb-5">
-                    <img src="{{ asset('frontend/assets/image/bulb.jpg') }}" class="icon mb-4" alt="Vision">
-                    <h4 class="title">Our Vision</h4>
-                    <p class="description">
-                        To become a trusted bridge between global talent and Japanese
-                        organizations by creating long-term professional and cultural
-                        connections.
-                    </p>
-                </div>
-                <div class="col-12 col-md-4 col-lg-4 position-relative mb-5">
-                    <img src="{{ asset('frontend/assets/image/values.jpg') }}" class="icon mb-4" alt="Values">
-                    <h4 class="title">Our Values</h4>
-                    <p class="description">
-                        Integrity, transparency, continuous support, and respect for
-                        cultural diversity in every step of the journey. We are there for you
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="blog-section">
-        <div class="section-heading my-4 py-4">
-            <h2 class="section-heading-title">{{ $settings['blogs_title'] ?? '' }}</h2>
-            <p class="section-heading-para">{{ $settings['blogs_subtitle'] ?? '' }}</p>
-        </div>
-        <div class="container">
-            <div class="blog-block">
-                <div class="row g-4">
-                    @foreach ($blogs as $item)
-                        <div class="col-lg-4 col-md-6">
-                            <div class="blog-card">
-                                <div class="blog-image">
-                                    <img src="{{ $item->image }}" alt="Blog image">
+                <div class="auto-container">
+                    <div class="row g-4">
+                        <div class="col-xl-6 col-lg-12">
+                            <div class="hero-content">
+                                <h6 class="wow fadeInUp">
+                                    <span class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                            viewBox="0 0 30 30" fill="none">
+                                            <path d="M15 12.5H23.75L10 27.5L13.75 16.25H6.25L16.25 2.5L15 12.5Z"
+                                                fill="white" />
+                                        </svg>
+                                    </span>
+                                    Reliable And Fast Business Solutions
+                                </h6>
+                                <h1 class="wow fadeInUp" data-wow-delay=".2s">Empower your Business with Our Solutions</h1>
+                                <p class="wow fadeInUp" data-wow-delay=".4s">everyone with high and useful reward for
+                                    his/her trading, purchase and investment. Our goal is to make the</p>
+                                <div class="hero-button wow fadeInUp" data-wow-delay=".6s">
+                                    <a href="page-contact.html" class="theme-btn btn-style-one">
+                                        Lets Talk With Us
+                                        <span class="icon">
+                                            <i class="flaticon-finance-fi_3385625"></i>
+                                        </span>
+                                    </a>
                                 </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <span>{{ $item->short_description }}</span>
-                                        <span>{{ $item->created_at->format('d M Y') }}</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6"></div>
+                    </div>
+                </div>
+            </section> --}}
+            <section class="hero-section hero-5 parallaxie bg-cover" style="background-image: url('{{ asset('frontend/assets/images/home-5/hero/hero-image.jpg') }}');">
+		<div class="banner-outer">
+			<div class="hero-content">
+				<div class="star">
+					<i class="icon fa-solid fa-star"></i>
+					<i class="icon fa-solid fa-star"></i>
+					<i class="icon fa-solid fa-star"></i>
+					<i class="icon fa-solid fa-star"></i>
+					<i class="icon fa-solid fa-star"></i>
+					<span class="star-title">Trusted by 50,000+ Clients</span>
+				</div>
+				<h1 class="banner-title wow fadeInUp" data-wow-delay=".2s">Fuel Business Success <br> with Informed Financial <br> Strategies</h1>
+				<div class="hero-button wow fadeInLeft" data-wow-delay="700ms" data-wow-duration="1500ms">
+					<a class="video-btn playbtnanim" href="https://www.youtube.com/watch?v=Lplq8RjQ0zU" data-fancybox="gallery" data-caption=""><i class="fa-sharp fa-solid fa-play"></i></a>
+					<h4 class="btn-title">Watch  Videos</h4>
+				</div>
+			</div>
+			<div class="hero-box-items">
+				<div class="content-box wow fadeInUp" data-wow-delay=".3s">
+					<p>(406) 555-012022</p>
+					<p>Give Us a Call</p>
+				</div>
+				<div class="content-box wow fadeInUp" data-wow-delay=".5s">
+					<p>Mon - Fri: 8:00AM - 7:00PM</p>
+					<p>Sat - Sun: Closed</p>
+				</div>
+				<div class="content-box wow fadeInUp" data-wow-delay=".8s">
+					<p>65 North Medical Drive</p>
+					<p>Salt Lake City, Australia 84132</p>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- Service Section Start -->
+	<section class="service-section-2 section-padding section-bg fix">
+		<div class="auto-container">
+			<div class="sec-title text-center">
+				<h6 class="sub-title wow fadeInUp">
+					<span class="triangle triangle1"></span>
+					<span class="triangle triangle2"></span>
+					Student Journey
+				</h6>
+				<h2 class="wow fadeInUp" data-wow-delay=".2s">Step by step process</h2>
+			</div>
+			<div class="row">
+				<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+					<div class="service-card-items-2">
+						<div class="service-icon">
+							<div class="icon">
+								<i class="flaticon-business-028-briefcase"></i>
+								<div class="service-triangle"></div>
+							</div>
+							<span class="number">
+								01
+							</span>
+						</div>
+						<div class="content">
+							<h3><a href="page-service-details.html">Business Consulting</a></h3>
+							<p>
+								everyone with high and useful reward for  his We offer a free consultation <br>
+								so that .
+							</p>
+						</div>
+						<div class="arrow-shape-2 float-bob-x">
+							<img src="images/home-2/service-icon/arrow-shape.png" alt="img">
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
+					<div class="service-card-items-2">
+						<div class="service-icon">
+							<div class="icon">
+								<i class="lnr-icon-folder-open"></i>
+								<div class="service-triangle"></div>
+							</div>
+							<span class="number">
+								02
+							</span>
+						</div>
+						<div class="content">
+							<h3><a href="page-service-details.html">Invest Process</a></h3>
+							<p>
+								everyone with high and useful reward for  his We offer a free consultation <br>
+								so that .
+							</p>
+						</div>
+						<div class="arrow-shape-2 float-bob-x">
+							<img src="images/home-2/service-icon/arrow-shape.png" alt="img">
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".7s">
+					<div class="service-card-items-2">
+						<div class="service-icon">
+							<div class="icon">
+								<i class=" lnr-icon-layers"></i>
+								<div class="service-triangle"></div>
+							</div>
+							<span class="number">
+								03
+							</span>
+						</div>
+						<div class="content">
+							<h3><a href="page-service-details.html">Life Insurance</a></h3>
+							<p>
+								everyone with high and useful reward for  his We offer a free consultation <br>
+								so that .
+							</p>
+						</div>
+						<div class="arrow-shape-2 float-bob-x">
+							<img src="images/home-2/service-icon/arrow-shape.png" alt="img">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+            <!-- Busnisness Solution Section Start -->
+            {{-- <section class="business-solution-section">
+                <div class="container pt-0 pb-0">
+                    <div class="row g-0">
+                        <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay=".2s">
+                            <div class="feature-left-content-1">
+                                <div class="down-shape">
+                                    <img src="images/home-1/dawn-2.png" alt="img" />
+                                </div>
+                                <div class="spiral-shape">
+                                    <img src="images/home-1/spiral.png" alt="img" />
+                                </div>
+                                <h2 class="text-anim">Providing the Best Business Solutions</h2>
+                                <div class="client-image">
+                                    <img src="images/home-1/client-1.png" alt="img" />
+                                    <img src="images/home-1/client-2.png" alt="img" class="icon-2" />
+                                    <img src="images/home-1/client-3.png" alt="img" class="icon-3" />
+                                    <img src="images/home-1/client-4.png" alt="img" class="icon-4" />
+                                </div>
+                                <h4>Happy Customers</h4>
+                                <div class="star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>(4.9)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8">
+                            <div class="row g-4">
+                                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                                    <div class="feature-business-solution-items-1">
+                                        <div class="business-image">
+                                            <img src="images/home-1/business-image-1.jpg" alt="img" />
+                                            <img src="images/home-1/business-image-1.jpg" alt="img" />
+                                        </div>
+                                        <div class="content">
+                                            <div class="icon">
+                                                <i class="flaticon-business-028-briefcase"></i>
+                                            </div>
+                                            <h3>Consultancy</h3>
+                                            <p>everyone with high and useful reward for his/her trading,</p>
+                                        </div>
                                     </div>
-                                    <h5 class="blog-title">
-                                        {{ $item->title }}
-                                    </h5>
-                                    <div class="blog-desc line-clamp-3">
-                                        {!! $item->description !!} </div>
-                                    <a href="{{ route('frontend.blogsingle', $item->slug) }}" class="blog-read">READ
-                                        MORE</a>
+                                </div>
+                                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                                    <div class="feature-business-solution-items-2">
+                                        <div class="content">
+                                            <h3>Business Mentor</h3>
+                                            <p>everyone with high and useful reward for his/her trading,</p>
+                                            <div class="icon"><i
+                                                    class="flaticon-finance-business-expense-svgrepo-com-1"></i></div>
+                                        </div>
+                                        <div class="business-image">
+                                            <img src="images/home-1/business-image-2.jpg" alt="img" />
+                                            <img src="images/home-1/business-image-2.jpg" alt="img" />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
+                </div>
+            </section> --}}
+
+            <!-- About Section Start -->
+            {{--
+             --}}
+
+             <section class="about-section-2 fix section-padding">
+		<div class="arrow-shape-1 bounce-x">
+			<img src="images/home-1/about/arrow-1.png" alt="img">
+		</div>
+		<div class="arrow-shape-2 bounce-y">
+			<img src="images/home-1/about/arrow-2.png" alt="img">
+		</div>
+		<div class="shape-1">
+			<img src="images/home-2/about/shape-1.png" alt="img">
+		</div>
+		<div class="auto-container">
+			<div class="about-wrapper-2 section-padding pt-0">
+				<div class="row g-4 align-items-center">
+					<div class="col-xl-6">
+						<div class="about-image-items-2 wow img-custom-anim-left">
+							<div class="about-image">
+								<img src="images/home-2/about/about-01.png" alt="img">
+							</div>
+							<div class="about-counter2">
+								<div class="count-box">
+									<h2>
+										<span class="count-text" data-speed="3000" data-stop="25">0</span>+
+									</h2>
+									<p>
+										Years of
+										Experience
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-6">
+						<div class="about-content-2">
+							<div class="sec-title mb-0">
+								<h6 class="sub-title wow fadeInUp">
+									<span class="triangle triangle1"></span>
+									<span class="triangle triangle2"></span>
+									Who We Are
+								</h6>
+								<h2 class="wow fadeInUp" data-wow-delay=".2s">Increase your money systematically </h2>
+							</div>
+							<div class="icon-items-area">
+								<div class="icon-items wow fadeInUp mb-4 mb-sm-0" data-wow-delay=".3s">
+									<div class="icon"><i class="flaticon-business-028-briefcase"></i></div>
+									<h6>Worldwide business Grow</h6>
+								</div>
+								<div class="icon-items wow fadeInUp" data-wow-delay=".5s">
+									<div class="icon"><i class="flaticon-business-006-target"></i></div>
+									<h6>business Strategy & growth planning</h6>
+								</div>
+							</div>
+							<p class="about-text wow fadeInUp" data-wow-delay=".5s">
+								everyone with high and useful reward for  his/her trading, purchase and investment. Our goal is to make the Discover the transformative power of our solutions. Learn how we've helped businesses of all
+								sizes overcome challenges.
+							</p>
+							<a href="page-contact.html" class="theme-btn btn-style-one wow fadeInUp" data-wow-delay=".7s">
+								Lets Talk With Us
+								<span class="icon">
+									<i class="flaticon-finance-fi_3385625"></i>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row g-4">
+				<div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+					<div class="about-counter">
+						<div class="count-box">
+							<h2>
+								<span class="count-text" data-speed="3000" data-stop="1">0</span>M
+							</h2>
+							<p>
+								Worldwide <br>
+								business Grow
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+					<div class="about-counter">
+						<div class="count-box">
+							<h2>
+								<span class="count-text" data-speed="3000" data-stop="32">0</span>+
+							</h2>
+							<p>
+								Best Business <br>
+								Awards
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+					<div class="about-counter">
+						<div class="count-box">
+							<h2>
+								<span class="count-text" data-speed="3000" data-stop="3">0</span>K+
+							</h2>
+							<p>
+								Satisfied <br>
+								Clients
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+            <!-- Counter Section Start -->
+            {{-- <section class="counter-section section-padding pt-0">
+                <div class="auto-container">
+                    <div class="counter-wrapper">
+                        <div class="counter-box-1 wow bounceInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="count-box">
+                                <h2><span class="count-text" data-speed="3000" data-stop="1">0</span>M</h2>
+                                <p>Worldwide business Grow</p>
+                            </div>
+                        </div>
+                        <div class="counter-box-1 wow bounceInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div class="count-box">
+                                <h2><span class="count-text" data-speed="3000" data-stop="12">0</span>K+</h2>
+                                <p>Satisfied Clients</p>
+                            </div>
+                        </div>
+                        <div class="counter-box-1 wow bounceInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                            <div class="count-box">
+                                <h2><span class="count-text" data-speed="3000" data-stop="119">0</span>M</h2>
+                                <p>Countries Served</p>
+                            </div>
+                        </div>
+                        <div class="counter-box-1 wow bounceInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            <div class="count-box">
+                                <h2>
+                                    <span class="count-text" data-speed="3000" data-stop="33">0</span>
+                                </h2>
+                                <p>Award winning contest</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> --}}
+
+            <!-- Service Section Start -->
+            <section class="service-section section-padding fix bg-cover"
+                style="background-image: url('images/home-1/service/service-bg.jpg')">
+                <span class="ellipse-bg"></span>
+                <div class="auto-container">
+                    <div class="sec-title">
+                        <div class="row g-4 justify-content-between align-items-center">
+                            <div class="col-xl-7 col-lg-7">
+                                <h6 class="text-white sub-title wow fadeInUp">
+                                    <span class="triangle triangle1"></span>
+                                    <span class="triangle triangle2"></span>
+                                   What We Do
+                                </h6>
+                                <h2 class="text-white wow fadeInUp" data-wow-delay=".2s">Guidance for Personal and
+                                    Professional Growth.</h2>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="section-counter-content">
+                                    <h3 class="count-box"><span class="count-text" data-speed="3000"
+                                            data-stop="5">0</span>k+</h3>
+                                    <h6 class="text-white font-size-20 line-height-1 font-weight-400">Satisfied Clients
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-wrapper">
+                    <div class="row">
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                            <div class="service-card-items">
+                                <div class="icon"><i class="flaticon-finance-business-expense-svgrepo-com-1"></i></div>
+                                <div class="content">
+                                    <h3><a href="page-service-details.html">Business Consulting</a></h3>
+                                    <p>We promise cost-effective business consulting solutions designed to help you lower
+                                        expenses and boost profits.</p>
+                                    <a href="page-service-details.html" class="link-btn"><i
+                                            class="lnr-icon-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                            <div class="service-card-items">
+                                <div class="icon"><i class=" lnr-icon-layers"></i></div>
+                                <div class="content">
+                                    <h3><a href="page-service-details.html">Invest Propose</a></h3>
+                                    <p>We promise cost-effective business consulting solutions designed to help you lower
+                                        expenses and boost profits.</p>
+                                    <a href="page-service-details.html" class="link-btn"><i
+                                            class="lnr-icon-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                            <div class="service-card-items">
+                                <div class="icon"><i class="flaticon-business-023-lifesaver"></i></div>
+                                <div class="content">
+                                    <h3><a href="page-service-details.html">Accounting</a></h3>
+                                    <p>We promise cost-effective business consulting solutions designed to help you lower
+                                        expenses and boost profits.</p>
+                                    <a href="page-service-details.html" class="link-btn"><i
+                                            class="lnr-icon-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                            <div class="service-card-items">
+                                <div class="icon"><i class="lnr-icon-folder-open"></i></div>
+                                <div class="content">
+                                    <h3><a href="page-service-details.html">Career Development</a></h3>
+                                    <p>We promise cost-effective business consulting solutions designed to help you lower
+                                        expenses and boost profits.</p>
+                                    <a href="page-service-details.html" class="link-btn"><i
+                                            class="lnr-icon-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Section Start -->
+            <section class="project-section fix section-padding">
+                <div class="shape-1">
+                    <img src="images/home-1/project/shape-1.png" alt="img" />
+                </div>
+                <div class="shape-2">
+                    <img src="images/home-1/project/shape-2.png" alt="img" />
+                </div>
+                <div class="auto-container">
+                    <div class="sec-title">
+                        <div class="row g-4 justify-content-between align-items-end">
+                            <div class="col-xl-7 col-lg-9">
+                                <h6 class="sub-title wow fadeInUp">
+                                    <span class="triangle triangle1"></span>
+                                    <span class="triangle triangle2"></span>
+                                    Case Studies
+                                </h6>
+                                <h2 class="wow fadeInUp" data-wow-delay=".3s">You Prefer to Have full <br />Control for
+                                    Business Issues</h2>
+                            </div>
+                            <div class="col-xl-5 col-lg-3 wow fadeInUp" data-wow-delay=".4s">
+                                <div class="array-button justify-content-end">
+                                    <button class="array-prev"><i class="fa-regular fa-arrow-left"></i></button>
+                                    <button class="array-next"><i class="fa-regular fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-wrapper">
+                        <div class="swiper project-slider fix">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="project-card-items">
+                                        <div class="project-image">
+                                            <img src="images/home-1/project/project-01.jpg" alt="img" />
+                                            <img src="images/home-1/project/project-01.jpg" alt="img" />
+                                            <span class="number">01</span>
+                                        </div>
+                                        <div class="project-content">
+                                            <div class="arrow-shape">
+                                                <img src="images/home-1/project/arrow-shape.png" alt="img" />
+                                            </div>
+                                            <div class="content">
+                                                <h3><a href="page-project-details.html">Technology IT</a></h3>
+                                                <p>Business Tech</p>
+                                            </div>
+                                            <a href="page-project-details.html" class="icon">
+                                                <i class="lnr-icon-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="project-card-items">
+                                        <div class="project-image">
+                                            <img src="images/home-1/project/project-02.jpg" alt="img" />
+                                            <img src="images/home-1/project/project-02.jpg" alt="img" />
+                                            <span class="number">02</span>
+                                        </div>
+                                        <div class="project-content">
+                                            <div class="arrow-shape">
+                                                <img src="images/home-1/project/arrow-shape.png" alt="img" />
+                                            </div>
+                                            <div class="content">
+                                                <h3><a href="page-project-details.html">Orion Finance</a></h3>
+                                                <p>Orion Finance</p>
+                                            </div>
+                                            <a href="page-project-details.html" class="icon">
+                                                <i class="lnr-icon-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="project-card-items">
+                                        <div class="project-image">
+                                            <img src="images/home-1/project/project-03.jpg" alt="img" />
+                                            <img src="images/home-1/project/project-03.jpg" alt="img" />
+                                            <span class="number">03</span>
+                                        </div>
+                                        <div class="project-content">
+                                            <div class="arrow-shape">
+                                                <img src="images/home-1/project/arrow-shape.png" alt="img" />
+                                            </div>
+                                            <div class="content">
+                                                <h3><a href="page-project-details.html">Business Firm</a></h3>
+                                                <p>Business Firm</p>
+                                            </div>
+                                            <a href="page-project-details.html" class="icon">
+                                                <i class="lnr-icon-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Marquee Section Start -->
+            <div class="marquee-section fix section-padding pt-0">
+                <div class="marquee">
+                    <div class="marquee-group">
+                        <div class="text">Consulting</div>
+                        <div class="text">
+                            <img src="images/home-1/dawn.png" alt="img" />
+                        </div>
+                        <div class="text">Business</div>
+                        <div class="text">
+                            <img src="images/home-1/dawn.png" alt="img" />
+                        </div>
+                        <div class="text">Consulting</div>
+                        <div class="text">
+                            <img src="images/home-1/dawn.png" alt="img" />
+                        </div>
+                        <div class="text">Finance</div>
+                        <div class="text">
+                            <img src="images/home-1/dawn.png" alt="img" />
+                        </div>
+                        <div class="text">Accounting</div>
+                        <div class="text">
+                            <img src="images/home-1/dawn.png" alt="img" />
+                        </div>
+                    </div>
+                    <div class="marquee-group">
+                        <div class="text">Consulting</div>
+                        <div class="text">
+                            <img src="images/home-1/dawn.png" alt="img" />
+                        </div>
+                        <div class="text">Business</div>
+                        <div class="text">
+                            <img src="images/home-1/dawn.png" alt="img" />
+                        </div>
+                        <div class="text">Consulting</div>
+                        <div class="text">
+                            <img src="images/home-1/dawn.png" alt="img" />
+                        </div>
+                        <div class="text">Finance</div>
+                        <div class="text">
+                            <img src="images/home-1/dawn.png" alt="img" />
+                        </div>
+                        <div class="text">Accounting</div>
+                    </div>
                 </div>
             </div>
-            <div class="see-btn-block my-4 pt-4">
-                <a href="{{ route('frontend.blog') }}" class="see-all-btn">
-                    View all
-                    <i class="ri-arrow-right-line"></i>
-                </a>
-            </div>
+
+            <!-- Why Choose Us Section Start -->
+            <section class="why-choose-section fix section-bg"
+                style="background-image: url('images/home-1/choose-us/choose-us-shape.png')">
+                <div class="auto-container">
+                    <div class="why-choose-us-wrapper">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-xl-5">
+                                <div class="why-choose-us-image-1">
+                                    <img src="images/home-1/choose-us/choose-us.jpg" alt="img"
+                                        class="wow img-custom-anim-left" />
+                                    <div class="icon-box-items">
+                                        <div class="icon">
+                                            <i class="flaticon-business-006-target"></i>
+                                        </div>
+                                        <h3>Best Business Consulting Awards</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-7">
+                                <div class="why-choose-us-content-1">
+                                    <div class="sec-title mb-0">
+                                        <h6 class="sub-title">
+                                            <span class="triangle triangle1"></span>
+                                            <span class="triangle triangle2"></span>
+                                            Why Chhose Us
+                                        </h6>
+                                        <h2 class="wow fadeInUp" data-wow-delay=".2s">you need someone at with Strategic
+                                            support</h2>
+                                    </div>
+                                    <ul class="nav">
+                                        <li class="nav-item">
+                                            <a href="#Mission" data-bs-toggle="tab" class="nav-link active"> Our Mission
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#Vision" data-bs-toggle="tab" class="nav-link"> Our Vision </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#Philosophy" data-bs-toggle="tab" class="nav-link"> Our Philosophy
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#Acchievment" data-bs-toggle="tab" class="nav-link"> Acchievment
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="Mission" class="tab-pane fade show active">
+                                            <div class="why-choose-list wow fadeInUp" data-wow-delay=".3s">
+                                                <h3>Our Mission</h3>
+                                                <p>everyone with high and useful reward for his/her trading, purchase
+                                                    investment to make the Collabo</p>
+                                            </div>
+                                            <div class="why-choose-list-items">
+                                                <ul class="why-list wow fadeInUp" data-wow-delay=".5s">
+                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span>
+                                                        Protecting your company</li>
+                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span> We
+                                                        offer you solutions</li>
+                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span> we
+                                                        take care of you</li>
+                                                </ul>
+                                                <div class="choose-us-progressbar wow fadeInUp" data-wow-delay=".5s">
+                                                    <div class="progress-container">
+                                                        <div class="circular-progress" id="progress1">
+                                                            <span class="progress-value" id="value1">0%</span>
+                                                        </div>
+                                                        <div class="text">Success Rate</div>
+                                                    </div>
+                                                    <div class="progress-container">
+                                                        <div class="circular-progress" id="progress2">
+                                                            <span class="progress-value" id="value2">0%</span>
+                                                        </div>
+                                                        <div class="text">Business Growth</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="Vision" class="tab-pane fade">
+                                            <div class="why-choose-list">
+                                                <h3>Our Vision</h3>
+                                                <p>everyone with high and useful reward for his/her trading, purchase
+                                                    investment to make the Collabo</p>
+                                            </div>
+                                            <div class="why-choose-list-items">
+                                                <ul class="why-list">
+                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span>
+                                                        Protecting your company</li>
+                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span> We
+                                                        offer you solutions</li>
+                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span> we
+                                                        take care of you</li>
+                                                </ul>
+                                                <div class="choose-us-progressbar">
+                                                    <div class="progress-container">
+                                                        <div class="circular-progress" id="progress3">
+                                                            <span class="progress-value" id="value3">0%</span>
+                                                        </div>
+                                                        <div class="text">Success Rate</div>
+                                                    </div>
+                                                    <div class="progress-container">
+                                                        <div class="circular-progress" id="progress4">
+                                                            <span class="progress-value" id="value4">0%</span>
+                                                        </div>
+                                                        <div class="text">Business Growth</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="Philosophy" class="tab-pane fade">
+                                            <div class="why-choose-list">
+                                                <h3>Our Philosophy</h3>
+                                                <p>everyone with high and useful reward for his/her trading, purchase
+                                                    investment to make the Collabo</p>
+                                            </div>
+                                            <div class="why-choose-list-items">
+                                                <ul class="why-list">
+                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span>
+                                                        Protecting your company</li>
+                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span> We
+                                                        offer you solutions</li>
+                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span> we
+                                                        take care of you</li>
+                                                </ul>
+                                                <div class="choose-us-progressbar">
+                                                    <div class="progress-container">
+                                                        <div class="circular-progress" id="progress5">
+                                                            <span class="progress-value" id="value5">0%</span>
+                                                        </div>
+                                                        <div class="text">Success Rate</div>
+                                                    </div>
+                                                    <div class="progress-container">
+                                                        <div class="circular-progress" id="progress6">
+                                                            <span class="progress-value" id="value6">0%</span>
+                                                        </div>
+                                                        <div class="text">Business Growth</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="Acchievment" class="tab-pane fade">
+                                            <div class="why-choose-list">
+                                                <h3>Acchievment</h3>
+                                                <p>everyone with high and useful reward for his/her trading, purchase
+                                                    investment to make the Collabo</p>
+                                            </div>
+                                            <div class="why-choose-list-items">
+                                                <ul class="why-list">
+                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span>
+                                                        Protecting your company</li>
+                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span> We
+                                                        offer you solutions</li>
+                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span> we
+                                                        take care of you</li>
+                                                </ul>
+                                                <div class="choose-us-progressbar">
+                                                    <div class="progress-container">
+                                                        <div class="circular-progress" id="progress7">
+                                                            <span class="progress-value" id="value7">0%</span>
+                                                        </div>
+                                                        <div class="text">Success Rate</div>
+                                                    </div>
+                                                    <div class="progress-container">
+                                                        <div class="circular-progress" id="progress8">
+                                                            <span class="progress-value" id="value8">0%</span>
+                                                        </div>
+                                                        <div class="text">Business Growth</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section Start -->
+            <section class="pricing-section fix section-padding">
+                <div class="pricing-circle">
+                    <img src="images/home-1/pricing-circle.png" alt="img" />
+                </div>
+                <div class="auto-container">
+                    <div class="sec-title text-center">
+                        <h6 class="sub-title wow fadeInUp">
+                            <span class="triangle triangle1"></span>
+                            <span class="triangle triangle2"></span>
+                            Pricing Plan
+                        </h6>
+                        <h2 class="wow fadeInUp" data-wow-delay=".3s">our populer pricing plan <br />by company</h2>
+                    </div>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="#Monthly" data-bs-toggle="tab" class="nav-link active"> Monthly </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#Yearly" data-bs-toggle="tab" class="nav-link"> Yearly </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="Monthly" class="tab-pane fade show active">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                    <div class="pricing-box-items">
+                                        <div class="pricing-header">
+                                            <div class="title-icon"><i class="flaticon-finance-Priicng-Plan"></i></div>
+                                            <h3>Personal Plan</h3>
+                                            <span>Customized anything in anytime</span>
+                                        </div>
+                                        <ul class="pricing-list">
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Unlimited
+                                                features
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Multi language
+                                                content
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> 30 Days free
+                                                trial features
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Data backup
+                                                and recovery
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Updates via
+                                                dashboard & slack
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Synced to
+                                                cloud database
+                                            </li>
+                                        </ul>
+                                        <div class="pricing-button">
+                                            <a href="page-pricing.html" class="theme-btn btn-style-one w-100">$2500/
+                                                Month</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5">
+                                    <div class="pricing-box-items active">
+                                        <span class="gt-price-tag">recommend</span>
+                                        <div class="pricing-header">
+                                            <div class="title-icon"><i class="flaticon-finance-Priicng-Plan"></i></div>
+                                            <h3>Premium Plan</h3>
+                                            <span>Customized anything in anytime</span>
+                                        </div>
+                                        <ul class="pricing-list">
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Unlimited
+                                                features
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Multi language
+                                                content
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> 30 Days free
+                                                trial features
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Data backup
+                                                and recovery
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Updates via
+                                                dashboard & slack
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Synced to
+                                                cloud database
+                                            </li>
+                                        </ul>
+                                        <div class="pricing-button">
+                                            <a href="page-pricing.html" class="theme-btn btn-style-one w-100">choose
+                                                pricing plan</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7">
+                                    <div class="pricing-box-items">
+                                        <div class="pricing-header">
+                                            <div class="title-icon"><i class="flaticon-finance-Priicng-Plan"></i></div>
+                                            <h3>Standard Plan</h3>
+                                            <span>Customized anything in anytime</span>
+                                        </div>
+                                        <ul class="pricing-list">
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Unlimited
+                                                features
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Multi language
+                                                content
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> 30 Days free
+                                                trial features
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Data backup
+                                                and recovery
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Updates via
+                                                dashboard & slack
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="fa-solid fa-check"></i></div> Synced to
+                                                cloud database
+                                            </li>
+                                        </ul>
+                                        <div class="pricing-button">
+                                            <a href="page-pricing.html" class="theme-btn btn-style-one w-100">$2500/
+                                                Month</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Yearly" class="tab-pane fade">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <div class="pricing-box-items">
+                                        <div class="pricing-header">
+                                            <div class="title-icon"><i class="flaticon-finance-Priicng-Plan"></i></div>
+                                            <h3>Personal Plan</h3>
+                                            <span>Customized anything in anytime</span>
+                                        </div>
+                                        <ul class="pricing-list">
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div>
+                                                Unlimited features
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Multi
+                                                language content
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> 30
+                                                Days free trial features
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Data
+                                                backup and recovery
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div>
+                                                Updates via dashboard & slack
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Synced
+                                                to cloud database
+                                            </li>
+                                        </ul>
+                                        <div class="pricing-button">
+                                            <a href="page-pricing.html" class="theme-btn btn-style-one w-100">$2500/
+                                                Yearly</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <div class="pricing-box-items active">
+                                        <span class="gt-price-tag">recommend</span>
+                                        <div class="pricing-header">
+                                            <div class="title-icon"><i class="flaticon-finance-Priicng-Plan"></i></div>
+                                            <h3>Premium Plan</h3>
+                                            <span>Customized anything in anytime</span>
+                                        </div>
+                                        <ul class="pricing-list">
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div>
+                                                Unlimited features
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Multi
+                                                language content
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> 30
+                                                Days free trial features
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Data
+                                                backup and recovery
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div>
+                                                Updates via dashboard & slack
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Synced
+                                                to cloud database
+                                            </li>
+                                        </ul>
+                                        <div class="pricing-button">
+                                            <a href="page-pricing.html" class="theme-btn btn-style-one w-100">choose
+                                                pricing plan</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                    <div class="pricing-box-items">
+                                        <div class="pricing-header">
+                                            <div class="title-icon"><i class="flaticon-finance-Priicng-Plan"></i></div>
+                                            <h3>Standard Plan</h3>
+                                            <span>Customized anything in anytime</span>
+                                        </div>
+                                        <ul class="pricing-list">
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div>
+                                                Unlimited features
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Multi
+                                                language content
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> 30
+                                                Days free trial features
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Data
+                                                backup and recovery
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div>
+                                                Updates via dashboard & slack
+                                            </li>
+                                            <li>
+                                                <div class="icon"><i class="lnr-icon-checkmark-circle"></i></div> Synced
+                                                to cloud database
+                                            </li>
+                                        </ul>
+                                        <div class="pricing-button">
+                                            <a href="page-pricing.html" class="theme-btn btn-style-one w-100">$2500/
+                                                Yearly</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section Start -->
+            <section class="team-section fix">
+                <div class="team-wrapper section-padding">
+                    <div class="auto-container">
+                        <div class="sec-title text-center">
+                            <h6 class="sub-title wow fadeInUp">
+                                <span class="triangle triangle1"></span>
+                                <span class="triangle triangle2"></span>
+                                Our Team
+                            </h6>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">
+                                Our Experienced <br />
+                                team member
+                            </h2>
+                        </div>
+                        <div class="team-bg-shape section-bg">
+                            <img src="images/home-1/team/team-bg-shape.png" alt="img" />
+                        </div>
+                    </div>
+                    <div class="swiper team-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="team-box-items">
+                                    <div class="team-image">
+                                        <img src="images/home-1/team/team-01.jpg" alt="img" />
+                                        <img src="images/home-1/team/team-01.jpg" alt="img" />
+                                        <div class="arrow-shape"><img src="images/home-1/team/arrow-shape.png"
+                                                alt="img" /></div>
+                                        <div class="team-content">
+                                            <div class="content">
+                                                <h4><a href="page-team-details.html">Arion Hezel</a></h4>
+                                                <p>Arion Hezel</p>
+                                            </div>
+                                            <div class="social-links">
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                            </div>
+                                            <span class="share-icon fa fa-share-alt"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="team-box-items">
+                                    <div class="team-image">
+                                        <img src="images/home-1/team/team-02.jpg" alt="img" />
+                                        <img src="images/home-1/team/team-02.jpg" alt="img" />
+                                        <div class="arrow-shape"><img src="images/home-1/team/arrow-shape.png"
+                                                alt="img" /></div>
+                                        <div class="team-content">
+                                            <div class="content">
+                                                <h4><a href="page-team-details.html">Wade Warren</a></h4>
+                                                <p>Founder, finclix</p>
+                                            </div>
+                                            <div class="social-links">
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                            </div>
+                                            <span class="share-icon fa fa-share-alt"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="team-box-items">
+                                    <div class="team-image">
+                                        <img src="images/home-1/team/team-03.jpg" alt="img" />
+                                        <img src="images/home-1/team/team-03.jpg" alt="img" />
+                                        <div class="arrow-shape"><img src="images/home-1/team/arrow-shape.png"
+                                                alt="img" /></div>
+                                        <div class="team-content">
+                                            <div class="content">
+                                                <h4><a href="page-team-details.html">Jacob Jones</a></h4>
+                                                <p>CEO, finclix</p>
+                                            </div>
+                                            <div class="social-links">
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                            </div>
+                                            <span class="share-icon fa fa-share-alt"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="team-box-items">
+                                    <div class="team-image">
+                                        <img src="images/home-1/team/team-04.jpg" alt="img" />
+                                        <img src="images/home-1/team/team-04.jpg" alt="img" />
+                                        <div class="arrow-shape"><img src="images/home-1/team/arrow-shape.png"
+                                                alt="img" /></div>
+                                        <div class="team-content">
+                                            <div class="content">
+                                                <h4><a href="page-team-details.html">Cody Fisher</a></h4>
+                                                <p>Arion Hezel</p>
+                                            </div>
+                                            <div class="social-links">
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                            </div>
+                                            <span class="share-icon fa fa-share-alt"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="team-box-items">
+                                    <div class="team-image">
+                                        <img src="images/home-1/team/team-05.jpg" alt="img" />
+                                        <img src="images/home-1/team/team-05.jpg" alt="img" />
+                                        <div class="arrow-shape"><img src="images/home-1/team/arrow-shape.png"
+                                                alt="img" /></div>
+                                        <div class="team-content">
+                                            <div class="content">
+                                                <h4><a href="page-team-details.html">Dianne Russell</a></h4>
+                                                <p>Admin, finclix</p>
+                                            </div>
+                                            <div class="social-links">
+                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                            </div>
+                                            <span class="share-icon fa fa-share-alt"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-dot">
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section Start -->
+            <section class="contact-section fix section-padding">
+                <div class="contact-shape">
+                    <img src="images/home-1/contact/contact-shape.png" alt="img" />
+                </div>
+                <div class="auto-container">
+                    <div class="contact-wrapper">
+                        <div class="row g-4">
+                            <div class="col-lg-6 col-md-8">
+                                <div class="contact-content-1">
+                                    <div class="sec-title mb-0">
+                                        <h6 class="sub-title text-white wow fadeInUp">
+                                            <span class="triangle triangle1"></span>
+                                            <span class="triangle triangle2"></span>
+                                            Contact Us
+                                        </h6>
+                                        <h2 class="text-white wow fadeInUp" data-wow-delay=".2s">Please Keep in Touch With
+                                            us When you want</h2>
+                                    </div>
+                                    <form id="contact_form" class="form-box wow fadeInUp" data-wow-delay=".3s"
+                                        name="contact_form"
+                                        action="https://html.kodesolution.com/2025/finclix-html/includes/sendmail.php"
+                                        method="post">
+                                        <div class="row g-4">
+                                            <div class="col-md-12">
+                                                <div class="form-clt">
+                                                    <input type="text" name="form_name" id="name"
+                                                        placeholder="Full Name*" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-clt">
+                                                    <input type="text" name="form_email" id="email"
+                                                        placeholder="Email" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-clt">
+                                                    <input type="text" name="form_phone" id="phone"
+                                                        placeholder="Phone" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-clt">
+                                                    <textarea name="form_message" id="message" placeholder="Message"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-clt">
+                                                    <input name="form_botcheck" class="form-control" type="hidden"
+                                                        value="" />
+                                                    <button type="submit" class="theme-btn btn-style-one w-100"
+                                                        data-loading-text="Please wait...">Submit Now</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-6"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-image-1">
+                    <img src="images/home-1/contact/contact-image.jpg" alt="img"
+                        class="wow img-custom-anim-right" />
+                    <div class="shape-image">
+                        <img src="images/home-1/contact/shape-1.png" alt="img" />
+                    </div>
+                    <div class="contact-info-box float-bob-y">
+                        <h2>Still Have you Any Question?</h2>
+                        <ul class="contact-list">
+                            <li>
+                                <div class="icon">
+                                    <i class="lnr-icon-phone-handset"></i>
+                                </div>
+                                <div class="content">
+                                    <h3>Call Us</h3>
+                                    <p><a href="tel:+184084152569">+1840 8415 2569</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="lnr-icon-envelope"></i>
+                                </div>
+                                <div class="content">
+                                    <h3>Mail Us</h3>
+                                    <p><a href="mailto:finclix@ourmail.com">finclix@ourmail.com</a></p>
+                                </div>
+                            </li>
+                        </ul>
+                        <span class="ellipse-bg"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonial Section Start -->
+            <section class="testimonial-section fix section-padding">
+                <div class="auto-container">
+                    <div class="testimonial-wrapper bg-cover"
+                        style="background-image: url(images/home-1/testimonial/testimonial-bg.png)">
+                        <div class="sec-title text-center">
+                            <h6 class="sub-title wow fadeInUp">
+                                <span class="triangle triangle1"></span>
+                                <span class="triangle triangle2"></span>
+                                Testimonials
+                            </h6>
+                            <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                                What our top Customers <br />
+                                Say About us
+                            </h2>
+                        </div>
+                        <div class="swiper testimonial-slider fix">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="testimonial-box-items">
+                                        <div class="client-info-items">
+                                            <div class="client-image">
+                                                <img src="images/home-1/testimonial/client-01.png" alt="img" />
+                                                <div class="quote-icon">
+                                                    <i class="lnr-icon-quote"></i>
+                                                </div>
+                                            </div>
+                                            <div class="client-content">
+                                                <h5>Alison Hedge</h5>
+                                                <span>CEO & Founder</span>
+                                            </div>
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <div class="star">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <p>Everyone receives valuable and rewarding returns on their trading, purchases,
+                                                and investments. There are many variations</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="testimonial-box-items">
+                                        <div class="client-info-items">
+                                            <div class="client-image">
+                                                <img src="images/home-1/testimonial/client-02.png" alt="img" />
+                                                <div class="quote-icon">
+                                                    <i class="lnr-icon-quote"></i>
+                                                </div>
+                                            </div>
+                                            <div class="client-content">
+                                                <h5>Eleanor Pena</h5>
+                                                <span>Head Of Design</span>
+                                            </div>
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <div class="star">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <p>Everyone receives valuable and rewarding returns on their trading, purchases,
+                                                and investments. There are many variations</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="testimonial-box-items">
+                                        <div class="client-info-items">
+                                            <div class="client-image">
+                                                <img src="images/home-1/testimonial/client-03.png" alt="img" />
+                                                <div class="quote-icon">
+                                                    <i class="lnr-icon-quote"></i>
+                                                </div>
+                                            </div>
+                                            <div class="client-content">
+                                                <h5>Jenny Wilson</h5>
+                                                <span>team Manager</span>
+                                            </div>
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <div class="star">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <p>Everyone receives valuable and rewarding returns on their trading, purchases,
+                                                and investments. There are many variations</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-dot mt-5 mb-0">
+                                <div class="dot2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Faq Section Start -->
+            <section class="faq-section fix section-padding section-bg bg-cover"
+                style="background-image: url('images/home-1/faq/faq-shape.png')">
+                <div class="auto-container">
+                    <div class="row g-4 justify-content-between align-items-center">
+                        <div class="col-xl-5 col-lg-6">
+                            <div class="faq-left-items-1">
+                                <div class="sec-title mb-0">
+                                    <h6 class="sub-title wow fadeInUp">
+                                        <span class="triangle triangle1"></span>
+                                        <span class="triangle triangle2"></span>
+                                        FAQ’S
+                                    </h6>
+                                    <h2 class="wow fadeInUp" data-wow-delay=".2s">Frequently Asked Quetions</h2>
+                                </div>
+                                <div class="faq-image">
+                                    <img src="images/home-1/faq/faq-image.jpg" alt="img"
+                                        class="wow img-custom-anim-left" />
+                                    <div class="shape-1 float-bob-y">
+                                        <img src="images/home-1/faq/shape-01.png" alt="img" />
+                                    </div>
+                                    <div class="shape-2 float-bob-x">
+                                        <img src="images/home-1/faq/shape-02.png" alt="img" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="faq-content-1">
+                                <ul class="accordion-box">
+                                    <!--Block-->
+                                    <li class="accordion block active-block wow fadeInUp">
+                                        <div class="acc-btn">
+                                            Financial consultants handle conflicts?
+                                            <div class="icon fa fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content current">
+                                            <div class="content">
+                                                <div class="text">everyone with high and useful reward for his/her
+                                                    trading, purchase and investment. Our goal is to make the</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--Block-->
+                                    <li class="accordion block wow fadeInUp" data-wow-delay=".2s">
+                                        <div class="acc-btn active">
+                                            Errors with financial consequences in tax ?
+                                            <div class="icon fa fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">everyone with high and useful reward for his/her
+                                                    trading, purchase and investment. Our goal is to make the</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--Block-->
+                                    <li class="accordion block wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="acc-btn">
+                                            Prevention of damage of almost € 43,000?
+                                            <div class="icon fa fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">everyone with high and useful reward for his/her
+                                                    trading, purchase and investment. Our goal is to make the</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!--Block-->
+                                    <li class="accordion block wow fadeInUp" data-wow-delay=".6s">
+                                        <div class="acc-btn">
+                                            Bad experience with financial service providers?
+                                            <div class="icon fa fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">everyone with high and useful reward for his/her
+                                                    trading, purchase and investment. Our goal is to make the</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="accordion block wow fadeInUp" data-wow-delay=".8s">
+                                        <div class="acc-btn">
+                                            Monthly insurance rates far too high ?
+                                            <div class="icon fa fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">everyone with high and useful reward for his/her
+                                                    trading, purchase and investment. Our goal is to make the</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cta Contact Section Start -->
+            <section class="cta-contact-section fix">
+                <div class="auto-container">
+                    <div class="cta-contact-wrapper bg-cover" style="background-image: url('images/home-1/cta-bg.jpg')">
+                        <div class="left-shape float-bob-x">
+                            <img src="images/home-1/left-shape.png" alt="img" />
+                        </div>
+                        <h3 class="font-size-32 text-white font-weight-600 wow fadeInUp" data-wow-delay=".3s">No strategy
+                            for the Long-Term</h3>
+                        <a href="page-contact.html" class="theme-btn btn-style-one wow fadeInUp"
+                            data-wow-delay=".5s">Lets Talk With Us</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- News Section Start -->
+            <section class="news-secton section-padding fix">
+                <div class="auto-container">
+                    <div class="sec-title text-center">
+                        <h6 class="sub-title wow fadeInUp">
+                            <span class="triangle triangle1"></span>
+                            <span class="triangle triangle2"></span>
+                            Our Blog
+                        </h6>
+                        <h2 class="wow fadeInUp" data-wow-delay=".3s">Insights from Latest Blog</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                            <div class="news-box-items">
+                                <div class="news-image">
+                                    <img src="images/home-1/news/news-01.jpg" alt="img" />
+                                    <img src="images/home-1/news/news-01.jpg" alt="img" />
+                                    <span class="post-box">
+                                        <span class="date">20</span>
+                                        <span class="month">March</span>
+                                    </span>
+                                </div>
+                                <div class="news-content">
+                                    <ul class="comments-list">
+                                        <li><i class="lnr-icon-user1"></i> Admin</li>
+                                        <li><i class="lnr-icon-comment"></i> 3 Comments</li>
+                                    </ul>
+                                    <h3>
+                                        <a href="news-details.html">Errors with financial consequences in tax ?</a>
+                                    </h3>
+                                    <a href="news-details.html" class="link-btn">
+                                        Learn More
+                                        <span class="icon"><i class="lnr-icon-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                            <div class="news-box-items">
+                                <div class="news-image">
+                                    <img src="images/home-1/news/news-02.jpg" alt="img" />
+                                    <img src="images/home-1/news/news-02.jpg" alt="img" />
+                                    <span class="post-box">
+                                        <span class="date">25</span>
+                                        <span class="month">March</span>
+                                    </span>
+                                </div>
+                                <div class="news-content">
+                                    <ul class="comments-list">
+                                        <li><i class="lnr-icon-user1"></i> Admin</li>
+                                        <li><i class="lnr-icon-comment"></i> 3 Comments</li>
+                                    </ul>
+                                    <h3>
+                                        <a href="news-details.html">Achieving Work Life Balance in a Hectic World</a>
+                                    </h3>
+                                    <a href="news-details.html" class="link-btn">
+                                        Learn More
+                                        <span class="icon">
+                                            <i class="lnr-icon-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                            <div class="news-box-items">
+                                <div class="news-image">
+                                    <img src="images/home-1/news/news-03.jpg" alt="img" />
+                                    <img src="images/home-1/news/news-03.jpg" alt="img" />
+                                    <span class="post-box">
+                                        <span class="date">30</span>
+                                        <span class="month">March</span>
+                                    </span>
+                                </div>
+                                <div class="news-content">
+                                    <ul class="comments-list">
+                                        <li><i class="lnr-icon-user1"></i> Admin</li>
+                                        <li><i class="lnr-icon-comment"></i> 3 Comments</li>
+                                    </ul>
+                                    <h3>
+                                        <a href="news-details.html">Mastering Work-Life On Target Business Goal </a>
+                                    </h3>
+                                    <a href="news-details.html" class="link-btn">
+                                        Learn More
+                                        <span class="icon">
+                                            <i class="lnr-icon-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Section Start -->
+            <footer class="footer-section-1 fix footer-bg bg-cover"
+                style="background-image: url(images/home-1/footer-shape.png)">
+                <span class="circle-shape"></span>
+                <span class="circle-shape-2"></span>
+                <div class="auto-container">
+                    <div class="footer-newsletter-wrapper">
+                        <div class="footer-newsletter-left wow fadeInUp" data-wow-delay=".3s">
+                            <div class="icon">
+                                <i class="lnr-icon-envelope"></i>
+                            </div>
+                            <h3 class="text-white font-weight-700 font-size-28"> subscribe to <br /> newsletter</h3>
+                        </div>
+                        <form action="#" class="wow fadeInUp" data-wow-delay=".5s">
+                            <div class="form-clt">
+                                <input type="text" name="email" id="email2"
+                                    placeholder="Your email address" />
+                                <button class="arrow-icon" type="submit">
+                                    <i class="lnr-icon-arrow-right"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="footer-widget-wrapper">
+                        <div class="row justify-content-between">
+                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+                                <div class="footer-widget-items mt-30">
+                                    <div class="widget-title mb-25">
+                                        <a href="index.html" class="footer-logo">
+                                            <img src="images/home-1/logo/white-logo.svg" alt="img" />
+                                        </a>
+                                    </div>
+                                    <div class="footer-content">
+                                        <p>everyone with high and useful reward for his/her trading</p>
+                                        <div class="social-icon">
+                                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+                                <div class="footer-widget-items mt-30">
+                                    <div class="widget-title mb-25">
+                                        <h3 class="font-size-24 text-white font-weight-500">Company</h3>
+                                    </div>
+                                    <ul class="user-links">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="page-about.html">About us</a></li>
+                                        <li><a href="page-services.html">Services</a></li>
+                                        <li><a href="page-contact.html">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
+                                <div class="footer-widget-items mt-30">
+                                    <div class="widget-title mb-25">
+                                        <h3 class="font-size-24 text-white font-weight-500">Support</h3>
+                                    </div>
+                                    <ul class="user-links">
+                                        <li><a href="page-service-details.html">Customer Support</a></li>
+                                        <li><a href="page-service-details.html">Privacy & policy</a></li>
+                                        <li><a href="page-service-details.html">Terms & condition</a></li>
+                                        <li><a href="page-service-details.html">Help Center</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+                                <div class="footer-widget-items mt-30">
+                                    <div class="widget-title mb-25">
+                                        <h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
+                                    </div>
+                                    <ul class="contact-list">
+                                        <li>
+                                            <i class="lnr-icon-phone-handset"></i>
+                                            <p><a href="tel:+1050055900">+10500-55-900</a></p>
+                                        </li>
+                                        <li>
+                                            <i class="lnr-icon-envelope"></i>
+                                            <p><a href="mailto:finclix@help.us">Finclix@help.us</a></p>
+                                        </li>
+                                        <li>
+                                            <i class="lnr-icon-map-marker"></i>
+                                            <p>44 Danwers, NY City, USA, 70-102</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="auto-container">
+                        <p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2025 Finclix. All Rights Reserved</p>
+                    </div>
+                </div>
+            </footer>
         </div>
-    </section>
+        <!-- End Page Wrapper -->
+
+        <script src="js/jquery.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.fancybox.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/gsap.js"></script>
+        <script src="js/gsap-scroll-to-plugin.js"></script>
+        <script src="js/gsap-scroll-smoother.js"></script>
+        <script src="js/gsap-scroll-trigger.js"></script>
+        <script src="js/gsap-split-text.js"></script>
+        <script src="js/split-type.min.js"></script>
+        <script src="js/parallaxie.js"></script>
+        <script src="js/wow.js"></script>
+        <script src="js/bxslider.js"></script>
+        <script src="js/nice-select.min.js"></script>
+        <script src="js/knob.js"></script>
+        <script src="js/appear.js"></script>
+        <script src="js/swiper.min.js"></script>
+        <script src="js/mixitup.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/jquery.form.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/contact-form-script.js"></script>
+    </body>
 @endsection

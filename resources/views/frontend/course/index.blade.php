@@ -20,9 +20,8 @@
                         <p class="breadcrumb-text text-white">
                             <a href="{{ route('frontend.home') }}" class="text-white text-decoration-none">Home</a> /
                             <a href="#"
-                                class="text-white text-decoration-none">{{ $course_page->title ?? 'About Us' }}</a>
-
-                        </p>
+                                class="text-white text-decoration-none">{{ $course_page->title ?? 'About Us' }}
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -51,7 +50,8 @@
                             <img src="{{ asset($course->image) }}" class="shadow rounded" alt="{{ $course->title }}">
                         </div>
                     </div>
-                    <div class="col-lg-6 py-3 d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-duration="3000">
+                    <div class="col-lg-6 py-3 d-flex align-items-center justify-content-center" data-aos="fade-up"
+                        data-aos-duration="3000">
                         <div class="service-content-container">
                             <h5 class="my-2">{{ $course->title }}</h5>
                             <p class="text-css-counter">
@@ -67,7 +67,8 @@
                     </div>
                 @else
                     {{-- Even position: Content Left, Image Right --}}
-                    <div class="col-lg-6 py-3 d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-duration="3000">
+                    <div class="col-lg-6 py-3 d-flex align-items-center justify-content-center" data-aos="fade-up"
+                        data-aos-duration="3000">
                         <div class="service-content-container">
                             <h5 class="my-2">{{ $course->title }}</h5>
                             <p class="text-css-counter">
