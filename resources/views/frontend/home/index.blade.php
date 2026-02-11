@@ -18,59 +18,68 @@
 
             <!-- Main Header-->
 
-            <!-- Hero Section Start -->
-            {{-- <section class="hero-section hero-1">
-                <div class="hero-image wow img-custom-anim-right">
-                    <img src="{{ asset('frontend/assets/images/home-1/hero/hero-01.png') }}" alt="img" />
-                    <div class="shape-2">
-                        <img src="{{ asset('frontend/assets/images/home-1/shape-2.png') }}" alt="img" />
-                    </div>
-                </div>
-                <div class="shape-1 float-bob-x">
-                    <img src="{{ asset('frontend/assets/images/home-1/shape-1.png') }}" alt="img" />
-                </div>
-                <div class="shape-3">
-                    <img src="{{ asset('frontend/assets/images/home-1/shape-3.png') }}" alt="img" />
-                </div>
+            <section class="lets-talk-banner-section parallaxie  section-padding fix bg-cover"
+                style="background-image: url('{{ asset('frontend/assets/images/home-2/feature/banner.jpg') }}');">
+                {{-- <div class="blur-shape-1">
+			<img src="images/home-2/feature/blur-shape-1.png" alt="img">
+		</div>
+		<div class="blur-shape-2">
+			<img src="images/home-2/feature/blur-shape-2.png" alt="img">
+		</div> --}}
                 <div class="auto-container">
-                    <div class="row g-4">
-                        <div class="col-xl-6 col-lg-12">
-                            <div class="hero-content">
-                                <h6 class="wow fadeInUp">
-                                    <span class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                                            viewBox="0 0 30 30" fill="none">
-                                            <path d="M15 12.5H23.75L10 27.5L13.75 16.25H6.25L16.25 2.5L15 12.5Z"
-                                                fill="white" />
-                                        </svg>
-                                    </span>
-                                    Reliable And Fast Business Solutions
-                                </h6>
-                                <h1 class="wow fadeInUp" data-wow-delay=".2s">Empower your Business with Our Solutions</h1>
-                                <p class="wow fadeInUp" data-wow-delay=".4s">everyone with high and useful reward for
-                                    his/her trading, purchase and investment. Our goal is to make the</p>
-                                <div class="hero-button wow fadeInUp" data-wow-delay=".6s">
-                                    <a href="page-contact.html" class="theme-btn btn-style-one">
-                                        Lets Talk With Us
-                                        <span class="icon">
-                                            <i class="flaticon-finance-fi_3385625"></i>
-                                        </span>
-                                    </a>
+                    <div class="lets-talk-banner-wrapper py-5">
+                        <div class="row g-4 align-items-center justify-content-between">
+                            <div class="col-lg-8">
+                                <div class="lets-talk-banner-content">
+                                    <h2 class="banner-title wow fadeInUp" data-wow-delay=".2s">
+                                        Your Start in Japan, Done Right
+                                    </h2>
+                                    <p class="wow fadeInUp" data-wow-delay=".4s">
+                                        Comprehensive support for international students—before arrival, during studies, and
+                                        beyond graduation.
+                                    </p>
+                                    {{-- <div class="count-item">
+								<div class="count-box wow fadeInUp" data-wow-delay=".6s">
+									<h2>
+										<span class="count-text" data-speed="3000" data-stop="99">0</span>%
+									</h2>
+									<span>
+										client satisfaction
+									</span>
+								</div>
+								<div class="count-box wow fadeInUp" data-wow-delay=".6s">
+									<h2>
+										<span class="count-text" data-speed="3000" data-stop="67">0</span>%
+									</h2>
+									<span>
+										Product Design
+									</span>
+								</div>
+							</div> --}}
                                 </div>
                             </div>
+                            <div class="col-lg-3 text-end wow fadeInUp" data-wow-delay=".3s">
+                                <a href="page-contact.html" class="circle-box">
+                                    <span>
+                                        Contact
+                                        with us
+                                        <i class="lnr-icon-arrow-right1"></i>
+                                    </span>
+                                </a>
+                            </div>
                         </div>
-                        <div class="col-lg-6"></div>
                     </div>
                 </div>
-            </section> --}}
-            <section class="hero-section hero-5 parallaxie bg-cover"
+            </section>
+            {{-- <section class="hero-section hero-5 parallaxie bg-cover"
                 style="background-image: url('{{ asset('frontend/assets/images/home-2/about/banner.jpg') }}'); object-fit:cover;">
                 <div class="banner-outer">
                     <div class="hero-content" style="text-align: center; font-weight:400;">
                         <h2 class="banner-title wow fadeInUp" data-wow-delay=".2s">
                             Samurai blue
                         </h2>
-                        <p class="banner-subtitle wow fadeInUp" data-wow-delay=".2s">Supporting International Students to Settle & Succeed in Japan</p>
+                        <p class="banner-subtitle wow fadeInUp" data-wow-delay=".2s">Supporting International Students to
+                            Settle & Succeed in Japan</p>
                     </div>
 
                     <div class="hero-box-items">
@@ -88,7 +97,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> --}}
             <!-- Service Section Start -->
 
             <!-- Busnisness Solution Section Start -->
@@ -316,13 +325,13 @@
                 style="background-image: url('images/home-1/service/service-bg.jpg')">
                 <span class="ellipse-bg"></span>
                 <div class="auto-container">
-                     <div class="sec-title text-center">
+                    <div class="sec-title text-center">
                         <h6 class="sub-title wow fadeInUp">
                             <span class="triangle triangle1"></span>
                             <span class="triangle triangle2"></span>
-                            Student Journey
+                            Services
                         </h6>
-                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Step by step process</h2>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Our Areas of Support</h2>
                     </div>
                 </div>
                 <div class="service-wrapper">
@@ -333,7 +342,8 @@
                                 <div class="content">
                                     <h3><a href="page-service-details.html">Student Support in Japan</a></h3>
                                     <p>We provide reliable student support services in Japan to help you adapt smoothly,
-                                        focus on your studies, make suiable income, and build a successful future abroad.</p>
+                                        focus on your studies, make suiable income, and build a successful future abroad.
+                                    </p>
                                     <a href="page-service-details.html" class="link-btn"><i
                                             class="lnr-icon-arrow-right"></i></a>
                                 </div>
@@ -478,53 +488,6 @@
                     </div>
                 </div>
             </section> --}}
-            <!-- Marquee Section Start -->
-            {{-- <div class="marquee-section fix section-padding pt-0">
-                <div class="marquee">
-                    <div class="marquee-group">
-                        <div class="text">Consulting</div>
-                        <div class="text">
-                            <img src="images/home-1/dawn.png" alt="img" />
-                        </div>
-                        <div class="text">Business</div>
-                        <div class="text">
-                            <img src="images/home-1/dawn.png" alt="img" />
-                        </div>
-                        <div class="text">Consulting</div>
-                        <div class="text">
-                            <img src="images/home-1/dawn.png" alt="img" />
-                        </div>
-                        <div class="text">Finance</div>
-                        <div class="text">
-                            <img src="images/home-1/dawn.png" alt="img" />
-                        </div>
-                        <div class="text">Accounting</div>
-                        <div class="text">
-                            <img src="images/home-1/dawn.png" alt="img" />
-                        </div>
-                    </div>
-                    <div class="marquee-group">
-                        <div class="text">Consulting</div>
-                        <div class="text">
-                            <img src="images/home-1/dawn.png" alt="img" />
-                        </div>
-                        <div class="text">Business</div>
-                        <div class="text">
-                            <img src="images/home-1/dawn.png" alt="img" />
-                        </div>
-                        <div class="text">Consulting</div>
-                        <div class="text">
-                            <img src="images/home-1/dawn.png" alt="img" />
-                        </div>
-                        <div class="text">Finance</div>
-                        <div class="text">
-                            <img src="images/home-1/dawn.png" alt="img" />
-                        </div>
-                        <div class="text">Accounting</div>
-                    </div>
-                </div>
-            </div> --}}
-
             <!-- Why Choose Us Section Start -->
             <section class="why-choose-section fix section-padding"
                 style="background-image: url('images/home-1/choose-us/choose-us-shape.png')">
@@ -535,12 +498,6 @@
                                 <div class="why-choose-us-image-1">
                                     <img src="{{ asset('frontend/assets/images/home-2/about/why-us.jpg') }}"
                                         alt="img" class="wow img-custom-anim-left" />
-                                    {{-- <div class="icon-box-items">
-                                        <div class="icon">
-                                            <i class="flaticon-business-006-target"></i>
-                                        </div>
-                                        <h3>Best Business Consulting Awards</h3>
-                                    </div> --}}
                                 </div>
                             </div>
                             <div class="col-xl-7">
@@ -553,23 +510,6 @@
                                         </h6>
                                         <h2 class="wow fadeInUp" data-wow-delay=".2s">Expert Guidance for Japan</h2>
                                     </div>
-                                    {{-- <ul class="nav">
-                                        <li class="nav-item">
-                                            <a href="#Mission" data-bs-toggle="tab" class="nav-link active"> Our Mission
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#Vision" data-bs-toggle="tab" class="nav-link"> Our Vision </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#Philosophy" data-bs-toggle="tab" class="nav-link"> Our Philosophy
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#Acchievment" data-bs-toggle="tab" class="nav-link"> Acchievment
-                                            </a>
-                                        </li>
-                                    </ul> --}}
                                     <div class="tab-content">
                                         <div id="Mission" class="tab-pane fade show active">
                                             <div class="why-choose-list wow fadeInUp" data-wow-delay=".3s">
@@ -590,115 +530,8 @@
                                                     <li><span class="icon"><i class="fa-solid fa-check"></i></span> we
                                                         Affordable & Transparent Process</li>
                                                 </ul>
-                                                {{-- <div class="choose-us-progressbar wow fadeInUp" data-wow-delay=".5s">
-                                                    <div class="progress-container">
-                                                        <div class="circular-progress" id="progress1">
-                                                            <span class="progress-value" id="value1">0%</span>
-                                                        </div>
-                                                        <div class="text">Success Rate</div>
-                                                    </div>
-                                                    <div class="progress-container">
-                                                        <div class="circular-progress" id="progress2">
-                                                            <span class="progress-value" id="value2">0%</span>
-                                                        </div>
-                                                        <div class="text">Business Growth</div>
-                                                    </div>
-                                                </div> --}}
                                             </div>
                                         </div>
-                                        {{-- <div id="Vision" class="tab-pane fade">
-                                            <div class="why-choose-list">
-                                                <h3>Our Vision</h3>
-                                                <p>everyone with high and useful reward for his/her trading, purchase
-                                                    investment to make the Collabo</p>
-                                            </div>
-                                            <div class="why-choose-list-items">
-                                                <ul class="why-list">
-                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span>
-                                                        Protecting your company</li>
-                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span> We
-                                                        offer you solutions</li>
-                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span> we
-                                                        take care of you</li>
-                                                </ul>
-                                                <div class="choose-us-progressbar">
-                                                    <div class="progress-container">
-                                                        <div class="circular-progress" id="progress3">
-                                                            <span class="progress-value" id="value3">0%</span>
-                                                        </div>
-                                                        <div class="text">Success Rate</div>
-                                                    </div>
-                                                    <div class="progress-container">
-                                                        <div class="circular-progress" id="progress4">
-                                                            <span class="progress-value" id="value4">0%</span>
-                                                        </div>
-                                                        <div class="text">Business Growth</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="Philosophy" class="tab-pane fade">
-                                            <div class="why-choose-list">
-                                                <h3>Our Philosophy</h3>
-                                                <p>everyone with high and useful reward for his/her trading, purchase
-                                                    investment to make the Collabo</p>
-                                            </div>
-                                            <div class="why-choose-list-items">
-                                                <ul class="why-list">
-                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span>
-                                                        Protecting your company</li>
-                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span> We
-                                                        offer you solutions</li>
-                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span> we
-                                                        take care of you</li>
-                                                </ul>
-                                                <div class="choose-us-progressbar">
-                                                    <div class="progress-container">
-                                                        <div class="circular-progress" id="progress5">
-                                                            <span class="progress-value" id="value5">0%</span>
-                                                        </div>
-                                                        <div class="text">Success Rate</div>
-                                                    </div>
-                                                    <div class="progress-container">
-                                                        <div class="circular-progress" id="progress6">
-                                                            <span class="progress-value" id="value6">0%</span>
-                                                        </div>
-                                                        <div class="text">Business Growth</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="Acchievment" class="tab-pane fade">
-                                            <div class="why-choose-list">
-                                                <h3>Acchievment</h3>
-                                                <p>everyone with high and useful reward for his/her trading, purchase
-                                                    investment to make the Collabo</p>
-                                            </div>
-                                            <div class="why-choose-list-items">
-                                                <ul class="why-list">
-                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span>
-                                                        Protecting your company</li>
-                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span> We
-                                                        offer you solutions</li>
-                                                    <li><span class="icon"><i class="fa-solid fa-check"></i></span> we
-                                                        take care of you</li>
-                                                </ul>
-                                                <div class="choose-us-progressbar">
-                                                    <div class="progress-container">
-                                                        <div class="circular-progress" id="progress7">
-                                                            <span class="progress-value" id="value7">0%</span>
-                                                        </div>
-                                                        <div class="text">Success Rate</div>
-                                                    </div>
-                                                    <div class="progress-container">
-                                                        <div class="circular-progress" id="progress8">
-                                                            <span class="progress-value" id="value8">0%</span>
-                                                        </div>
-                                                        <div class="text">Business Growth</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -706,83 +539,146 @@
                     </div>
                 </div>
             </section>
-  <section class="service-section-2 section-padding section-bg fix">
-                <div class="auto-container">
-                    <div class="sec-title text-center">
-                        <h6 class="sub-title wow fadeInUp">
-                            <span class="triangle triangle1"></span>
-                            <span class="triangle triangle2"></span>
-                            Student Journey
-                        </h6>
-                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Step by step process</h2>
+            <div class=" section-bg">
+                <section class="service-section-2 section-padding fix">
+                    <div class="auto-container">
+                        <div class="sec-title text-center">
+                            <h6 class="sub-title wow fadeInUp">
+                                <span class="triangle triangle1"></span>
+                                <span class="triangle triangle2"></span>
+                                Student Journey
+                            </h6>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">Step by step process</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="service-card-items-2">
+                                    <div class="service-icon">
+                                        <div class="icon">
+                                            <i class="flaticon-business-028-briefcase"></i>
+                                            <div class="service-triangle"></div>
+                                        </div>
+                                        <span class="number">
+                                            01
+                                        </span>
+                                    </div>
+                                    <div class="content">
+                                        <h3><a href="page-service-details.html">Consultation & Course Selection</a></h3>
+                                        <p>
+                                            We begin with a personalized consultation to understand the student’s goals,
+                                            academic background.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
+                                <div class="service-card-items-2">
+                                    <div class="service-icon">
+                                        <div class="icon">
+                                            <i class="lnr-icon-folder-open"></i>
+                                            <div class="service-triangle"></div>
+                                        </div>
+                                        <span class="number">
+                                            02
+                                        </span>
+                                    </div>
+                                    <div class="content">
+                                        <h3><a href="page-service-details.html">Application & Visa Processing</a></h3>
+                                        <p>
+                                            We assist with university or language school applications, document preparation,
+                                            and
+                                            submission.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".7s">
+                                <div class="service-card-items-2">
+                                    <div class="service-icon">
+                                        <div class="icon">
+                                            <i class=" lnr-icon-layers"></i>
+                                            <div class="service-triangle"></div>
+                                        </div>
+                                        <span class="number">
+                                            03
+                                        </span>
+                                    </div>
+                                    <div class="content">
+                                        <h3><a href="page-service-details.html">Pre-Departure & Arrival Support</a></h3>
+                                        <p>
+                                            Before departure, we provide orientation, accommodation assistance, and travel
+                                            guidance.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                            <div class="service-card-items-2">
-                                <div class="service-icon">
-                                    <div class="icon">
-                                        <i class="flaticon-business-028-briefcase"></i>
-                                        <div class="service-triangle"></div>
-                                    </div>
-                                    <span class="number">
-                                        01
-                                    </span>
-                                </div>
-                                <div class="content">
-                                    <h3><a href="page-service-details.html">Consultation & Course Selection</a></h3>
-                                    <p>
-                                        We begin with a personalized consultation to understand the student’s goals,
-                                        academic background.
-                                    </p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
-                            <div class="service-card-items-2">
-                                <div class="service-icon">
-                                    <div class="icon">
-                                        <i class="lnr-icon-folder-open"></i>
-                                        <div class="service-triangle"></div>
-                                    </div>
-                                    <span class="number">
-                                        02
-                                    </span>
-                                </div>
-                                <div class="content">
-                                    <h3><a href="page-service-details.html">Application & Visa Processing</a></h3>
-                                    <p>
-                                        We assist with university or language school applications, document preparation, and
-                                        submission.
-                                    </p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".7s">
-                            <div class="service-card-items-2">
-                                <div class="service-icon">
-                                    <div class="icon">
-                                        <i class=" lnr-icon-layers"></i>
-                                        <div class="service-triangle"></div>
-                                    </div>
-                                    <span class="number">
-                                        03
-                                    </span>
-                                </div>
-                                <div class="content">
-                                    <h3><a href="page-service-details.html">Pre-Departure & Arrival Support</a></h3>
-                                    <p>
-                                        Before departure, we provide orientation, accommodation assistance, and travel
-                                        guidance.
-                                    </p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                </section>
                 </div>
-            </section>
+                <section class="feature-section-3 section-padding fix">
+                    <div class="container">
+                    <div class="row g-4">
+                        <div class="col-lg-5">
+                            <div class="feature-box-3">
+                                <div class="arrow-shape">
+                                    <img src="images/home-3/arrow-shape.png" alt="img">
+                                </div>
+
+                                <span class="wow fadeInUp" data-wow-delay=".4s"> Our Objectives
+                            </div></span>
+
+                            <div class="content px-5 wow fadeInUp" data-wow-delay=".5s">
+                                <p>
+                                   To simplify life in Japan for international students by providing clear,
+                                    practical, and reliable support that helps them navigate education, daily
+                                    living, and cultural adaptation with confidence.
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="row g-4">
+                                <div class="col-xl-6 col-lg-12 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                                    <div class="feature-service-card-items">
+                                        <div class="icon">
+                                            <i class="flaticon-business-028-briefcase"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h3><a href="page-service-details.html">Mission</a></h3>
+                                            <p>
+                                               Our mission is to support international students at every stage of their journey in Japan—from
+                                               preparation and arrival to study, work, and independent living.
+                                            </p>
+                                            <a href="page-service-details.html" class="text-btn">
+                                                Read More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-12 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
+                                    <div class="feature-service-card-items">
+                                        <div class="icon">
+                                            <i class="flaticon-finance-business-expense-svgrepo-com-1"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h3><a href="page-service-details.html">Vision</a></h3>
+                                            <p>
+                                              To become a trusted bridge between international students and life in Japan,
+                                               creating an environment where students feel supported, informed.
+                                            </p>
+                                            <a href="page-service-details.html" class="text-btn">
+                                                Read More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
             <!-- Team Section Start -->
             {{-- <section class="team-section fix">
                 <div class="team-wrapper section-padding">
@@ -924,9 +820,6 @@
 
             <!-- Contact Section Start -->
             <section class="contact-section fix section-padding">
-                {{-- <div class="contact-shape">
-                    <img src="images/home-1/contact/contact-shape.png" alt="img" />
-                </div> --}}
                 <div class="auto-container">
                     <div class="contact-wrapper">
                         <div class="row g-4">
@@ -1009,7 +902,7 @@
                                 </div>
                                 <div class="content">
                                     <h3>Mail Us</h3>
-                                    <p><a href="mailto:finclix@ourmail.com">finclix@ourmail.com</a></p>
+                                    <p><a href="mailto:finclix@ourmail.com">info@ourmail.com</a></p>
                                 </div>
                             </li>
                         </ul>
@@ -1033,98 +926,143 @@
                                 Say About us
                             </h2>
                         </div>
-                        <div class="swiper testimonial-slider fix">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="testimonial-box-items">
-                                        <div class="client-info-items">
-                                            <div class="client-image">
-                                                <img src="{{ asset('frontend/assets/images/home-1/testimonial/download.png') }}"
-                                                    alt="img" />
-                                                <div class="quote-icon">
-                                                    <i class="lnr-icon-quote"></i>
+                        <div class="testimonial-wrapper-2">
+                            <div class="swiper testimonial-slider-2">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-card-item">
+                                            <div class="box-shape">
+                                                <img src="images/home-2/testimonial/box-shape.png" alt="img">
+                                            </div>
+                                            <div class="client-item">
+                                                <div class="client-image">
+                                                    <img src="images/home-2/testimonial/client-2.png" alt="img">
+                                                </div>
+                                                <div class="info-text">
+                                                    <h5>Esther Howard</h5>
+                                                    <span>team Manager</span>
                                                 </div>
                                             </div>
-                                            <div class="client-content">
-                                                <h5>Ramesh K.</h5>
-                                                <span>Language School Student, Tokyo</span>
+                                            <div class="content">
+                                                <div class="quote-icon">
+                                                    <i class="flaticon-finance-Quote"></i>
+                                                    <div class="test-triangle"></div>
+                                                </div>
+                                                <div class="star">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <p>
+                                                    It is a long established fact that a reader will be distracted by the
+                                                    readable content of a page when looking at its layout.
+                                                </p>
                                             </div>
                                         </div>
-                                        <div class="testimonial-content">
-                                            <div class="star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-card-item">
+                                            <div class="client-item">
+                                                <div class="client-image">
+                                                    <img src="{{ asset('frontend/assets/images/home-1/people.jpg') }}"
+                                                        alt="img">
+                                                </div>
+                                                <div class="info-text">
+                                                    <h5>Esther Howard</h5>
+                                                    <span>team Manager</span>
+                                                </div>
                                             </div>
-                                            <p>“Samurai Blue guided me through every step of my journey to Japan. From visa
-                                                processing to accommodation support, everything was smooth and stress-free.”
-                                            </p>
+                                            <div class="content">
+                                                <div class="quote-icon">
+                                                    <i class="flaticon-finance-Quote"></i>
+                                                    <div class="test-triangle"></div>
+                                                </div>
+                                                <div class="star">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <p>
+                                                    It is a long established fact that a reader will be distracted by the
+                                                    readable content of a page when looking at its layout.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-card-item">
+                                            <div class="box-shape">
+                                                <img src="images/home-2/testimonial/box-shape.png" alt="img">
+                                            </div>
+                                            <div class="client-item">
+                                                <div class="client-image">
+                                                    <img src="images/home-2/testimonial/client-2.png" alt="img">
+                                                </div>
+                                                <div class="info-text">
+                                                    <h5>Esther Howard</h5>
+                                                    <span>team Manager</span>
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="quote-icon">
+                                                    <i class="flaticon-finance-Quote"></i>
+                                                    <div class="test-triangle"></div>
+                                                </div>
+                                                <div class="star">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <p>
+                                                    It is a long established fact that a reader will be distracted by the
+                                                    readable content of a page when looking at its layout.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-card-item">
+                                            <div class="box-shape">
+                                                <img src="images/home-2/testimonial/box-shape.png" alt="img">
+                                            </div>
+                                            <div class="client-item">
+                                                <div class="client-image">
+                                                    <img src="images/home-2/testimonial/client-3.png" alt="img">
+                                                </div>
+                                                <div class="info-text">
+                                                    <h5>Esther Howard</h5>
+                                                    <span>team Manager</span>
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="quote-icon">
+                                                    <i class="flaticon-finance-Quote"></i>
+                                                    <div class="test-triangle"></div>
+                                                </div>
+                                                <div class="star">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <p>
+                                                    It is a long established fact that a reader will be distracted by the
+                                                    readable content of a page when looking at its layout.
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-box-items">
-                                        <div class="client-info-items">
-                                            <div class="client-image">
-                                                <img src="{{ asset('frontend/assets/images/home-1/testimonial/download.png') }}"
-                                                    alt="img" />
-                                                <div class="quote-icon">
-                                                    <i class="lnr-icon-quote"></i>
-                                                </div>
-                                            </div>
-                                            <div class="client-content">
-                                                <h5>Sita P.</h5>
-                                                <span>F&B Training Program, Osaka</span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-content">
-                                            <div class="star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <p>“The Food & Beverage training provided by Samurai Blue helped me gain
-                                                practical skills and confidence. They also assisted me in finding a
-                                                part-time job, which made living in Japan much easier.”</p>
-                                        </div>
-                                    </div>
+                                <div class="swiper-dot mt-5 mb-0">
+                                    <div class="dot2"></div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-box-items">
-                                        <div class="client-info-items">
-                                            <div class="client-image">
-                                                <img src="{{ asset('frontend/assets/images/home-1/testimonial/download.png') }}"
-                                                    alt="img" />
-                                                <div class="quote-icon">
-                                                    <i class="lnr-icon-quote"></i>
-                                                </div>
-                                            </div>
-                                            <div class="client-content">
-                                                <h5>Anil S.</h5>
-                                                <span>Working Student, Yokohama</span>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-content">
-                                            <div class="star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <p>“I was worried about managing studies and work in Japan, but Samurai Blue
-                                                made everything clear. Their guidance on job placement and language support
-                                                was extremely helpful.”</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-dot mt-5 mb-0">
-                                <div class="dot2"></div>
                             </div>
                         </div>
                     </div>
@@ -1147,8 +1085,8 @@
                                     <h2 class="wow fadeInUp" data-wow-delay=".2s">Frequently Asked Quetions</h2>
                                 </div>
                                 <div class="faq-image">
-                                    <img src="{{ asset('frontend/assets/images/home-1/faq.jpg') }}"
-                                        alt="img" class="wow img-custom-anim-left" />
+                                    <img src="{{ asset('frontend/assets/images/home-1/faq.jpg') }}" alt="img"
+                                        class="wow img-custom-anim-left" />
                                     {{-- <div class="shape-1 float-bob-y">
                                         <img src="images/home-1/faq/shape-01.png" alt="img" />
                                     </div>
@@ -1269,8 +1207,7 @@
                         <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                             <div class="news-box-items">
                                 <div class="news-image">
-                                    <img src="{{ asset('frontend/assets/images/home-1/ssw.jpg') }}"
-                                        alt="img" />
+                                    <img src="{{ asset('frontend/assets/images/home-1/ssw.jpg') }}" alt="img" />
                                     {{-- <img src="images/home-1/news/news-01.jpg" alt="img" /> --}}
                                     <span class="post-box">
                                         <span class="date">20</span>
@@ -1295,7 +1232,8 @@
                         <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                             <div class="news-box-items">
                                 <div class="news-image">
-                                    <img src="{{ asset('frontend/assets/images/home-1/banner-2.jpeg') }}" alt="img" />
+                                    <img src="{{ asset('frontend/assets/images/home-1/banner-2.jpeg') }}"
+                                        alt="img" />
                                     {{-- <img src="images/home-1/news/news-02.jpg" alt="img" /> --}}
                                     <span class="post-box">
                                         <span class="date">25</span>
@@ -1308,7 +1246,8 @@
                                         <li><i class="lnr-icon-comment"></i> 3 Comments</li>
                                     </ul>
                                     <h3>
-                                        <a href="news-details.html">Government & public debate on foreign student support</a>
+                                        <a href="news-details.html">Government & public debate on foreign student
+                                            support</a>
                                     </h3>
                                     <a href="news-details.html" class="link-btn">
                                         Learn More
@@ -1335,7 +1274,7 @@
                                         <li><i class="lnr-icon-comment"></i> 3 Comments</li>
                                     </ul>
                                     <h3>
-                                        <a href="news-details.html">Policy responses to international student  </a>
+                                        <a href="news-details.html">Policy responses to international student </a>
                                     </h3>
                                     <a href="news-details.html" class="link-btn">
                                         Learn More
@@ -1356,7 +1295,7 @@
                 <span class="circle-shape"></span>
                 <span class="circle-shape-2"></span>
                 <div class="auto-container">
-                    <div class="footer-newsletter-wrapper">
+                    {{-- <div class="footer-newsletter-wrapper">
                         <div class="footer-newsletter-left wow fadeInUp" data-wow-delay=".3s">
                             <div class="icon">
                                 <i class="lnr-icon-envelope"></i>
@@ -1371,7 +1310,7 @@
                                 </button>
                             </div>
                         </form>
-                    </div>
+                    </div> --}}
                     <div class="footer-widget-wrapper">
                         <div class="row justify-content-between">
                             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
@@ -1448,30 +1387,5 @@
                 </div>
             </footer>
         </div>
-        <!-- End Page Wrapper -->
-
-        <script src="js/jquery.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.fancybox.js"></script>
-        <script src="js/jquery-ui.js"></script>
-        <script src="js/gsap.js"></script>
-        <script src="js/gsap-scroll-to-plugin.js"></script>
-        <script src="js/gsap-scroll-smoother.js"></script>
-        <script src="js/gsap-scroll-trigger.js"></script>
-        <script src="js/gsap-split-text.js"></script>
-        <script src="js/split-type.min.js"></script>
-        <script src="js/parallaxie.js"></script>
-        <script src="js/wow.js"></script>
-        <script src="js/bxslider.js"></script>
-        <script src="js/nice-select.min.js"></script>
-        <script src="js/knob.js"></script>
-        <script src="js/appear.js"></script>
-        <script src="js/swiper.min.js"></script>
-        <script src="js/mixitup.js"></script>
-        <script src="js/script.js"></script>
-        <script src="js/jquery.form.min.js"></script>
-        <script src="js/jquery.validate.min.js"></script>
-        <script src="js/contact-form-script.js"></script>
     </body>
 @endsection

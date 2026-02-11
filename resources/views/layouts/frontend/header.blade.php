@@ -7,8 +7,8 @@
              <div class="nav-outer">
                  <div class="logo-box">
                      <div class="logo">
-                         <a href="index.html"><img src="{{ asset('frontend/assets/images/black-logo.png') }}"
-                                 alt="" title="finclix" /></a>
+                         <a href="index.html"><img src=""
+                                 alt="logo" title="finclix" /></a>
                      </div>
                  </div>
 
@@ -64,10 +64,10 @@
                                  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
                              </div> --}}
-                             <a href="tel:+92(8800)9806" class="info-btn">
+                             {{-- <a href="tel:+92(8800)9806" class="info-btn">
                                  <i class="icon fa fa-phone"></i>
                                  + 88 ( 9800 ) 6802
-                             </a>
+                             </a> --}}
                          </div>
                      </div>
 

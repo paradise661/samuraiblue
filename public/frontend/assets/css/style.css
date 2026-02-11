@@ -4396,10 +4396,13 @@ background: linear-gradient(103deg, rgba(11, 12, 12, 0.599) 38.63%, rgba(37, 40,
   color: var(--headings-color);
 }
 .hero-5 .banner-outer .hero-content .banner-title {
-  font-size: 70px !important;
-  line-height: 110px;
-  font-weight: 400;
-  margin-bottom: 0;
+font-size: 56px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;  line-height: 110px;
+  /* font-weight: 400;
+  margin-bottom: 0; */
   color: var(--theme-color-white);
   font-size: clamp(36px, 4.7vw, 90px);
   line-height: 1.2;
@@ -5820,7 +5823,7 @@ background: linear-gradient(103deg, rgba(11, 12, 12, 0.599) 38.63%, rgba(37, 40,
   }
 }
 .lets-talk-banner-wrapper .lets-talk-banner-content p {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
   color: var(--theme-color-white);
   padding-bottom: 70px;
   margin-bottom: 45px;
@@ -5956,8 +5959,12 @@ background: linear-gradient(103deg, rgba(11, 12, 12, 0.599) 38.63%, rgba(37, 40,
 
 .lets-talk-banner-section {
   position: relative;
-  margin: 0 30px;
-  border-radius: 50px;
+    height: 80vh;
+        display: flex;
+            justify-content: center;
+            align-items: center;
+  /* margin: 0 30px; */
+  /* border-radius: 50px; */
 }
 @media (max-width: 1399.98px) {
   .lets-talk-banner-section {
@@ -5965,13 +5972,15 @@ background: linear-gradient(103deg, rgba(11, 12, 12, 0.599) 38.63%, rgba(37, 40,
     padding-right: 30px;
   }
 }
+
 @media (max-width: 767.98px) {
   .lets-talk-banner-section {
-    margin: 0 20px;
+    /* margin: 0 20px; */
     padding-left: 18px;
     padding-right: 18px;
   }
 }
+
 .lets-talk-banner-section::before {
   position: absolute;
   top: 0;
@@ -6052,12 +6061,9 @@ background: linear-gradient(103deg, rgba(11, 12, 12, 0.599) 38.63%, rgba(37, 40,
           transform: rotateY(360deg);
 }
 
-.feature-section-3 {
-  margin: 30px 30px 0;
-}
 
 .feature-box-3 {
-  background-color: var(--theme-color-white);
+  /* background-color: var(--theme-color-white); */
   border-radius: 30px;
   padding: 45px 50px;
   position: relative;
@@ -8405,6 +8411,7 @@ background: linear-gradient(103deg, rgba(11, 12, 12, 0.599) 38.63%, rgba(37, 40,
   display: inline;
 }
 .service-card-items-2 .content h3 a:hover {
+    color:#144443 ;
   background-size: 100% 2px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(var(--headings-color)), to(var(--headings-color)));
   background-image: linear-gradient(180deg, var(--headings-color) 0%, var(--headings-color) 100%);
@@ -11305,8 +11312,8 @@ background: linear-gradient(103deg, rgba(11, 12, 12, 0.599) 38.63%, rgba(37, 40,
 }
 .testimonial-card-item .client-item .client-image {
   position: relative;
-  height: 80px;
-  width: 80px;
+  height: 85px;
+  width: 85px;
   margin: 0 auto;
   z-index: 9;
 }
@@ -11320,10 +11327,12 @@ background: linear-gradient(103deg, rgba(11, 12, 12, 0.599) 38.63%, rgba(37, 40,
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  border: 1px dashed var(--theme-color1);
+  /* border: 1px dashed var(--theme-color1); */
 }
 .testimonial-card-item .client-item .client-image img {
   border-radius: 50%;
+  height: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -21491,16 +21500,15 @@ a {
     text-decoration: none !important;
 }
 .banner-subtitle{
-    font-size: 24px;
-        /* Adjust the size as needed */
         color: #fff;
         /* Soft dark color for readability */
-        margin-top: 10px;
-        /* Space between heading and paragraph */
-        line-height: 1.6;
-        /* Better readability */
-        max-width: 600px;
-        /* Optional: limit width for large screens */
-        margin-left: auto;
-        margin-right: auto;
+        font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+}
+.feature-section-3>.container,
+.feature-section-3>.container-fluid {
+    padding-top: 0;
+    padding-bottom: 0;
 }
