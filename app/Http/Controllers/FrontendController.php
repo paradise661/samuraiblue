@@ -193,6 +193,11 @@ class FrontendController extends Controller
         $album->load('galleries');
         return view('frontend.album.show', compact('album'));
     }
+    public function faq(){
+        $faq_page = Page::where('status', 1)->where('slug', 'faq')->first();
+        $faqs = Faq::where('status',1)->oldest("order")->get();
+        return view('frontend.faq',compact('faq_page','faqs'));
+    }
 
     function studentvoice()
     {
