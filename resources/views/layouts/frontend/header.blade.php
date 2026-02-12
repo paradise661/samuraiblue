@@ -7,8 +7,7 @@
              <div class="nav-outer">
                  <div class="logo-box">
                      <div class="logo">
-                         <a href="index.html"><img src=""
-                                 alt="logo" title="finclix" /></a>
+                         <a href="index.html"><img src="" alt="logo" title="samuraiblue" /></a>
                      </div>
                  </div>
 
@@ -29,29 +28,17 @@
                              <li class="dropdown">
                                  <a href="#">Services</a>
                                  <ul>
-                                     <li><a href="page-services.html">Our Services</a></li>
-                                     <li><a href="page-service-details.html">Service Details</a></li>
+                                     <li><a href="page-services.html">Student Support in Japan
+                                         </a></li>
+                                     <li><a href="page-service-details.html">Job Placement & Training
+                                         </a></li>
                                  </ul>
                              </li>
                              <li class=" dropdown">
                                  <a href="#">Student Journey</a>
                              </li>
-                             {{-- <li class="dropdown">
-                                 <a href="#">Shop</a>
-                                 <ul>
-                                     <li><a href="shop-products.html">Products</a></li>
-                                     <li><a href="shop-products-sidebar.html">Products with Sidebar</a></li>
-                                     <li><a href="shop-product-details.html">Product Details</a></li>
-                                     <li><a href="shop-cart.html">Cart</a></li>
-                                     <li><a href="shop-checkout.html">Checkout</a></li>
-                                 </ul>
-                             </li> --}}
                              <li class="dropdown">
                                  <a href="#">Blogs</a>
-                                 {{-- <ul>
-                        <li><a href="news-grid.html">News Grid</a></li>
-                        <li><a href="news-details.html">News Details</a></li>
-                      </ul> --}}
                              </li>
                              <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
                          </ul>
@@ -59,20 +46,9 @@
                      <!-- Main Menu End-->
                      <div class="ui-btn-outer">
                          <div class="header-contact">
-                             {{-- <div class="social-icon">
-                                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                 <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                             </div> --}}
-                             {{-- <a href="tel:+92(8800)9806" class="info-btn">
-                                 <i class="icon fa fa-phone"></i>
-                                 + 88 ( 9800 ) 6802
-                             </a> --}}
                          </div>
                      </div>
-
                      <a href="page-contact.html" class="theme-btn btn-style-one">Apply Now</a>
-
                      <!-- Mobile Nav toggler -->
                      <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
                  </div>

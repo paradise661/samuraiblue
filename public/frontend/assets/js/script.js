@@ -87,9 +87,9 @@ var THEMEMASCOT = {};
 		}
 	}
 	headerStyle();
-	
+
 	// Header hide on scroll down, show on scroll up (optional)
-	
+
 	if ($(window).width() > 991) {
 		if ($(window).width() > 768) {
 			$('.parallaxie').parallaxie({
@@ -99,7 +99,7 @@ var THEMEMASCOT = {};
 		}
 	}
 
-	
+
 	//Submenu Dropdown Toggle
 	if($('.main-header li.dropdown ul').length){
 		$('.main-header .navigation li.dropdown').append('<div class="dropdown-btn"><i class="fa fa-angle-down"></i></div>');
@@ -172,7 +172,7 @@ var THEMEMASCOT = {};
 
 	// 	},{accY: 0});
 	// }
-	
+
 	//Fact Counter + Text Count
 	if ($(".count-box").length) {
 		$(".count-box").appear(
@@ -257,7 +257,7 @@ var THEMEMASCOT = {};
 					.val(+$(this).next().val() - 1);
 		}
 	});
-	
+
 	//project-carousel
 	if($('.project-slider').length > 0) {
 		const ProjectSlider = new Swiper(".project-slider", {
@@ -521,44 +521,39 @@ var THEMEMASCOT = {};
 		});
 	}
 
-	if($('.testimonial-slider-2').length > 0) {
-		const testimonialSlider2 = new Swiper(".testimonial-slider-2", {
-			spaceBetween: 30,
-			speed: 1000,
-			loop: true,
-			autoplay: {
-				delay: 1000,
-				disableOnInteraction: false,
-			},
-			pagination: {
-				el: ".dot2",
-				clickable: true,
-			},
-			breakpoints: {
-				1499: {
-					slidesPerView: 4,
-				},
-				1199: {
-					slidesPerView: 3,
-				},
-				991: {
-					slidesPerView: 2.5,
-				},
-				767: {
-					slidesPerView: 2,
-				},
-				696: {
-					slidesPerView: 2,
-				},
-				476: {
-					slidesPerView: 1.3,
-				},
-				0: {
-					slidesPerView: 1,
-				},
-			},
-		});
-	}
+	if ($('.testimonial-slider-2').length > 0) {
+    const testimonialSlider2 = new Swiper(".testimonial-slider-2", {
+        spaceBetween: 30,
+        speed: 1000,
+        loop: true,
+        autoplay: {
+            delay: 1000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".dot2",
+            clickable: true,
+        },
+        breakpoints: {
+            1499: {
+                slidesPerView: 3,
+            },
+            1199: {
+                slidesPerView: 3,
+            },
+            991: {
+                slidesPerView: 2,
+            },
+            767: {
+                slidesPerView: 1,
+            },
+            0: {
+                slidesPerView: 1,
+            },
+        },
+    });
+}
+
 
 	if($('.testimonial-slider-3').length > 0) {
 		const testimonialSlider3 = new Swiper(".testimonial-slider-3", {
@@ -667,7 +662,7 @@ var THEMEMASCOT = {};
 			}
 		});
 	}
-	
+
 	// Scroll to a Specific Div
 	if($('.scroll-to-target').length){
 		$(".scroll-to-target").on('click', function() {
@@ -778,11 +773,11 @@ var THEMEMASCOT = {};
 		function animateProgress(id, valueId, endValue, speed) {
 			const progress = document.getElementById(id);
 			const valueContainer = document.getElementById(valueId);
-	
+
 			if (!progress || !valueContainer) return;
-	
+
 			let currentValue = 0;
-	
+
 			function updateProgress() {
 				currentValue++;
 				if (currentValue > endValue) {
@@ -793,15 +788,15 @@ var THEMEMASCOT = {};
 					#C8F169 ${currentValue * 3.6}deg,
 					#D4D4D4 ${currentValue * 3.6}deg
 				)`;
-	
+
 				if (currentValue < endValue) {
 					setTimeout(() => requestAnimationFrame(updateProgress), speed);
 				}
 			}
-	
+
 			requestAnimationFrame(updateProgress);
 		}
-	
+
 		// Initialize progress bars only if their elements exist
 		document.addEventListener("DOMContentLoaded", function () {
 			if (document.getElementById('progress1') && document.getElementById('value1')) {
@@ -830,9 +825,9 @@ var THEMEMASCOT = {};
 			}
 		});
 	})();
-	
-	
-	
+
+
+
 
 
 })(window.jQuery);
