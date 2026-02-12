@@ -59,12 +59,11 @@
                                     </div>
                                     <div class="about-counter2">
                                         <div class="count-box">
-                                            <h2>
+                                            {{-- <h2>
                                                 <span class="count-text" data-speed="3000" data-stop="25">1</span>+
-                                            </h2>
+                                            </h2> --}}
                                             <p>
-                                                Years of
-                                                Experience
+                                              Since 2015
                                             </p>
                                         </div>
                                     </div>
@@ -84,7 +83,7 @@
                                     <div class="about-text wow fadeInUp" data-wow-delay=".5s">
                                         {!! $about_us->description ?? ' ' !!}
                                     </div>
-                                    <a href="page-contact.html" class="theme-btn btn-style-one wow fadeInUp"
+                                    <a href="{{ route('frontend.about') }}" class="theme-btn btn-style-one wow fadeInUp"
                                         data-wow-delay=".7s">
                                         Lets Talk With Us
                                         <span class="icon">
@@ -100,24 +99,28 @@
                             <div class="about-counter">
                                 <div class="count-box">
                                     <h2>
-                                        <span class="count-text" data-speed="3000" data-stop="1">0</span>M
+                                        <span class="count-text" data-speed="3000"
+                                            data-stop="{{ (int) ($settings['home_counter_students'] ?? 3) }}">
+                                            0
+                                        </span>K
                                     </h2>
+
                                     <p>
-                                        Worldwide <br>
-                                        business Grow
+                                        {{ $settings['home_counter_students_title'] ?? 'Students helped' }}
                                     </p>
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                             <div class="about-counter">
                                 <div class="count-box">
                                     <h2>
-                                        <span class="count-text" data-speed="3000" data-stop="32">0</span>+
+                                        <span class="count-text" data-speed="3000"
+                                            data-stop="{{ (int) ( $settings['home_counter_scholarship'] ?? 15)}}">0</span>+
                                     </h2>
                                     <p>
-                                        Best Business <br>
-                                        Awards
+                                        {{ $settings['home_counter_scholarship_title'] ?? 'company connected' }}
                                     </p>
                                 </div>
                             </div>
@@ -126,11 +129,10 @@
                             <div class="about-counter">
                                 <div class="count-box">
                                     <h2>
-                                        <span class="count-text" data-speed="3000" data-stop="3">0</span>K+
+                                        <span class="count-text" data-speed="3000" data-stop="{{ (int) ( $settings['home_counter_enrolled'] ?? 4)}}">0</span>K+
                                     </h2>
                                     <p>
-                                        Satisfied <br>
-                                        Clients
+                                         {{ $settings['home_counter_enrolled_title'] ?? 'satisfied clients' }}
                                     </p>
                                 </div>
                             </div>
@@ -157,7 +159,7 @@
                         @foreach ($services as $item)
                             <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                 <div class="service-card-items">
-                                    <div class="icon"><i class="{{ $item->icon }}"></i></div>
+                                    <div class="icon"><i class="{{ $item->icon ?? '' }}"></i></div>
                                     <div class="content">
                                         <h3><a href="page-service-details.html">{{ $item->title ?? '' }}</a></h3>
                                         <p class="text-justify line-clamp-4">{{ $item->short_description ?? '' }}
@@ -179,8 +181,8 @@
                         <div class="row g-4 align-items-center">
                             <div class="col-xl-5">
                                 <div class="why-choose-us-image-1">
-                                    @if (!empty($why_choose_us) && !empty($why_choose_us->banner_image))
-                                        <img src="{{ asset($why_choose_us->banner_image) }}" alt="img"
+                                    @if (!empty($why_choose_us) && !empty($why_choose_us->image))
+                                        <img src="{{ $why_choose_us->image}}" alt="img"
                                             class="wow img-custom-anim-left" />
                                     @else
                                         <img src="{{ asset('frontend/assets/images/default.jpg') }}" alt="default"
@@ -194,14 +196,14 @@
                                         <h6 class="sub-title">
                                             <span class="triangle triangle1"></span>
                                             <span class="triangle triangle2"></span>
-                                            {{ $why_choose_us->title }}
+                                            {{ $why_choose_us->title ?? '' }}
                                         </h6>
                                         {{-- <h2 class="wow fadeInUp" data-wow-delay=".2s">  {{ $why_choose_us->short_description }}</h2> --}}
                                     </div>
                                     <div class="tab-content">
                                         <div id="Mission" class="tab-pane fade show active">
                                             <div class="why-choose-list custom-list wow fadeInUp" data-wow-delay=".3s">
-                                                {!! $why_choose_us->description !!}
+                                                {!! $why_choose_us->description ?? '' !!}
                                             </div>
                                             {{-- <div class="why-choose-list-items">
                                                 <ul class="why-list wow fadeInUp" data-wow-delay=".5s">
@@ -227,32 +229,33 @@
                         <h6 class="sub-title wow fadeInUp">
                             <span class="triangle triangle1"></span>
                             <span class="triangle triangle2"></span>
-                            Student Journey
+                            {{ $settings['courses_title'] ?? '' }}
                         </h6>
-                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Step by step process</h2>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">{{ $settings['courses_subtitle'] ?? '' }}</h2>
                     </div>
                     <div class="row">
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                            <div class="service-card-items-2">
-                                <div class="service-icon">
-                                    <div class="icon">
-                                        <i class="flaticon-business-028-briefcase"></i>
-                                        <div class="service-triangle"></div>
+                        @foreach ($courses as $item)
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="service-card-items-2">
+                                    <div class="service-icon">
+                                        <div class="icon">
+                                            <i class="flaticon-business-028-briefcase"></i>
+                                            <div class="service-triangle"></div>
+                                        </div>
+                                        <span class="number">
+                                           0{{ $item->order }}
+                                        </span>
                                     </div>
-                                    <span class="number">
-                                        01
-                                    </span>
-                                </div>
-                                <div class="content">
-                                    <h3><a href="page-service-details.html">Consultation & Course Selection</a></h3>
-                                    <p>
-                                        We begin with a personalized consultation to understand the student’s goals,
-                                        academic background.
-                                    </p>
+                                    <div class="content">
+                                        <h3><a href="{{ route('frontend.course') }}">{{ $item->title ?? '' }}</a></h3>
+                                        <p>
+                                            {{ $item->short_description ?? '' }}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
+                        @endforeach
+                        {{-- <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
                             <div class="service-card-items-2">
                                 <div class="service-icon">
                                     <div class="icon">
@@ -292,11 +295,11 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </section>
-            <section class="feature-section-3 section-padding fix">
+            {{-- <section class="feature-section-3 section-padding fix">
                 <div class="container">
                     <div class="row g-4">
                         <div class="col-lg-5">
@@ -354,7 +357,7 @@
                             </div>
                         </div>
                     </div>
-            </section>
+            </section> --}}
         </div>
         <!-- Contact Section Start -->
         <section class="contact-section fix section-padding">
@@ -367,10 +370,9 @@
                                     <h6 class="sub-title text-white wow fadeInUp">
                                         <span class="triangle triangle1"></span>
                                         <span class="triangle triangle2"></span>
-                                        Contact Us
+                                      {{ $settings['contact_title']?? ''}}
                                     </h6>
-                                    <h2 class="text-white wow fadeInUp" data-wow-delay=".2s">Please Keep in Touch With
-                                        us When you want</h2>
+                                    <h2 class="text-white wow fadeInUp" data-wow-delay=".2s">{{ $settings['contact_description'] ?? ''}}</h2>
                                 </div>
                                 <form id="contact_form" class="form-box wow fadeInUp" data-wow-delay=".3s"
                                     name="contact_form"
@@ -423,7 +425,7 @@
                         <img src="images/home-1/contact/shape-1.png" alt="img" />
                     </div> --}}
                 <div class="contact-info-box float-bob-y">
-                    <h2>Still Have you Any Question?</h2>
+                    <h2>{{ $settings['contact_form_title']?? '' }}</h2>
                     <ul class="contact-list">
                         <li>
                             <div class="icon">
@@ -431,7 +433,7 @@
                             </div>
                             <div class="content">
                                 <h3>Call Us</h3>
-                                <p><a href="tel:+184084152569">+1840 8415 2569</a></p>
+                                <p><a href="tel:+184084152569">{{ $settings['site_phone']?? '' }}</a></p>
                             </div>
                         </li>
                         <li>
@@ -440,7 +442,7 @@
                             </div>
                             <div class="content">
                                 <h3>Mail Us</h3>
-                                <p><a href="mailto:info@ourmail.com">info@ourmail.com</a></p>
+                                <p><a href="mailto:info@ourmail.com">{{ $settings['site_email']?? '' }}</a></p>
                             </div>
                         </li>
                     </ul>
@@ -466,37 +468,39 @@
                     <div class="testimonial-wrapper-2">
                         <div class="swiper testimonial-slider-2">
                             <div class="swiper-wrapper">
-                                @foreach ($testimonials as $testimonial)
-                                    <div class="swiper-slide">
-                                        <div class="testimonial-card-item">
-                                            <div class="client-item">
-                                                <div class="client-image">
-                                                    <img src="{{ $testimonial->image }}" alt="img">
+                                @if ($testimonials && $testimonials->count())
+                                    @foreach ($testimonials as $testimonial)
+                                        <div class="swiper-slide">
+                                            <div class="testimonial-card-item">
+                                                <div class="client-item">
+                                                    <div class="client-image">
+                                                        <img src="{{ $testimonial->image }}" alt="img">
+                                                    </div>
+                                                    <div class="info-text">
+                                                        <h5>{{ $testimonial->name ?? 'name' }}</h5>
+                                                        <span>{{ $testimonial->position ?? 'student' }}</span>
+                                                    </div>
                                                 </div>
-                                                <div class="info-text">
-                                                    <h5>{{ $testimonial->name ?? 'name' }}</h5>
-                                                    <span>{{ $testimonial->position ?? 'student' }}</span>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <div class="quote-icon">
-                                                    <i class="flaticon-finance-Quote"></i>
-                                                    <div class="test-triangle"></div>
-                                                </div>
-                                                <div class="star">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="line-clamp-4">
-                                                    {!! $testimonial->description !!}
+                                                <div class="content">
+                                                    <div class="quote-icon">
+                                                        <i class="flaticon-finance-Quote"></i>
+                                                        <div class="test-triangle"></div>
+                                                    </div>
+                                                    <div class="star">
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                    </div>
+                                                    <div class="line-clamp-4">
+                                                        {!! $testimonial->description ?? '' !!}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @endforeach
+                                    @endforeach
+                                @endif
                                 {{-- <div class="swiper-slide">
                                     <div class="testimonial-card-item">
                                         <div class="client-item">
@@ -611,9 +615,10 @@
                                 <h6 class="sub-title wow fadeInUp">
                                     <span class="triangle triangle1"></span>
                                     <span class="triangle triangle2"></span>
-                                    {{ $faq_page->title }}
+                                    {{ $faq_page->title ?? '' }}
                                 </h6>
-                                <h2 class="wow fadeInUp" data-wow-delay=".2s"> {{ $faq_page->short_description }}</h2>
+                                <h2 class="wow fadeInUp" data-wow-delay=".2s"> {{ $faq_page->short_description ?? '' }}
+                                </h2>
                             </div>
                             <div class="faq-image">
                                 <img src="{{ $faq_page->banner_image }}" alt="img"
@@ -632,19 +637,19 @@
                             <ul class="accordion-box">
                                 <!--Block-->
                                 @foreach ($faq as $item)
-                                @endforeach
-                                <li class="accordion block active-block wow fadeInUp">
-                                    <div class="acc-btn">
-                                        {{ $item->question }}
-                                        <div class="icon fa fa-plus"></div>
-                                    </div>
-                                    <div class="acc-content current">
-                                        <div class="content">
-                                            <div class="text">{{ $item->answer }}
+                                    <li class="accordion block active-block wow fadeInUp">
+                                        <div class="acc-btn">
+                                            {{ $item->question ?? '' }}
+                                            <div class="icon fa fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content current">
+                                            <div class="content">
+                                                <div class="text">{{ $item->answer ?? '' }}
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                @endforeach
                                 <!--Block-->
                                 {{-- <li class="accordion block wow fadeInUp" data-wow-delay=".2s">
                                     <div class="acc-btn active">
@@ -714,37 +719,37 @@
                     <h6 class="sub-title wow fadeInUp">
                         <span class="triangle triangle1"></span>
                         <span class="triangle triangle2"></span>
-                        Our Blog
+                        {{ $settings['blogs_title'] ?? '' }}
                     </h6>
-                    <h2 class="wow fadeInUp" data-wow-delay=".3s">Insights from Latest Blog</h2>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s">{{ $settings['blogs_subtitle'] ?? '' }}</h2>
                 </div>
                 <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="news-box-items">
-                            <div class="news-image">
-                                <img src="{{ asset('frontend/assets/images/home-1/ssw.jpg') }}" alt="img" />
-                                {{-- <img src="images/home-1/news/news-01.jpg" alt="img" /> --}}
-                                <span class="post-box">
-                                    <span class="date">20</span>
-                                    <span class="month">March</span>
-                                </span>
+                    @if (isset($blogs) && $blogs->count())
+                        @foreach ($blogs as $item)
+                            <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="news-box-items">
+                                    <div class="news-image">
+                                        <img src="{{ $item->image }}" alt="img" />
+                                        {{-- <img src="images/home-1/news/news-01.jpg" alt="img" /> --}}
+                                        <span class="post-box">
+                                            <span class="date">20</span>
+                                            <span class="month">March</span>
+                                        </span>
+                                    </div>
+                                    <div class="news-content">
+                                        <h3>
+                                            <a href="news-details.html">{{ $item->title ?? '' }}</a>
+                                        </h3>
+                                        <a href="news-details.html" class="link-btn">
+                                            Learn More
+                                            <span class="icon"><i class="lnr-icon-arrow-right"></i></span>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="news-content">
-                                {{-- <ul class="comments-list">
-                                    <li><i class="lnr-icon-user1"></i> Admin</li>
-                                    <li><i class="lnr-icon-comment"></i> 3 Comments</li>
-                                </ul> --}}
-                                <h3>
-                                    <a href="news-details.html">Record high number of international students</a>
-                                </h3>
-                                <a href="news-details.html" class="link-btn">
-                                    Learn More
-                                    <span class="icon"><i class="lnr-icon-arrow-right"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                        @endforeach
+                    @endif
+                    {{-- <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                         <div class="news-box-items">
                             <div class="news-image">
                                 <img src="{{ asset('frontend/assets/images/home-1/banner-2.jpeg') }}" alt="img" />
@@ -754,10 +759,7 @@
                                 </span>
                             </div>
                             <div class="news-content">
-                                {{-- <ul class="comments-list">
-                                    <li><i class="lnr-icon-user1"></i> Admin</li>
-                                    <li><i class="lnr-icon-comment"></i> 3 Comments</li>
-                                </ul> --}}
+
                                 <h3>
                                     <a href="news-details.html">Government & public debate on foreign student
                                         support</a>
@@ -781,10 +783,7 @@
                                 </span>
                             </div>
                             <div class="news-content">
-                                {{-- <ul class="comments-list">
-                                    <li><i class="lnr-icon-user1"></i> Admin</li>
-                                    <li><i class="lnr-icon-comment"></i> 3 Comments</li>
-                                </ul> --}}
+
                                 <h3>
                                     <a href="news-details.html">Policy responses to international student </a>
                                 </h3>
@@ -796,7 +795,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>

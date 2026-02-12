@@ -7,7 +7,7 @@
              <div class="nav-outer">
                  <div class="logo-box">
                      <div class="logo">
-                         <a href="index.html"><img src="" alt="logo" title="samuraiblue" /></a>
+                         <a href="index.html"><img src="{{ $settings['site_main_logo'] ? asset($settings['site_main_logo']) : asset('frontend/assets/images/logo.png') }}" alt="logo" title="samuraiblue" /></a>
                      </div>
                  </div>
 
