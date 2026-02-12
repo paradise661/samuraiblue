@@ -20,7 +20,7 @@
                              <li class="dropdown">
                                  <a href="#">About</a>
                                  <ul>
-                                     <li><a href="page-about.html">Company's Profile</a></li>
+                                     <li><a href="{{route('frontend.about')}}">Company's Profile</a></li>
                                      <li><a href="page-testimonial.html">Testimonial</a></li>
                                      <li><a href="page-faq.html">FAQ</a></li>
                                  </ul>
