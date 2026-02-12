@@ -77,7 +77,11 @@ class FrontendController extends Controller
         $why_choose_us = WhyChooseUs::where('status', 1)->first();
         $teams = Team::where('status', 1)->oldest("order")->get();
         $studentreviw = WhyChooseUs::get();
-        return view('frontend.about.index', compact('why_choose_us','about_us', 'why_us', 'teams', 'studentreviw'));
+        $mission = Page::where('status',1)->where('slug','our-mission')->first();
+        $vision = Page::where('status', 1)->where('slug', 'our-vision')->first();
+        $international = Page::where('status', 1)->where('slug', 'international-student')->first();
+        $experience = Page::where('status', 1)->where('slug', 'japan-experience')->first();
+        return view('frontend.about.index', compact('why_choose_us','about_us', 'why_us', 'teams', 'studentreviw','mission','vision','international','experience'));
     }
     public function service()
     {
