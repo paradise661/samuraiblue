@@ -63,7 +63,7 @@
                                                 <span class="count-text" data-speed="3000" data-stop="25">1</span>+
                                             </h2> --}}
                                             <p>
-                                              Since 2015
+                                                Since 2015
                                             </p>
                                         </div>
                                     </div>
@@ -117,7 +117,7 @@
                                 <div class="count-box">
                                     <h2>
                                         <span class="count-text" data-speed="3000"
-                                            data-stop="{{ (int) ( $settings['home_counter_scholarship'] ?? 15)}}">0</span>+
+                                            data-stop="{{ (int) ($settings['home_counter_scholarship'] ?? 15) }}">0</span>+
                                     </h2>
                                     <p>
                                         {{ $settings['home_counter_scholarship_title'] ?? 'company connected' }}
@@ -129,10 +129,11 @@
                             <div class="about-counter">
                                 <div class="count-box">
                                     <h2>
-                                        <span class="count-text" data-speed="3000" data-stop="{{ (int) ( $settings['home_counter_enrolled'] ?? 4)}}">0</span>K+
+                                        <span class="count-text" data-speed="3000"
+                                            data-stop="{{ (int) ($settings['home_counter_enrolled'] ?? 4) }}">0</span>K+
                                     </h2>
                                     <p>
-                                         {{ $settings['home_counter_enrolled_title'] ?? 'satisfied clients' }}
+                                        {{ $settings['home_counter_enrolled_title'] ?? 'satisfied clients' }}
                                     </p>
                                 </div>
                             </div>
@@ -182,7 +183,7 @@
                             <div class="col-xl-5">
                                 <div class="why-choose-us-image-1">
                                     @if (!empty($why_choose_us) && !empty($why_choose_us->image))
-                                        <img src="{{ $why_choose_us->image}}" alt="img"
+                                        <img src="{{ $why_choose_us->image }}" alt="img"
                                             class="wow img-custom-anim-left" />
                                     @else
                                         <img src="{{ asset('frontend/assets/images/default.jpg') }}" alt="default"
@@ -243,7 +244,7 @@
                                             <div class="service-triangle"></div>
                                         </div>
                                         <span class="number">
-                                           0{{ $item->order }}
+                                            0{{ $item->order }}
                                         </span>
                                     </div>
                                     <div class="content">
@@ -370,9 +371,10 @@
                                     <h6 class="sub-title text-white wow fadeInUp">
                                         <span class="triangle triangle1"></span>
                                         <span class="triangle triangle2"></span>
-                                      {{ $settings['contact_title']?? ''}}
+                                        {{ $settings['contact_title'] ?? '' }}
                                     </h6>
-                                    <h2 class="text-white wow fadeInUp" data-wow-delay=".2s">{{ $settings['contact_description'] ?? ''}}</h2>
+                                    <h2 class="text-white wow fadeInUp" data-wow-delay=".2s">
+                                        {{ $settings['contact_description'] ?? '' }}</h2>
                                 </div>
                                 <form id="contact_form" class="form-box wow fadeInUp" data-wow-delay=".3s"
                                     name="contact_form"
@@ -425,7 +427,7 @@
                         <img src="images/home-1/contact/shape-1.png" alt="img" />
                     </div> --}}
                 <div class="contact-info-box float-bob-y">
-                    <h2>{{ $settings['contact_form_title']?? '' }}</h2>
+                    <h2>{{ $settings['contact_form_title'] ?? '' }}</h2>
                     <ul class="contact-list">
                         <li>
                             <div class="icon">
@@ -433,7 +435,7 @@
                             </div>
                             <div class="content">
                                 <h3>Call Us</h3>
-                                <p><a href="tel:+184084152569">{{ $settings['site_phone']?? '' }}</a></p>
+                                <p><a href="tel:+184084152569">{{ $settings['site_phone'] ?? '' }}</a></p>
                             </div>
                         </li>
                         <li>
@@ -442,7 +444,7 @@
                             </div>
                             <div class="content">
                                 <h3>Mail Us</h3>
-                                <p><a href="mailto:info@ourmail.com">{{ $settings['site_email']?? '' }}</a></p>
+                                <p><a href="mailto:info@ourmail.com">{{ $settings['site_email'] ?? '' }}</a></p>
                             </div>
                         </li>
                     </ul>
@@ -501,99 +503,6 @@
                                         </div>
                                     @endforeach
                                 @endif
-                                {{-- <div class="swiper-slide">
-                                    <div class="testimonial-card-item">
-                                        <div class="client-item">
-                                            <div class="client-image">
-                                                <img src="{{ asset('frontend/assets/images/home-1/testimonial/download.png') }}"
-                                                    alt="img">
-                                            </div>
-                                            <div class="info-text">
-                                                <h5>Esther Howard</h5>
-                                                <span>team Manager</span>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <div class="quote-icon">
-                                                <i class="flaticon-finance-Quote"></i>
-                                                <div class="test-triangle"></div>
-                                            </div>
-                                            <div class="star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <p>
-                                                It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when looking at its layout.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-card-item">
-                                        <div class="client-item">
-                                            <div class="client-image">
-                                                <img src="{{ asset('frontend/assets/images/home-1/testimonial/download.png') }}"
-                                                    alt="img">
-                                            </div>
-                                            <div class="info-text">
-                                                <h5>Esther Howard</h5>
-                                                <span>team Manager</span>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <div class="quote-icon">
-                                                <i class="flaticon-finance-Quote"></i>
-                                                <div class="test-triangle"></div>
-                                            </div>
-                                            <div class="star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <p>
-                                                It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when looking at its layout.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-card-item">
-                                        <div class="client-item">
-                                            <div class="client-image">
-                                                <img src="{{ asset('frontend/assets/images/home-1/testimonial/download.png') }}"
-                                                    alt="img">
-                                            </div>
-                                            <div class="info-text">
-                                                <h5>Esther Howard</h5>
-                                                <span>team Manager</span>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <div class="quote-icon">
-                                                <i class="flaticon-finance-Quote"></i>
-                                                <div class="test-triangle"></div>
-                                            </div>
-                                            <div class="star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <p>
-                                                It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when looking at its layout.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div> --}}
                             </div>
                             <div class="swiper-dot mt-5 mb-0">
                                 <div class="dot2"></div>
@@ -603,7 +512,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Faq Section Start -->
         <section class="faq-section fix section-padding section-bg bg-cover"
             style="background-image: url('images/home-1/faq/faq-shape.png')">
@@ -650,62 +558,6 @@
                                         </div>
                                     </li>
                                 @endforeach
-                                <!--Block-->
-                                {{-- <li class="accordion block wow fadeInUp" data-wow-delay=".2s">
-                                    <div class="acc-btn active">
-                                        How much does accommodation cost?
-                                        <div class="icon fa fa-plus"></div>
-                                    </div>
-                                    <div class="acc-content">
-                                        <div class="content">
-                                            <div class="text">Accommodation costs vary by location and type. On
-                                                average, students can expect to pay between ¥30,000 to ¥60,000 per month
-                                                for shared housing or student accommodation.</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!--Block-->
-                                <li class="accordion block wow fadeInUp" data-wow-delay=".4s">
-                                    <div class="acc-btn">
-                                        Is Japanese language required?
-                                        <div class="icon fa fa-plus"></div>
-                                    </div>
-                                    <div class="acc-content">
-                                        <div class="content">
-                                            <div class="text">Basic Japanese is recommended but not always required
-                                                at the beginning. Many institutions offer Japanese language courses, and
-                                                we provide guidance to help students improve their language skills after
-                                                arrival.</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!--Block-->
-                                <li class="accordion block wow fadeInUp" data-wow-delay=".6s">
-                                    <div class="acc-btn">
-                                        What jobs are available?
-                                        <div class="icon fa fa-plus"></div>
-                                    </div>
-                                    <div class="acc-content">
-                                        <div class="content">
-                                            <div class="text">Students commonly work in restaurants, convenience
-                                                stores, factories, hotels, supermarkets, and cleaning services. Food &
-                                                Beverage roles are especially popular for part-time work.</div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="accordion block wow fadeInUp" data-wow-delay=".8s">
-                                    <div class="acc-btn">
-                                        How long is Food & Beverage (F&B) training?
-                                        <div class="icon fa fa-plus"></div>
-                                    </div>
-                                    <div class="acc-content">
-                                        <div class="content">
-                                            <div class="text">Food & Beverage training typically lasts between 3 to 6
-                                                months, depending on the program and skill level, and includes both
-                                                practical and on-the-job training.</div>
-                                        </div>
-                                    </div>
-                                </li> --}}
                             </ul>
                         </div>
                     </div>
@@ -725,7 +577,7 @@
                 </div>
                 <div class="row">
                     @if (isset($blogs) && $blogs->count())
-                       @foreach ($blogs as $item)
+                        @foreach ($blogs as $item)
                             <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                                 <div class="news-box-items">
                                     <div class="news-image">
@@ -737,7 +589,8 @@
                                     </div>
                                     <div class="news-content">
                                         <h3>
-                                            <a href="{{ route('frontend.blogsingle', $item->slug) }}">{{ $item->title ?? '' }}</a>
+                                            <a
+                                                href="{{ route('frontend.blogsingle', $item->slug) }}">{{ $item->title ?? '' }}</a>
                                         </h3>
                                         <a href="{{ route('frontend.blogsingle', $item->slug) }}" class="link-btn">
                                             Learn More
