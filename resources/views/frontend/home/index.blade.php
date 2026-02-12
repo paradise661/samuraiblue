@@ -39,10 +39,10 @@
                         <div class="lets-talk-banner-content ">
 
                             <h2 class="banner-title wow fadeInUp" data-wow-delay=".2s">
-                               {{ $sliders->title ?? ' '}}
+                                {{ $sliders->title ?? ' ' }}
                             </h2>
                             <div class="banner-subtitle wow fadeInUp" data-wow-delay=".4s">
-                          {!! $sliders->description ?? ' ' !!}
+                                {!! $sliders->description ?? ' ' !!}
                             </div>
                         </div>
                     </div>
@@ -76,12 +76,13 @@
                                         <h6 class="sub-title wow fadeInUp">
                                             <span class="triangle triangle1"></span>
                                             <span class="triangle triangle2"></span>
-                                          {{ $about_us->title ?? ' ' }}
+                                            {{ $about_us->title ?? ' ' }}
                                         </h6>
-                                        <h2 class="wow fadeInUp" data-wow-delay=".2s">{{ $about_us->short_description ?? ''}}</h2>
+                                        <h2 class="wow fadeInUp" data-wow-delay=".2s">
+                                            {{ $about_us->short_description ?? '' }}</h2>
                                     </div>
                                     <div class="about-text wow fadeInUp" data-wow-delay=".5s">
-                                       {!!$about_us->description ?? ' '!!}
+                                        {!! $about_us->description ?? ' ' !!}
                                     </div>
                                     <a href="page-contact.html" class="theme-btn btn-style-one wow fadeInUp"
                                         data-wow-delay=".7s">
@@ -146,26 +147,26 @@
                         <h6 class="sub-title wow fadeInUp">
                             <span class="triangle triangle1"></span>
                             <span class="triangle triangle2"></span>
-                      {{ $settings['services_title'] ?? '' }}
+                            {{ $settings['services_title'] ?? '' }}
                         </h6>
                         <h2 class="wow fadeInUp" data-wow-delay=".2s">{{ $settings['services_subtitle'] ?? '' }}</h2>
                     </div>
                 </div>
                 <div class="service-wrapper">
                     <div class="row">
-                         @foreach ($services as $item)
-                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                            <div class="service-card-items">
-                                <div class="icon"><i class="{{ $item->icon }}"></i></div>
-                                <div class="content">
-                                    <h3><a href="page-service-details.html">{{ $item->title ?? ''}}</a></h3>
-                                    <p class="text-justify line-clamp-4">{{ $item->short_description ?? '' }}
-                                    </p>
-                                    <a href="page-service-details.html" class="link-btn"><i
-                                            class="lnr-icon-arrow-right"></i></a>
+                        @foreach ($services as $item)
+                            <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                                <div class="service-card-items">
+                                    <div class="icon"><i class="{{ $item->icon }}"></i></div>
+                                    <div class="content">
+                                        <h3><a href="page-service-details.html">{{ $item->title ?? '' }}</a></h3>
+                                        <p class="text-justify line-clamp-4">{{ $item->short_description ?? '' }}
+                                        </p>
+                                        <a href="page-service-details.html" class="link-btn"><i
+                                                class="lnr-icon-arrow-right"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>
@@ -178,8 +179,13 @@
                         <div class="row g-4 align-items-center">
                             <div class="col-xl-5">
                                 <div class="why-choose-us-image-1">
-                                    <img src="{{ $why_choose_us->banner_image }}"
-                                        alt="img" class="wow img-custom-anim-left" />
+                                    @if (!empty($why_choose_us) && !empty($why_choose_us->banner_image))
+                                        <img src="{{ asset($why_choose_us->banner_image) }}" alt="img"
+                                            class="wow img-custom-anim-left" />
+                                    @else
+                                        <img src="{{ asset('frontend/assets/images/default.jpg') }}" alt="default"
+                                            class="wow img-custom-anim-left" />
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-xl-7">
@@ -195,7 +201,7 @@
                                     <div class="tab-content">
                                         <div id="Mission" class="tab-pane fade show active">
                                             <div class="why-choose-list custom-list wow fadeInUp" data-wow-delay=".3s">
-                                                {!!$why_choose_us->description!!}
+                                                {!! $why_choose_us->description !!}
                                             </div>
                                             {{-- <div class="why-choose-list-items">
                                                 <ul class="why-list wow fadeInUp" data-wow-delay=".5s">
@@ -451,17 +457,47 @@
                         <h6 class="sub-title wow fadeInUp">
                             <span class="triangle triangle1"></span>
                             <span class="triangle triangle2"></span>
-                            Testimonials
+                            {{ $settings['testioninal_title'] ?? '' }}
                         </h6>
                         <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                            What our top Customers <br />
-                            Say About us
+                            {{ $settings['testioninal_subtitle'] ?? '' }}
                         </h2>
                     </div>
                     <div class="testimonial-wrapper-2">
                         <div class="swiper testimonial-slider-2">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
+                                @foreach ($testimonials as $testimonial)
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-card-item">
+                                            <div class="client-item">
+                                                <div class="client-image">
+                                                    <img src="{{ $testimonial->image }}" alt="img">
+                                                </div>
+                                                <div class="info-text">
+                                                    <h5>{{ $testimonial->name ?? 'name' }}</h5>
+                                                    <span>{{ $testimonial->position ?? 'student' }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="quote-icon">
+                                                    <i class="flaticon-finance-Quote"></i>
+                                                    <div class="test-triangle"></div>
+                                                </div>
+                                                <div class="star">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <div class="line-clamp-4">
+                                                    {!! $testimonial->description !!}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                                {{-- <div class="swiper-slide">
                                     <div class="testimonial-card-item">
                                         <div class="client-item">
                                             <div class="client-image">
@@ -553,38 +589,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-card-item">
-                                        <div class="client-item">
-                                            <div class="client-image">
-                                                <img src="{{ asset('frontend/assets/images/home-1/testimonial/download.png') }}"
-                                                    alt="img">
-                                            </div>
-                                            <div class="info-text">
-                                                <h5>Esther Howard</h5>
-                                                <span>team Manager</span>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <div class="quote-icon">
-                                                <i class="flaticon-finance-Quote"></i>
-                                                <div class="test-triangle"></div>
-                                            </div>
-                                            <div class="star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <p>
-                                                It is a long established fact that a reader will be distracted by the
-                                                readable content of a page when looking at its layout.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="swiper-dot mt-5 mb-0">
                                 <div class="dot2"></div>
@@ -606,12 +611,12 @@
                                 <h6 class="sub-title wow fadeInUp">
                                     <span class="triangle triangle1"></span>
                                     <span class="triangle triangle2"></span>
-                                    FAQ’S
+                                    {{ $faq_page->title }}
                                 </h6>
-                                <h2 class="wow fadeInUp" data-wow-delay=".2s">Frequently Asked Quetions</h2>
+                                <h2 class="wow fadeInUp" data-wow-delay=".2s"> {{ $faq_page->short_description }}</h2>
                             </div>
                             <div class="faq-image">
-                                <img src="{{ asset('frontend/assets/images/home-1/faq.jpg') }}" alt="img"
+                                <img src="{{ $faq_page->banner_image }}" alt="img"
                                     class="wow img-custom-anim-left" />
                                 {{-- <div class="shape-1 float-bob-y">
                                         <img src="images/home-1/faq/shape-01.png" alt="img" />
@@ -626,22 +631,22 @@
                         <div class="faq-content-1">
                             <ul class="accordion-box">
                                 <!--Block-->
+                                @foreach ($faq as $item)
+                                @endforeach
                                 <li class="accordion block active-block wow fadeInUp">
                                     <div class="acc-btn">
-                                        Can I work while studying?
+                                        {{ $item->question }}
                                         <div class="icon fa fa-plus"></div>
                                     </div>
                                     <div class="acc-content current">
                                         <div class="content">
-                                            <div class="text">Yes. International students in Japan are allowed to
-                                                work part-time for up to 28 hours per week with proper work permission,
-                                                helping them support their living expenses and gain work experience.
+                                            <div class="text">{{ $item->answer }}
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                                 <!--Block-->
-                                <li class="accordion block wow fadeInUp" data-wow-delay=".2s">
+                                {{-- <li class="accordion block wow fadeInUp" data-wow-delay=".2s">
                                     <div class="acc-btn active">
                                         How much does accommodation cost?
                                         <div class="icon fa fa-plus"></div>
@@ -695,7 +700,7 @@
                                                 practical and on-the-job training.</div>
                                         </div>
                                     </div>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>
