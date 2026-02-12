@@ -38,7 +38,7 @@
                                  <a href="#">Student Journey</a>
                              </li>
                              <li class="dropdown">
-                                 <a href="#">Blogs</a>
+                                 <a href="{{ route('frontend.blog') }}">Blogs</a>
                              </li>
                              <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
                          </ul>
@@ -65,7 +65,7 @@
          <nav class="menu-box">
              <div class="upper-box">
                  <div class="nav-logo">
-                     <a href="index.html"><img src="images/white-logo.png" alt="" /></a>
+                     <a href="index.html"><img src="{{ $settings['site_main_logo'] ? asset($settings['site_main_logo']) : asset('frontend/assets/images/logo.png') }}" alt="" /></a>
                  </div>
                  <div class="close-btn"><i class="icon fa fa-times"></i></div>
              </div>
@@ -124,7 +124,7 @@
              <div class="inner-container">
                  <!--Logo-->
                  <div class="logo">
-                     <a href="index.html"><img src="images/black-logo.png" alt="img" /></a>
+                     <a href="index.html"><img src="{{ $settings['site_main_logo'] ? asset($settings['site_main_logo']) : asset('frontend/assets/images/logo.png') }}" alt="img" /></a>
                  </div>
 
                  <!--Right Col-->

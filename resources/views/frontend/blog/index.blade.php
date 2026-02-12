@@ -5,63 +5,101 @@
         'description' => $blog_page->meta_description ?? '',
         'keyword' => $blog_page->meta_keywords ?? '',
         'schema' => $blog_page->seo_schema ?? '',
-        'created_at' => $blog_page->created_at,
-        'updated_at' => $blog_page->updated_at,
+        'created_at' => $blog_page->created_at ?? now(),
+        'updated_at' => $blog_page->updated_at ?? now(),
     ])
 @endsection
 @extends('layouts.frontend.master')
 @section('content')
-    <section class="position-relative" style="height: 420px;">
-        <img src="{{ $blog_page->banner_image }}" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
-            alt="Blog Banner">
-        <div class="position-absolute top-0 start-0 w-100 h-100"
-            style="background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));"></div>
-        <div class="container h-100 position-relative d-flex align-items-center">
-            <div class="text-white">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb text-white-50 mb-3">
-                        <li class="breadcrumb-item">
-                            <a href="#" class="text-white text-decoration-none">Home</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="#" class="text-white text-decoration-none">Blog</a>
-                        </li>
-                    </ol>
-                </nav>
-                <h1 class="fw-bold display-5">{{ $blog_page->title }}</h1>
-            </div>
-        </div>
+    @if ($blog_page)
+         <section class="page-title" style="background-image: url({{$blog_page->banner_image}});">
+      <div class="auto-container">
+		<div class="title-outer">
+			<ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
+				<li><a href="{{ route('frontend.home') }}">Home</a></li>
+				<li>{{ $blog_page->title ?? '' }}</li>
+			</ul>
+			<h1 class="title wow fadeInUp" data-wow-delay=".5s">{{ $blog_page->title ?? '' }}</h1>
+		</div>
+      </div>
     </section>
-    <section class="blog-section my-4 py-4">
-        <div class="container">
-            <div class="blog-block">
-                <div class="row g-4">
-                    @foreach ($blog as $item)
-                        <div class="col-lg-4 col-md-6">
-                            <a href="{{ route('frontend.blogsingle', $item->slug) }}"
-                                class="d-flex stretched-card-link align-items-center mb-3 text-decoration-none text-dark">
-                                <div class="blog-card">
-                                    <div class="blog-image">
-                                        <img src="{{ $item->image }}" alt="Blog image">
+    @endif
+    <section class="news-secton section-padding fix">
+            <div class="auto-container">
+
+                <div class="row">
+                    @if (isset($blog) && $blog->count())
+                        @foreach ($blog as $item)
+                            <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="news-box-items">
+                                    <div class="news-image">
+                                        <img src="{{ $item->image }}" alt="img" />
+                                        {{-- <img src="images/home-1/news/news-01.jpg" alt="img" /> --}}
+                                        {{-- <span class="post-box">
+                                           {{$item->created_at ?? 'now'}}
+                                        </span> --}}
                                     </div>
-                                    <div class="blog-content">
-                                        <div class="blog-meta">
-                                            <span>{{ $item->short_description }}</span>
-                                            <span> {{ $item->created_at->format('d M Y') }}</span>
-                                        </div>
-                                        <h5 class="blog-title">
-                                            {{ $item->title }}
-                                        </h5>
-                                        <div class="blog-desc line-clamp-3">
-                                            {!! $item->description !!} </div>
-                                        <div class="blog-read">Read MORE</div>
+                                    <div class="news-content">
+                                        <h3>
+                                            <a href="{{ route('frontend.blogsingle', $item->slug) }}">{{ $item->title ?? '' }}</a>
+                                        </h3>
+                                        <a href="{{ route('frontend.blogsingle', $item->slug) }}" class="link-btn">
+                                            Learn More
+                                            <span class="icon"><i class="lnr-icon-arrow-right"></i></span>
+                                        </a>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
+                        @endforeach
+                    @endif
+                    {{-- <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="news-box-items">
+                            <div class="news-image">
+                                <img src="{{ asset('frontend/assets/images/home-1/banner-2.jpeg') }}" alt="img" />
+                                <span class="post-box">
+                                    <span class="date">25</span>
+                                    <span class="month">March</span>
+                                </span>
+                            </div>
+                            <div class="news-content">
+
+                                <h3>
+                                    <a href="news-details.html">Government & public debate on foreign student
+                                        support</a>
+                                </h3>
+                                <a href="news-details.html" class="link-btn">
+                                    Learn More
+                                    <span class="icon">
+                                        <i class="lnr-icon-arrow-right"></i>
+                                    </span>
+                                </a>
+                            </div>
                         </div>
-                    @endforeach
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                        <div class="news-box-items">
+                            <div class="news-image">
+                                <img src="{{ asset('frontend/assets/images/home-1/banner-1.jpg') }}" alt="img" />
+                                <span class="post-box">
+                                    <span class="date">30</span>
+                                    <span class="month">March</span>
+                                </span>
+                            </div>
+                            <div class="news-content">
+
+                                <h3>
+                                    <a href="news-details.html">Policy responses to international student </a>
+                                </h3>
+                                <a href="news-details.html" class="link-btn">
+                                    Learn More
+                                    <span class="icon">
+                                        <i class="lnr-icon-arrow-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div> --}}
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 @endsection

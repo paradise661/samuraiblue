@@ -3026,12 +3026,12 @@ width: 90px;
 }
 
 .sticky-header .logo {
-    padding: 10px 0;
+    padding: 5px 0;
 }
 
-.sticky-header .logo img {
-    max-height: 40px;
-}
+/* .sticky-header .logo img {
+   height: 100%;
+} */
 
 .sticky-header .nav-outer {
     background: none;
@@ -24515,4 +24515,69 @@ a {
     border: 3px solid #006960;
     border-radius: 50%;
     text-align: center;
+}
+.blog-detail-block {
+    background-color: #f8f9fa;
+}
+
+.blog-detail-block .card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.blog-detail-block .card-img-top {
+    height: 400px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.blog-detail-block h2 {
+    font-size: 2rem;
+    color: #222;
+}
+
+.blog-detail-block .text-muted {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.sticky-sidebar {
+    position: sticky !important;
+    top: 100px;
+}
+
+.sticky-sidebar h4 {
+    font-size: 1.25rem;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.sticky-sidebar a {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.sticky-sidebar a:hover {
+    background-color: #f1f1f1;
+    transform: translateX(5px);
+    text-decoration: none;
+}
+
+.sticky-sidebar img {
+    border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .sticky-sidebar {
+        position: static;
+        top: auto;
+        margin-top: 30px;
+    }
+
+    .blog-detail-block .card-img-top {
+        height: 250px;
+    }
 }

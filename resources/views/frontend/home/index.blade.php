@@ -725,22 +725,21 @@
                 </div>
                 <div class="row">
                     @if (isset($blogs) && $blogs->count())
-                        @foreach ($blogs as $item)
+                       @foreach ($blogs as $item)
                             <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                                 <div class="news-box-items">
                                     <div class="news-image">
                                         <img src="{{ $item->image }}" alt="img" />
                                         {{-- <img src="images/home-1/news/news-01.jpg" alt="img" /> --}}
-                                        <span class="post-box">
-                                            <span class="date">20</span>
-                                            <span class="month">March</span>
-                                        </span>
+                                        {{-- <span class="post-box">
+                                           {{$item->created_at ?? 'now'}}
+                                        </span> --}}
                                     </div>
                                     <div class="news-content">
                                         <h3>
-                                            <a href="news-details.html">{{ $item->title ?? '' }}</a>
+                                            <a href="{{ route('frontend.blogsingle', $item->slug) }}">{{ $item->title ?? '' }}</a>
                                         </h3>
-                                        <a href="news-details.html" class="link-btn">
+                                        <a href="{{ route('frontend.blogsingle', $item->slug) }}" class="link-btn">
                                             Learn More
                                             <span class="icon"><i class="lnr-icon-arrow-right"></i></span>
                                         </a>
