@@ -11,15 +11,19 @@
 
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
     <link href="{{ asset('frontend/assets/css/bootstrap.min.css') }}" rel="stylesheet" />
-    {{-- <link href="css/style.css" rel="stylesheet" /> --}}
+    {{--
+    <link href="css/style.css" rel="stylesheet" /> --}}
     <link href="{{ asset('frontend/assets/css/responsive.css') }}" rel="stylesheet" />
 
     <link rel="shortcut icon" href="{{ asset('frontend/assets/images/favicon.svg') }}" type="image/x-icon" />
-    {{-- <link rel="icon" type="image/x-icon"
+    {{--
+    <link rel="icon" type="image/x-icon"
         href="{{ $settings['site_fav_icon'] ? asset($settings['site_fav_icon']) : 'Smurai Blue' }}" /> --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+
 
 
 </head>
@@ -46,7 +50,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        window.addEventListener("scroll", function() {
+        window.addEventListener("scroll", function () {
             const navbar = document.querySelector(".navbar");
             navbar.classList.toggle("scrolled", window.scrollY > 50);
         });
@@ -78,6 +82,8 @@
     <script src="{{ asset('frontend/assets/js/jquery.form.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/contact-form-script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 </body>
 
 </html>
