@@ -174,8 +174,8 @@ class FrontendController extends Controller
     function testimonial()
     {
         $testimonial_page = Page::where('status', 1)->where('slug', 'testimonial')->first();
-        $testimonial = Testimonial::where('status', 1)->oldest("order")->get() ?? [];
-        return view('frontend.testimonial', compact('testimonial', 'testimonial_page'));
+        $testimonials = Testimonial::where('status', 1)->oldest("order")->get() ?? [];
+        return view('frontend.testimonial', compact('testimonials', 'testimonial_page'));
     }
     function gallery()
     {

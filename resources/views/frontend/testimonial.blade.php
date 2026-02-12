@@ -1,61 +1,72 @@
 @section('seo')
     @include('frontend.seo', [
-        'name' => $testimonial_page->seo_title ?? '',
-        'title' => $testimonial_page->seo_title ?? ($testimonial_page->title ?? ''),
-        'description' => $testimonial_page->meta_description ?? '',
-        'keyword' => $testimonial_page->meta_keywords ?? '',
-        'schema' => $testimonial_page->seo_schema ?? '',
-        'created_at' => $testimonial_page->created_at,
-        'updated_at' => $testimonial_page->updated_at,
-    ])
+    'name' => $testimonial_page->seo_title ?? '',
+    'title' => $testimonial_page->seo_title ?? ($testimonial_page->title ?? ''),
+    'description' => $testimonial_page->meta_description ?? '',
+    'keyword' => $testimonial_page->meta_keywords ?? '',
+    'schema' => $testimonial_page->seo_schema ?? '',
+    'created_at' => $testimonial_page->created_at,
+    'updated_at' => $testimonial_page->updated_at,
+])
 @endsection
 @extends('layouts.frontend.master')
 @section('content')
-    @if ($testimonial_page)
-        <section class="position-relative" style="height: 420px;">
-            <img src="{{ $testimonial_page->banner_image ?? ''}}" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
-                alt="Blog Banner">
-            <div class="position-absolute top-0 start-0 w-100 h-100"
-                style="background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));"></div>
-            <div class="container h-100 position-relative d-flex align-items-center">
-                <div class="text-white">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb text-white-50 mb-3">
-                            <li class="breadcrumb-item">
-                                <a href="#" class="text-white text-decoration-none">Home</a>
-                            </li>
-                            <li class="breadcrumb-item">
-                                <a href="#" class="text-white text-decoration-none">Blog</a>
-                            </li>
-                        </ol>
-                    </nav>
-                    <h1 class="fw-bold display-5">{{ $testimonial_page->title ?? '' }}</h1>
-                </div>
-            </div>
-        </section>
-    @endif
-    <section class="review-section py-5">
-        <div class="container">
-            <div class="section-heading text-center pb-4 mb-5">
-                <h2 class="section-heading-title">Reviews</h2>
-                <p class="section-heading-para">Our clients voices!!</p>
-            </div>
-            <div class="row g-4">
-                @foreach ($testimonial as $item)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="review-card text-center p-4">
-                            <img src="{{ $item->image }}" class="review-img mb-3" alt="Reviewer">
-                            <div class="review-content text-muted line-clamp-3 mb-3">
-                                {!! $item->description !!}
-                            </div>
-                            <h6 class="mb-1">{{ $item->name }}</h6>
-                            <div class="stars text-warning fs-6">
-                                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
-                                <i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+    <!-- Start main-content -->
+    <section class="page-title" style="background-image: url(images/inner/page-title-bg.jpg);">
+      <div class="auto-container">
+        <div class="title-outer">
+            <ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
+                <li><a href="{{ route('frontend.home') }}">Home</a></li>
+                <li><a href="{{ route('frontend.home') }}">{{ $testimonial_page->title ?? 'Testimonials' }}</a></li>
+            </ul>
+            <h1 class="title wow fadeInUp" data-wow-delay=".5s">{{ $testimonial_page->title ?? 'Testimonials' }}</h1>
+        </div>
+      </div>
+    </section>
+
+    <!--Testimonial Section -->
+    <section class="testimonial-section-3 fix section-padding">
+        <div class="auto-container">
+            <div class="swiper testimonial-slider-3">
+                <div class="swiper-wrapper">
+                    @foreach ($testimonials as $testimonial)
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-wrapper-3">
+                                <div class="mask-shape-style-3">
+                                    <img src="{{ asset('frontend/assets/images/home-3/testimonial/mask-shape.png') }}" alt="img">
+                                </div>
+                                <div class="image-box-style-3">
+                                    <div class="quate">
+                                        <i class="flaticon-finance-Quote"></i>
+                                    </div>
+                                    <div class="image">
+                                        <img src="{{ $testimonial->image }}" alt="Image">
+                                        {{-- <div class="planet-shape">
+                                            <img src="{{ asset('frontend/assets/images/home-3/testimonial/planet.png') }}" alt="img">
+                                        </div> --}}
+                                    </div>
+                                    <div class="star">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="content-box-style-3">
+                                    <h3 class="text">{!! $testimonial->description !!}</h3>
+                                    <h3 class="title">{{ $testimonial->name }} / <span>{{ $testimonial->position }}</span></h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+
+                </div>
+                <div class="array-button justify-content-end">
+                  <button class="array-prev"><i class="fa-regular fa-arrow-left"></i></button>
+                  <button class="array-next"><i class="fa-regular fa-arrow-right"></i></button>
+                </div>
             </div>
         </div>
     </section>
