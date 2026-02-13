@@ -562,19 +562,19 @@
                         <div class="faq-content-1">
                             <ul class="accordion-box">
                                 <!--Block-->
-                                @foreach ($faq as $item)
-                                    <li class="accordion block active-block wow fadeInUp">
-                                        <div class="acc-btn">
-                                            {{ $item->question ?? '' }}
-                                            <div class="icon fa fa-plus"></div>
+                                @foreach ($faqs as $key => $faq)
+                                <li class="accordion block {{ $key == 0 ? 'active-block' : '' }} wow fadeInUp"
+                                    data-wow-delay="{{ $key * 0.2 }}s">
+                                    <div class="acc-btn {{ $key == 0 ? 'active' : '' }}">
+                                        {{ $faq->question }}
+                                        <div class="icon fa fa-plus"></div>
+                                    </div>
+                                    <div class="acc-content {{ $key == 0 ? 'current' : '' }}">
+                                        <div class="content">
+                                            <div class="text">{!! $faq->answer !!}</div>
                                         </div>
-                                        <div class="acc-content current">
-                                            <div class="content">
-                                                <div class="text">{!! $item->answer ?? '' !!}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    </div>
+                                </li>
                                 @endforeach
                             </ul>
                         </div>
