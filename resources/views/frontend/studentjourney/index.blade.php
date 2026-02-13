@@ -1,27 +1,27 @@
 @extends('layouts.frontend.master')
 @section('seo')
     @include('frontend.seo', [
-    'name' => $studentjourney->seo_title ?? '',
-    'title' => $studentjourney->seo_title ?? $studentjourney->title ?? '',
-    'description' => $studentjourney->meta_description ?? '',
-    'keyword' => $studentjourney->meta_keywords ?? '',
-    'schema' => $studentjourney->seo_schema ?? '',
-    'created_at' => $studentjourney->created_at ?? now(),
-    'updated_at' => $studentjourney->updated_at ?? now(),
-])
+        'name' => $studentjourney->seo_title ?? '',
+        'title' => $studentjourney->seo_title ?? ($studentjourney->title ?? ''),
+        'description' => $studentjourney->meta_description ?? '',
+        'keyword' => $studentjourney->meta_keywords ?? '',
+        'schema' => $studentjourney->seo_schema ?? '',
+        'created_at' => $studentjourney->created_at ?? now(),
+        'updated_at' => $studentjourney->updated_at ?? now(),
+    ])
 @endsection
 @section('content')
     <!-- Start main-content -->
     <section class="page-title" style="background-image: url(images/inner/page-title-bg.jpg);">
-            <div class="auto-container">
-                <div class="title-outer">
-            <ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
-                <li><a href="{{ route('frontend.home') }}">Home</a></li>
-                <li><a href="{{ route('frontend.home') }}">{{ $studentjourney->title ?? 'Student Journey' }}</a></li>
-            </ul>
-            <h1 class="title wow fadeInUp" data-wow-delay=".5s">{{ $studentjourney->title ?? 'Student Journey' }}</h1>
+        <div class="auto-container">
+            <div class="title-outer">
+                <ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
+                    <li><a href="{{ route('frontend.home') }}">Home</a></li>
+                    <li><a href="{{ route('frontend.home') }}">{{ $studentjourney->title ?? 'Student Journey' }}</a></li>
+                </ul>
+                <h1 class="title wow fadeInUp" data-wow-delay=".5s">{{ $studentjourney->title ?? 'Student Journey' }}</h1>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Service Section Start -->
@@ -50,7 +50,9 @@
                                 </span>
                             </div>
                             <div class="content">
-                                <h3><a href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}">{{ $studentstep->title }}</a></h3>
+                                <h3><a
+                                        href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}">{{ $studentstep->title }}</a>
+                                </h3>
                                 <div class="line-clamp-5">
                                     {{ $studentstep->short_description }}
                                 </div>
@@ -59,6 +61,8 @@
                                 <img src="{{ asset('frontend/assets/images/home-2/service-icon/arrow-shape.png') }}" alt="img">
                             </div> --}}
                         </div>
+                        <a class="stretched-link" href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}"></a>
+
                     </div>
                 @endforeach
 
@@ -81,5 +85,4 @@
             </div> --}}
         </div>
     </section>
-
 @endsection

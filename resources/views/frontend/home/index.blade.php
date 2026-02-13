@@ -261,12 +261,13 @@
                                         </span>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="{{ route('frontend.course') }}">{{ $item->title ?? '' }}</a></h3>
+                                        <h3><a href="{{ route('frontend.studentjourneysingle', $item->slug) }}">{{ $item->title ?? '' }}</a></h3>
                                         <div class="line-clamp-5">
                                             {{ $item->short_description ?? '' }}
                                         </div>
                                     </div>
                                 </div>
+                                <a class="stretched-link" href="{{ route('frontend.studentjourneysingle', $item->slug) }}"></a>
                             </div>
                         @endforeach
                         {{-- <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
