@@ -16,37 +16,42 @@
                 <div class="outer-box">
                     <nav class="nav main-menu">
                         <ul class="navigation">
-                            <li class="current dropdown">
+                            <li class="{{ request()->routeIs('frontend.home') ? 'current' : '' }}">
                                 <a href="{{ route('frontend.home') }}">Home</a>
                             </li>
-                            <li class="dropdown">
+
+                            <li class="{{ request()->routeIs('frontend.about') ? 'current' : '' }}">
                                 <a href="{{ route('frontend.about') }}">About</a>
-                                {{-- <ul>
-                                    <li><a href="page-about.html">Company's Profile</a></li>
-                                    <li><a href="page-testimonial.html">Testimonial</a></li>
-                                    <li><a href="page-faq.html">FAQ</a></li>
-                                </ul> --}}
                             </li>
-                            <li class="dropdown">
+
+                            <li class="{{ request()->routeIs('frontend.service*') ? 'current' : '' }} dropdown">
                                 <a href="{{ route('frontend.service') }}">Services</a>
                                 <ul>
-                                    <li><a href="page-services.html">Student Support in Japan
-                                        </a></li>
-                                    <li><a href="page-service-details.html">Job Placement & Training
-                                        </a></li>
+                                    @foreach ($footer_services as $services)
+                                        <li><a href="{{ route('frontend.servicesingle', $services->slug) }}">{{ $services->title }}</a></li>
+                                    @endforeach
+
+                                    {{-- <li><a href="#">Job Placement & Training</a></li> --}}
                                 </ul>
                             </li>
-                            <li class="dropdown">
+
+                            <li class="{{ request()->routeIs('frontend.studentjourney') ? 'current' : '' }}">
                                 <a href="{{ route('frontend.studentjourney') }}">Student Journey</a>
                             </li>
-                            <li class="dropdown">
+
+                            <li class="{{ request()->routeIs('frontend.testimonial') ? 'current' : '' }}">
                                 <a href="{{ route('frontend.testimonial') }}">Testimonials</a>
                             </li>
-                            <li class="dropdown">
+
+                            <li class="{{ request()->routeIs('frontend.faq') ? 'current' : '' }}">
                                 <a href="{{ route('frontend.faq') }}">FAQ</a>
                             </li>
-                            <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
+
+                            <li class="{{ request()->routeIs('frontend.contact') ? 'current' : '' }}">
+                                <a href="{{ route('frontend.contact') }}">Contact</a>
+                            </li>
                         </ul>
+
                     </nav>
                     <!-- Main Menu End-->
                     <div class="ui-btn-outer">

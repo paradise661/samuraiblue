@@ -44,6 +44,13 @@
                             <div class="banner-subtitle wow fadeInUp" data-wow-delay=".4s">
                                 {!! $sliders->description ?? ' ' !!}
                             </div>
+                            {{-- <a href="{{ route('frontend.about') }}" class="theme-btn btn-style-one wow fadeInUp"
+                                        data-wow-delay=".7s">
+                                      Company's Overview
+                                        <span class="icon">
+                                            <i class="flaticon-finance-fi_3385625"></i>
+                                        </span>
+                                    </a> --}}
                         </div>
                     </div>
                 </section>
@@ -85,7 +92,7 @@
                                     </div>
                                     <a href="{{ route('frontend.about') }}" class="theme-btn btn-style-one wow fadeInUp"
                                         data-wow-delay=".7s">
-                                        Lets Talk With Us
+                                        Company's Overview
                                         <span class="icon">
                                             <i class="flaticon-finance-fi_3385625"></i>
                                         </span>
@@ -160,12 +167,17 @@
                         @foreach ($services as $item)
                             <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                 <div class="service-card-items">
-                                    <div class="icon"><i class="{{ $item->icon ?? '' }}"></i></div>
+                                    <div class="icon">
+                                        {{-- <i class="{{ $item->icon ?? '' }}"></i> --}}
+                                        <img src="{{ $item->image_1 }}">
+                                    </div>
                                     <div class="content">
-                                        <h3><a href="page-service-details.html">{{ $item->title ?? '' }}</a></h3>
+                                        <h3><a
+                                                href="{{ route('frontend.servicesingle', $item->slug) }}">{{ $item->title ?? '' }}</a>
+                                        </h3>
                                         <p class="text-justify line-clamp-4">{{ $item->short_description ?? '' }}
                                         </p>
-                                        <a href="page-service-details.html" class="link-btn"><i
+                                        <a href="{{ route('frontend.servicesingle', $item->slug) }}" class="link-btn"><i
                                                 class="lnr-icon-arrow-right"></i></a>
                                     </div>
                                 </div>
@@ -240,7 +252,8 @@
                                 <div class="service-card-items-2">
                                     <div class="service-icon">
                                         <div class="icon">
-                                            <i class="flaticon-business-028-briefcase"></i>
+                                            {{-- <i class="flaticon-business-028-briefcase"></i> --}}
+                                            <img src="{{ $item->image }}">
                                             <div class="service-triangle"></div>
                                         </div>
                                         <span class="number">
@@ -552,7 +565,7 @@
                                         </div>
                                         <div class="acc-content current">
                                             <div class="content">
-                                                <div class="text">{{ $item->answer ?? '' }}
+                                                <div class="text">{!! $item->answer ?? '' !!}
                                                 </div>
                                             </div>
                                         </div>

@@ -45,7 +45,10 @@
                 @foreach ($services as $item)
                     <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                         <div class="service-card-items">
-                            <div class="icon"><i class="{{ $item->icon ?? '' }}"></i></div>
+                            <div class="icon">
+                                {{-- <i class="{{ $item->icon ?? '' }}"></i> --}}
+                                    <img src="{{ $item->image_1 }}">
+                            </div>
                             <div class="content">
                                 <h3><a href="{{ route('frontend.servicesingle', $item->slug) }}">{{ $item->title ?? '' }}</a></h3>
                                 <p class="text-justify line-clamp-4">{{ $item->short_description ?? '' }}

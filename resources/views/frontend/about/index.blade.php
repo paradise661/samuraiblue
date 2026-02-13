@@ -112,9 +112,9 @@
                                 </div>
                                 <div class="content">
                                     <h3><a href="page-service-details.html">{{ $mission->title }}</a></h3>
-                                    <p>
+                                    <div class="line-clamp-5">
                                         {!! $mission->description !!}
-                                    </p>
+                                    </div>
                                     {{-- <a href="page-service-details.html" class="text-btn">
                                                 Read More
                                             </a> --}}
@@ -129,9 +129,9 @@
                                 </div>
                                 <div class="content">
                                     <h3><a href="page-service-details.html">{{ $vision->title }}</a></h3>
-                                    <p>
+                                    <div class="line-clamp-5">
                                         {!! $vision->description !!}
-                                    </p>
+                                    </div>
                                     {{-- <a href="page-service-details.html" class="text-btn">
                                                 Read More
                                             </a> --}}

@@ -1,13 +1,13 @@
 <!-- Footer Section Start -->
 <footer class="footer-section-1 fix footer-bg bg-cover" style="background-image: url(images/home-1/footer-shape.png)">
-    <span class="circle-shape"></span>
-    <span class="circle-shape-2"></span>
+    {{-- <span class="circle-shape"></span>
+    <span class="circle-shape-2"></span> --}}
     <div class="auto-container">
         <div class="footer-widget-wrapper">
             <div class="row justify-content-between">
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
                     <div class="footer-widget-items mt-30">
-                        <div class="widget-title mb-25">
+                        <div class="widget-title mb-25" style="height: 90px; width: 90px;">
                             <a href="{{ route('frontend.home') }}" class="footer-logo">
                                 <img src="{{ $settings['site_footer_logo'] }}" alt="img" />
                             </a>

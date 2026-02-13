@@ -30,5 +30,7 @@ Route::name('frontend.')->group(
         Route::get('/gallery/{album:slug}', [FrontendController::class, 'galleryshow'])->name('albums.show');
         Route::get('/faq',[FrontendController::class, 'faq'])->name('faq');
         Route::get('/student-journey',[FrontendController::class,'studentjourney'])->name('studentjourney');
+        Route::get('/student-journey/{slug}', [FrontendController::class, 'studentjourneysingle'])->name('studentjourneysingle');
+
     }
 );

@@ -50,7 +50,7 @@
                                 </span>
                             </div>
                             <div class="content">
-                                <h3><a href="page-service-details.html">{{ $studentstep->title }}</a></h3>
+                                <h3><a href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}">{{ $studentstep->title }}</a></h3>
                                 <div>
                                     {!! $studentstep->description !!}
                                 </div>

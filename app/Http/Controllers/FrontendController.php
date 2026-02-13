@@ -103,6 +103,15 @@ class FrontendController extends Controller
         $studentsteps = Course::where('status',1)->get();
         return view('frontend.studentjourney.index',compact('studentjourney','studentsteps'));
     }
+
+    function studentjourneysingle($slug)
+    {
+        $studentjourney = Page::where('status', 1)->where('slug', 'student-journey')->first();
+        $studentjourneysingle = Course::where('slug', $slug)->where('status', 1)->first();
+        $studentsteps = Course::where('status', 1)->get();
+
+        return view('frontend.studentjourney.show', compact('studentjourney', 'studentsteps', 'studentjourneysingle'));
+    }
     public function event()
     {
         $event_page = Page::where('status', 1)->where('slug', 'event')->first();

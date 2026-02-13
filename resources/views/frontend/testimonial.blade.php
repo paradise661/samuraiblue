@@ -25,49 +25,52 @@
     </section>
 
     <!--Testimonial Section -->
-    <section class="testimonial-section-3 fix section-padding">
-        <div class="auto-container">
-            <div class="swiper testimonial-slider-3">
-                <div class="swiper-wrapper">
-                    @foreach ($testimonials as $testimonial)
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-wrapper-3">
-                                <div class="mask-shape-style-3">
-                                    <img src="{{ asset('frontend/assets/images/home-3/testimonial/mask-shape.png') }}" alt="img">
-                                </div>
-                                <div class="image-box-style-3">
-                                    <div class="quate">
-                                        <i class="flaticon-finance-Quote"></i>
-                                    </div>
-                                    <div class="image">
-                                        <img src="{{ $testimonial->image }}" alt="Image">
-                                        {{-- <div class="planet-shape">
-                                            <img src="{{ asset('frontend/assets/images/home-3/testimonial/planet.png') }}" alt="img">
-                                        </div> --}}
-                                    </div>
-                                    <div class="star">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                </div>
-                                <div class="content-box-style-3">
-                                    <h3 class="text">{!! $testimonial->description !!}</h3>
-                                    <h3 class="title">{{ $testimonial->name }} / <span>{{ $testimonial->position }}</span></h3>
-                                </div>
+   <section class="testimonial-section fix section-padding">
+            <div class="auto-container">
+                <div class="testimonial-wrapper bg-cover">
+                    <div class="testimonial-wrapper-2">
+                        <div class="swiper testimonial-slider-2">
+                            <div class="swiper-wrapper">
+                                @if ($testimonials && $testimonials->count())
+                                    @foreach ($testimonials as $testimonial)
+                                        <div class="swiper-slide">
+                                            <div class="testimonial-card-item">
+                                                <div class="client-item">
+                                                    <div class="client-image">
+                                                        <img src="{{ $testimonial->image }}" alt="img">
+                                                    </div>
+                                                    <div class="info-text">
+                                                        <h5>{{ $testimonial->name ?? 'name' }}</h5>
+                                                        <span>{{ $testimonial->position ?? 'student' }}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="content">
+                                                    <div class="quote-icon">
+                                                        <i class="flaticon-finance-Quote"></i>
+                                                        <div class="test-triangle"></div>
+                                                    </div>
+                                                    <div class="star">
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                    </div>
+                                                    <div class="line-clamp-4">
+                                                        {!! $testimonial->description ?? '' !!}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @endif
+                            </div>
+                            <div class="swiper-dot mt-5 mb-0">
+                                <div class="dot2"></div>
                             </div>
                         </div>
-                    @endforeach
-
-                </div>
-                <div class="array-button justify-content-end">
-                  <button class="array-prev"><i class="fa-regular fa-arrow-left"></i></button>
-                  <button class="array-next"><i class="fa-regular fa-arrow-right"></i></button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 @endsection
