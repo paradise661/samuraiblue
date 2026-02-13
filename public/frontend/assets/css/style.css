@@ -9448,7 +9448,9 @@ Section Title
 }
 
 .service-card-items .icon img {
-    height: 60%;
+        margin-bottom: 12px;
+            height: 66%;
+
 }
 
 @media (max-width: 1699.98px) {
@@ -9471,7 +9473,7 @@ Section Title
 
 .service-card-items .icon {
     background-image: -webkit-gradient(linear, right top, left top, from(var(--theme-color1)), color-stop(50%, var(--theme-color7)), to(var(--theme-color1)));
-    background-image: linear-gradient(to left, #d4e5ffe6 0%, #6D90C5 50%, #d4e5ffe6 100%);
+    background-image: linear-gradient(to left, #6d90c5d4 0%, #6D90C5 50%, #6d90c5c4 100%);
     background-size: 200%;
     border-radius: 50%;
     height: 68px;
