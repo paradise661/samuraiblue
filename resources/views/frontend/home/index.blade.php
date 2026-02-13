@@ -247,7 +247,7 @@
                         <h2 class="wow fadeInUp" data-wow-delay=".2s">{{ $settings['courses_subtitle'] ?? '' }}</h2>
                     </div>
                     <div class="row">
-                        @foreach ($studentsteps as $item)
+                        @foreach ($studentsteps as $key => $item)
                             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
                                 <div class="service-card-items-2">
                                     <div class="service-icon">
@@ -257,7 +257,7 @@
                                             <div class="service-triangle"></div>
                                         </div>
                                         <span class="number">
-                                            0{{ $item->order }}
+                                            0{{ $key + 1 }}
                                         </span>
                                     </div>
                                     <div class="content">
@@ -389,48 +389,48 @@
                                     <h2 class="text-white wow fadeInUp" data-wow-delay=".2s">
                                         {{ $settings['contact_description'] ?? '' }}</h2>
                                 </div>
-                             <form id="contactFormHome" class="form-box wow fadeInUp" data-wow-delay=".3s"
-      action="{{ route('frontend.contact.submit.home') }}" method="post">
-    @csrf
+                                <form id="contactFormHome" class="form-box wow fadeInUp" data-wow-delay=".3s"
+                                    action="{{ route('frontend.contact.submit.home') }}" method="post">
+                                    @csrf
 
-    <div class="row g-4">
-        <div class="col-md-12">
-            <div class="form-clt">
-                <input type="text" name="name" placeholder="Full Name*" />
-                <span class="text-danger error-text name_error"></span>
-            </div>
-        </div>
+                                    <div class="row g-4">
+                                        <div class="col-md-12">
+                                            <div class="form-clt">
+                                                <input type="text" name="name" placeholder="Full Name*" />
+                                                <span class="text-danger error-text name_error"></span>
+                                            </div>
+                                        </div>
 
-        <div class="col-md-12">
-            <div class="form-clt">
-                <input type="text" name="email" placeholder="Email" />
-                <span class="text-danger error-text email_error"></span>
-            </div>
-        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-clt">
+                                                <input type="text" name="email" placeholder="Email" />
+                                                <span class="text-danger error-text email_error"></span>
+                                            </div>
+                                        </div>
 
-        <div class="col-md-12">
-            <div class="form-clt">
-                <input type="text" name="phone" placeholder="Phone" />
-                <span class="text-danger error-text phone_error"></span>
-            </div>
-        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-clt">
+                                                <input type="text" name="phone" placeholder="Phone" />
+                                                <span class="text-danger error-text phone_error"></span>
+                                            </div>
+                                        </div>
 
-        <div class="col-md-12">
-            <div class="form-clt">
-                <textarea name="message" placeholder="Message"></textarea>
-                <span class="text-danger error-text message_error"></span>
-            </div>
-        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-clt">
+                                                <textarea name="message" placeholder="Message"></textarea>
+                                                <span class="text-danger error-text message_error"></span>
+                                            </div>
+                                        </div>
 
-        <div class="col-md-12">
-            <button type="submit" class="theme-btn btn-style-one w-100">
-                Submit Now
-            </button>
-        </div>
-    </div>
-</form>
+                                        <div class="col-md-12">
+                                            <button type="submit" class="theme-btn btn-style-one w-100">
+                                                Submit Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
 
-<div id="form-success" class="alert alert-success d-none mt-3"></div>
+                                <div id="form-success" class="alert alert-success d-none mt-3"></div>
 
                             </div>
                         </div>
