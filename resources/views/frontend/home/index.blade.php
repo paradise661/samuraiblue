@@ -445,7 +445,7 @@
                         <img src="images/home-1/contact/shape-1.png" alt="img" />
                     </div> --}}
                 <div class="contact-info-box float-bob-y">
-                    <h2>{{ $settings['contact_form_title'] ?? '' }}</h2>
+                    <h2>{{ $settings['contact_section_title'] ?? '' }}</h2>
                     <ul class="contact-list">
                         <li>
                             <div class="icon">
