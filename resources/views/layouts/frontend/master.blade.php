@@ -34,8 +34,18 @@
         @yield('content')
     </main>
     @include('layouts.frontend.footer')
-
-
+    <div class="gtranslate_wrapper"></div>
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "en",
+            "languages": ["en", "ja"],
+            "wrapper_selector": ".gtranslate_wrapper",
+            "flag_style": "3d",
+            "alt_flags": {
+                "en": "usa"
+            }
+        }
+    </script>
     <script>
         AOS.init();
     </script>
@@ -59,6 +69,7 @@
     <script>
         AOS.init();
     </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js"></script>
     <script src="{{ asset('frontend/assets/js/jquery.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>

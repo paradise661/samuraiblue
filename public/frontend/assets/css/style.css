@@ -7144,7 +7144,8 @@ Section Title
     text-align: center;
     border-radius: 50%;
     background-image: -webkit-gradient(linear, right top, left top, from(var(--theme-color1)), color-stop(50%, var(--theme-color7)), to(var(--theme-color1)));
-    background-image: linear-gradient(to left, #d4e5ffe6 0%, #6D90C5 50%, #d4e5ffe6 100%);    background-size: 200%;
+    background-image: linear-gradient(to left, #d4e5ffe6 0%, #6D90C5 50%, #d4e5ffe6 100%);
+    background-size: 200%;
     -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
     font-size: 30px;
@@ -16593,11 +16594,11 @@ Section Title
 }
 
 .team-box-items-4 .team-image img:nth-child(1) {
-    -webkit-transform: translatex(50%) scalex(2);
+    /* -webkit-transform: translatex(50%) scalex(2);
     transform: translatex(50%) scalex(2);
     opacity: 0;
     -webkit-filter: blur(10px);
-    filter: blur(10px);
+    filter: blur(10px); */
 }
 
 .team-box-items-4 .team-image img:nth-child(2) {
@@ -16608,6 +16609,14 @@ Section Title
     right: 0;
     -o-object-fit: cover;
     object-fit: cover;
+}
+
+.team-box-items-4 .team-image {
+    height: 350px;
+}
+
+.team-box-items-4 .team-image img {
+    height: 350px;
 }
 
 .team-box-items-4 .team-image::after {
@@ -18784,7 +18793,7 @@ Section Title
 }
 
 .growth-section::after {
-background: radial-gradient(95.51% 264.21% at 92.63% 41.85%, rgb(0 7 31 / 0%) 0%, #00245b 99.98%, #181d26 99.99%);
+    background: radial-gradient(95.51% 264.21% at 92.63% 41.85%, rgb(0 7 31 / 0%) 0%, #00245b 99.98%, #181d26 99.99%);
     content: "";
     height: 100%;
     left: 0;
@@ -24536,6 +24545,7 @@ a {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
 .line-clamp-5 {
     display: -webkit-box !important;
     -webkit-line-clamp: 5;

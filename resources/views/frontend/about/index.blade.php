@@ -1,13 +1,13 @@
 @section('seo')
     @include('frontend.seo', [
-        'name' => $about_us->seo_title ?? '',
-        'title' => $about_us->seo_title ?? ($about_us->title ?? ''),
-        'description' => $about_us->meta_description ?? '',
-        'keyword' => $about_us->meta_keywords ?? '',
-        'schema' => $about_us->seo_schema ?? '',
-        'created_at' => $about_us->created_at,
-        'updated_at' => $about_us->updated_at,
-    ])
+    'name' => $about_us->seo_title ?? '',
+    'title' => $about_us->seo_title ?? ($about_us->title ?? ''),
+    'description' => $about_us->meta_description ?? '',
+    'keyword' => $about_us->meta_keywords ?? '',
+    'schema' => $about_us->seo_schema ?? '',
+    'created_at' => $about_us->created_at,
+    'updated_at' => $about_us->updated_at,
+])
 @endsection
 @extends('layouts.frontend.master')
 @section('content')
@@ -222,8 +222,8 @@
                         <div class="inner-column">
                             <div class="image1 overlay-anim wow fadeInUp" data-wow-delay=".3s">
                                 <img src="{{ optional($experience)->image_1
-                                    ? asset($experience->image_1)
-                                    : asset('frontend/assets/images/default-image.jpg') }}"
+    ? asset($experience->image_1)
+    : asset('frontend/assets/images/default-image.jpg') }}"
                                     alt="Image">
                             </div>
 
@@ -238,104 +238,43 @@
     </section>
 
     <!--Team Section -->
-    {{-- <section class="team-section-3 fix section-padding">
+    <section class="team-section-3 fix section-padding">
         <div class="auto-container">
             <div class="sec-title text-center">
                 <h6 class="sub-title wow fadeInUp">
                     <span class="triangle triangle1"></span>
                     <span class="triangle triangle2"></span>
-                    Our Teammate
+                    {{ $settings['teams_title'] }}
                 </h6>
                 <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                    Enhance Your Experience with <br> Expert Consulting
+                    {{ $settings['teams_subtitle'] }}
                 </h2>
             </div>
             <div class="row">
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="team-box-items-4">
-                        <div class="team-image">
-                            <img src="images/home-3/team/team-01.jpg" alt="img">
-                            <img src="images/home-3/team/team-01.jpg" alt="img">
-                        </div>
-                        <div class="socials">
-                            <i class="fa-solid fa-plus"></i>
-                            <ul>
-                                <li><a href="#0"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#0"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#0"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                <li><a href="#0"><i class="fa-brands fa-behance"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content-box">
-                            <h3 class="title"><a href="page-team-details.html">Guy Hawkins</a></h3>
-                            <p class="sub-title">Admin</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
-                    <div class="team-box-items-4">
-                        <div class="team-image">
-                            <img src="images/home-3/team/team-02.jpg" alt="img">
-                            <img src="images/home-3/team/team-02.jpg" alt="img">
-                        </div>
-                        <div class="socials">
-                            <i class="fa-solid fa-plus"></i>
-                            <ul>
-                                <li><a href="#0"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#0"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#0"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                <li><a href="#0"><i class="fa-brands fa-behance"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content-box">
-                            <h3 class="title"><a href="page-team-details.html">Jacob Jones</a></h3>
-                            <p class="sub-title">Manager</p>
+                 @foreach ($teams as $team)
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="team-box-items-4">
+                            <div class="team-image">
+                                <img src="{{ $team->image }}" alt="img">
+                                {{-- <img src="{{ $team->image }}" alt="img"> --}}
+                            </div>
+                            <div class="socials">
+                                <i class="fa-solid fa-plus"></i>
+                                <ul>
+
+                                    <li><a href="{{ $team->facebook }}"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="{{ $team->instagram }}"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="{{  $team->twitter }}"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="content-box">
+                                <h3 class="title">{{ $team->name }}</h3>
+                                <p class="sub-title">{{ $team->position }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
-                    <div class="team-box-items-4">
-                        <div class="team-image">
-                            <img src="images/home-3/team/team-03.jpg" alt="img">
-                            <img src="images/home-3/team/team-03.jpg" alt="img">
-                        </div>
-                        <div class="socials">
-                            <i class="fa-solid fa-plus"></i>
-                            <ul>
-                                <li><a href="#0"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#0"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#0"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                <li><a href="#0"><i class="fa-brands fa-behance"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content-box">
-                            <h3 class="title"><a href="page-team-details.html">Kristin Watson</a></h3>
-                            <p class="sub-title">Consultant</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
-                    <div class="team-box-items-4">
-                        <div class="team-image">
-                            <img src="images/home-3/team/team-04.jpg" alt="img">
-                            <img src="images/home-3/team/team-04.jpg" alt="img">
-                        </div>
-                        <div class="socials">
-                            <i class="fa-solid fa-plus"></i>
-                            <ul>
-                                <li><a href="#0"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#0"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#0"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                <li><a href="#0"><i class="fa-brands fa-behance"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content-box">
-                            <h3 class="title"><a href="page-team-details.html">Bessie Cooper</a></h3>
-                            <p class="sub-title">Founder</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
-    </section> --}}
+    </section>
 @endsection
