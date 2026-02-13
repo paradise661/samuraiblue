@@ -67,8 +67,9 @@ class FrontendController extends Controller
         $countrylocation = CountryLocation::where('status', 1)->oldest("order")->get();
 
         $faq_page = Page::where('status', 1)->where('slug', 'faq')->first();
+        $faqs = Faq::where('status', 1)->oldest("order")->get();
 
-        return view('frontend.home.index', compact('sliders','popup', 'faq_page', 'countrylocation', 'faq', 'abroadstudies', 'universities', 'studentsteps', 'countries', 'blogs', 'services', 'about_us', 'why_choose_us', 'teams', 'testimonials'));
+        return view('frontend.home.index', compact('sliders','popup', 'faq_page', 'countrylocation', 'faq', 'abroadstudies', 'universities', 'studentsteps', 'countries', 'blogs', 'services', 'about_us', 'why_choose_us', 'teams', 'testimonials','faqs'));
     }
     public function about()
     {
