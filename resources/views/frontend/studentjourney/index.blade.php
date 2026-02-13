@@ -12,7 +12,7 @@
 @endsection
 @section('content')
     <!-- Start main-content -->
-    <section class="page-title" style="background-image: url(images/inner/page-title-bg.jpg);">
+    <section class="page-title" style="background-image: url({{ $studentjourney->banner_image ?? ' ' }});">
         <div class="auto-container">
             <div class="title-outer">
                 <ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
