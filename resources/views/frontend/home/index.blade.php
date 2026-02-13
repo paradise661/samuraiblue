@@ -389,44 +389,49 @@
                                     <h2 class="text-white wow fadeInUp" data-wow-delay=".2s">
                                         {{ $settings['contact_description'] ?? '' }}</h2>
                                 </div>
-                                <form id="contact_form" class="form-box wow fadeInUp" data-wow-delay=".3s"
-                                    name="contact_form"
-                                    action="https://html.kodesolution.com/2025/finclix-html/includes/sendmail.php"
-                                    method="post">
-                                    <div class="row g-4">
-                                        <div class="col-md-12">
-                                            <div class="form-clt">
-                                                <input type="text" name="form_name" id="name"
-                                                    placeholder="Full Name*" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-clt">
-                                                <input type="text" name="form_email" id="email"
-                                                    placeholder="Email" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-clt">
-                                                <input type="text" name="form_phone" id="phone"
-                                                    placeholder="Phone" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-clt">
-                                                <textarea name="form_message" id="message" placeholder="Message"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-clt">
-                                                <input name="form_botcheck" class="form-control" type="hidden"
-                                                    value="" />
-                                                <button type="submit" class="theme-btn btn-style-one w-100"
-                                                    data-loading-text="Please wait...">Submit Now</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
+                             <form id="contactFormHome" class="form-box wow fadeInUp" data-wow-delay=".3s"
+      action="{{ route('frontend.contact.submit.home') }}" method="post">
+    @csrf
+
+    <div class="row g-4">
+        <div class="col-md-12">
+            <div class="form-clt">
+                <input type="text" name="name" placeholder="Full Name*" />
+                <span class="text-danger error-text name_error"></span>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-clt">
+                <input type="text" name="email" placeholder="Email" />
+                <span class="text-danger error-text email_error"></span>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-clt">
+                <input type="text" name="phone" placeholder="Phone" />
+                <span class="text-danger error-text phone_error"></span>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-clt">
+                <textarea name="message" placeholder="Message"></textarea>
+                <span class="text-danger error-text message_error"></span>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <button type="submit" class="theme-btn btn-style-one w-100">
+                Submit Now
+            </button>
+        </div>
+    </div>
+</form>
+
+<div id="form-success" class="alert alert-success d-none mt-3"></div>
+
                             </div>
                         </div>
                         <div class="col-lg-6"></div>

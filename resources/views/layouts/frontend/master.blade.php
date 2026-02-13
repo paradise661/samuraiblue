@@ -94,6 +94,104 @@
     <script src="{{ asset('frontend/assets/js/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('frontend/assets/js/contact-form-script.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".clamp-text").forEach(function (el) {
+        const btn = el.nextElementSibling;
+
+        // Detect overflow
+        if (el.scrollHeight > el.clientHeight) {
+            btn.classList.remove("d-none");
+        }
+
+        btn.addEventListener("click", function () {
+            el.classList.toggle("expanded");
+
+            btn.textContent = el.classList.contains("expanded")
+                ? "Read Less <"
+                : "Read More >";
+        });
+    });
+});
+</script>
+<script>
+$(document).ready(function () {
+    $('#contactFormHome').on('submit', function (e) {
+        e.preventDefault();
+
+        let form = this;
+        let formData = new FormData(form);
+
+        $('.error-text').text('');
+        $('#form-success').addClass('d-none').text('');
+
+        $.ajax({
+            url: $(form).attr('action'),
+            method: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+
+            success: function (response) {
+                if (response.status) {
+                    $('#form-success')
+                        .removeClass('d-none')
+                        .text(response.message);
+
+                    form.reset();
+                }
+            },
+
+            error: function (xhr) {
+                if (xhr.status === 422) {
+                    $.each(xhr.responseJSON.errors, function (key, value) {
+                        $('.' + key + '_error').text(value[0]);
+                    });
+                }
+            }
+        });
+    });
+});
+</script>
+<script>
+$(document).ready(function () {
+    $('#contactForm').on('submit', function (e) {
+        e.preventDefault();
+
+        let form = this;
+        let formData = new FormData(form);
+
+        $('.error-text').text('');
+        $('#contact-success').addClass('d-none').text('');
+
+        $.ajax({
+            url: $(form).attr('action'),
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+
+            success: function (response) {
+                if (response.status) {
+                    $('#contact-success')
+                        .removeClass('d-none')
+                        .text(response.message);
+
+                    form.reset();
+                }
+            },
+
+            error: function (xhr) {
+                if (xhr.status === 422) {
+                    $.each(xhr.responseJSON.errors, function (key, value) {
+                        $('.' + key + '_error').text(value[0]);
+                    });
+                }
+            }
+        });
+    });
+});
+</script>
 
 </body>
 

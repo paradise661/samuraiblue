@@ -240,38 +240,55 @@ class FrontendController extends Controller
     }
     public function contact_submite(Request $request)
     {
-        //
-        $input = $request->all();
-        // dd($input);
         $rules = [
             'name' => 'required|min:3',
-            'email' =>'required|email',
-            'message'=>'required'
+            'email' => 'required|email',
+            'message' => 'required',
         ];
-        $validator = Validator::make($input, $rules);
+
+        $validator = Validator::make($request->all(), $rules);
+
         if ($validator->fails()) {
-            return redirect()->back()->withInput()->withErrors($validator);
+            return response()->json([
+                'status' => false,
+                'errors' => $validator->errors()
+            ], 422);
         }
-        // Create a new Inquiry instance with the validated data
-        ContactInquiry::create($input);
-        return redirect()->back()->with('success', 'Your message has been submitted successfully.');
+
+        ContactInquiry::create($request->all());
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Your message has been submitted successfully.'
+        ]);
     }
+
     public function contact_submite_home(Request $request)
     {
-        //
-        $input = $request->all();
-        // dd($input);
         $rules = [
             'name' => 'required|min:3',
+            'phone' => 'required',
+            'email' => 'required|email',
+            'message' => 'required'
         ];
-        $validator = Validator::make($input, $rules);
+
+        $validator = Validator::make($request->all(), $rules);
+
         if ($validator->fails()) {
-            return redirect()->back()->withInput()->withErrors($validator);
+            return response()->json([
+                'status' => false,
+                'errors' => $validator->errors()
+            ], 422);
         }
-        // Create a new Inquiry instance with the validated data
-        ContactInquiry::create($input);
-        return redirect()->back()->with('success', 'Your message has been submitted successfully.');
+
+        ContactInquiry::create($request->all());
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Your message has been submitted successfully.'
+        ]);
     }
+
     function register()
     {
         $register_banner = Page::where('status', 1)->where('id', 10)->first();

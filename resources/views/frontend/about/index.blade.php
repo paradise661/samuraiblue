@@ -1,13 +1,13 @@
 @section('seo')
     @include('frontend.seo', [
-    'name' => $about_us->seo_title ?? '',
-    'title' => $about_us->seo_title ?? ($about_us->title ?? ''),
-    'description' => $about_us->meta_description ?? '',
-    'keyword' => $about_us->meta_keywords ?? '',
-    'schema' => $about_us->seo_schema ?? '',
-    'created_at' => $about_us->created_at,
-    'updated_at' => $about_us->updated_at,
-])
+        'name' => $about_us->seo_title ?? '',
+        'title' => $about_us->seo_title ?? ($about_us->title ?? ''),
+        'description' => $about_us->meta_description ?? '',
+        'keyword' => $about_us->meta_keywords ?? '',
+        'schema' => $about_us->seo_schema ?? '',
+        'created_at' => $about_us->created_at,
+        'updated_at' => $about_us->updated_at,
+    ])
 @endsection
 @extends('layouts.frontend.master')
 @section('content')
@@ -107,34 +107,33 @@
                         <div class="col-xl-6 col-lg-12 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
                             <div class="feature-service-card-items">
                                 <div class="icon">
-                                    {{-- <i class="flaticon-business-028-briefcase"></i> --}}
-                                    <img src="{{ $mission->image_1 }}">
+                                    <img
+                                        src="{{ optional($mission)->image_1 ? asset($mission->image_1) : asset('frontend/assets/images/default-image.jpg') }}">
                                 </div>
+
                                 <div class="content">
-                                    <h3><a href="page-service-details.html">{{ $mission->title }}</a></h3>
-                                    <div class="line-clamp-5">
-                                        {!! $mission->description !!}
+                                    <h3>{{ $mission->title ?? 'Our Mission' }}</h3>
+
+                                    <div class="line-clamp-5 clamp-text">
+                                        {!! $mission->description ?? '' !!}
                                     </div>
-                                    {{-- <a href="page-service-details.html" class="text-btn">
-                                                Read More
-                                            </a> --}}
+
+                                    <button class="read-more-btn d-none">Read More ></button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-12 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
                             <div class="feature-service-card-items">
                                 <div class="icon">
-                                    <img src="{{ $vision->image_1 }}">
-                                    {{-- <i class="flaticon-finance-business-expense-svgrepo-com-1"></i> --}}
+                                    <img
+                                        src="{{ optional($vision)->image_1 ? asset($vision->image_1) : asset('frontend/assets/images/default-image.jpg') }}">
                                 </div>
                                 <div class="content">
-                                    <h3><a href="page-service-details.html">{{ $vision->title }}</a></h3>
-                                    <div class="line-clamp-5">
-                                        {!! $vision->description !!}
+                                    <h3>{{ $vision->title ?? 'Our Vision' }}</h3>
+                                    <div class="line-clamp-5 clamp-text">
+                                        {!! $vision->description ?? '' !!}
                                     </div>
-                                    {{-- <a href="page-service-details.html" class="text-btn">
-                                                Read More
-                                            </a> --}}
+                                    <button class="read-more-btn d-none">Read More ></button>
                                 </div>
                             </div>
                         </div>
@@ -222,8 +221,8 @@
                         <div class="inner-column">
                             <div class="image1 overlay-anim wow fadeInUp" data-wow-delay=".3s">
                                 <img src="{{ optional($experience)->image_1
-    ? asset($experience->image_1)
-    : asset('frontend/assets/images/default-image.jpg') }}"
+                                    ? asset($experience->image_1)
+                                    : asset('frontend/assets/images/default-image.jpg') }}"
                                     alt="Image">
                             </div>
 
@@ -251,7 +250,7 @@
                 </h2>
             </div>
             <div class="row">
-                 @foreach ($teams as $team)
+                @foreach ($teams as $team)
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
                         <div class="team-box-items-4">
                             <div class="team-image">
@@ -264,7 +263,7 @@
 
                                     <li><a href="{{ $team->facebook }}"><i class="fa-brands fa-facebook-f"></i></a></li>
                                     <li><a href="{{ $team->instagram }}"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="{{  $team->twitter }}"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    <li><a href="{{ $team->twitter }}"><i class="fa-brands fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
                             <div class="content-box">
