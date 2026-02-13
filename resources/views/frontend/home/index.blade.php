@@ -262,9 +262,9 @@
                                     </div>
                                     <div class="content">
                                         <h3><a href="{{ route('frontend.course') }}">{{ $item->title ?? '' }}</a></h3>
-                                        <p>
+                                        <div class="line-clamp-5">
                                             {{ $item->short_description ?? '' }}
-                                        </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

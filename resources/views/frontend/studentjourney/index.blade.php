@@ -51,8 +51,8 @@
                             </div>
                             <div class="content">
                                 <h3><a href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}">{{ $studentstep->title }}</a></h3>
-                                <div>
-                                    {!! $studentstep->description !!}
+                                <div class="line-clamp-5">
+                                    {{ $studentstep->short_description }}
                                 </div>
                             </div>
                             {{-- <div class="arrow-shape-2 float-bob-x">
