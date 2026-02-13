@@ -11,40 +11,48 @@
 @endsection
 @extends('layouts.frontend.master')
 @section('content')
-    <section class="position-relative" style="height: 420px;">
-        <img src="{{ $service_page->banner_image }}" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
-            alt="service Banner">
-        <div class="position-absolute top-0 start-0 w-100 h-100"
-            style="background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));"></div>
-        <div class="container h-100 position-relative d-flex align-items-center">
-            <div class="text-white">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb text-white-50 mb-3">
-                        <li class="breadcrumb-item">
-                            <a href="{{ route('frontend.home') }}" class="text-white text-decoration-none">Home</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="#" class="text-white text-decoration-none">{{ $service_page->title ?? '' }}</a>
-                        </li>
-                    </ol>
-                </nav>
-                <h1 class="fw-bold display-5">{{ $service_page->title ?? '' }}</h1>
+    @if ($service_page)
+        <section class="page-title"
+            style="background-image: url('{{ optional($service_page)->banner_image
+                ? asset($service_page->banner_image)
+                : asset('frontend/assets/images/default-banner.jpg') }}');">
+            <div class="auto-container">
+                <div class="title-outer">
+                    <ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
+                        <li><a href="{{ route('frontend.home') }}">Home</a></li>
+                        <li>{{ $service_page->title ?? '' }}</li>
+                    </ul>
+                    <h1 class="title wow fadeInUp" data-wow-delay=".5s">{{ $service_page->title ?? '' }}</h1>
+                </div>
             </div>
+        </section>
+    @endif
+    <section class="service-section section-padding section-bg fix bg-cover"
+        style="background-image: url('images/home-1/service/service-bg.jpg')">
+        <span class="ellipse-bg"></span>
+        <div class="auto-container">
+            {{-- <div class="sec-title text-center">
+                <h6 class="sub-title wow fadeInUp">
+                    <span class="triangle triangle1"></span>
+                    <span class="triangle triangle2"></span>
+                    {{ $settings['services_title'] ?? '' }}
+                </h6>
+                <h2 class="wow fadeInUp" data-wow-delay=".2s">{{ $settings['services_subtitle'] ?? '' }}</h2>
+            </div> --}}
         </div>
-    </section>
-    <section class="features-section py-5">
-        <div class="container">
-            <div class="row g-4">
+        <div class="service-wrapper">
+            <div class="row">
                 @foreach ($services as $item)
-                    <div class="col-lg-3 col-md-6">
-                        <div class="feature-card text-center">
-                            <div class="icon-box">
-                                <i class="ri-customer-service-2-line"></i>
+                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="service-card-items">
+                            <div class="icon"><i class="{{ $item->icon ?? '' }}"></i></div>
+                            <div class="content">
+                                <h3><a href="{{ route('frontend.servicesingle', $item->slug) }}">{{ $item->title ?? '' }}</a></h3>
+                                <p class="text-justify line-clamp-4">{{ $item->short_description ?? '' }}
+                                </p>
+                                <a href="{{ route('frontend.servicesingle', $item->slug) }}" class="link-btn"><i
+                                        class="lnr-icon-arrow-right"></i></a>
                             </div>
-                            <h5 class="feature-card-title">{{ $item->title }}</h5>
-                            <p class="feature-card-desc">
-                                {{ $item->short_description }}
-                            </p>
                         </div>
                     </div>
                 @endforeach

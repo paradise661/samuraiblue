@@ -52,7 +52,7 @@ class FrontendController extends Controller
 
         $home_course = Settings::where('key', 'home_courses')->first();
         $courseIds = explode(',', $home_course->value);
-        $courses = Course::whereIn('id', $courseIds)->where('status', 1)->get();
+        $studentsteps = Course::whereIn('id', $courseIds)->where('status', 1)->get();
 
         $home_testimonial = Settings::where('key', 'home_testioninals')->first();
         $testimonialIds = explode(',', $home_testimonial->value);
@@ -68,7 +68,7 @@ class FrontendController extends Controller
 
         $faq_page = Page::where('status', 1)->where('slug', 'faq')->first();
 
-        return view('frontend.home.index', compact('sliders','popup', 'faq_page', 'countrylocation', 'faq', 'abroadstudies', 'universities', 'courses', 'countries', 'blogs', 'services', 'about_us', 'why_choose_us', 'teams', 'testimonials'));
+        return view('frontend.home.index', compact('sliders','popup', 'faq_page', 'countrylocation', 'faq', 'abroadstudies', 'universities', 'studentsteps', 'countries', 'blogs', 'services', 'about_us', 'why_choose_us', 'teams', 'testimonials'));
     }
     public function about()
     {
@@ -102,7 +102,7 @@ class FrontendController extends Controller
         $studentjourney = Page::where('status', 1)->where('slug', 'student-journey')->first();
         $studentsteps = Course::where('status',1)->get();
         return view('frontend.studentjourney.index',compact('studentjourney','studentsteps'));
-    } 
+    }
     public function event()
     {
         $event_page = Page::where('status', 1)->where('slug', 'event')->first();

@@ -6,8 +6,8 @@
     'description' => $studentjourney->meta_description ?? '',
     'keyword' => $studentjourney->meta_keywords ?? '',
     'schema' => $studentjourney->seo_schema ?? '',
-    'created_at' => $studentjourney->created_at,
-    'updated_at' => $studentjourney->updated_at,
+    'created_at' => $studentjourney->created_at ?? now(),
+    'updated_at' => $studentjourney->updated_at ?? now(),
 ])
 @endsection
 @section('content')
@@ -17,9 +17,9 @@
                 <div class="title-outer">
             <ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
                 <li><a href="{{ route('frontend.home') }}">Home</a></li>
-                <li><a href="{{ route('frontend.home') }}">{{ $studentjourney->title ?? 'FAQ' }}</a></li>
+                <li><a href="{{ route('frontend.home') }}">{{ $studentjourney->title ?? 'Student Journey' }}</a></li>
             </ul>
-            <h1 class="title wow fadeInUp" data-wow-delay=".5s">{{ $studentjourney->title ?? 'FAQ' }}</h1>
+            <h1 class="title wow fadeInUp" data-wow-delay=".5s">{{ $studentjourney->title ?? 'Student Journey' }}</h1>
         </div>
       </div>
     </section>
@@ -51,9 +51,9 @@
                             </div>
                             <div class="content">
                                 <h3><a href="page-service-details.html">{{ $studentstep->title }}</a></h3>
-                                <p>
+                                <div>
                                     {!! $studentstep->description !!}
-                                </p>
+                                </div>
                             </div>
                             {{-- <div class="arrow-shape-2 float-bob-x">
                                 <img src="{{ asset('frontend/assets/images/home-2/service-icon/arrow-shape.png') }}" alt="img">

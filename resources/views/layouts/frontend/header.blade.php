@@ -28,7 +28,7 @@
                                 </ul> --}}
                             </li>
                             <li class="dropdown">
-                                <a href="#">Services</a>
+                                <a href="{{ route('frontend.service') }}">Services</a>
                                 <ul>
                                     <li><a href="page-services.html">Student Support in Japan
                                         </a></li>

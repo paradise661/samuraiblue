@@ -12,47 +12,51 @@
 @extends('layouts.frontend.master')
 @section('content')
     @if ($blog_page)
-         <section class="page-title" style="background-image: url({{$blog_page->banner_image}});">
-      <div class="auto-container">
-		<div class="title-outer">
-			<ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
-				<li><a href="{{ route('frontend.home') }}">Home</a></li>
-				<li>{{ $blog_page->title ?? '' }}</li>
-			</ul>
-			<h1 class="title wow fadeInUp" data-wow-delay=".5s">{{ $blog_page->title ?? '' }}</h1>
-		</div>
-      </div>
-    </section>
+        <section class="page-title"
+            style="background-image: url('{{ optional($blog_page)->banner_image
+                ? asset($blog_page->banner_image)
+                : asset('frontend/assets/images/default-banner.jpg') }}');">
+            <div class="auto-container">
+                <div class="title-outer">
+                    <ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
+                        <li><a href="{{ route('frontend.home') }}">Home</a></li>
+                        <li>{{ $blog_page->title ?? '' }}</li>
+                    </ul>
+                    <h1 class="title wow fadeInUp" data-wow-delay=".5s">{{ $blog_page->title ?? '' }}</h1>
+                </div>
+            </div>
+        </section>
     @endif
     <section class="news-secton section-padding fix">
-            <div class="auto-container">
+        <div class="auto-container">
 
-                <div class="row">
-                    @if (isset($blog) && $blog->count())
-                        @foreach ($blog as $item)
-                            <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                                <div class="news-box-items">
-                                    <div class="news-image">
-                                        <img src="{{ $item->image }}" alt="img" />
-                                        {{-- <img src="images/home-1/news/news-01.jpg" alt="img" /> --}}
-                                        {{-- <span class="post-box">
+            <div class="row">
+                @if (isset($blog) && $blog->count())
+                    @foreach ($blog as $item)
+                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                            <div class="news-box-items">
+                                <div class="news-image">
+                                    <img src="{{ $item->image }}" alt="img" />
+                                    {{-- <img src="images/home-1/news/news-01.jpg" alt="img" /> --}}
+                                    {{-- <span class="post-box">
                                            {{$item->created_at ?? 'now'}}
                                         </span> --}}
-                                    </div>
-                                    <div class="news-content">
-                                        <h3>
-                                            <a href="{{ route('frontend.blogsingle', $item->slug) }}">{{ $item->title ?? '' }}</a>
-                                        </h3>
-                                        <a href="{{ route('frontend.blogsingle', $item->slug) }}" class="link-btn">
-                                            Learn More
-                                            <span class="icon"><i class="lnr-icon-arrow-right"></i></span>
-                                        </a>
-                                    </div>
+                                </div>
+                                <div class="news-content">
+                                    <h3>
+                                        <a
+                                            href="{{ route('frontend.blogsingle', $item->slug) }}">{{ $item->title ?? '' }}</a>
+                                    </h3>
+                                    <a href="{{ route('frontend.blogsingle', $item->slug) }}" class="link-btn">
+                                        Learn More
+                                        <span class="icon"><i class="lnr-icon-arrow-right"></i></span>
+                                    </a>
                                 </div>
                             </div>
-                        @endforeach
-                    @endif
-                    {{-- <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                        </div>
+                    @endforeach
+                @endif
+                {{-- <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                         <div class="news-box-items">
                             <div class="news-image">
                                 <img src="{{ asset('frontend/assets/images/home-1/banner-2.jpeg') }}" alt="img" />
@@ -99,7 +103,7 @@
                             </div>
                         </div>
                     </div> --}}
-                </div>
             </div>
-        </section>
+        </div>
+    </section>
 @endsection
