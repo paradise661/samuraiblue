@@ -1,10 +1,10 @@
 <div class="tab-pane fade" id="universities" role="tabpanel">
     {{-- Our universities Section --}}
     <fieldset class="border p-3">
-        <legend class="float-none w-auto legend-title">Our Universities Section</legend>
+        <legend class="float-none w-auto legend-title">Our mission-vision Section</legend>
         <div class="row">
             <div class="mb-4 col-md-6">
-                <label for="universities_title" class="form-label">Our Universities Title</label>
+                <label for="universities_title" class="form-label">Our mission-vision Title</label>
                 <input type="text" class="form-control" id="universities_title" name="universities_title"
                     placeholder="Our Universities Title" value="{{ $settings['universities_title'] }}" />
                 @error('universities_title')
@@ -14,7 +14,7 @@
 
 
             <div class="mb-4 col-md-6">
-                <label for="universities_subtitle" class="form-label">Our Universities Subtitle</label>
+                <label for="universities_subtitle" class="form-label">Our mission-vision Subtitle</label>
                 <input type="text" class="form-control" id="universities_subtitle" name="universities_subtitle"
                     placeholder="Our Universities Subtitle" value="{{ $settings['universities_subtitle'] }}" />
                 @error('universities_subtitle')
@@ -23,7 +23,7 @@
             </div>
 
             <div class="mb-4 col-md-6">
-                <label for="universities_button" class="form-label">Our Universities Button Text</label>
+                <label for="universities_button" class="form-label">Our mission-vision Button Text</label>
                 <input type="text" class="form-control" id="universities_button" name="universities_button"
                     placeholder="Our Universities Button Text" value="{{ $settings['universities_button'] }}" />
                 @error('universities_button')
@@ -41,7 +41,7 @@
             </div> --}}
 
             <div class="mb-4">
-                <label for="universities_description" class="form-label">Our Universities Description</label>
+                <label for="universities_description" class="form-label">Our mission-vision Description</label>
                 <textarea class="form-control" id="universities_description" name="universities_description"
                     placeholder="Our Universities Description" rows="4">{{ $settings['universities_description'] }}</textarea>
 
@@ -51,7 +51,7 @@
             </div>
 
             <div class="mb-4">
-                <label for="home_universities" class="form-label">Home Universities</label>
+                <label for="home_universities" class="form-label">Home mission-vision</label>
 
                 @php
                     $selectedUniversitiesIds = explode(',', $settings['home_universities']);
@@ -65,7 +65,7 @@
                             {{ $university->id }}-{{ $university->title }}</option>
                     @endforeach
                 </select>
-                <!-- choicejs --> 
+                <!-- choicejs -->
 
                 @error('home_universities')
                     <p class="text-danger">{{ $message }}</p>
