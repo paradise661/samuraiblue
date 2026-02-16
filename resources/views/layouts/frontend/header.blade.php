@@ -20,15 +20,21 @@
                                 <a href="{{ route('frontend.home') }}">Home</a>
                             </li>
 
-                            <li class="{{ request()->routeIs('frontend.about') ? 'current' : '' }}">
+                            <li class="{{ request()->routeIs('frontend.about') ? 'current' : '' }} dropdown">
                                 <a href="{{ route('frontend.about') }}">About</a>
+                                <ul>
+                                    <li><a href="{{ route('frontend.about') }}">About Us</a></li>
+                                    <li><a href="{{ route('frontend.messagefromfounder') }}">Messages</a></li>
+                                </ul>
                             </li>
 
                             <li class="{{ request()->routeIs('frontend.service*') ? 'current' : '' }} dropdown">
                                 <a href="{{ route('frontend.service') }}">Services</a>
                                 <ul>
                                     @foreach ($footer_services as $services)
-                                        <li><a href="{{ route('frontend.servicesingle', $services->slug) }}">{{ $services->title }}</a></li>
+                                        <li><a
+                                                href="{{ route('frontend.servicesingle', $services->slug) }}">{{ $services->title }}</a>
+                                        </li>
                                     @endforeach
 
                                     {{-- <li><a href="#">Job Placement & Training</a></li> --}}

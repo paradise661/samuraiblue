@@ -11,7 +11,7 @@
 @endsection
 @extends('layouts.frontend.master')
 @section('content')
-    @if ($message_page)
+    {{-- @if ($message_page)
         <div class="hero-banner2 position-relative ">
             <div class="row g-0 text-bannner-section">
                 <div class="col-md-6 d-flex justify-content-center align-items-center py-5">
@@ -36,6 +36,22 @@
                 </div>
             </div>
         </div>
+    @endif --}}
+    @if ($message_page)
+        <section class="page-title"
+            style="background-image: url('{{ optional($message_page)->banner_image
+                ? asset($message_page->banner_image)
+                : asset('frontend/assets/images/default-banner.jpg') }}');">
+            <div class="auto-container">
+                <div class="title-outer">
+                    <ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
+                        <li><a href="{{ route('frontend.home') }}">Home</a></li>
+                        <li>{{ $message_page->title ?? '' }}</li>
+                    </ul>
+                    <h1 class="title wow fadeInUp" data-wow-delay=".5s">{{ $message_page->title ?? '' }}</h1>
+                </div>
+            </div>
+        </section>
     @endif
     {{-- about us section --}}
     {{-- about us section --}}
@@ -46,7 +62,10 @@
                 <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-right"
                     data-aos-duration="3000">
                     <div class="about-us-img-ceo">
-                        <img src="{{ asset($message_page->image_1) }}" alt="{{ $message_page->title }}">
+                        <img style="    height: 800px;
+                                       object-fit: cover;"
+                              src="{{ asset($message_page->image_1) }}"
+                            alt="{{ $message_page->title }}">
                     </div>
                 </div>
                 {{-- Content --}}
