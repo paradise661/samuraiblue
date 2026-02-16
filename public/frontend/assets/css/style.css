@@ -7144,7 +7144,7 @@ Section Title
     text-align: center;
     border-radius: 50%;
     background-image: -webkit-gradient(linear, right top, left top, from(var(--theme-color1)), color-stop(50%, var(--theme-color7)), to(var(--theme-color1)));
-    background-image: linear-gradient(to left, #d4e5ffe6 0%, #6D90C5 50%, #d4e5ffe6 100%);
+    background-image: linear-gradient(to left, #98c1ffe6 0%, #6D90C5 50%, #98c1ffe6 100%);
     background-size: 200%;
     -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;

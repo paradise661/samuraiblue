@@ -108,7 +108,7 @@
                             <div class="feature-service-card-items">
                                 <div class="icon">
                                     <img
-                                        src="{{ optional($mission)->image_1 ? asset($mission->image_1) : asset('frontend/assets/images/default-image.jpg') }}">
+                                       style="margin-bottom: 10px;" src="{{ optional($mission)->image_1 ? asset($mission->image_1) : asset('frontend/assets/images/default-image.jpg') }}">
                                 </div>
 
                                 <div class="content">
@@ -126,7 +126,7 @@
                             <div class="feature-service-card-items">
                                 <div class="icon">
                                     <img
-                                        src="{{ optional($vision)->image_1 ? asset($vision->image_1) : asset('frontend/assets/images/default-image.jpg') }}">
+                                       style="margin-bottom: 10px;"   src="{{ optional($vision)->image_1 ? asset($vision->image_1) : asset('frontend/assets/images/default-image.jpg') }}">
                                 </div>
                                 <div class="content">
                                     <h3>{{ $vision->title ?? 'Our Vision' }}</h3>
