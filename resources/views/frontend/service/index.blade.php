@@ -50,7 +50,7 @@
                                     <img src="{{ $item->image_1 }}">
                             </div>
                             <div class="content">
-                                <h3><a href="{{ route('frontend.servicesingle', $item->slug) }}">{{ $item->title ?? '' }}</a></h3>
+                                <h3><a href="{{ route('frontend.servicesingle', $item->slug) }}"><div class="line-clamp-1">{{ $item->title ?? ''}}</div></a></h3>
                                 <p class="text-justify line-clamp-4">{{ $item->short_description ?? '' }}
                                 </p>
                                 <a href="{{ route('frontend.servicesingle', $item->slug) }}" class="link-btn"><i

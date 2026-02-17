@@ -173,7 +173,7 @@
                                     </div>
                                     <div class="content">
                                         <h3><a
-                                                href="{{ route('frontend.servicesingle', $item->slug) }}">{{ $item->title ?? '' }}</a>
+                                                href="{{ route('frontend.servicesingle', $item->slug) }}"><div class="line-clamp-1">{{ $item->title ?? ''}}</div></a>
                                         </h3>
                                         <p class="text-justify line-clamp-4">{{ $item->short_description ?? '' }}
                                         </p>
@@ -181,6 +181,7 @@
                                                 class="lnr-icon-arrow-right"></i></a>
                                     </div>
                                 </div>
+                            <a class="stretched-link" href="{{ route('frontend.servicesingle', $item->slug) }}"></a>
                             </div>
                         @endforeach
                     </div>
@@ -263,7 +264,7 @@
                                     </div>
                                     <div class="content">
                                         <h3><a
-                                                href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}">{{ $studentstep->title }}</a>
+                                                href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}"><div class="line-clamp-1">{{ $studentstep->title }}</div></a>
                                         </h3>
                                         <div style="font-size: 17px;
     color: #6e6b6b;

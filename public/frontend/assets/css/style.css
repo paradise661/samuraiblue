@@ -24571,6 +24571,12 @@ a {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+.line-clamp-1 {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
 .line-clamp-5 {
     display: -webkit-box !important;

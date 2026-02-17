@@ -75,7 +75,7 @@
                                 </span>
                             </div>
                             <div class="content">
-                                <h3><a href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}">{{ $studentstep->title }}</a></h3>
+                                <h3><a href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}"><div class="line-clamp-1">{{ $studentstep->title }}</div></a></h3>
                                 <div style="font-size: 17px;
     color: #6e6b6b;
     font-weight: 400;"
