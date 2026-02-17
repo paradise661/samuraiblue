@@ -16,9 +16,9 @@
     <link href="{{ asset('frontend/assets/css/responsive.css') }}" rel="stylesheet" />
 
     <link rel="shortcut icon" href="{{ asset('frontend/assets/images/favicon.svg') }}" type="image/x-icon" />
-    {{--
+
     <link rel="icon" type="image/x-icon"
-        href="{{ $settings['site_fav_icon'] ? asset($settings['site_fav_icon']) : 'Smurai Blue' }}" /> --}}
+        href="{{ $settings['site_fav_icon'] ? asset($settings['site_fav_icon']) : 'Smurai Blue' }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -32,6 +32,32 @@
     @include('layouts.frontend.header')
     <main>
         @yield('content')
+        <div class="modal fade" id="testimonialModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Testimonial</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <img id="testimonialModalImage" src="" alt="" class="rounded-circle me-3"
+                            style="width:70px;height:70px;object-fit:cover;">
+                        <div>
+                            <h6 id="testimonialModalName" class="mb-0"></h6>
+                            <small id="testimonialModalPosition" class="text-muted"></small>
+                        </div>
+                    </div>
+
+                    <div id="testimonialModalContent"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     </main>
     @include('layouts.frontend.footer')
     <div class="gtranslate_wrapper"></div>
@@ -192,6 +218,58 @@ $(document).ready(function () {
     });
 });
 </script>
+<script>
+(function () {
+
+    function initTestimonials(scope = document) {
+        scope.querySelectorAll('.testimonial-card-item').forEach(card => {
+            if (card.dataset.processed) return;
+            card.dataset.processed = 'true';
+
+            const text = card.querySelector('.testimonial-text');
+            const btn  = card.querySelector('[data-readmore]');
+
+            if (!text || !btn) return;
+
+            if (text.scrollHeight > text.clientHeight) {
+                btn.classList.remove('d-none');
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initTestimonials();
+    });
+
+    // EVENT DELEGATION (critical)
+    document.addEventListener('click', function (e) {
+        const btn = e.target.closest('[data-readmore]');
+        if (!btn) return;
+
+        const card = btn.closest('.testimonial-card-item');
+        if (!card) return;
+
+        document.getElementById('testimonialModalName').textContent =
+            card.dataset.name;
+
+        document.getElementById('testimonialModalPosition').textContent =
+            card.dataset.position;
+
+        document.getElementById('testimonialModalImage').src =
+            card.dataset.image;
+
+        document.getElementById('testimonialModalContent').innerHTML =
+            card.querySelector('.testimonial-text').dataset.full;
+
+        const modal = bootstrap.Modal.getOrCreateInstance(
+            document.getElementById('testimonialModal')
+        );
+        modal.show();
+    });
+
+})();
+</script>
+
 
 </body>
 

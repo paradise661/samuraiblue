@@ -65,11 +65,12 @@ class FrontendController extends Controller
 
         $abroadstudies = Country::where('status', 1)->oldest("order")->get();
         $countrylocation = CountryLocation::where('status', 1)->oldest("order")->get();
+        $consultancy = Page::where('status', 1)->where('slug', 'consultancy')->first();
 
         $faq_page = Page::where('status', 1)->where('slug', 'faq')->first();
         $faqs = Faq::where('status', 1)->oldest("order")->get();
 
-        return view('frontend.home.index', compact('sliders','popup', 'faq_page', 'countrylocation', 'faq', 'abroadstudies', 'universities', 'studentsteps', 'countries', 'blogs', 'services', 'about_us', 'why_choose_us', 'teams', 'testimonials','faqs'));
+        return view('frontend.home.index', compact('sliders','popup', 'faq_page','consultancy', 'countrylocation', 'faq', 'abroadstudies', 'universities', 'studentsteps', 'countries', 'blogs', 'services', 'about_us', 'why_choose_us', 'teams', 'testimonials','faqs'));
     }
     public function about()
     {
@@ -80,9 +81,11 @@ class FrontendController extends Controller
         $studentreviw = WhyChooseUs::get();
         $mission = Page::where('status',1)->where('slug','our-mission')->first();
         $vision = Page::where('status', 1)->where('slug', 'our-vision')->first();
+        $consultancy = Page::where('status', 1)->where('slug', 'consultancy')->first();
+
         $international = Page::where('status', 1)->where('slug', 'international-student')->first();
         $experience = Page::where('status', 1)->where('slug', 'japan-experience')->first();
-        return view('frontend.about.index', compact('why_choose_us','about_us', 'why_us', 'teams', 'studentreviw','mission','vision','international','experience'));
+        return view('frontend.about.index', compact('why_choose_us','about_us','consultancy', 'why_us', 'teams', 'studentreviw','mission','vision','international','experience'));
     }
     public function service()
     {

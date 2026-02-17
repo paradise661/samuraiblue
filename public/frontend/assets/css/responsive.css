@@ -16,7 +16,7 @@
 	.header-style-one .header-lower .logo-box{
 		margin-right: 30px;
 	}
-	
+
 	.main-menu .navigation>li {
 		margin-right: 50px;
 	}
@@ -59,7 +59,7 @@
 		margin-right: 30px;
 	}
 
-	
+
 }
 
 
@@ -78,9 +78,9 @@
 		min-height: auto;
 	}
 
-	
 
-	
+
+
 }
 
 
@@ -107,7 +107,7 @@
 	.sticky-header .logo img {
 		width: auto;
 		max-width: none;
-		max-height: 45px;
+		max-height: 100%;
 	}
 
 	.mobile-nav-toggler {
@@ -139,8 +139,8 @@
 	.main-slider .title:before{
 		display: none;
 	}
-	
-	
+
+
 }
 
 
@@ -150,14 +150,14 @@
 		padding-left: 0;
 	}
 
-	
+
 	.main-header .header-lower .logo-box {
 		min-width: auto;
 		margin-right: 0px;
 		max-width: 140px;
 	}
 
-	
+
 	.main-header .header-lower .logo-box .logo img {
 		max-width: 140px;
 	}

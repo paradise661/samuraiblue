@@ -87,7 +87,7 @@
                                         <h2 class="wow fadeInUp" data-wow-delay=".2s">
                                             {{ $about_us->short_description ?? '' }}</h2>
                                     </div>
-                                    <div class="about-text wow fadeInUp" data-wow-delay=".5s">
+                                    <div class="about-text wow fadeInUp text-justify" data-wow-delay=".5s">
                                         {!! $about_us->description ?? ' ' !!}
                                     </div>
                                     <a href="{{ route('frontend.about') }}" class="theme-btn btn-style-one wow fadeInUp"
@@ -215,7 +215,8 @@
                                     </div>
                                     <div class="tab-content">
                                         <div id="Mission" class="tab-pane fade show active">
-                                            <div class="why-choose-list custom-list wow fadeInUp" data-wow-delay=".3s">
+                                            <div class="why-choose-list custom-list wow fadeInUp text-justify"
+                                                data-wow-delay=".3s">
                                                 {!! $why_choose_us->description ?? '' !!}
                                             </div>
                                             {{-- <div class="why-choose-list-items">
@@ -236,8 +237,8 @@
                     </div>
                 </div>
             </section>
-            <section class="service-section-2 section-padding section-bg fix">
-                <div class="auto-container">
+            <section class="service-section-4 section-padding section-bg fix">
+                <div class="container-fluid">
                     <div class="sec-title text-center">
                         <h6 class="sub-title wow fadeInUp">
                             <span class="triangle triangle1"></span>
@@ -246,71 +247,37 @@
                         </h6>
                         <h2 class="wow fadeInUp" data-wow-delay=".2s">{{ $settings['courses_subtitle'] ?? '' }}</h2>
                     </div>
-                    <div class="row">
-                        @foreach ($studentsteps as $key => $item)
-                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                                <div class="service-card-items-2">
+                    <div class="row g-4">
+                        @foreach ($studentsteps as $key => $studentstep)
+                            <div class="col-xxl-3 col-lg-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="service-card-items-4">
                                     <div class="service-icon">
                                         <div class="icon">
-                                            {{-- <i class="flaticon-business-028-briefcase"></i> --}}
-                                            <img src="{{ $item->image }}">
-                                            <div class="service-triangle"></div>
+                                            {{-- <i class="flaticon-business-054-graph"></i> --}}
+                                            <img src="{{ $studentstep->image }}">
                                         </div>
                                         <span class="number">
                                             0{{ $key + 1 }}
+
                                         </span>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="{{ route('frontend.studentjourneysingle', $item->slug) }}">{{ $item->title ?? '' }}</a></h3>
-                                        <div class="line-clamp-5">
-                                            {{ $item->short_description ?? '' }}
+                                        <h3><a
+                                                href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}">{{ $studentstep->title }}</a>
+                                        </h3>
+                                        <div style="font-size: 17px;
+    color: #6e6b6b;
+    font-weight: 400;"
+                                            class="line-clamp-5 text-justify">
+                                            {{ $studentstep->short_description }}
                                         </div>
                                     </div>
                                 </div>
-                                <a class="stretched-link" href="{{ route('frontend.studentjourneysingle', $item->slug) }}"></a>
+                                <a class="stretched-link"
+                                    href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}"></a>
+
                             </div>
                         @endforeach
-                        {{-- <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
-                            <div class="service-card-items-2">
-                                <div class="service-icon">
-                                    <div class="icon">
-                                        <i class="lnr-icon-folder-open"></i>
-                                        <div class="service-triangle"></div>
-                                    </div>
-                                    <span class="number">
-                                        02
-                                    </span>
-                                </div>
-                                <div class="content">
-                                    <h3><a href="page-service-details.html">Application & Visa Processing</a></h3>
-                                    <p>
-                                        We assist with university or language school applications, document preparation,
-                                        and
-                                        submission.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".7s">
-                            <div class="service-card-items-2">
-                                <div class="service-icon">
-                                    <div class="icon">
-                                        <i class=" lnr-icon-layers"></i>
-                                        <div class="service-triangle"></div>
-                                    </div>
-                                    <span class="number">
-                                        03
-                                    </span>
-                                </div>
-                                <div class="content">
-                                    <h3><a href="page-service-details.html">Pre-Departure & Arrival Support</a></h3>
-                                    <p>
-                                        Before departure, we provide orientation, accommodation assistance, and travel
-                                        guidance.
-                                    </p>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </section>
@@ -489,10 +456,15 @@
                     <div class="testimonial-wrapper-2">
                         <div class="swiper testimonial-slider-2">
                             <div class="swiper-wrapper">
+
                                 @if ($testimonials && $testimonials->count())
                                     @foreach ($testimonials as $testimonial)
                                         <div class="swiper-slide">
-                                            <div class="testimonial-card-item">
+                                            <div class="testimonial-card-item"
+                                                data-name="{{ $testimonial->name ?? 'Name' }}"
+                                                data-position="{{ $testimonial->position ?? 'Student' }}"
+                                                data-image="{{ $testimonial->image }}">
+
                                                 <div class="client-item">
                                                     <div class="client-image">
                                                         <img src="{{ $testimonial->image }}" alt="img">
@@ -502,11 +474,13 @@
                                                         <span>{{ $testimonial->position ?? 'student' }}</span>
                                                     </div>
                                                 </div>
+
                                                 <div class="content">
                                                     <div class="quote-icon">
                                                         <i class="flaticon-finance-Quote"></i>
                                                         <div class="test-triangle"></div>
                                                     </div>
+
                                                     <div class="star">
                                                         <i class="fa-solid fa-star"></i>
                                                         <i class="fa-solid fa-star"></i>
@@ -514,20 +488,31 @@
                                                         <i class="fa-solid fa-star"></i>
                                                         <i class="fa-solid fa-star"></i>
                                                     </div>
-                                                    <div class="line-clamp-4">
-                                                        {!! $testimonial->description ?? '' !!}
+
+                                                    <div class="line-clamp-4 text-justify testimonial-text"
+                                                        data-full="{!! e($testimonial->description) !!}">
+                                                        {!! $testimonial->description !!}
                                                     </div>
+
+                                                    <button type="button" class="read-more-btn-testimonial d-none"
+                                                        data-readmore>
+                                                        Read More
+                                                    </button>
+
                                                 </div>
                                             </div>
                                         </div>
                                     @endforeach
                                 @endif
+
                             </div>
+
                             <div class="swiper-dot mt-5 mb-0">
                                 <div class="dot2"></div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -564,18 +549,18 @@
                             <ul class="accordion-box">
                                 <!--Block-->
                                 @foreach ($faqs as $key => $faq)
-                                <li class="accordion block {{ $key == 0 ? 'active-block' : '' }} wow fadeInUp"
-                                    data-wow-delay="{{ $key * 0.2 }}s">
-                                    <div class="acc-btn {{ $key == 0 ? 'active' : '' }}">
-                                        {{ $faq->question }}
-                                        <div class="icon fa fa-plus"></div>
-                                    </div>
-                                    <div class="acc-content {{ $key == 0 ? 'current' : '' }}">
-                                        <div class="content">
-                                            <div class="text">{!! $faq->answer !!}</div>
+                                    <li class="accordion block {{ $key == 0 ? 'active-block' : '' }} wow fadeInUp"
+                                        data-wow-delay="{{ $key * 0.2 }}s">
+                                        <div class="acc-btn {{ $key == 0 ? 'active' : '' }}">
+                                            {{ $faq->question }}
+                                            <div class="icon fa fa-plus"></div>
                                         </div>
-                                    </div>
-                                </li>
+                                        <div class="acc-content {{ $key == 0 ? 'current' : '' }}">
+                                            <div class="content">
+                                                <div class="text text-justify">{!! $faq->answer !!}</div>
+                                            </div>
+                                        </div>
+                                    </li>
                                 @endforeach
                             </ul>
                         </div>
@@ -670,6 +655,40 @@
                 </div>
             </div>
         </section>
+        <section class="partner-section">
+        <div class="container-fluid">
+            <div class="partner-glass-card">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-center">
+                        <img style="height: 130px; width:130px"
+                            src="{{ optional($consultancy)->image_1
+                                ? asset($consultancy->image_1)
+                                : asset('frontend/assets/images/default-image.jpg') }}"
+                            class="nepal-logo py-4" alt="Nepal Consultancy">
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="sec-title mb-0">
+                            <h6 class="sub-title wow fadeInUp">
+                                <span class="triangle triangle1"></span>
+                                <span class="triangle triangle2"></span>
+                                {{ $consultancy->title ?? '' }}
+                            </h6>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">{{ $consultancy->short_description ?? '' }}</h2>
+                        </div>
+                        <div class="about-text wow fadeInUp text-justify" data-wow-delay=".4s">{!! $consultancy->description ?? '' !!}
+                        </div>
+                        <a href="https://hanami.edu.np" target="/blank" class="theme-btn btn-style-one wow fadeInUp"
+                            data-wow-delay=".7s">
+                            Visit Nepal Office
+                            <span class="icon">
+                                <i class="flaticon-finance-fi_3385625"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
         {{-- </div> --}}
     </body>
 @endsection

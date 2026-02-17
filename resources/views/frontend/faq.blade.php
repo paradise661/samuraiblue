@@ -64,7 +64,7 @@
                                     </div>
                                     <div class="acc-content {{ $key == 0 ? 'current' : '' }}">
                                         <div class="content">
-                                            <div class="text">{!! $faq->answer !!}</div>
+                                            <div class="text text-justify">{!! $faq->answer !!}</div>
                                         </div>
                                     </div>
                                 </li>

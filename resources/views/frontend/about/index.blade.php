@@ -12,7 +12,7 @@
 @extends('layouts.frontend.master')
 @section('content')
     <!-- Start main-content -->
-    <section class="page-title" style="background-image: url({{$about_us->banner_image}});">
+    <section class="page-title" style="background-image: url({{ $about_us->banner_image }});">
         <div class="auto-container">
             <div class="title-outer">
                 <ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
@@ -52,7 +52,7 @@
                             <h2 class="wow fadeInUp" data-wow-delay=".2s">
                                 {{ $about_us->short_description ?? 'The Journey Behind Our Success' }}</h2>
                         </div>
-                        <p class="about-text wow fadeInUp" data-wow-delay=".4s">{!! $about_us->description ?? 'Here goes description' !!}</p>
+                        <div class="about-text wow fadeInUp text-justify" data-wow-delay=".4s">{!! $about_us->description ?? 'Here goes description' !!}</div>
                         {{-- <div class="about-block wow fadeInUp" data-wow-delay=".6s">
                             <div class="inner-box">
                                                 <div class="icon">
@@ -97,9 +97,9 @@
                         <span class="wow fadeInUp" data-wow-delay=".4s"> {{ $settings['universities_title'] }}
                     </div></span>
                     <div class="content px-5 wow fadeInUp" data-wow-delay=".5s">
-                        <p>
+                        <div class="objectives text-justify">
                             {{ $settings['universities_subtitle'] }}
-                        </p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -107,14 +107,14 @@
                         <div class="col-xl-6 col-lg-12 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
                             <div class="feature-service-card-items">
                                 <div class="icon">
-                                    <img
-                                       style="margin-bottom: 10px;" src="{{ optional($mission)->image_1 ? asset($mission->image_1) : asset('frontend/assets/images/default-image.jpg') }}">
+                                    <img style="margin-bottom: 10px;"
+                                        src="{{ optional($mission)->image_1 ? asset($mission->image_1) : asset('frontend/assets/images/default-image.jpg') }}">
                                 </div>
 
                                 <div class="content">
                                     <h3>{{ $mission->title ?? 'Our Mission' }}</h3>
 
-                                    <div class="line-clamp-5 clamp-text">
+                                    <div class="line-clamp-5 clamp-text text-justify">
                                         {!! $mission->description ?? '' !!}
                                     </div>
 
@@ -125,12 +125,12 @@
                         <div class="col-xl-6 col-lg-12 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
                             <div class="feature-service-card-items">
                                 <div class="icon">
-                                    <img
-                                       style="margin-bottom: 10px;"   src="{{ optional($vision)->image_1 ? asset($vision->image_1) : asset('frontend/assets/images/default-image.jpg') }}">
+                                    <img style="margin-bottom: 10px;"
+                                        src="{{ optional($vision)->image_1 ? asset($vision->image_1) : asset('frontend/assets/images/default-image.jpg') }}">
                                 </div>
                                 <div class="content">
                                     <h3>{{ $vision->title ?? 'Our Vision' }}</h3>
-                                    <div class="line-clamp-5 clamp-text">
+                                    <div class="line-clamp-5 clamp-text text-justify">
                                         {!! $vision->description ?? '' !!}
                                     </div>
                                     <button class="read-more-btn d-none">Read More ></button>
@@ -165,13 +165,46 @@
             </div>
             <div class="row g-5">
                 <div class="content-box content-white">
-                    <p class="text-white">{!! $international->description ?? '' !!}</p>
+                    <div class="text-white objectives text-justify">{!! $international->description ?? '' !!}</div>
                 </div>
 
             </div>
         </div>
     </section>
-
+    <section class="partner-section">
+        <div class="container">
+            <div class="partner-glass-card">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-center">
+                        <img style="height: 130px; width:130px"
+                            src="{{ optional($consultancy)->image_1
+                                ? asset($consultancy->image_1)
+                                : asset('frontend/assets/images/default-image.jpg') }}"
+                            class="nepal-logo my-4" alt="Nepal Consultancy">
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="sec-title mb-0">
+                            <h6 class="sub-title wow fadeInUp">
+                                <span class="triangle triangle1"></span>
+                                <span class="triangle triangle2"></span>
+                                {{ $consultancy->title ?? '' }}
+                            </h6>
+                            <h2 class="wow fadeInUp" data-wow-delay=".2s">{{ $consultancy->short_description ?? '' }}</h2>
+                        </div>
+                        <div class="about-text wow fadeInUp text-justify" data-wow-delay=".4s">{!! $consultancy->description ?? '' !!}
+                        </div>
+                        <a href="https://hanami.edu.np" target="/blank" class="theme-btn btn-style-one wow fadeInUp"
+                            data-wow-delay=".7s">
+                            Visit Nepal Office
+                            <span class="icon">
+                                <i class="flaticon-finance-fi_3385625"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="about-section fix section-padding">
         <div class="auto-container">
             <div class="row g-4">
@@ -186,7 +219,8 @@
                             </h6>
                             <h2 class="wow fadeInUp" data-wow-delay=".2s">{{ $experience->short_description ?? '' }}</h2>
                         </div>
-                        <p class="about-text wow fadeInUp" data-wow-delay=".4s">{!! $experience->description ?? '' !!} </p>
+                        <div class="about-text wow fadeInUp text-justify" data-wow-delay=".4s">{!! $experience->description ?? '' !!}
+                        </div>
                         {{-- <div class="about-block wow fadeInUp" data-wow-delay=".6s">
                             <div class="inner-box">
                                                 <div class="icon">
