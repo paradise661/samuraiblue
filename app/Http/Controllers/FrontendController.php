@@ -52,7 +52,7 @@ class FrontendController extends Controller
 
         $home_course = Settings::where('key', 'home_courses')->first();
         $courseIds = explode(',', $home_course->value);
-        $studentsteps = Course::whereIn('id', $courseIds)->where('status', 1)->get();
+        $studentsteps = Course::whereIn('id', $courseIds)->where('status', 1)->limit(4)->get();
 
         $home_testimonial = Settings::where('key', 'home_testioninals')->first();
         $testimonialIds = explode(',', $home_testimonial->value);
