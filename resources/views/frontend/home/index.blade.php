@@ -731,7 +731,7 @@
                 </div>
 
                 <div class="content-box text-center">
-                    <span class="designation-tag">Our Nepal Partner</span>
+                    {{-- <span class="designation-tag">Our Nepal Partner</span> --}}
                     <h3 class="name-display">{{ $item->name }}</h3>
                     <p class="short-info">
                         {{ $item->short_description }}
