@@ -75,7 +75,7 @@
                                 @enderror
                             </div>
                             <div class="mb-4">
-                                <label for="instagram" class="form-label">instagram</label>
+                                <label for="instagram" class="form-label">Instagram</label>
                                 <input type="text" class="form-control" id="instagram" name="instagram"
                                     placeholder="Eg- 980000000" value="{{ old('instagram', ${$name}->instagram) }}" />
                                 @error('instagram')
@@ -83,7 +83,7 @@
                                 @enderror
                             </div>
                             <div class="mb-4">
-                                <label for="twitter" class="form-label">twitter</label>
+                                <label for="twitter" class="form-label">Site URL</label>
                                 <input type="text" class="form-control" id="twitter" name="twitter" placeholder="twitter"
                                     value="{{ old('twitter', ${$name}->twitter) }}" />
                                 @error('twitter')

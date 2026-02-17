@@ -702,47 +702,50 @@
                     </h6>
                     <h2 class="wow fadeInUp" data-wow-delay=".3s"> {{ $consultancy->short_description ?? '' }}</h2>
                 </div>
-               <div class="team-wrapper-4">
-    <div class="row justify-content-center">
+                <div class="team-wrapper-4">
+                    <div class="row justify-content-center">
 
-        @foreach ($partners as $item)
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-4">
+                        @foreach ($partners as $item)
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-4">
 
-                <div class="team-block">
-                    <div class="inner-box text-center">
-                        <div class="image-box">
-                            <figure class="image">
-                                <a href="#">
-                                    <div class="image-overlay"></div>
-                                    <img src="{{ asset($item->image) }}" alt="{{ $item->name }}">
-                                </a>
-                            </figure>
+                                <div class="team-block">
+                                    <div class="inner-box text-center">
+                                        <div class="image-box">
+                                            <figure class="image">
+                                                <a href="#">
+                                                    <div class="image-overlay"></div>
+                                                    <img src="{{ asset($item->image) }}" alt="{{ $item->name }}">
+                                                </a>
+                                            </figure>
 
-                            <div class="share-icon">
-                                <span class="icon far fa-plus"></span>
-                                <div class="social-links">
-                                    <a href="{{ $item->instagram }}"><i class="fab fa-instagram"></i></a>
-                                    <a href="{{$item->twitter   }}"><i class="fas fa-x"></i></a>
-                                    <a href="{{ $item->facebook  }}"><i class="fab fa-facebook"></i></a>
+                                            <div class="share-icon">
+                                                <span class="icon far fa-plus"></span>
+                                                <div class="social-links">
+                                                    <a href="{{ $item->instagram }}"><i class="fab fa-instagram"></i></a>
+                                                    <a href="{{ $item->twitter }}"><i class="fas fa-eye"></i>
+                                                    </a>
+                                                    <a href="{{ $item->facebook }}"><i class="fab fa-facebook"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content-box text-center">
+                                            {{-- <span class="designation-tag">Our Nepal Partner</span> --}}
+                                            <h3 class="name-display">{{ $item->name }}</h3>
+                                            {{-- <p class="short-info">
+                                        {{ $item->short_description }}
+                                    </p> --}}
+
+                                        </div>
+                                    </div>
                                 </div>
+
+
+
                             </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
-
-                <div class="content-box text-center">
-                    {{-- <span class="designation-tag">Our Nepal Partner</span> --}}
-                    <h3 class="name-display">{{ $item->name }}</h3>
-                    <p class="short-info">
-                        {{ $item->short_description }}
-                    </p>
-                </div>
-
-            </div>
-        @endforeach
-
-    </div>
-</div>
 
             </div>
         </section>

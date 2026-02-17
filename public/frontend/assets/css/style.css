@@ -16929,7 +16929,7 @@ Section Title
 
 .team-block .inner-box .image-box {
     position: relative;
-    padding-top: 12px;
+    /* padding-top: 12px; */
 }
 /*
 .team-block .inner-box .image-box::before {
@@ -24919,4 +24919,31 @@ a {
 /* Interactive Hover effect for the whole card */
 .team-block:hover .content-box {
     transform: translateY(-5px);
+}
+.team-block {
+    position: relative;
+}
+
+.team-block .content-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.65);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.team-block .name-display {
+    color: #fff;
+    margin: 0;
+}
+.team-block:hover .content-box {
+    opacity: 1;
+    transform: translateY(0);
+}
+.team-block:hover .image-overlay {
+    opacity: 1;
 }
