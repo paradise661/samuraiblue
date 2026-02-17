@@ -27,6 +27,7 @@ use Illuminate\Http\Request;
 use App\Models\DocumentImage;
 use App\Models\ContactInquiry;
 use App\Models\CountryLocation;
+use App\Models\Partner;
 use App\Models\Popup;
 use Illuminate\Support\Facades\Validator;
 
@@ -39,6 +40,8 @@ class FrontendController extends Controller
         $sliders = Slider::where('status', 1)->oldest("order")->first();
         $about_us = Page::where('status', 1)->where('slug', 'about-us')->first();
         $why_choose_us = WhyChooseUs::where('status', 1)->first();
+        $partners = Partner::where('status', 1)->oldest("order")->get();
+
         $teams = Team::where('status', 1)->oldest("order")->get();
         $faq = Faq::where('status', 1)->limit(6)->get();
         $popup = Popup::where('status', 1)->get();
@@ -70,7 +73,7 @@ class FrontendController extends Controller
         $faq_page = Page::where('status', 1)->where('slug', 'faq')->first();
         $faqs = Faq::where('status', 1)->oldest("order")->get();
 
-        return view('frontend.home.index', compact('sliders','popup', 'faq_page','consultancy', 'countrylocation', 'faq', 'abroadstudies', 'universities', 'studentsteps', 'countries', 'blogs', 'services', 'about_us', 'why_choose_us', 'teams', 'testimonials','faqs'));
+        return view('frontend.home.index', compact('sliders','popup', 'partners', 'faq_page','consultancy', 'countrylocation', 'faq', 'abroadstudies', 'universities', 'studentsteps', 'countries', 'blogs', 'services', 'about_us', 'why_choose_us', 'teams', 'testimonials','faqs'));
     }
     public function about()
     {

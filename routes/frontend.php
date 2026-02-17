@@ -17,6 +17,8 @@ Route::name('frontend.')->group(
         Route::get('/blogs/{slug}', [FrontendController::class, 'blogsingle'])->name('blogsingle');
         Route::get('/contact-us', [FrontendController::class, 'contact'])->name('contact');
         Route::get('/our-team', [FrontendController::class, 'team'])->name('team');
+        Route::get('/our-partner', [FrontendController::class, 'partner'])->name('partner');
+
         Route::get('/testimonial', [FrontendController::class, 'testimonial'])->name('testimonial');
         Route::get('gallery', [FrontendController::class, 'gallery'])->name('gallery');
         Route::get('students-voice', [FrontendController::class, 'studentvoice'])->name('studentvoice');

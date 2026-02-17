@@ -16931,7 +16931,7 @@ Section Title
     position: relative;
     padding-top: 12px;
 }
-
+/*
 .team-block .inner-box .image-box::before {
     content: "";
     position: absolute;
@@ -16948,7 +16948,7 @@ Section Title
     z-index: 1;
     -webkit-transition: all 300ms ease;
     transition: all 300ms ease;
-}
+} */
 
 .team-block .inner-box .image-box .image {
     margin-bottom: 0;
@@ -17091,7 +17091,7 @@ Section Title
     border-radius: 50%;
     z-index: -1;
     background: -webkit-gradient(linear, left top, right top, from(#C8F169), to(#039397));
-    background: linear-gradient(90deg, #C8F169 0%, #039397 100%);
+    background: #555555;
     -webkit-transform: scale(0);
     transform: scale(0);
     -webkit-transition: all 300ms ease;
@@ -18576,6 +18576,7 @@ Section Title
 }
 
 .news-box-items .news-content h3 a {
+    font-size: 22px;
     background-position: 0 95%;
     background-repeat: no-repeat;
     background-size: 0% 2px;
@@ -24820,6 +24821,7 @@ a {
     font-size: 14px;
     text-decoration: none;
 }
+
 .journey-bridge {
     display: flex;
     justify-content: space-between;
@@ -24842,4 +24844,79 @@ a {
     border: 2px solid #6D90C5;
     padding: 10px 20px;
     border-radius: 50px;
+}
+/* Dark Image Overlay */
+.image-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Darkens the bottom 50% of the image for a cinematic look */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 2;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.team-block:hover .image-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+/* Make sure icons stay on top of overlay */
+.share-icon {
+    z-index: 5 !important;
+}
+
+/* Attractive Typography (Downside) */
+.content-box {
+    /* padding-top: 25px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.designation-tag {
+    justify-content: center;
+    display: flex;
+    color: #6D90C5;
+    /* Your brand blue */
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.name-display {
+    justify-content: center;
+        display: flex;
+    font-size: 24px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.short-info {
+    justify-content: center;
+        display: flex;
+    font-size: 15px;
+    color: #777;
+    line-height: 1.6;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Interactive Hover effect for the whole card */
+.team-block:hover .content-box {
+    transform: translateY(-5px);
 }

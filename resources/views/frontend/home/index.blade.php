@@ -655,40 +655,96 @@
                 </div>
             </div>
         </section>
-        <section class="partner-section">
-        <div class="container-fluid">
-            <div class="partner-glass-card">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 text-center">
-                        <img  style="height: 180px; width:130px"
-                            src="{{ optional($consultancy)->image_1
-                                ? asset($consultancy->image_1)
-                                : asset('frontend/assets/images/default-image.jpg') }}"
-                            class="nepal-logo py-4" alt="Nepal Consultancy">
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="sec-title mb-0">
-                            <h6 class="sub-title wow fadeInUp">
-                                <span class="triangle triangle1"></span>
-                                <span class="triangle triangle2"></span>
-                                {{ $consultancy->title ?? '' }}
-                            </h6>
-                            <h2 class="wow fadeInUp" data-wow-delay=".2s">{{ $consultancy->short_description ?? '' }}</h2>
+        {{-- <section class="partner-section">
+            <div class="container-fluid">
+                <div class="partner-glass-card">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 text-center">
+                            <img style="height: 180px; width:130px"
+                                src="{{ optional($consultancy)->image_1
+                                    ? asset($consultancy->image_1)
+                                    : asset('frontend/assets/images/default-image.jpg') }}"
+                                class="nepal-logo py-4" alt="Nepal Consultancy">
                         </div>
-                        <div class="about-text wow fadeInUp text-justify" data-wow-delay=".4s">{!! $consultancy->description ?? '' !!}
+                        <div class="col-lg-8">
+                            <div class="sec-title mb-0">
+                                <h6 class="sub-title wow fadeInUp">
+                                    <span class="triangle triangle1"></span>
+                                    <span class="triangle triangle2"></span>
+                                    {{ $consultancy->title ?? '' }}
+                                </h6>
+                                <h2 class="wow fadeInUp" data-wow-delay=".2s">{{ $consultancy->short_description ?? '' }}
+                                </h2>
+                            </div>
+                            <div class="about-text wow fadeInUp text-justify" data-wow-delay=".4s">{!! $consultancy->description ?? '' !!}
+                            </div>
+                            <a href="https://hanami.edu.np" target="/blank"
+                                class="theme-btn text-white btn-style-one wow fadeInUp" data-wow-delay=".7s">
+                                Visit Nepal Office
+                                <span class="icon">
+                                    <i class="flaticon-finance-fi_3385625"></i>
+                                </span>
+                            </a>
                         </div>
-                        <a href="https://hanami.edu.np" target="/blank" class="theme-btn text-white btn-style-one wow fadeInUp"
-                            data-wow-delay=".7s">
-                            Visit Nepal Office
-                            <span class="icon">
-                                <i class="flaticon-finance-fi_3385625"></i>
-                            </span>
-                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section> --}}
         {{-- </div> --}}
+        <section class="py-4">
+            <div class="auto-container">
+
+                <div class="sec-title text-center">
+                    <h6 class="sub-title wow fadeInUp">
+                        <span class="triangle triangle1"></span>
+                        <span class="triangle triangle2"></span>
+                        {{ $consultancy->title ?? '' }}
+                    </h6>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s"> {{ $consultancy->short_description ?? '' }}</h2>
+                </div>
+               <div class="team-wrapper-4">
+    <div class="row justify-content-center">
+
+        @foreach ($partners as $item)
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-4">
+
+                <div class="team-block">
+                    <div class="inner-box text-center">
+                        <div class="image-box">
+                            <figure class="image">
+                                <a href="#">
+                                    <div class="image-overlay"></div>
+                                    <img src="{{ asset($item->image) }}" alt="{{ $item->name }}">
+                                </a>
+                            </figure>
+
+                            <div class="share-icon">
+                                <span class="icon far fa-plus"></span>
+                                <div class="social-links">
+                                    <a href="{{ $item->instagram }}"><i class="fab fa-instagram"></i></a>
+                                    <a href="{{$item->twitter   }}"><i class="fas fa-x"></i></a>
+                                    <a href="{{ $item->facebook  }}"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-box text-center">
+                    <span class="designation-tag">Our Nepal Partner</span>
+                    <h3 class="name-display">{{ $item->name }}</h3>
+                    <p class="short-info">
+                        {{ $item->short_description }}
+                    </p>
+                </div>
+
+            </div>
+        @endforeach
+
+    </div>
+</div>
+
+            </div>
+        </section>
     </body>
 @endsection
