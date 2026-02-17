@@ -660,7 +660,7 @@
             <div class="partner-glass-card">
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-center">
-                        <img style="height: 130px; width:130px"
+                        <img  style="height: 180px; width:130px"
                             src="{{ optional($consultancy)->image_1
                                 ? asset($consultancy->image_1)
                                 : asset('frontend/assets/images/default-image.jpg') }}"
@@ -677,7 +677,7 @@
                         </div>
                         <div class="about-text wow fadeInUp text-justify" data-wow-delay=".4s">{!! $consultancy->description ?? '' !!}
                         </div>
-                        <a href="https://hanami.edu.np" target="/blank" class="theme-btn btn-style-one wow fadeInUp"
+                        <a href="https://hanami.edu.np" target="/blank" class="theme-btn text-white btn-style-one wow fadeInUp"
                             data-wow-delay=".7s">
                             Visit Nepal Office
                             <span class="icon">

@@ -193,7 +193,7 @@
                         </div>
                         <div class="about-text wow fadeInUp text-justify" data-wow-delay=".4s">{!! $consultancy->description ?? '' !!}
                         </div>
-                        <a href="https://hanami.edu.np" target="/blank" class="theme-btn btn-style-one wow fadeInUp"
+                        <a href="https://hanami.edu.np" target="/blank" class="theme-btn text-white btn-style-one wow fadeInUp"
                             data-wow-delay=".7s">
                             Visit Nepal Office
                             <span class="icon">
