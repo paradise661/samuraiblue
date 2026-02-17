@@ -7,7 +7,7 @@
             <div class="nav-outer">
                 <div class="logo-box">
                     <div class="logo">
-                        <a href="index.html"><img
+                        <a href="{{ route('frontend.home') }}"><img
                                 src="{{ $settings['site_main_logo'] ? asset($settings['site_main_logo']) : asset('frontend/assets/images/logo.png') }}"
                                 alt="logo" title="samuraiblue" /></a>
                     </div>
@@ -144,7 +144,7 @@
             <div class="inner-container">
                 <!--Logo-->
                 <div class="logo">
-                    <a href="index.html"><img
+                    <a href="{{ route('frontend.home') }}"><img
                             src="{{ $settings['site_main_logo'] ? asset($settings['site_main_logo']) : asset('frontend/assets/images/logo.png') }}"
                             alt="img" /></a>
                 </div>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ $settings['site_title'] ?? config('app.name', 'samuraiblue') }}</title>
+    <title>{{ $settings['site_title'] ?? config('app.name', 'Samurai Blue Co. | Best consultancy for Japan ') }}</title>
 
     @yield('seo')
 
