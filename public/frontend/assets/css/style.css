@@ -1067,7 +1067,7 @@ Scroll To Top style
 
 /*Btn Style One*/
 .btn-style-one {
-    background-color: #6D90C5;
+    background-color: #4471B4;
     border-radius: 100px;
     color: white;
     font-family: var(--heading-font-family);
@@ -1086,7 +1086,7 @@ Scroll To Top style
     height: 100%;
     width: 100%;
     content: "";
-    background-color: #8aa6d0;
+    background-color: #6D90C5;
     -webkit-transform: scale(1, 0);
     transform: scale(1, 0);
     -webkit-transform-origin: bottom left;
@@ -3206,7 +3206,7 @@ Scroll To Top style
 }
 
 .footer-bg {
-    background-color: #6D90C5;
+    background-color: #4471B4;
 }
 
 .swiper-dot {
@@ -3748,7 +3748,7 @@ Section Title
 }
 
 .sec-title .sub-title {
-    color: #6D90C5;
+    color: #4471B4;
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -3781,7 +3781,7 @@ Section Title
 }
 
 .sec-title .sub-title .triangle.triangle1 {
-    border-left-color: #8aa6d0;
+    border-left-color: #6D90C5;
     left: 5px;
     z-index: 9;
 }
@@ -3789,7 +3789,7 @@ Section Title
 .sec-title .sub-title .triangle.triangle2 {
     -webkit-animation: move2 1s infinite alternate ease-in-out;
     animation: move2 1s infinite alternate ease-in-out;
-    border-left-color: #6D90C5;
+    border-left-color: #4471B4;
     left: 20px;
 }
 
@@ -7114,7 +7114,7 @@ Section Title
 
 .feature-service-card-items {
     border-radius: 30px;
-    background: #6D90C5;
+    background: #4471B4;
     padding: 50px 60px;
     padding-bottom: 30px;
 }
@@ -7144,7 +7144,7 @@ Section Title
     text-align: center;
     border-radius: 50%;
     background-image: -webkit-gradient(linear, right top, left top, from(var(--theme-color1)), color-stop(50%, var(--theme-color7)), to(var(--theme-color1)));
-    background-image: linear-gradient(to left, #98c1ffe6 0%, #6D90C5 50%, #98c1ffe6 100%);
+    background-image: linear-gradient(to left, #98c1ffe6 0%, #4471B4 50%, #98c1ffe6 100%);
     background-size: 200%;
     -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
@@ -8008,7 +8008,7 @@ Section Title
     height: 168px;
     border-radius: 50%;
     background-color: var(--theme-color-white);
-    border: 2px solid #8aa6d0;
+    border: 2px solid #6D90C5;
     content: "";
     z-index: -1;
 }
@@ -8022,7 +8022,7 @@ Section Title
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    background-color: #8aa6d0;
+    background-color: #6D90C5;
     content: "";
     z-index: -1;
 }
@@ -8172,7 +8172,7 @@ Section Title
     -ms-flex-align: center;
     align-items: center;
     background-image: -webkit-gradient(linear, right top, left top, from(var(--theme-color1)), color-stop(50%, var(--theme-color7)), to(var(--theme-color1)));
-    background-image: linear-gradient(to left, #8aa6d0 0%, #6D90C5 50%, #8aa6d0 100%);
+    background-image: linear-gradient(to left, #6D90C5 0%, #4471B4 50%, #6D90C5 100%);
     background-size: 200%;
     border-radius: 100px;
     color: white;
@@ -8219,7 +8219,7 @@ Section Title
 }
 
 .about-content-2 .theme-btn.btn-style-one:hover .icon {
-    background-color: #6D90C5;
+    background-color: #4471B4;
     fill: var(--theme-color-white);
 }
 
@@ -9440,7 +9440,7 @@ Section Title
 }
 
 .service-card-items {
-    border: 1px solid #8aa6d0;
+    border: 1px solid #6D90C5;
     border-radius: 30px;
     margin-top: 30px;
     padding: 50px;
@@ -9473,7 +9473,7 @@ Section Title
 
 .service-card-items .icon {
     background-image: -webkit-gradient(linear, right top, left top, from(var(--theme-color1)), color-stop(50%, var(--theme-color7)), to(var(--theme-color1)));
-    background-image: linear-gradient(to left, #6d90c5d4 0%, #6D90C5 50%, #6d90c5c4 100%);
+    background-image: linear-gradient(to left, #4471B4d4 0%, #4471B4 50%, #4471B4c4 100%);
     background-size: 200%;
     border-radius: 50%;
     height: 68px;
@@ -9572,7 +9572,7 @@ Section Title
     height: 100%;
     width: 100%;
     content: "";
-    border: 2px solid #8aa6d0;
+    border: 2px solid #6D90C5;
     /* left: 14px; */
     margin-right: 13px;
     margin-left: 13px;
@@ -9598,7 +9598,7 @@ Section Title
     width: 85px;
     height: 92px;
     line-height: 92px;
-    background: #6D90C5;
+    background: #4471B4;
     text-align: center;
     position: relative;
     -webkit-transition: all 0.2s ease-in-out;
@@ -9632,7 +9632,7 @@ Section Title
     position: absolute;
     width: 0;
     height: 0;
-    border-right: 14px solid #6D90C5;
+    border-right: 14px solid #4471B4;
     border-bottom: 11px solid transparent;
 }
 
@@ -9807,7 +9807,7 @@ Section Title
 }
 
 .service-card-items-4 .service-icon .number {
-    color: #6d90c5;
+    color: #4471B4;
     font-family: var(--heading-font-family);
     font-size: 80px;
     font-weight: 600;
@@ -9866,7 +9866,7 @@ Section Title
 }
 
 .service-card-items-4:hover .service-icon .number {
-    color: #8aa6d0;
+    color: #6D90C5;
 }
 
 .service-section-4 .container-fluid {
@@ -12977,7 +12977,7 @@ Section Title
     text-align: center;
     position: relative;
     padding: 60px 35px;
-    background-color: #95add1a1;
+    background-color: #6D90C5;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
@@ -13055,7 +13055,7 @@ Section Title
 }
 
 .testimonial-card-item .content .quote-icon {
-    background: #6D90C5;
+    background: #4471B4;
     color: white;
     font-size: 30px;
     height: 67px;
@@ -13081,7 +13081,7 @@ Section Title
     position: absolute;
     width: 0;
     height: 0;
-    border-left: 11px solid #6D90C587;
+    border-left: 11px solid #4471B487;
     border-bottom: 11px solid transparent;
 }
 
@@ -16779,7 +16779,7 @@ Section Title
 }
 
 /* .team-box-items-4:hover {
-    background-color: #6D90C5;
+    background-color: #4471B4;
 } */
 
 .team-box-items-4:hover .team-image {
@@ -17594,7 +17594,7 @@ Section Title
 
 .contact-content-1 .form-box .form-clt .btn-style-one {
     background-image: -webkit-gradient(linear, right top, left top, from(var(--theme-color1)), color-stop(50%, var(--theme-color7)), to(var(--theme-color1)));
-    background-image: linear-gradient(to left, #8aa6d0 0%, #456cb3 50%, #8aa6d0 100%);
+    background-image: linear-gradient(to left, #6D90C5 0%, #456cb3 50%, #6D90C5 100%);
     background-size: 200%;
     color: #fff;
     padding: 24px 42px;
@@ -17652,7 +17652,7 @@ Section Title
     bottom: 130px;
     left: -50%;
     padding: 55px 70px;
-    background-color: #456cb3;
+    background-color:#6D90C5;
     overflow: hidden;
 }
 
@@ -17743,7 +17743,7 @@ Section Title
 
 .contact-section {
     position: relative;
-    background-color: #6d90c5;
+    background-color: #4471B4;
     z-index: 9;
 }
 
@@ -18595,7 +18595,7 @@ Section Title
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    color: #6D90C5;
+    color: #4471B4;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -18610,7 +18610,7 @@ Section Title
 }
 
 .news-box-items .news-content .link-btn .icon {
-    background: linear-gradient(99deg, #8aa6d0 0%, #6D90C5 93.92%);
+    background: linear-gradient(99deg, #6D90C5 0%, #4471B4 93.92%);
     border-radius: 26px;
     color: var(--theme-color-white);
     display: inline-block;
@@ -18819,7 +18819,7 @@ Section Title
 }
 
 .growth-section::after {
-    background: radial-gradient(95.51% 264.21% at 92.63% 41.85%, #8aa6d0 0%, #00245b 99.98%, #181d26 99.99%);
+    background: radial-gradient(95.51% 264.21% at 92.63% 41.85%, #6D90C5 0%, #00245b 99.98%, #181d26 99.99%);
     content: "";
     height: 100%;
     left: 0;
@@ -23720,7 +23720,7 @@ Sidebar
 }
 
 .contact-details-block:hover {
-    background-color: #6D90C5;
+    background-color: #4471B4;
 }
 
 .contact-details-block:hover .icon {
@@ -24115,7 +24115,7 @@ Sidebar
 }
 
 .footer-widget-wrapper .footer-widget-items .footer-content .social-icon a:hover {
-    background: #8aa6d0;
+    background: #6D90C5;
 }
 
 .footer-widget-wrapper .footer-widget-items .user-links {
@@ -24296,7 +24296,7 @@ Sidebar
 }
 
 .footer-bottom {
-    background: #6D90C5;
+    background: #4471B4;
     /* padding: 30px 0; */
 }
 
@@ -24601,7 +24601,7 @@ a {
 
 .custom-list li:before {
     content: "✓";
-    color: #6D90C5;
+    color: #4471B4;
     display: inline-block;
     position: absolute;
     top: 10%;
@@ -24612,7 +24612,7 @@ a {
     font-size: 18px;
     font-weight: bold;
     line-height: 18px;
-    border: 3px solid #6D90C5;
+    border: 3px solid #4471B4;
     border-radius: 50%;
     text-align: center;
 }
@@ -24787,7 +24787,7 @@ a {
 }
 
 .journey-card:hover .journey-icon {
-    background: #6D90C5;
+    background: #4471B4;
     transform: rotate(-5deg);
 }
 
@@ -24816,14 +24816,14 @@ a {
 .journey-card:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     transform: translateY(-5px);
-    border-color: #6D90C5;
+    border-color: #4471B4;
 }
 
 .read-more {
     margin-top: 20px;
     display: inline-block;
     font-weight: 600;
-    color: #6D90C5;
+    color: #4471B4;
     font-size: 14px;
     text-decoration: none;
 }
@@ -24841,13 +24841,13 @@ a {
     top: 50%;
     width: 100%;
     height: 2px;
-    background: #6D90C5;
+    background: #4471B4;
     z-index: -1;
 }
 
 .bridge-step {
     background: white;
-    border: 2px solid #6D90C5;
+    border: 2px solid #4471B4;
     padding: 10px 20px;
     border-radius: 50px;
 }
@@ -24893,7 +24893,7 @@ a {
 .designation-tag {
     justify-content: center;
     display: flex;
-    color: #6D90C5;
+    color: #4471B4;
     /* Your brand blue */
     font-size: 13px;
     font-weight: 700;

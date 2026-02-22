@@ -23,7 +23,76 @@
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
-
+            {{-- <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label for="home"> Home</label>
+                    <input type="text" name="home" value="{{ $settings['home'] ?? '' }}" class="form-control br-8"
+                        placeholder=" Sat: 10 AM - 4 PM">
+                </div>
+            </div> --}}
+            <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="home"> Home</label>
+                    <input type="text" name="home" value="{{ $settings['home'] ?? '' }}" class="form-control br-8"
+                        placeholder="Home">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="about"> About</label>
+                    <input type="text" name="about" value="{{ $settings['about'] ?? '' }}"
+                        class="form-control br-8" placeholder="About">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="message"> Message</label>
+                    <input type="text" name="message" value="{{ $settings['message'] ?? '' }}"
+                        class="form-control br-8" placeholder="Message">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="service"> Service</label>
+                    <input type="text" name="service" value="{{ $settings['service'] ?? '' }}"
+                        class="form-control br-8" placeholder="Service">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="journey"> Journey</label>
+                    <input type="text" name="journey" value="{{ $settings['journey'] ?? '' }}"
+                        class="form-control br-8" placeholder="Journey">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="review"> Review</label>
+                    <input type="text" name="review" value="{{ $settings['review'] ?? '' }}"
+                        class="form-control br-8" placeholder="Review">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="faq"> Faq</label>
+                    <input type="text" name="faq" value="{{ $settings['faq'] ?? '' }}" class="form-control br-8"
+                        placeholder="Faq">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="contact"> Contact</label>
+                    <input type="text" name="contact" value="{{ $settings['contact'] ?? '' }}"
+                        class="form-control br-8" placeholder="Contact">
+                </div>
+            </div>
+             <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="apply"> Apply</label>
+                    <input type="text" name="apply" value="{{ $settings['apply'] ?? '' }}"
+                        class="form-control br-8" placeholder="Apply">
+                </div>
+            </div>
             <div class="col-md-6 col-lg-6">
                 <div class="mb-2">
                     <label for="home_cta_1_text" class="form-label">CTA 1 Text</label>
@@ -76,8 +145,7 @@
                 <div class="col-md-12">
                     <div class="form-group mb-3">
                         <label for="homepage_meta_description">SEO Description</label>
-                        <textarea name="homepage_meta_description" rows="4" class="form-control br-8"
-                            placeholder="SEO Description">{{ $settings['homepage_meta_description'] }}</textarea>
+                        <textarea name="homepage_meta_description" rows="4" class="form-control br-8" placeholder="SEO Description">{{ $settings['homepage_meta_description'] }}</textarea>
                     </div>
                 </div>
 

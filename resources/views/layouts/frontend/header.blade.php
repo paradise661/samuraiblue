@@ -17,19 +17,19 @@
                     <nav class="nav main-menu">
                         <ul class="navigation">
                             <li class="{{ request()->routeIs('frontend.home') ? 'current' : '' }}">
-                                <a href="{{ route('frontend.home') }}">Home</a>
+                                <a href="{{ route('frontend.home') }}">{{ $settings['home'] ?? '' }}</a>
                             </li>
 
                             <li class="{{ request()->routeIs('frontend.about') ? 'current' : '' }} dropdown">
-                                <a href="{{ route('frontend.about') }}">About</a>
+                                <a href="{{ route('frontend.about') }}">{{ $settings['about'] ?? '' }}</a>
                                 <ul>
-                                    <li><a href="{{ route('frontend.about') }}">About Us</a></li>
-                                    <li><a href="{{ route('frontend.messagefromfounder') }}">Messages</a></li>
+                                    <li><a href="{{ route('frontend.about') }}">{{ $settings['about'] ?? '' }}</a></li>
+                                    <li><a href="{{ route('frontend.messagefromfounder') }}">{{ $settings['message'] ?? '' }}</a></li>
                                 </ul>
                             </li>
 
                             <li class="{{ request()->routeIs('frontend.service*') ? 'current' : '' }} dropdown">
-                                <a href="{{ route('frontend.service') }}">Services</a>
+                                <a href="{{ route('frontend.service') }}">{{ $settings['service'] ?? '' }}</a>
                                 <ul>
                                     @foreach ($footer_services as $services)
                                         <li><a
@@ -42,19 +42,19 @@
                             </li>
 
                             <li class="{{ request()->routeIs('frontend.studentjourney') ? 'current' : '' }}">
-                                <a href="{{ route('frontend.studentjourney') }}">Student Journey</a>
+                                <a href="{{ route('frontend.studentjourney') }}">{{ $settings['journey'] ?? '' }}</a>
                             </li>
 
                             <li class="{{ request()->routeIs('frontend.testimonial') ? 'current' : '' }}">
-                                <a href="{{ route('frontend.testimonial') }}">Testimonials</a>
+                                <a href="{{ route('frontend.testimonial') }}">{{ $settings['review'] ?? '' }}</a>
                             </li>
 
                             <li class="{{ request()->routeIs('frontend.faq') ? 'current' : '' }}">
-                                <a href="{{ route('frontend.faq') }}">FAQ</a>
+                                <a href="{{ route('frontend.faq') }}">{{ $settings['faq'] ?? '' }}</a>
                             </li>
 
                             <li class="{{ request()->routeIs('frontend.contact') ? 'current' : '' }}">
-                                <a href="{{ route('frontend.contact') }}">Contact</a>
+                                <a href="{{ route('frontend.contact') }}">{{ $settings['contact'] ?? '' }}</a>
                             </li>
                         </ul>
 
@@ -64,7 +64,7 @@
                         <div class="header-contact">
                         </div>
                     </div>
-                    <a href="{{ route('frontend.contact') }}" class="theme-btn btn-style-one">Apply Now</a>
+                    <a href="{{ route('frontend.contact') }}" class="theme-btn btn-style-one">{{ $settings['apply'] ?? '' }}</a>
                     <!-- Mobile Nav toggler -->
                     <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
                 </div>
