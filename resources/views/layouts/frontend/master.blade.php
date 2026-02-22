@@ -60,8 +60,8 @@
 
     </main>
     @include('layouts.frontend.footer')
-    <div class="gtranslate_wrapper"></div>
-    <script>
+    {{-- <div class="gtranslate_wrapper"></div> --}}
+    {{-- <script>
         window.gtranslateSettings = {
             "default_language": "en",
             "languages": ["en", "ja"],
@@ -71,7 +71,7 @@
                 "en": "usa"
             }
         }
-    </script>
+    </script> --}}
     <script>
         AOS.init();
     </script>
