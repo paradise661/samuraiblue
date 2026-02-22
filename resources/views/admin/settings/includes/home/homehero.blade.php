@@ -128,6 +128,13 @@
                         class="form-control br-8" placeholder="Email title">
                 </div>
             </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="established">Established date</label>
+                    <input type="text" name="established" value="{{ $settings['established'] ?? '' }}"
+                        class="form-control br-8" placeholder="Since 2026">
+                </div>
+            </div>
              <div class="col-md-6 col-lg-6">
                 <div class="mb-2">
                     <label for="get-in-touch"> Get in touch</label>

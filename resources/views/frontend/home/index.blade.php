@@ -70,7 +70,7 @@
                                                 <span class="count-text" data-speed="3000" data-stop="25">1</span>+
                                             </h2> --}}
                                             <p>
-                                                Since 2015
+                                                {{ $settings['established'] ?? '' }}
                                             </p>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@
                                         <span class="count-text" data-speed="3000"
                                             data-stop="{{ (int) ($settings['home_counter_students'] ?? 3) }}">
                                             0
-                                        </span>K
+                                        </span>
                                     </h2>
 
                                     <p>
@@ -124,7 +124,7 @@
                                 <div class="count-box">
                                     <h2>
                                         <span class="count-text" data-speed="3000"
-                                            data-stop="{{ (int) ($settings['home_counter_scholarship'] ?? 15) }}">0</span>+
+                                            data-stop="{{ (int) ($settings['home_counter_scholarship'] ?? 15) }}">0</span>
                                     </h2>
                                     <p>
                                         {{ $settings['home_counter_scholarship_title'] ?? 'company connected' }}
@@ -137,7 +137,7 @@
                                 <div class="count-box">
                                     <h2>
                                         <span class="count-text" data-speed="3000"
-                                            data-stop="{{ (int) ($settings['home_counter_enrolled'] ?? 4) }}">0</span>K+
+                                            data-stop="{{ (int) ($settings['home_counter_enrolled'] ?? 4) }}">0</span>
                                     </h2>
                                     <p>
                                         {{ $settings['home_counter_enrolled_title'] ?? 'satisfied clients' }}
