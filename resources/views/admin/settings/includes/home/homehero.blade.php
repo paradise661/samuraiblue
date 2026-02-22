@@ -128,6 +128,13 @@
                         class="form-control br-8" placeholder="Email title">
                 </div>
             </div>
+             <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="get-in-touch"> Get in touch</label>
+                    <input type="text" name="get-in-touch" value="{{ $settings['get-in-touch'] ?? '' }}"
+                        class="form-control br-8" placeholder="Get in touch">
+                </div>
+            </div>
             <div class="col-md-6 col-lg-6">
                 <div class="mb-2">
                     <label for="home_cta_1_text" class="form-label">CTA 1 Text</label>
