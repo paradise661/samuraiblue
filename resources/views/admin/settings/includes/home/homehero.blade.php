@@ -86,11 +86,46 @@
                         class="form-control br-8" placeholder="Contact">
                 </div>
             </div>
-             <div class="col-md-6 col-lg-6">
+            <div class="col-md-6 col-lg-6">
                 <div class="mb-2">
                     <label for="apply"> Apply</label>
                     <input type="text" name="apply" value="{{ $settings['apply'] ?? '' }}"
                         class="form-control br-8" placeholder="Apply">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="submit"> Submit</label>
+                    <input type="text" name="submit" value="{{ $settings['submit'] ?? '' }}"
+                        class="form-control br-8" placeholder="Submit">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="call"> Call</label>
+                    <input type="text" name="call" value="{{ $settings['call'] ?? '' }}"
+                        class="form-control br-8" placeholder="Call">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="phone"> Phone</label>
+                    <input type="text" name="phone" value="{{ $settings['phone'] ?? '' }}"
+                        class="form-control br-8" placeholder="Phone">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="address"> Address</label>
+                    <input type="text" name="address" value="{{ $settings['address'] ?? '' }}"
+                        class="form-control br-8" placeholder="Address">
+                </div>
+            </div>
+             <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="email-title"> Email title</label>
+                    <input type="text" name="email-title" value="{{ $settings['email-title'] ?? '' }}"
+                        class="form-control br-8" placeholder="Email title">
                 </div>
             </div>
             <div class="col-md-6 col-lg-6">

@@ -30,17 +30,17 @@
                             <h3 class="font-size-24 text-white font-weight-500">Company</h3>
                         </div>
                         <ul class="user-links">
-                            <li><a href="{{ route('frontend.home') }}">Home</a></li>
-                            <li><a href="{{ route('frontend.about') }}">About us</a></li>
-                            <li><a href="{{ route('frontend.testimonial') }}">Testimonials</a></li>
-                            <li><a href="{{ route('frontend.contact') }}">Contact Us</a></li>
+                            <li><a href="{{ route('frontend.home') }}">{{ $settings['home'] ?? '' }}</a></li>
+                            <li><a href="{{ route('frontend.about') }}">{{ $settings['about'] ?? '' }}</a></li>
+                            <li><a href="{{ route('frontend.testimonial') }}">{{ $settings['review'] ?? '' }}</a></li>
+                            <li><a href="{{ route('frontend.contact') }}">{{ $settings['contact'] ?? '' }}</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
                     <div class="footer-widget-items mt-30">
                         <div class="widget-title mb-25">
-                            <h3 class="font-size-24 text-white font-weight-500">Services</h3>
+                            <h3 class="font-size-24 text-white font-weight-500">{{ $settings['service'] ?? '' }}</h3>
                         </div>
                         <ul class="user-links">
                             @foreach ($footer_services as $service)
@@ -54,7 +54,7 @@
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
                     <div class="footer-widget-items mt-30">
                         <div class="widget-title mb-25">
-                            <h3 class="font-size-24 text-white font-weight-500">Contact Us</h3>
+                            <h3 class="font-size-24 text-white font-weight-500">{{ $settings['contact'] ?? '' }}</h3>
                         </div>
                         <ul class="contact-list">
                             <li>

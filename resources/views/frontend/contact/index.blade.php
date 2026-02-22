@@ -17,7 +17,7 @@
         <div class="auto-container">
             <div class="title-outer">
                 <ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
-                    <li><a href="{{ route('frontend.home') }}">Home</a></li>
+                    <li><a href="{{ route('frontend.home') }}">{{ $settings['home'] ?? '' }}</a></li>
                     <li><a href="{{ route('frontend.home') }}">{{ $contact_page->title ?? 'Contact Us' }}</a></li>
                 </ul>
                 <h1 class="title wow fadeInUp" data-wow-delay=".5s">{{ $contact_page->title ?? 'Contact Us' }}</h1>
@@ -35,7 +35,7 @@
                             <div class="icon">
                                 <i class="lnr-icon-map-marker"></i>
                             </div>
-                            <h4 class="title">Address</h4>
+                            <h4 class="title">{{ $settings['address'] ?? '' }}</h4>
                             <p class="text">{{ $settings['contact_location'] ?? 'Kathmandu,Nepal' }}</p>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                             <div class="icon">
                                 <i class="lnr-icon-phone-handset"></i>
                             </div>
-                            <h4 class="title">Phone</h4>
+                            <h4 class="title">{{ $settings['phone'] ?? '' }}</h4>
                             <p class="text">{{ $settings['contact_phone'] ?? '+977 9803997680' }}</p>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                             <div class="icon">
                                 <i class="lnr-icon-envelope"></i>
                             </div>
-                            <h4 class="title">Mail Adress</h4>
+                            <h4 class="title">{{ $settings['email-title'] ?? '' }}</h4>
                             <p class="text">{{ $settings['contact_email'] ?? 'info@samuraiblue.com' }}</p>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                                 </div>
 
                                 <button type="submit" class="theme-btn btn-style-one rounded-0">
-                                    Submit Now
+                                  {{ $settings['submit'] ?? '' }}
                                 </button>
                             </form>
 

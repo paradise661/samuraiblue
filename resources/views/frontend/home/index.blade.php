@@ -393,7 +393,7 @@
 
                                         <div class="col-md-12">
                                             <button type="submit" class="theme-btn btn-style-one w-100">
-                                                Submit Now
+                                               {{ $settings['submit'] ?? '' }}
                                             </button>
                                         </div>
                                     </div>
@@ -421,7 +421,7 @@
                                 <i class="lnr-icon-phone-handset"></i>
                             </div>
                             <div class="content">
-                                <h3>Call Us</h3>
+                                <h3>{{ $settings['call'] ?? '' }}</h3>
                                 <p><a href="tel:+184084152569">{{ $settings['site_phone'] ?? '' }}</a></p>
                             </div>
                         </li>
@@ -430,7 +430,7 @@
                                 <i class="lnr-icon-envelope"></i>
                             </div>
                             <div class="content">
-                                <h3>Mail Us</h3>
+                                <h3>{{ $settings['email-title'] ?? '' }}</h3>
                                 <p><a href="mailto:info@ourmail.com">{{ $settings['site_email'] ?? '' }}</a></p>
                             </div>
                         </li>
