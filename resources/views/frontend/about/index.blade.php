@@ -118,7 +118,7 @@
                                         {!! $mission->description ?? '' !!}
                                     </div>
 
-                                    <button class="read-more-btn d-none">Read More ></button>
+                                    <button class="read-more-btn d-none">  {{ $settings['blogs_button'] }}e ></button>
                                 </div>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
                                     <div class="line-clamp-5 clamp-text text-justify">
                                         {!! $vision->description ?? '' !!}
                                     </div>
-                                    <button class="read-more-btn d-none">Read More ></button>
+                                    <button class="read-more-btn d-none">  {{ $settings['blogs_button'] }} ></button>
                                 </div>
                             </div>
                         </div>
@@ -143,7 +143,7 @@
     </section>
 
     <!--Service Section -->
-    <section class="growth-section section-padding bg-cover parallaxie"
+    {{-- <section class="growth-section section-padding bg-cover parallaxie"
         style="background-image: url({{ optional($international)->banner_image ? asset(optional($international)->banner_image) : asset('frontend/assets/images/default-banner.jpg') }});">
         <div class="sec-shape">
             <img class="sway_Y__animation" src="{{ asset('frontend/assets/images/growth-shape.png') }}" alt="Image">
@@ -170,7 +170,7 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
     <section class="py-4 my-4">
         <div class="auto-container">
 
@@ -226,7 +226,7 @@
 
         </div>
     </section>
-    <section class="about-section fix section-padding">
+    {{-- <section class="about-section fix section-padding">
         <div class="auto-container">
             <div class="row g-4">
 
@@ -242,32 +242,6 @@
                         </div>
                         <div class="about-text wow fadeInUp text-justify" data-wow-delay=".4s">{!! $experience->description ?? '' !!}
                         </div>
-                        {{-- <div class="about-block wow fadeInUp" data-wow-delay=".6s">
-                            <div class="inner-box">
-                                                <div class="icon">
-                                                    <i class="flaticon-finance-creativity-1-1"></i>
-                                                </div>
-                                <div class="content">
-                                <h4 class="title">Creative Solutions</h4>
-                                <p class="text">In today's competitive business landscape, the need for
-                                    efficient IT
-                                    solutions
-                                    has been more critical.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="about-block wow fadeInUp" data-wow-delay=".8s">
-                            <div class="inner-box">
-                                            <div class="icon">
-                                                <i class="flaticon-finance-edit-tools-1"></i>
-                                            </div>
-                                <div class="content">
-                                <h4 class="title">Actionable Solutions</h4>
-                                <p class="text">Innovation is the key to staying ahead in a changing world. We
-                                    harness cutting-edge technology</p>
-                                </div>
-                            </div>
-                        </div> --}}
 
                     </div>
                 </div>
@@ -280,16 +254,12 @@
                                     : asset('frontend/assets/images/default-image.jpg') }}"
                                     alt="Image">
                             </div>
-
-                            {{-- <div class="image2 wow fadeInUp" data-wow-delay=".5s">
-                                <img src="{{ $experience->image_2 }}" alt="Image">
-                            </div> --}}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!--Team Section -->
     <section class="team-section-3 fix section-padding">

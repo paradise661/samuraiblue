@@ -44,7 +44,7 @@
                                                 </div>
                                                 <div class="info-text">
                                                     <h5>{{ $testimonial->name ?? 'name' }}</h5>
-                                                    <span>{{ $testimonial->position ?? 'student' }}</span>
+                                                    <span>{{ $testimonial->position ?? '' }}</span>
                                                 </div>
                                             </div>
                                             <div class="content">
