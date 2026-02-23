@@ -41,7 +41,7 @@
                 <div class="col-lg-4">
                     <div class="card border-0 shadow-sm sticky-sidebar">
                         <div class="card-body">
-                            <h4 class="fw-semibold mb-4">Popular Blogs</h4>
+                            <h4 class="fw-semibold mb-4">{{ $settings['popular-blogs'] ?? '' }}</h4>
                             @foreach ($blogs as $blog)
                                 <a href="{{ route('frontend.blogsingle', $blog->slug) }}"
                                     class="d-flex stretched-card-link align-items-center mb-3 text-decoration-none text-dark">

@@ -57,7 +57,9 @@
             </div>
         </div>
     </div>
-
+<a href="{{ $settings['whatsapp-link'] ?? '' }}" class="whatsapp-btn" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
     </main>
     @include('layouts.frontend.footer')
     {{-- <div class="gtranslate_wrapper"></div> --}}

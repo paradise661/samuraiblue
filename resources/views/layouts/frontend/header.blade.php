@@ -1,16 +1,28 @@
-<!-- Topbar -->
 <div class="topbar">
     <div class="auto-container d-flex justify-content-between align-items-center">
         <div class="topbar-left">
-            <i class="icon lnr-icon-phone-handset"></i>
-            <a href="tel:{{ $settings['site_phone'] }}">{{ $settings['site_phone'] }}</a>
+            <div>
+                <i class="icon lnr-icon-phone-handset"></i>
+                <a href="tel:{{ $settings['site_phone'] }}">{{ $settings['site_phone'] }}</a>
+            </div>
+            <div>
+                <i class="icon lnr-icon-envelope1"></i>
+                <a href="mailto:{{ $settings['site_email'] }}">{{ $settings['site_email'] }}</a>
+            </div>
+            <div class="top-location">
+                <i class="icon lnr-icon-map-marker"></i>
+                <span>{{ $settings['contact_location'] ?? '' }}</span>
+            </div>
         </div>
-        <div class="topbar-right">
-            <i class="icon lnr-icon-envelope1"></i>
-            <a href="mailto:{{ $settings['site_email'] }}">{{ $settings['site_email'] }}</a>
+
+        <div class="topbar-right social-links">
+            @foreach ($socials as $social)
+                <a href="{{ $social->link }}"><i class="{{ $social->icon }}"></i></a>
+            @endforeach
         </div>
     </div>
 </div>
+
 <header class="main-header header-style-one header-1">
     <!-- Header Lower -->
     <div class="header-lower">
@@ -69,7 +81,7 @@
                                 <a href="{{ route('frontend.faq') }}">{{ $settings['faq'] ?? '' }}</a>
                             </li>
                             <li></li>
-{{--
+                            {{--
                             <li class="{{ request()->routeIs('frontend.contact') ? 'current' : '' }}">
                                 <a href="{{ route('frontend.contact') }}">{{ $settings['contact'] ?? '' }}</a>
                             </li> --}}
@@ -114,7 +126,7 @@
                     <!-- Contact Info Box -->
                     <div class="contact-info-box">
                         <i class="icon lnr-icon-phone-handset"></i>
-                        <span class="title">Call Now</span>
+                        <span class="title">{{ $settings['call'] ?? '' }}</span>
                         <a href="tel:+92880098670">{{ $settings['site_phone'] }}</a>
                     </div>
                 </li>
@@ -122,8 +134,16 @@
                     <!-- Contact Info Box -->
                     <div class="contact-info-box">
                         <span class="icon lnr-icon-envelope1"></span>
-                        <span class="title">Send Email</span>
+                        <span class="title">{{ $settings['email-title'] ?? '' }}</span>
                         <a href="mailto:help@company.com">{{ $settings['site_email'] }}</a>
+                    </div>
+                </li>
+                 <li>
+                    <!-- Contact Info Box -->
+                    <div class="contact-info-box">
+                        <span class="icon lnr-icon-envelope1"></span>
+                        <span class="title">{{ $settings['address'] ?? '' }}</span>
+                        <a href="mailto:help@company.com">{{ $settings['contact_location'] ?? '' }}</a>
                     </div>
                 </li>
                 <li>

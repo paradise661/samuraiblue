@@ -41,7 +41,7 @@
                 <div class="col-lg-4">
                     <div class="card border-0 shadow-sm sticky-sidebar">
                         <div class="card-body">
-                            <h4 class="fw-semibold mb-4">Popular Services</h4>
+                            <h4 class="fw-semibold mb-4">{{ $settings['popular-services'] ?? '' }}</h4>
                             @foreach ($services as $service)
                                 <a href="{{ route('frontend.servicesingle', $service->slug) }}"
                                     class="d-flex stretched-card-link align-items-center mb-3 text-decoration-none text-dark">

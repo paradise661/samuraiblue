@@ -130,6 +130,41 @@
             </div>
              <div class="col-md-6 col-lg-6">
                 <div class="mb-2">
+                    <label for="company"> Company</label>
+                    <input type="text" name="company" value="{{ $settings['company'] ?? '' }}"
+                        class="form-control br-8" placeholder="Company">
+                </div>
+            </div>
+             <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="other-process"> Other Process</label>
+                    <input type="text" name="other-process" value="{{ $settings['other-process'] ?? '' }}"
+                        class="form-control br-8" placeholder="Other Process">
+                </div>
+            </div>
+             <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="whatsapp-link"> Whatsapp Link</label>
+                    <input type="text" name="whatsapp-link" value="{{ $settings['whatsapp-link'] ?? '' }}"
+                        class="form-control br-8" placeholder="Whatsapp Link">
+                </div>
+            </div>
+             <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="popular-blogs"> Popular Blogs</label>
+                    <input type="text" name="popular-blogs" value="{{ $settings['popular-blogs'] ?? '' }}"
+                        class="form-control br-8" placeholder=" Popular Blogs">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
+                    <label for="popular-services"> Popular services</label>
+                    <input type="text" name="popular-services" value="{{ $settings['popular-services'] ?? '' }}"
+                        class="form-control br-8" placeholder=" Popular services">
+                </div>
+            </div>
+             <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
                     <label for="email-title"> Email title</label>
                     <input type="text" name="email-title" value="{{ $settings['email-title'] ?? '' }}"
                         class="form-control br-8" placeholder="Email title">

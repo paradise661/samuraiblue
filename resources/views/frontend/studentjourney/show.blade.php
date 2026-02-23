@@ -43,7 +43,7 @@
                 <div class="col-lg-4">
                     <div class="card border-0 shadow-sm sticky-sidebar">
                         <div class="card-body">
-                            <h4 class="fw-semibold mb-4">Other Processes</h4>
+                            <h4 class="fw-semibold mb-4">{{ $settings['other-process'] ?? '' }}</h4>
                             @foreach ($studentsteps as $item)
                                 <a href="{{ route('frontend.studentjourneysingle', $item->slug) }}"
                                     class="d-flex stretched-card-link align-items-center mb-3 text-decoration-none text-dark">

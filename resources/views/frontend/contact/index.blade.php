@@ -75,7 +75,7 @@
                                 </div>
                                 <div>
                                     <h4 class="title">{{ $settings['address'] ?? '' }}</h4>
-                                    <p class="text">{{ $settings['contact_location'] ?? 'Kathmandu,Nepal' }}</p>
+                                    <p class="text">{{ $settings['contact_location'] ?? '' }}</p>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                                 <div>
 
                                     <h4 class="title">{{ $settings['phone'] ?? '' }}</h4>
-                                    <p class="text">{{ $settings['contact_phone'] ?? '+977 9803997680' }}</p>
+                                    <p class="text">{{ $settings['contact_phone'] ?? '' }}</p>
                                 </div>
                             </div>
 

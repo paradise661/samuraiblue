@@ -13,7 +13,7 @@
                             </a>
                         </div>
                         <div class="footer-content">
-                            <p>{{ $settings['site_information'] }}</p>
+                            <p>{{ $settings['site_title'] }}</p>
                             <div class="social-icon">
                                 @foreach ($socials as $social)
                                     <a href="{{ $social->link }}"><i class="{{ $social->icon }}"></i></a>
@@ -27,7 +27,7 @@
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
                     <div class="footer-widget-items mt-30">
                         <div class="widget-title mb-25">
-                            <h3 class="font-size-24 text-white font-weight-500">Company</h3>
+                            <h3 class="font-size-24 text-white font-weight-500">{{ $settings['company'] ?? '' }}</h3>
                         </div>
                         <ul class="user-links">
                             <li><a href="{{ route('frontend.home') }}">{{ $settings['home'] ?? '' }}</a></li>
@@ -77,7 +77,7 @@
     </div>
     <div class="footer-bottom">
         <div class="auto-container">
-            <p class="wow fadeInUp" data-wow-delay=".3s">Copyright © 2026 . All Rights Reserved</p>
+            <p class="wow fadeInUp" data-wow-delay=".3s">{{ $settings['site_copyright'] }}</p>
         </div>
     </div>
 </footer>
