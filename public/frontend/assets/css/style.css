@@ -3540,7 +3540,7 @@ Scroll To Top style
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    background: var(--bg-theme-color1);
+    background:#4471B4;
     width: 100%;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: auto;
@@ -3564,7 +3564,7 @@ Scroll To Top style
     height: 50px;
     font-size: 14px;
     text-align: center;
-    color: var(--headings-color);
+    color: #4471B4;
     -webkit-transition: all 300ms ease;
     transition: all 300ms ease;
 }

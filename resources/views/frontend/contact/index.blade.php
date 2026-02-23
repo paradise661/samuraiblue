@@ -74,7 +74,7 @@
                     faucibus <br> odio feugiat arc dolor.</p> --}}
                             </div>
                             <div class="google-map">
-                                <iframe src="{{ $settings['contact_map'] }}" style="border:0;" allowfullscreen=""
+                                <iframe src="{{ $settings['site_location_url'] }}" style="border:0;" allowfullscreen=""
                                     loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
