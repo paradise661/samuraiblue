@@ -16,7 +16,7 @@
             <div class="auto-container">
                 <div class="title-outer">
                     <ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
-                        <li><a href="{{ route('frontend.home') }}">Home</a></li>
+                        <li><a href="{{ route('frontend.home') }}">{{ $settings['home'] ?? '' }}</a></li>
                         <li><a href="{{ route('frontend.blog') }}">{{ $blog_page->title ?? '' }}</a></li>
                     </ul>
                     <h1 class="title wow fadeInUp" data-wow-delay=".5s">{{ $blogsingle->title ?? '' }}</h1>

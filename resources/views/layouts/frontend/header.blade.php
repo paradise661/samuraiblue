@@ -1,3 +1,16 @@
+<!-- Topbar -->
+<div class="topbar">
+    <div class="auto-container d-flex justify-content-between align-items-center">
+        <div class="topbar-left">
+            <i class="icon lnr-icon-phone-handset"></i>
+            <a href="tel:{{ $settings['site_phone'] }}">{{ $settings['site_phone'] }}</a>
+        </div>
+        <div class="topbar-right">
+            <i class="icon lnr-icon-envelope1"></i>
+            <a href="mailto:{{ $settings['site_email'] }}">{{ $settings['site_email'] }}</a>
+        </div>
+    </div>
+</div>
 <header class="main-header header-style-one header-1">
     <!-- Header Lower -->
     <div class="header-lower">
@@ -23,8 +36,11 @@
                             <li class="{{ request()->routeIs('frontend.about') ? 'current' : '' }} dropdown">
                                 <a href="{{ route('frontend.about') }}">{{ $settings['about'] ?? '' }}</a>
                                 <ul>
-                                    <li><a href="{{ route('frontend.about') }}">{{ $settings['about'] ?? '' }}</a></li>
-                                    <li><a href="{{ route('frontend.messagefromfounder') }}">{{ $settings['message'] ?? '' }}</a></li>
+                                    <li><a href="{{ route('frontend.about') }}">{{ $settings['about'] ?? '' }}</a>
+                                    </li>
+                                    <li><a
+                                            href="{{ route('frontend.messagefromfounder') }}">{{ $settings['message'] ?? '' }}</a>
+                                    </li>
                                 </ul>
                             </li>
 
@@ -52,10 +68,11 @@
                             <li class="{{ request()->routeIs('frontend.faq') ? 'current' : '' }}">
                                 <a href="{{ route('frontend.faq') }}">{{ $settings['faq'] ?? '' }}</a>
                             </li>
-
+                            <li></li>
+{{--
                             <li class="{{ request()->routeIs('frontend.contact') ? 'current' : '' }}">
                                 <a href="{{ route('frontend.contact') }}">{{ $settings['contact'] ?? '' }}</a>
-                            </li>
+                            </li> --}}
                         </ul>
 
                     </nav>
@@ -64,7 +81,8 @@
                         <div class="header-contact">
                         </div>
                     </div>
-                    <a href="{{ route('frontend.contact') }}" class="theme-btn btn-style-one">{{ $settings['apply'] ?? '' }}</a>
+                    <a href="{{ route('frontend.contact') }}"
+                        class="theme-btn btn-style-one">{{ $settings['apply'] ?? '' }}</a>
                     <!-- Mobile Nav toggler -->
                     <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
                 </div>

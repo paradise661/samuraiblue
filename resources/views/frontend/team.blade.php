@@ -22,10 +22,10 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb text-white-50 mb-3">
                             <li class="breadcrumb-item">
-                                <a href="#" class="text-white text-decoration-none">Home</a>
+                                <a href="#" class="text-white text-decoration-none">{{ $settings['home'] ?? '' }}</a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="#" class="text-white text-decoration-none">team</a>
+                                <a href="#" class="text-white text-decoration-none">{{ $team_page->title ?? ''}}</a>
                             </li>
                         </ol>
                     </nav>

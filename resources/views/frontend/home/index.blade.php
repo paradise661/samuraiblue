@@ -32,16 +32,16 @@
                 </div>
             </section> --}}
             @if ($sliders)
-                <section class="lets-talk-banner-section parallaxie section-padding bg-cover"
+                <section class="lets-talk-banner-section parallaxie section-padding bg-cover zoom-bg"
                     style="background-image: url('{{ asset($sliders->image) }}');">
                     <div
                         class="lets-talk-banner-wrapper d-flex flex-column justify-content-center align-items-center text-center py-5">
                         <div class="lets-talk-banner-content ">
 
-                            <h2 class="banner-title wow fadeInUp" data-wow-delay=".2s">
+                            <h2 class="banner-title typing-text wow fadeInUp" data-wow-delay=".2s">
                                 {{ $sliders->title ?? ' ' }}
                             </h2>
-                            <div class="banner-subtitle wow fadeInUp" data-wow-delay=".4s">
+                            <div class="banner-subtitle typing-text-2 wow fadeInUp" data-wow-delay=".4s">
                                 {!! $sliders->description ?? ' ' !!}
                             </div>
                             {{-- <a href="{{ route('frontend.about') }}" class="theme-btn btn-style-one wow fadeInUp"
@@ -90,18 +90,65 @@
                                     <div class="about-text wow fadeInUp text-justify" data-wow-delay=".5s">
                                         {!! $about_us->description ?? ' ' !!}
                                     </div>
-                                    <a href="{{ route('frontend.about') }}" class="theme-btn btn-style-one wow fadeInUp"
+                                    {{-- <a href="{{ route('frontend.about') }}" class="theme-btn btn-style-one wow fadeInUp"
                                         data-wow-delay=".7s">
                                         Company's Overview
                                         <span class="icon">
                                             <i class="flaticon-finance-fi_3385625"></i>
                                         </span>
-                                    </a>
+                                    </a> --}}
+
+                                    <div class="row g-4">
+                                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                            <div class="about-counter">
+                                                <div class="count-box">
+                                                    <h2>
+                                                        <span class="count-text" data-speed="3000"
+                                                            data-stop="{{ (int) ($settings['home_counter_students'] ?? 3) }}">
+                                                            0
+                                                        </span>
+                                                    </h2>
+
+                                                    <p>
+                                                        {{ $settings['home_counter_students_title'] ?? 'Students helped' }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                                            <div class="about-counter">
+                                                <div class="count-box">
+                                                    <h2>
+                                                        <span class="count-text" data-speed="3000"
+                                                            data-stop="{{ (int) ($settings['home_counter_scholarship'] ?? 15) }}">0</span>
+                                                    </h2>
+                                                    <p>
+                                                        {{ $settings['home_counter_scholarship_title'] ?? 'company connected' }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                                            <div class="about-counter">
+                                                <div class="count-box">
+                                                    <h2>
+                                                        <span class="count-text" data-speed="3000"
+                                                            data-stop="{{ (int) ($settings['home_counter_enrolled'] ?? 4) }}">0</span>
+                                                    </h2>
+                                                    <p>
+                                                        {{ $settings['home_counter_enrolled_title'] ?? 'satisfied clients' }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row g-4">
+                    {{-- <div class="row g-4">
                         <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                             <div class="about-counter">
                                 <div class="count-box">
@@ -145,7 +192,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </section>
             <!-- Service Section Start -->
@@ -172,8 +219,9 @@
                                         <img src="{{ $item->image_1 }}">
                                     </div>
                                     <div class="content">
-                                        <h3><a
-                                                href="{{ route('frontend.servicesingle', $item->slug) }}"><div class="line-clamp-1">{{ $item->title ?? ''}}</div></a>
+                                        <h3><a href="{{ route('frontend.servicesingle', $item->slug) }}">
+                                                <div class="line-clamp-1">{{ $item->title ?? '' }}</div>
+                                            </a>
                                         </h3>
                                         <p class="text-justify line-clamp-4">{{ $item->short_description ?? '' }}
                                         </p>
@@ -181,7 +229,7 @@
                                                 class="lnr-icon-arrow-right"></i></a>
                                     </div>
                                 </div>
-                            <a class="stretched-link" href="{{ route('frontend.servicesingle', $item->slug) }}"></a>
+                                <a class="stretched-link" href="{{ route('frontend.servicesingle', $item->slug) }}"></a>
                             </div>
                         @endforeach
                     </div>
@@ -263,8 +311,9 @@
                                         </span>
                                     </div>
                                     <div class="content">
-                                        <h3><a
-                                                href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}"><div class="line-clamp-1">{{ $studentstep->title }}</div></a>
+                                        <h3><a href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}">
+                                                <div class="line-clamp-1">{{ $studentstep->title }}</div>
+                                            </a>
                                         </h3>
                                         <div style="font-size: 17px;
     color: #6e6b6b;
@@ -365,35 +414,35 @@
                                     <div class="row g-4">
                                         <div class="col-md-12">
                                             <div class="form-clt">
-                                                <input type="text" name="name" placeholder="Full Name*" />
+                                                <input type="text" name="name" placeholder="{{ $settings['your-name'] ?? '' }}*" />
                                                 <span class="text-danger error-text name_error"></span>
                                             </div>
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="form-clt">
-                                                <input type="text" name="email" placeholder="Email" />
+                                                <input type="text" name="email" placeholder="{{ $settings['email-title'] ?? '' }}" />
                                                 <span class="text-danger error-text email_error"></span>
                                             </div>
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="form-clt">
-                                                <input type="text" name="phone" placeholder="Phone" />
+                                                <input type="text" name="phone" placeholder="{{ $settings['phone'] ?? '' }}" />
                                                 <span class="text-danger error-text phone_error"></span>
                                             </div>
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="form-clt">
-                                                <textarea name="message" placeholder="Message"></textarea>
+                                                <textarea name="message" placeholder="{{ $settings['message'] ?? '' }}"></textarea>
                                                 <span class="text-danger error-text message_error"></span>
                                             </div>
                                         </div>
 
                                         <div class="col-md-12">
                                             <button type="submit" class="theme-btn btn-style-one w-100">
-                                               {{ $settings['submit'] ?? '' }}
+                                                {{ $settings['submit'] ?? '' }}
                                             </button>
                                         </div>
                                     </div>
@@ -497,7 +546,7 @@
 
                                                     <button type="button" class="read-more-btn-testimonial d-none"
                                                         data-readmore>
-                                                        Read More
+                                                       {{ $settings['testioninal_button'] }}
                                                     </button>
 
                                                 </div>
@@ -598,7 +647,7 @@
                                                 href="{{ route('frontend.blogsingle', $item->slug) }}">{{ $item->title ?? '' }}</a>
                                         </h3>
                                         <a href="{{ route('frontend.blogsingle', $item->slug) }}" class="link-btn">
-                                            Learn More
+                                           {{ $settings['blogs_button'] }}
                                             <span class="icon"><i class="lnr-icon-arrow-right"></i></span>
                                         </a>
                                     </div>
@@ -713,7 +762,7 @@
                                     <div class="inner-box text-center">
                                         <div class="image-box">
                                             <figure class="image">
-                                                <a href="#">
+                                                <a href="{{ $item->twitter }}">
                                                     <div class="image-overlay"></div>
                                                     <img src="{{ asset($item->image) }}" alt="{{ $item->name }}">
                                                 </a>
@@ -723,8 +772,8 @@
                                                 <span class="icon far fa-plus"></span>
                                                 <div class="social-links">
                                                     <a href="{{ $item->instagram }}"><i class="fab fa-instagram"></i></a>
-                                                    <a href="{{ $item->twitter }}"><i class="fas fa-eye"></i>
-                                                    </a>
+                                                    {{-- <a href="{{ $item->twitter }}"><i class="fas fa-eye"></i>
+                                                    </a> --}}
                                                     <a href="{{ $item->facebook }}"><i class="fab fa-facebook"></i></a>
                                                 </div>
                                             </div>

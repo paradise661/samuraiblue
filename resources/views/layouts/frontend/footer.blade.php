@@ -42,9 +42,9 @@
                         <div class="widget-title mb-25">
                             <h3 class="font-size-24 text-white font-weight-500">{{ $settings['service'] ?? '' }}</h3>
                         </div>
-                        <ul class="user-links">
+                        <ul class="user-links ">
                             @foreach ($footer_services as $service)
-                                <li><a
+                                <li><a class="line-clamp-1"
                                         href="{{ route('frontend.servicesingle', $service->slug) }}">{{ $service->title }}</a>
                                 </li>
                             @endforeach

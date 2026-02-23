@@ -18,7 +18,7 @@
                     <div class="text-center page-banner-lft px-4">
                         <h1 class="text-white font-weight-bold">{{ $coursesingle->title ?? 'About Us' }}</h1>
                         <p class="breadcrumb-text text-white">
-                            <a href="{{ route('frontend.home') }}" class="text-white text-decoration-none">Home</a> /
+                            <a href="{{ route('frontend.home') }}" class="text-white text-decoration-none">{{ $settings['home'] ?? '' }}</a> /
                             <a href="{{ route('frontend.course') }}"
                                 class="text-white text-decoration-none">{{ $course_page->title ?? 'About Us' }}</a> /
                             <a href="#"

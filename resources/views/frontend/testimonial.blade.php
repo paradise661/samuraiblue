@@ -16,7 +16,7 @@
         <div class="auto-container">
             <div class="title-outer">
                 <ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
-                    <li><a href="{{ route('frontend.home') }}">Home</a></li>
+                    <li><a href="{{ route('frontend.home') }}">{{ $settings['home'] ?? '' }}</a></li>
                     <li><a href="{{ route('frontend.home') }}">{{ $testimonial_page->title ?? 'Testimonials' }}</a></li>
                 </ul>
                 <h1 class="title wow fadeInUp" data-wow-delay=".5s">{{ $testimonial_page->title ?? 'Testimonials' }}</h1>
@@ -65,7 +65,7 @@
                                                 </div>
                                                 <button type="button" class="read-more-btn-testimonial d-none"
                                                     data-readmore>
-                                                    Read More
+                                                   {{ $settings['testioninal_button'] }}
                                                 </button>
                                             </div>
                                         </div>
@@ -81,6 +81,6 @@
             </div>
         </div>
     </section>
-    
+
 
 @endsection

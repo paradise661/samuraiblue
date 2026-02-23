@@ -18,7 +18,7 @@
                 <div class="text-center page-banner-lft px-4">
                     <h1 class="text-white font-weight-bold">{{ $album->name }}</h1>
                     <p class="breadcrumb-text text-white">
-                        <a href="{{ route('frontend.home') }}" class="text-white text-decoration-none">Home</a> /
+                        <a href="{{ route('frontend.home') }}" class="text-white text-decoration-none">{{ $settings['home'] ?? '' }}</a> /
                         <span class="text-white">{{ $album->name }}</span>
                     </p>
                 </div>
@@ -38,12 +38,12 @@
         <div class="row g-3">
             @forelse ($album->galleries as $gallery)
                 <div class="col-md-4 col-sm-6 mb-4">
-                    <a data-fancybox="{{ $album->slug }}" 
-                       data-caption="{{ $gallery->name }}" 
+                    <a data-fancybox="{{ $album->slug }}"
+                       data-caption="{{ $gallery->name }}"
                        href="{{ asset($gallery->image) }}">
-                        <img src="{{ asset($gallery->image) }}" 
-                             alt="{{ $gallery->name }}" 
-                             class="img-fluid rounded shadow-sm" 
+                        <img src="{{ asset($gallery->image) }}"
+                             alt="{{ $gallery->name }}"
+                             class="img-fluid rounded shadow-sm"
                              style="object-fit: cover; height: 250px; width: 100%;">
                     </a>
                 </div>

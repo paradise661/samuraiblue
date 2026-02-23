@@ -19,7 +19,7 @@
             <div class="auto-container">
                 <div class="title-outer">
                     <ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
-                        <li><a href="{{ route('frontend.home') }}">Home</a></li>
+                        <li><a href="{{ route('frontend.home') }}">{{ $settings['home'] ?? '' }}</a></li>
                         <li>{{ $blog_page->title ?? '' }}</li>
                     </ul>
                     <h1 class="title wow fadeInUp" data-wow-delay=".5s">{{ $blog_page->title ?? '' }}</h1>
@@ -48,7 +48,7 @@
                                             href="{{ route('frontend.blogsingle', $item->slug) }}">{{ $item->title ?? '' }}</a>
                                     </h3>
                                     <a href="{{ route('frontend.blogsingle', $item->slug) }}" class="link-btn">
-                                        Learn More
+                                       {{ $settings['blogs_button'] }}
                                         <span class="icon"><i class="lnr-icon-arrow-right"></i></span>
                                     </a>
                                 </div>

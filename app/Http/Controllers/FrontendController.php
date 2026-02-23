@@ -85,10 +85,11 @@ class FrontendController extends Controller
         $mission = Page::where('status',1)->where('slug','our-mission')->first();
         $vision = Page::where('status', 1)->where('slug', 'our-vision')->first();
         $consultancy = Page::where('status', 1)->where('slug', 'consultancy')->first();
+        $partners = Partner::where('status', 1)->oldest("order")->get();
 
         $international = Page::where('status', 1)->where('slug', 'international-student')->first();
         $experience = Page::where('status', 1)->where('slug', 'japan-experience')->first();
-        return view('frontend.about.index', compact('why_choose_us','about_us','consultancy', 'why_us', 'teams', 'studentreviw','mission','vision','international','experience'));
+        return view('frontend.about.index', compact('why_choose_us','partners','about_us','consultancy', 'why_us', 'teams', 'studentreviw','mission','vision','international','experience'));
     }
     public function service()
     {

@@ -116,6 +116,13 @@
             </div>
             <div class="col-md-6 col-lg-6">
                 <div class="mb-2">
+                    <label for="your-name"> Your Name</label>
+                    <input type="text" name="your-name" value="{{ $settings['your-name'] ?? '' }}"
+                        class="form-control br-8" placeholder=" Your Name">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="mb-2">
                     <label for="address"> Address</label>
                     <input type="text" name="address" value="{{ $settings['address'] ?? '' }}"
                         class="form-control br-8" placeholder="Address">

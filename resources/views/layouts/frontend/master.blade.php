@@ -270,7 +270,20 @@ $(document).ready(function () {
 
 })();
 </script>
-
+<script>
+    $(document).ready(function(){
+        $('#hero-slick-slider').slick({
+            fade: true,           // Fade works best with background zooms
+            autoplay: true,
+            autoplaySpeed: 6000,  // Give enough time for the zoom to finish
+            speed: 1000,          // Transition speed between slides
+            arrows: false,        // Clean look
+            dots: true,
+            pauseOnHover: false,
+            infinite: true
+        });
+    });
+</script>
 
 </body>
 
