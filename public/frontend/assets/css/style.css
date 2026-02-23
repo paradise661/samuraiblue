@@ -23710,6 +23710,8 @@ padding-right: 20px;
 }
 
 .contact-details-block .title {
+    display: flex;
+    justify-content: start;
     -webkit-transition: all 300ms ease;
     transition: all 300ms ease;
     margin-bottom: 20px;
@@ -23717,6 +23719,8 @@ padding-right: 20px;
 }
 
 .contact-details-block .text {
+    display: flex;
+        justify-content: start;
     margin-bottom: 0;
     color: var(--text-color2);
     font-weight: 500;
