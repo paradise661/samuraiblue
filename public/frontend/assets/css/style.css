@@ -52,6 +52,9 @@ License: copyright commercial
 @import url("tm-bs-mp.css");
 @import url("tm-utility-classes.css");
 
+body{
+    overflow-x: hidden;
+}
 :root {
     --theme-color-white: #ffffff;
     --theme-color-white-rgb: 255, 255, 255;
@@ -2278,7 +2281,7 @@ Scroll To Top style
 
 @media only screen and (max-width: 1023px) {
     .header-style-one .main-box {
-        padding: 14px 30px;
+        padding: 14px 0px;
     }
 }
 
@@ -3100,7 +3103,7 @@ Scroll To Top style
 
 @media (max-width: 991.98px) {
     .section-padding {
-        padding: 80px 0;
+        padding: 15px 0;
     }
 }
 
@@ -7957,7 +7960,7 @@ Section Title
 .about-image-items-2 .about-image {
     position: relative;
     height: 600px;
-    max-width: 512px;
+    /* max-width: 512px; */
     /* -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 638"><path fill-rule="evenodd" clip-rule="evenodd" d="M258.738 335.547C251.715 502.809 138.823 636.054 0 638V0C138.823 1.94739 251.715 135.19 258.738 302.453C265.668 137.395 375.696 5.46635 512 0.14593V637.857C375.696 632.536 265.668 500.607 258.738 335.547Z" /></svg>');
           mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 638"><path fill-rule="evenodd" clip-rule="evenodd" d="M258.738 335.547C251.715 502.809 138.823 636.054 0 638V0C138.823 1.94739 251.715 135.19 258.738 302.453C265.668 137.395 375.696 5.46635 512 0.14593V637.857C375.696 632.536 265.668 500.607 258.738 335.547Z" /></svg>');
   -webkit-mask-repeat: no-repeat;
@@ -7987,12 +7990,16 @@ Section Title
 
 @media (max-width: 1199.98px) {
     .about-image-items-2 .about-counter2 {
+        display: none;
         left: 220px;
         right: auto;
     }
 }
 
 @media (max-width: 767.98px) {
+    .about-image-items-2 .about-image {
+        height: 400px;
+    }
     .about-image-items-2 .about-counter2 {
         left: 41%;
     }
@@ -8046,9 +8053,9 @@ Section Title
     display: block;
 }
 
-.about-content-2 {
+/* .about-content-2 {
     max-width: 620px;
-}
+} */
 
 .about-content-2 .icon-items-area {
     display: -webkit-box;
@@ -24561,6 +24568,8 @@ a {
 .banner-subtitle {
     color: #fff;
     /* Soft dark color for readability */
+    white-space: normal;
+        overflow: visible;
     font-size: 20px;
     max-width: 700px;
     margin: 0 auto;

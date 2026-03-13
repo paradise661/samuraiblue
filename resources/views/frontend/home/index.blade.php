@@ -41,7 +41,7 @@
                             <h2 class="banner-title typing-text wow fadeInUp" data-wow-delay=".2s">
                                 {{ $sliders->title ?? ' ' }}
                             </h2>
-                            <div class="banner-subtitle typing-text-2 wow fadeInUp" data-wow-delay=".4s">
+                            <div class="banner-subtitle  wow fadeInUp" data-wow-delay=".4s">
                                 {!! $sliders->description ?? ' ' !!}
                             </div>
                             {{-- <a href="{{ route('frontend.about') }}" class="theme-btn btn-style-one wow fadeInUp"
