@@ -7998,6 +7998,7 @@ Section Title
 }
 
 .about-image-items-2 .about-counter2 {
+    display: none;
     border-radius: 50%;
     text-align: center;
     position: absolute;
