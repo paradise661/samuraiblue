@@ -55,9 +55,9 @@
                     </div>
                 </section>
             @endif
-            <section class="about-section-2 fix section-padding">
+            <section class="about-section-2 fix about-section-padding ">
                 <div class="auto-container">
-                    <div class="about-wrapper-2 section-padding pt-0">
+                    <div class="about-wrapper-2 pt-0">
                         <div class="row g-4 align-items-center">
                             <div class="col-xl-6">
                                 <div class="about-image-items-2 wow img-custom-anim-left">
