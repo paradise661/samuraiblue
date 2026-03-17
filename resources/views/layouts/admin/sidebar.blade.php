@@ -129,7 +129,7 @@
         <li class="menu-item {{ Request::segment(2) == 'course' ? 'active' : '' }}">
             <a href="{{ route('course.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-book"></i>
-                <div>Courses</div>
+                <div>Student Journey</div>
             </a>
         </li>
         <li class="menu-item {{ Request::segment(2) == 'branch' ? 'active' : '' }}">

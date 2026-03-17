@@ -37,7 +37,7 @@ class FrontendController extends Controller
     //
     public function home()
     {
-        $sliders = Slider::where('status', 1)->oldest("order")->first();
+        $sliders = Slider::where('status', 1)->oldest("order")->get();
         $about_us = Page::where('status', 1)->where('slug', 'about-us')->first();
         $why_choose_us = WhyChooseUs::where('status', 1)->first();
         $partners = Partner::where('status', 1)->oldest("order")->get();
@@ -48,6 +48,7 @@ class FrontendController extends Controller
         $home_country = Settings::where('key', 'home_countries')->first();
         $countryIds = explode(',', $home_country->value);
         $countries = Country::whereIn('id', $countryIds)->where('status', 1)->get();
+        $message_page = Page::where('status', 1)->where('slug', 'message-from-ceo')->first();
 
         $home_service = Settings::where('key', 'home_services')->first();
         $serviceIds = explode(',', $home_service->value);
@@ -73,7 +74,7 @@ class FrontendController extends Controller
         $faq_page = Page::where('status', 1)->where('slug', 'faq')->first();
         $faqs = Faq::where('status', 1)->oldest("order")->get();
 
-        return view('frontend.home.index', compact('sliders','popup', 'partners', 'faq_page','consultancy', 'countrylocation', 'faq', 'abroadstudies', 'universities', 'studentsteps', 'countries', 'blogs', 'services', 'about_us', 'why_choose_us', 'teams', 'testimonials','faqs'));
+        return view('frontend.home.index', compact('sliders','popup', 'partners','message_page', 'faq_page','consultancy', 'countrylocation', 'faq', 'abroadstudies', 'universities', 'studentsteps', 'countries', 'blogs', 'services', 'about_us', 'why_choose_us', 'teams', 'testimonials','faqs'));
     }
     public function about()
     {

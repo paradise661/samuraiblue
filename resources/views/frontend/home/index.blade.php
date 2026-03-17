@@ -31,30 +31,37 @@
                     </div>
                 </div>
             </section> --}}
-            @if ($sliders)
-                <section class="lets-talk-banner-section parallaxie section-padding bg-cover zoom-bg"
-                    style="background-image: url('{{ asset($sliders->image) }}');">
-                    <div
-                        class="lets-talk-banner-wrapper d-flex flex-column justify-content-center align-items-center text-center py-5">
-                        <div class="lets-talk-banner-content ">
+           <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
 
-                            <h2 class="banner-title typing-text wow fadeInUp" data-wow-delay=".2s">
-                                {{ $sliders->title ?? ' ' }}
+        @foreach ($sliders as $slider)
+            <div class="swiper-slide">
+                <section class="lets-talk-banner-section parallaxie section-padding bg-cover zoom-bg"
+                    style="background-image: url('{{ $slider->image }}');">
+
+                    <div class="lets-talk-banner-wrapper d-flex flex-column justify-content-center align-items-center text-center py-5">
+                        <div class="lets-talk-banner-content">
+
+                            <h2 class="banner-title typing-text">
+                                {{ $slider->title }}
                             </h2>
-                            <div class="banner-subtitle  wow fadeInUp" data-wow-delay=".4s">
-                                {!! $sliders->description ?? ' ' !!}
+
+                            <div class="banner-subtitle">
+                                {!! $slider->description !!}
                             </div>
-                            {{-- <a href="{{ route('frontend.about') }}" class="theme-btn btn-style-one wow fadeInUp"
-                                        data-wow-delay=".7s">
-                                      Company's Overview
-                                        <span class="icon">
-                                            <i class="flaticon-finance-fi_3385625"></i>
-                                        </span>
-                                    </a> --}}
+
                         </div>
                     </div>
+
                 </section>
-            @endif
+            </div>
+        @endforeach
+
+    </div>
+
+    <!-- Optional controls -->
+    <div class="swiper-pagination"></div>
+</div>
             <section class="about-section-2 fix about-section-padding ">
                 <div class="auto-container">
                     <div class="about-wrapper-2 pt-0">
@@ -618,8 +625,35 @@
                 </div>
             </div>
         </section>
+        <section class="about-us-section py-5">
+        <div class="container">
+            <div class="row">
+                {{-- Image --}}
+                <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-right"
+                    data-aos-duration="3000">
+                    <div class="about-us-img-ceo">
+                        <img style="    height: 800px;
+                                       object-fit: cover;"
+                              src="{{ asset($message_page->image_1) }}"
+                            alt="{{ $message_page->title }}">
+                    </div>
+                </div>
+                {{-- Content --}}
+                <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-left"
+                    data-aos-duration="3000">
+                    <div class="service-content-container">
+                        <h6 class="my-2">{{ $message_page->title ?? 'About us' }}</h6>
+                        <h3 class="my-2">{{ $message_page->short_description }}</h3>
+                        <p class="text-css-counter">
+                            {!! $message_page->description !!}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
         <!-- News Section Start -->
-        <section class="news-secton section-padding fix">
+        <section class="news-secton section-padding section-bg fix">
             <div class="auto-container">
                 <div class="sec-title text-center">
                     <h6 class="sub-title wow fadeInUp">

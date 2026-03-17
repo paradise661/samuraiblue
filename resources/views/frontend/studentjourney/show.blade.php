@@ -12,7 +12,7 @@
 @endsection
 @section('content')
     <!-- Start main-content -->
-    <section class="page-title" style="background-image: url(images/inner/page-title-bg.jpg);">
+    <section class="page-title" style="background-image: url({{ $studentjourney->banner_image ?? ' ' }});">
         <div class="auto-container">
             <div class="title-outer">
                 <ul class="page-breadcrumb wow fadeInUp" data-wow-delay=".3s">
@@ -50,7 +50,7 @@
                                     <img src="{{ $item->image }}" class="rounded"
                                         style="width: 70px; height: 70px; object-fit: cover;" alt="{{ $item->title }}">
                                     <div class="ms-3">
-                                        <h6 class="mb-0 fw-medium hover-text-primary">
+                                        <h6 class="side-bar-title mb-0 fw-medium hover-text-primary">
                                             {{ $item->title }}
                                         </h6>
                                     </div>

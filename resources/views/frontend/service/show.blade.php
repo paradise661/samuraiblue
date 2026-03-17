@@ -48,7 +48,7 @@
                                     <img src="{{ $service->image }}" class="rounded"
                                         style="width: 70px; height: 70px; object-fit: cover;" alt="{{ $service->title }}">
                                     <div class="ms-3">
-                                        <h6 class="mb-0 fw-medium hover-text-primary">
+                                        <h6 class="mb-0 side-bar-title fw-medium hover-text-primary">
                                             {{ $service->title }}
                                         </h6>
                                     </div>

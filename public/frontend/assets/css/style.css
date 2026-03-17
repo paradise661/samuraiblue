@@ -2311,7 +2311,7 @@ Scroll To Top style
 
 @media (max-width: 1699.98px) {
     .header-style-one .main-box .outer-box {
-        gap: 25px;
+        gap: 85px;
     }
 }
 
@@ -2845,6 +2845,7 @@ Scroll To Top style
 }
 
 .main-menu .navigation>li.dropdown:hover>ul {
+        background: #4471B4;
     margin-top: 0;
     opacity: 1;
     top: 100%;
@@ -2896,7 +2897,7 @@ Scroll To Top style
     line-height: 29px;
     font-weight: 500;
     font-size: 16px;
-    color: var(--headings-color);
+    color: white;
     text-align: left;
     font-family: var(--heading-font-family);
     margin: 0 30px;
@@ -6683,7 +6684,7 @@ Section Title
 }
 
 .lets-talk-banner-wrapper .lets-talk-banner-content h2 {
-    font-size: 50px;
+    font-size: 75px;
     font-weight: 700;
     color: var(--theme-color-white);
     line-height: 110%;
@@ -6870,6 +6871,7 @@ Section Title
     display: flex;
     justify-content: center;
     align-items: center;
+    background-position: inherit !important;
     /* margin: 0 30px; */
     /* border-radius: 50px; */
 }
@@ -24694,17 +24696,21 @@ a {
 .sticky-sidebar h4 {
     font-size: 1.25rem;
     margin-bottom: 25px;
-    color: #333;
+    color: #4471B4;
+}
+.side-bar-title{
+    color: #4471B4;
 }
 
 .sticky-sidebar a {
     transition: all 0.3s ease;
+        background-color: #6d90c566;
     border-radius: 8px;
     padding: 5px;
 }
 
 .sticky-sidebar a:hover {
-    background-color: #f1f1f1;
+    background-color: #6d90c53b;
     transform: translateX(5px);
     text-decoration: none;
 }
@@ -25061,7 +25067,17 @@ a {
     animation: typing 2s steps(50, end) forwards, hideCursor 0.1s 2s forwards;
     /* typing 2s, then hide cursor after 2s */
 }
+@media (max-width: 425px) {
 
+    .typing-text,
+    .typing-text-2 {
+        width: auto;
+        overflow: visible;
+        white-space: normal;
+        border-right: none;
+        animation: none;
+    }
+}
 @keyframes typing {
     from {
         width: 0;
