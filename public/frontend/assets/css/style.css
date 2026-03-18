@@ -9624,7 +9624,10 @@ Section Title
     align-items: center;
     gap: 30px;
 }
-
+.message-section{
+    display: flex;
+    justify-content: center;
+}
 .service-card-items-2 .service-icon .icon {
     width: 85px;
     height: 92px;
@@ -24754,6 +24757,7 @@ a {
     margin-top: 10px;
     background: none;
     border: none;
+    /* background: white; */
     color: white;
     font-weight: 600;
     cursor: pointer;
@@ -24876,7 +24880,15 @@ a {
     font-size: 14px;
     text-decoration: none;
 }
-
+.message-read-more{
+margin-top: 20px;
+    display: inline-block;
+    font-weight: 600;
+    color: #4471B4;
+    font-size: 14px;
+    text-decoration: none;
+    background-color: white;
+}
 .journey-bridge {
     display: flex;
     justify-content: space-between;

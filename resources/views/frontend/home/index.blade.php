@@ -31,37 +31,38 @@
                     </div>
                 </div>
             </section> --}}
-           <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
 
-        @foreach ($sliders as $slider)
-            <div class="swiper-slide">
-                <section class="lets-talk-banner-section parallaxie section-padding bg-cover zoom-bg"
-                    style="background-image: url('{{ $slider->image }}');">
+                    @foreach ($sliders as $slider)
+                        <div class="swiper-slide">
+                            <section class="lets-talk-banner-section parallaxie section-padding bg-cover zoom-bg"
+                                style="background-image: url('{{ $slider->image }}');">
 
-                    <div class="lets-talk-banner-wrapper d-flex flex-column justify-content-center align-items-center text-center py-5">
-                        <div class="lets-talk-banner-content">
+                                <div
+                                    class="lets-talk-banner-wrapper d-flex flex-column justify-content-center align-items-center text-center py-5">
+                                    <div class="lets-talk-banner-content">
 
-                            <h2 class="banner-title typing-text">
-                                {{ $slider->title }}
-                            </h2>
+                                        <h2 class="banner-title typing-text">
+                                            {{ $slider->title }}
+                                        </h2>
 
-                            <div class="banner-subtitle">
-                                {!! $slider->description !!}
-                            </div>
+                                        <div class="banner-subtitle">
+                                            {!! $slider->description !!}
+                                        </div>
 
+                                    </div>
+                                </div>
+
+                            </section>
                         </div>
-                    </div>
+                    @endforeach
 
-                </section>
+                </div>
+
+                <!-- Optional controls -->
+                <div class="swiper-pagination"></div>
             </div>
-        @endforeach
-
-    </div>
-
-    <!-- Optional controls -->
-    <div class="swiper-pagination"></div>
-</div>
             <section class="about-section-2 fix about-section-padding ">
                 <div class="auto-container">
                     <div class="about-wrapper-2 pt-0">
@@ -202,8 +203,47 @@
                     </div> --}}
                 </div>
             </section>
+            <section class="message-section section-padding section-bg fix bg-cover">
+                <div class="testimonial-card-item">
+
+                    <div class="client-item">
+                        <div class="client-image">
+                            <img src="{{ $message_page->image_1 }}" alt="img">
+                        </div>
+                        <div class="info-text">
+                            <h5>{{ $message_page->title ?? 'name' }}</h5>
+                            <span>{{ $message_page->position ?? '' }}</span>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="quote-icon">
+                            <i class="flaticon-finance-Quote"></i>
+                            <div class="test-triangle"></div>
+                        </div>
+
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="line-clamp-4 text-justify testimonial-text">
+                            {!! $message_page->description !!}
+                        </div>
+    <a href="{{ route('frontend.messagefromfounder') }}">
+                        <button type="button" class="message-read-more" >
+                       {{ $settings['testioninal_button'] }}
+                        </button></a>
+
+                    </div>
+                </div>
+            </section>
+
             <!-- Service Section Start -->
-            <section class="service-section section-padding section-bg fix bg-cover"
+            <section class="service-section section-padding fix bg-cover"
                 style="background-image: url('images/home-1/service/service-bg.jpg')">
                 <span class="ellipse-bg"></span>
                 <div class="auto-container">
@@ -243,7 +283,7 @@
                 </div>
             </section>
             <!-- Why Choose Us Section Start -->
-            <section class="why-choose-section fix section-padding"
+            <section class="why-choose-section section-bg fix section-padding"
                 style="background-image: url('images/home-1/choose-us/choose-us-shape.png')">
                 <div class="auto-container">
                     <div class="why-choose-us-wrapper">
@@ -293,7 +333,7 @@
                     </div>
                 </div>
             </section>
-            <section class="service-section-4 section-padding section-bg fix">
+            <section class="service-section-4 section-bg  section-padding fix">
                 <div class="container-fluid">
                     <div class="sec-title text-center">
                         <h6 class="sub-title wow fadeInUp">
@@ -399,7 +439,7 @@
             </section> --}}
         </div>
         <!-- Contact Section Start -->
-        <section class="contact-section fix section-padding">
+        <section class="contact-section section-bg fix section-padding">
             <div class="auto-container">
                 <div class="contact-wrapper">
                     <div class="row g-4">
@@ -421,21 +461,24 @@
                                     <div class="row g-4">
                                         <div class="col-md-12">
                                             <div class="form-clt">
-                                                <input type="text" name="name" placeholder="{{ $settings['your-name'] ?? '' }}*" />
+                                                <input type="text" name="name"
+                                                    placeholder="{{ $settings['your-name'] ?? '' }}*" />
                                                 <span class="text-danger error-text name_error"></span>
                                             </div>
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="form-clt">
-                                                <input type="text" name="email" placeholder="{{ $settings['email-title'] ?? '' }}" />
+                                                <input type="text" name="email"
+                                                    placeholder="{{ $settings['email-title'] ?? '' }}" />
                                                 <span class="text-danger error-text email_error"></span>
                                             </div>
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="form-clt">
-                                                <input type="text" name="phone" placeholder="{{ $settings['phone'] ?? '' }}" />
+                                                <input type="text" name="phone"
+                                                    placeholder="{{ $settings['phone'] ?? '' }}" />
                                                 <span class="text-danger error-text phone_error"></span>
                                             </div>
                                         </div>
@@ -497,7 +540,7 @@
         </section>
 
         <!-- Testimonial Section Start -->
-        <section class="testimonial-section fix section-padding">
+        <section class="testimonial-section section-bg fix section-padding">
             <div class="auto-container">
                 <div class="testimonial-wrapper bg-cover">
                     <div class="sec-title text-center">
@@ -553,7 +596,7 @@
 
                                                     <button type="button" class="read-more-btn-testimonial d-none"
                                                         data-readmore>
-                                                       {{ $settings['testioninal_button'] }}
+                                                        {{ $settings['testioninal_button'] }}
                                                     </button>
 
                                                 </div>
@@ -574,7 +617,7 @@
             </div>
         </section>
         <!-- Faq Section Start -->
-        <section class="faq-section fix section-padding section-bg bg-cover"
+        <section class="faq-section fix section-padding bg-cover"
             style="background-image: url('images/home-1/faq/faq-shape.png')">
             <div class="auto-container">
                 <div class="row g-4 justify-content-between align-items-center">
@@ -625,33 +668,30 @@
                 </div>
             </div>
         </section>
-        <section class="about-us-section py-5">
-        <div class="container">
-            <div class="row">
-                {{-- Image --}}
-                <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-right"
-                    data-aos-duration="3000">
-                    <div class="about-us-img-ceo">
-                        <img style="    height: 800px;
+        {{-- <section class="about-us-section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-right"
+                        data-aos-duration="3000">
+                        <div class="about-us-img-ceo">
+                            <img style="    height: 800px;
                                        object-fit: cover;"
-                              src="{{ asset($message_page->image_1) }}"
-                            alt="{{ $message_page->title }}">
+                                src="{{ asset($message_page->image_1) }}" alt="{{ $message_page->title }}">
+                        </div>
                     </div>
-                </div>
-                {{-- Content --}}
-                <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-left"
-                    data-aos-duration="3000">
-                    <div class="service-content-container">
-                        <h6 class="my-2">{{ $message_page->title ?? 'About us' }}</h6>
-                        <h3 class="my-2">{{ $message_page->short_description }}</h3>
-                        <p class="text-css-counter">
-                            {!! $message_page->description !!}
-                        </p>
+                    <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-left"
+                        data-aos-duration="3000">
+                        <div class="service-content-container">
+                            <h6 class="my-2">{{ $message_page->title ?? 'About us' }}</h6>
+                            <h3 class="my-2">{{ $message_page->short_description }}</h3>
+                            <p class="text-css-counter">
+                                {!! $message_page->description !!}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section> --}}
         <!-- News Section Start -->
         <section class="news-secton section-padding section-bg fix">
             <div class="auto-container">
@@ -681,7 +721,7 @@
                                                 href="{{ route('frontend.blogsingle', $item->slug) }}">{{ $item->title ?? '' }}</a>
                                         </h3>
                                         <a href="{{ route('frontend.blogsingle', $item->slug) }}" class="link-btn">
-                                           {{ $settings['blogs_button'] }}
+                                            {{ $settings['blogs_button'] }}
                                             <span class="icon"><i class="lnr-icon-arrow-right"></i></span>
                                         </a>
                                     </div>
