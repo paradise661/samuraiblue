@@ -163,7 +163,7 @@
                                         {!! $mission->description ?? '' !!}
                                     </div>
 
-                                    <button class="read-more-btn d-none">  {{ $settings['blogs_button'] }}e ></button>
+                                    <button class="read-more-btn d-none">  {{ $settings['blogs_button'] }} ></button>
                                 </div>
                             </div>
                         </div>
