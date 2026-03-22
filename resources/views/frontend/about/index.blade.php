@@ -79,7 +79,52 @@
                                 </div>
                             </div>
                         </div> --}}
+ <div class="row g-4">
+                                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                            <div class="about-counter">
+                                                <div class="count-box">
+                                                    <h2>
+                                                        <span class="count-text" data-speed="3000"
+                                                            data-stop="{{ (int) ($settings['home_counter_students'] ?? 3) }}">
+                                                            0
+                                                        </span>
+                                                    </h2>
 
+                                                    <p>
+                                                        {{ $settings['home_counter_students_title'] ?? 'Students helped' }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                                            <div class="about-counter">
+                                                <div class="count-box">
+                                                    <h2>
+                                                        <span class="count-text" data-speed="3000"
+                                                            data-stop="{{ (int) ($settings['home_counter_scholarship'] ?? 15) }}">0</span>
+                                                    </h2>
+                                                    <p>
+                                                        {{ $settings['home_counter_scholarship_title'] ?? 'company connected' }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                                            <div class="about-counter">
+                                                <div class="count-box">
+                                                    <h2>
+                                                        <span class="count-text" data-speed="3000"
+                                                            data-stop="{{ (int) ($settings['home_counter_enrolled'] ?? 4) }}">0</span>
+                                                    </h2>
+                                                    <p>
+                                                        {{ $settings['home_counter_enrolled_title'] ?? 'satisfied clients' }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
                     </div>
                 </div>
             </div>
