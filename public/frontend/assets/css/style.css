@@ -7890,8 +7890,8 @@ Section Title
 }
 
 .about-section-2 {
-    margin: 70px 30px 0px;
-    border-radius: 50px;
+    /* margin: 70px 30px 0px;
+    border-radius: 50px; */
     position: relative;
     z-index: 9;
 }
@@ -13009,6 +13009,8 @@ Section Title
 }
 
 .testimonial-card-item .client-item {
+    height: 100%;
+    /* overflow: hidden; */
     text-align: center;
     position: relative;
     padding: 60px 35px;
@@ -13027,8 +13029,8 @@ Section Title
 
 .testimonial-card-item .client-item .client-image {
     position: relative;
-    height: 85px;
-    width: 85px;
+    height: 100%;
+    width: 100%;
     margin: 0 auto;
     z-index: 9;
 }
@@ -13042,14 +13044,14 @@ Section Title
     content: "";
     width: 90px;
     height: 90px;
-    border-radius: 50%;
+     border-radius: 50%;
     /* border: 1px dashed var(--theme-color1); */
 }
 
 .testimonial-card-item .client-item .client-image img {
     border-radius: 50%;
-    height: 100%;
-    width: 100%;
+    height: 95px;
+    width: 95px;
     -o-object-fit: cover;
     object-fit: cover;
 }
@@ -13082,6 +13084,7 @@ Section Title
     position: relative;
     z-index: 9;
 }
+
 
 @media (max-width: 1199.98px) {
     .testimonial-card-item .content {
@@ -25213,4 +25216,144 @@ margin-top: 20px;
     .topbar {
         display: none;
     }
+}
+/* Container styling */
+.message-wrapper {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.msg-profile-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    /* Ensures image corners match card radius */
+}
+
+.msg-card-inner {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows stacking on mobile */
+}
+
+/* Image Side Styles */
+.msg-image-side {
+    flex: 0 0 40%;
+    /* Image takes 40% width */
+    max-width: 40%;
+    position: relative;
+    min-height: 400px;
+}
+
+.msg-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* This makes the image fill the area perfectly */
+    display: block;
+}
+
+/* Content Side Styles */
+.msg-content-side {
+    flex: 0 0 60%;
+    /* Content takes 60% width */
+    max-width: 60%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.msg-quote-box {
+    font-size: 40px;
+    color: #e1e1e1;
+    margin-bottom: 15px;
+}
+
+.msg-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 25px;
+    /* Optional: creates a line clamp if text is too long */
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: justify;
+}
+
+.msg-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #007bff;
+    /* Change to your brand color */
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.msg-btn:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .msg-image-side,
+    .msg-content-side {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .msg-image-side {
+        height: 300px;
+        min-height: auto;
+    }
+}
+/* Typography for the new fields */
+.msg-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.msg-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #007bff;
+    /* Accent color */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* margin-bottom: 15px; */
+}
+
+.msg-divider {
+    width: 50px;
+    border: 0;
+    border-top: 2px solid #eee;
+    margin: 15px 0 20px 0;
+}
+
+.msg-description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* Ensure the content side distributes space well */
+.msg-content-side {
+    padding: 50px;
+    /* Increased padding for a premium feel */
 }

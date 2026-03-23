@@ -63,7 +63,7 @@
                 <!-- Optional controls -->
                 <div class="swiper-pagination"></div>
             </div>
-            <section class="about-section-2 fix about-section-padding ">
+            <section class="about-section-2 fix section-bg about-section-padding ">
                 <div class="auto-container">
                     <div class="about-wrapper-2 pt-0">
                         <div class="row g-4 align-items-center">
@@ -203,47 +203,38 @@
                     </div> --}}
                 </div>
             </section>
-            <section class="message-section section-padding section-bg fix bg-cover">
-                <div class="testimonial-card-item">
-
-                    <div class="client-item">
-                        <div class="client-image">
-                            <img src="{{ $message_page->image_1 }}" alt="img">
+            <section class="message-wrapper">
+                <div class="auto-container">
+                    <div class="msg-profile-card">
+                        <div class="msg-card-inner">
+                            <div class="msg-image-side">
+                                <img src="{{ $message_page->image_1 }}" alt="Founder Image">
+                            </div>
+                            <div class="msg-content-side">
+                                <div class="msg-text-content">
+                                    <h3 class="msg-title">
+                                        {{ $message_page->title ?? 'Default Title' }}
+                                    </h3>
+                                    <div class="msg-subtitle">
+                                        {{ $message_page->short_description ?? 'Lead Summary Here' }}
+                                    </div>
+                                    <div class="msg-description">
+                                        {!! $message_page->description !!}
+                                    </div>
+                                </div>
+                                <div class="msg-action">
+                                    <a href="{{ route('frontend.messagefromfounder') }}" class="msg-btn">
+                                        {{ $settings['testioninal_button'] }}
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="info-text">
-                            <h5>{{ $message_page->title ?? 'name' }}</h5>
-                            <span>{{ $message_page->position ?? '' }}</span>
-                        </div>
-                    </div>
-
-                    <div class="content">
-                        <div class="quote-icon">
-                            <i class="flaticon-finance-Quote"></i>
-                            <div class="test-triangle"></div>
-                        </div>
-
-                        <div class="star">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-
-                        <div class="line-clamp-4 text-justify testimonial-text">
-                            {!! $message_page->description !!}
-                        </div>
-    <a href="{{ route('frontend.messagefromfounder') }}">
-                        <button type="button" class="message-read-more" >
-                       {{ $settings['testioninal_button'] }}
-                        </button></a>
-
                     </div>
                 </div>
             </section>
 
             <!-- Service Section Start -->
-            <section class="service-section section-padding fix bg-cover"
+            <section class="service-section section-bg section-padding fix bg-cover"
                 style="background-image: url('images/home-1/service/service-bg.jpg')">
                 <span class="ellipse-bg"></span>
                 <div class="auto-container">
@@ -283,7 +274,7 @@
                 </div>
             </section>
             <!-- Why Choose Us Section Start -->
-            <section class="why-choose-section section-bg fix section-padding"
+            <section class="why-choose-section  fix section-padding"
                 style="background-image: url('images/home-1/choose-us/choose-us-shape.png')">
                 <div class="auto-container">
                     <div class="why-choose-us-wrapper">
@@ -346,32 +337,32 @@
                     <div class="row g-4">
                         @foreach ($studentsteps as $key => $studentstep)
                             <div class="col-xxl-3 col-lg-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                                <div class="service-card-items-4">
-                                    <div class="service-icon">
-                                        <div class="icon">
-                                            {{-- <i class="flaticon-business-054-graph"></i> --}}
-                                            <img src="{{ $studentstep->image }}">
-                                        </div>
-                                        <span class="number">
-                                            0{{ $key + 1 }}
+                                <a class=""
+                                    href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}">
+                                    <div class="service-card-items-4">
+                                        <div class="service-icon">
+                                            <div class="icon">
+                                                {{-- <i class="flaticon-business-054-graph"></i> --}}
+                                                <img src="{{ $studentstep->image }}">
+                                            </div>
+                                            <span class="number">
+                                                0{{ $key + 1 }}
 
-                                        </span>
-                                    </div>
-                                    <div class="content">
-                                        <h3><a href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}">
+                                            </span>
+                                        </div>
+                                        <div class="content">
+                                            <h3>
                                                 <div class="line-clamp-1">{{ $studentstep->title }}</div>
-                                            </a>
-                                        </h3>
-                                        <div style="font-size: 17px;
+                                            </h3>
+                                            <div style="font-size: 17px;
     color: #6e6b6b;
     font-weight: 400;"
-                                            class="line-clamp-5 text-justify">
-                                            {{ $studentstep->short_description }}
+                                                class="line-clamp-5 text-justify">
+                                                {{ $studentstep->short_description }}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <a class="stretched-link"
-                                    href="{{ route('frontend.studentjourneysingle', $studentstep->slug) }}"></a>
+                                </a>
 
                             </div>
                         @endforeach
