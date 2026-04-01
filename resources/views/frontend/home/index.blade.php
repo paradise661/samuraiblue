@@ -36,24 +36,20 @@
 
                     @foreach ($sliders as $slider)
                         <div class="swiper-slide">
-                            <section class="lets-talk-banner-section parallaxie section-padding bg-cover zoom-bg"
-                                style="background-image: url('{{ $slider->image }}');">
+                            <section class="lets-talk-banner-section parallaxie section-padding">
+                                <img src="{{ $slider->image }}" alt="{{ $slider->title }}" class="banner-bg-img">
 
                                 <div
                                     class="lets-talk-banner-wrapper d-flex flex-column justify-content-center align-items-center text-center py-5">
                                     <div class="lets-talk-banner-content">
-
                                         <h2 class="banner-title typing-text">
                                             {{ $slider->title }}
                                         </h2>
-
                                         <div class="banner-subtitle">
                                             {!! $slider->description !!}
                                         </div>
-
                                     </div>
                                 </div>
-
                             </section>
                         </div>
                     @endforeach
